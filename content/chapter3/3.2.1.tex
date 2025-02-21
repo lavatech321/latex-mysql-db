@@ -1,0 +1,52 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item INSERT statement adds one or more rows of data to an already created table.
+		\bigskip
+		\syntaxblock{
+			INSERT INTO table\_name[(col1, col2, col3...)] VALUES(value1, value2, value3,...);
+		}		
+		Eg:
+		\commandblock{
+			CREATE TABLE product(id NUMBER, name VARCHAR2(20)); \\
+			INSERT INTO PRODUCT(id,name) VALUES(101,'cadbury'); \\
+			INSERT INTO PRODUCT VALUES(102,'munch');
+		}
+		
+		\item \textbf{'\&'} is default substitution variable wherein it will ask user to enter the value.
+		\bigskip
+		\syntaxblock{
+			INSERT INTO table\_name VALUES(\&col1, \&col2, \&col3,...);
+		}
+		Eg:
+		\outputblock{
+			\textbf{INSERT INTO PRODUCT VALUES(\&no, '\&name');} \\
+			Enter value for no: 101 \\
+			Enter value for name: cadbury \\
+			old 1: insert into product values(\&no, '\&name') \\
+			new 1: insert into product values(101, 'cadbury') \\
+			1 row created. 
+		}
+		\newpage
+		\outputblock{
+			\textbf{INSERT INTO PRODUCT VALUES(\&a, '\&b');} \\
+			Enter value for no: 102 \\
+			Enter value for name: munch \\
+			old 1: insert into product values(\&a, '\&b') \\
+			new 1: insert into product values(102, 'munch') \\
+			1 row created. 
+		}
+		
+		\item Insert record using records of another table:
+		\syntaxblock{
+			INSERT INTO table\_name SELECT col1,col2,.. FROM another\_table\_name; 
+		}
+		Eg:
+		\commandblock{
+			INSERT INTO product SELECT * FROM items; \\
+			INSERT INTO product(id, name) SELECT id,name FROM items; 
+		}	
+	\end{itemize}
+	
+\end{flushleft}

@@ -1,0 +1,31 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A rollback reverts any changes made within the current transaction to the last committed state. 
+		\bigskip
+		\syntaxblock{
+			rollback; \\
+			or \\
+			roll;
+		}
+		Eg:
+		\commandblock{
+			INSERT INTO product VALUES(102,'MUNCH'); \\
+			COMMIT; \\
+			INSERT INTO product VALUES(101,'Cadbury'); \\
+			ROLLBACK;
+		}
+		\bigskip
+		\outputblock{
+			SELECT * FROM product; \\
+			NO NAME \\
+			---------- ----------------- \\
+			102 Munch
+		}
+		
+
+	\end{itemize}
+	
+\end{flushleft}
+

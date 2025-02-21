@@ -1,0 +1,86 @@
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A Java program contains any number of classes in a single program. 
+		\item Only 1 class can be declared as \textbf{public}.
+		\item \textbf{Name of the program and name of public class must be matched}, otherwise it will result in compile time error.
+		\item Below are some use-cases on this:
+		
+		\begin{itemize}
+			\item \textbf{Case I}: Program name can be anything if there is no public class.
+			\bigskip
+			\codeblockfull{Lava.java}{
+					class A \{\} \\
+					class B \{\}
+			}			
+			\bigskip
+			\commandblock{
+			\$ javac Lava.java // This will create A.class, B.class
+			}
+			
+			\bigskip
+			\item \textbf{Case II}: Program name should be same as public class name.
+			\bigskip
+			\codeblockfull{Lava.java}{
+				class A \{\} \\
+				public class B \{\} \xmark // Lava.java is incorrect name 
+			}
+			\bigskip
+			\codeblockfull{B.java}{
+				class A \{\} \\
+				public class B \{\} \cmark 
+			}
+			
+			\bigskip
+			\item \textbf{Case III}: There can be only 1 public class in single program.
+			\bigskip
+			\codeblockfull{B.java}{
+				public class B \{\} \\
+				public class C \{\} \xmark \s // Two class cannot be public
+			}
+
+			\item \textbf{Class IV:} Multiple class with main() means executing those specific class will execute their respective main()
+			\bigskip
+			\codeblockfull{Lava.java}{
+				class A \{ \\ 
+				\s public static void main(String[] args) \{ \\
+				\s \s  System.out.println("A class main"); \\
+				\s	\} 			\\
+				class B \{ \\ 
+				\s public static void main(String[] args) \{ \\
+				\s \s  System.out.println("B class main"); \\
+				\s	\} \\
+				\}
+			}
+		
+			\bigskip
+			\commandblock{
+			\$ javac Lava.java \\
+			A.class B.class \\
+			\\
+			\$ java A \\
+			A class main \\
+			\\
+			\$ java B \\
+			B class main \\
+			\\
+			\$ java Lava \\
+			RuntimeError: NoClassDefFoundError: Lava 
+			}
+		\end{itemize}
+	\end{itemize}
+
+	\textbf{Conclusion:}
+	\begin{itemize}
+		\item For every class in program, a separate \textbf{“.class”} is generated.
+		\item ".java" file is compiled to generate ".class" file. ".class" file is executed.
+		\item Executing a ".class" file executes it's main().
+		\item Executing a ".class" file without main() results in runtime exception.
+		\item Multiple classes in a single ".java" file is not recommended. 
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+
+

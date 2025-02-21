@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item IdentityHashMap class implements Map interface.
+		\item It is same as HashMaps except:
+		\begin{itemize}
+			\item For HashMap, JVM uses \textbf{".equals()"} to identify duplicate keys.
+			\item For IdentityHashMap, JVM uses \textbf{"=="} operator to identify duplicate keys.
+		\end{itemize}
+		
+		\item Notice below code for HashMap:
+		\codeblockfull{Test.java}{
+			import java.util.*; \\
+			class one \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		HashMap h1 = new HashMap(); \\
+			\s \s		h1.put(new Integer(10),"Pawan"); \\
+			\s \s		h1.put(new Integer(10),"Raman"); \\
+			\s \s		System.out.println(h1);  // Output: \{10=Raman\}   \\
+			\s	\} \\
+			\}	
+		}
+		\item Now, notice the same code for IdentityMap:
+		\codeblockfull{Test.java}{
+			import java.util.*; \\
+			class one \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		IdentityHashMap h1 = new IdentityHashMap(); \\
+			\s \s		h1.put(new Integer(10),"Pawan"); \\
+			\s \s		h1.put(new Integer(10),"Raman"); \\
+					System.out.println(h1);  // Output: \{10=Pawan, 10=Raman\} \\
+			\s	\} \\
+			\}
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

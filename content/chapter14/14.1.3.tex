@@ -1,0 +1,173 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+	\item Vector are \textbf{ordered \& indexed} collection of \textbf{hetrogenous objects} wherein \textbf{duplicate objects \& null} is allowed. 
+
+	\newimage{0.5}{content/chapter14/images/list3.png}	
+	\item Like ArrayList, Vector is best choice for retrieval operation.
+	\end{itemize}
+
+	\textbf{Difference between ArrayList and Vector}
+	\bigskip
+	\tabletwo{
+		\textbf{ArrayList} & \textbf{Vector} \\
+		\hline
+		Methods are \textbf{non-synchronize} & Methods are \textbf{synchronized} \\
+		\hline
+		At a time, multiple threads are allowed to operate on ArrayList Object and hence ArrayList is \textbf{not thread safe} & At a time, only one thread is allowed to operate on Vector Object and it is \textbf{thread safe} \\
+		\hline
+		Threads are not required to wait to operate on ArrayList, hence relatively \textbf{performance is \textbf{high}} & Threads are required to wait to operate on Vector Object and hence relatively \textbf{performance is low}. \\
+		\hline
+		Introduced in 1.2 version and it is non-legacy class & Introduced in 1.0 version and it is legacy class \\
+	}
+
+	\newpage
+	\textbf{Ways of initializing Vector}
+	
+	\begin{itemize}
+		\item Creating an empty Vector:
+		\bigskip
+		\syntaxblock{
+			// To create Vector of hetrogenous elements: \\
+			Vector list = new Vector(); \\
+			\\
+			// To create Vector of homogenous elements: \\
+			Vector<ClassName> list = new Vector<ClassName>(); 
+		}
+		Eg:
+		\codeblock{
+			Vector list = new Vector(); \\
+			Vector<String> list = new Vector<String>(); 
+		}
+		
+		\bigskip
+		\item \textbf{Vector capacity}:
+		\begin{itemize}
+			\item Above syntax will create Vector with \textbf{default capacity of 10}.
+			\item Once 10 objects are added, then a new Vector object will be created with new capacity as shown below:
+			\bigskip
+			\codecontinue{
+				\textbf{New capacity = (current capacity * 2)}
+			}
+			
+		\end{itemize}
+		
+		\item Creating an empty Vector with initial capacity:
+		\bigskip
+		
+		\syntaxblock{
+			// To create Vector of hetrogenous elements: \\
+			Vector v1 = new Vector(capacity); \\
+			\\
+			// To create Vector of homogenous elements: \\
+			Vector<ClassName> list = new Vector<ClassName>(capacity); 
+		}
+		Eg:
+		\codeblock{
+			Vector numbers = new Vector(20); \\
+			Vector<Integer> list = new Vector<Integer>(20);  			
+		}
+		
+		\bigskip
+		\item Initialization with data:
+		\begin{itemize}
+			\item Using \textbf{Arrays.asList()} method:
+			\bigskip
+			\codeblock{
+				import java.util.*; \\ 
+				String[] namesArray = \{"Jim", "Jane", "Alice"\}; \\
+				Vector<String> namesList = new Vector<>(Arrays.asList(namesArray)); 
+			}
+			
+			\item Using \textbf{List.of} method:
+			\bigskip
+			\codeblock{
+				Vector<String> colors = new Vector<>(List.of("Red", "Green", "Blue"));
+			}
+			
+			\item Using \textbf{"var"} and \textbf{"List.of"}: 
+			\bigskip
+			\codeblock{
+				var fruits = new Vector(List.of("Apple", "Banana", "Orange"));
+			}
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\textbf{Methods specific to Vector}:
+	\begin{itemize}
+		\item Add member to Vector:
+		\syntaxblock{
+			void addElement(Object o)
+		}
+		\bigskip
+		\item Remove element at specific index of Vector:
+		\syntaxblock{
+			void removeElementAt(int index)
+		}
+		\bigskip
+		\item Remove all member of Vector:
+		\syntaxblock{
+			void removeAllElements()
+		}
+		\bigskip
+		\item Retrieve element at specific index of Vector:
+		\syntaxblock{
+			Object elementAt(int index)
+		}
+		\bigskip
+		\item Retrieve first element of Vector:
+		\syntaxblock{
+			Object firstElement()
+		}
+		\bigskip
+		\item Retrieve last element of Vector:
+		\syntaxblock{
+			Object lastElement()
+		}
+		\bigskip
+		\item Get Vector size:
+		\syntaxblock{
+			int size()
+		}
+		\bigskip
+		\item Get Vector capacity:
+		\syntaxblock{
+			int capacity()
+		}
+	\end{itemize}
+
+	\newpage
+	\textbf{Example Program}
+	\newline
+	\textbf{Program to display vector capacity functioning:}
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		public class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		\textbf{Vector v1 = new Vector(3);} \\
+		\s \s		\textbf{v1.add("Apple");} \\
+		\s \s		\textbf{v1.addElement("Mango");} \\
+		\s \s		\textbf{v1.add(2,"Orange");} \\
+		\s \s		System.out.println(\textbf{v1.capacity()}); \\
+		\s \s		System.out.println(v1.capacity()); \\
+		\s \s		v1.add("Banana"); \\
+		\s \s		System.out.println(v1.capacity()); \\
+		\s	\} \\
+		\}	
+	}
+	\bigskip
+	\outputblock{
+		\textbf{[}Apple, Mango, Orange\textbf{]} \\
+		3 \\
+		\textbf{[}Apple, Mango, Orange, Banana\textbf{]} \\
+		6
+	}
+	
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,141 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Used if number of lines of the code to be synchronised is less.
+		\item Pros of synchronised block over synchronised method:
+		\begin{itemize}
+			\item Reduces thread waiting time.
+			\item Improves application performance.
+		\end{itemize}
+		\item Ways of creating synchronised blocks:
+		\begin{itemize}
+			\item Get lock of particular object:
+			\bigskip
+			\syntaxblock{
+				synchronised(object) {}
+			}
+			\item Get lock of class-level object:
+			\bigskip
+			\syntaxblock{
+					synchronised(Class) {}
+			}
+		\end{itemize}
+		\item Eg: Consider below code that uses synchronized block to obtain object lock and update custom name using multiple threads.
+		\bigskip
+		\codeblockfull{demo.java}{
+			class Customer \{ \\
+			\s	String name; \\
+			\s	Customer(String name) \{ \\
+			\s \s		this.name = name; \\
+			\s	\} \\
+			\s	public void set(String name) \{ \\
+			\s \s		this.name = name; \\
+			\s	\} \\
+			\s	public void get()\{ \\
+			\s		System.out.println("Customer name: " + this.name); \\
+			\s	\} \\
+			\} 
+		}
+		\newpage
+		\codecontinue{
+			class Demo extends Thread \{ \\
+			\s	Customer c; \\
+			\s	String name; \\
+			\s	Demo(Customer c, String name) \{ \\
+			\s \s		this.c = c; \\
+			\s \s		this.name = name; \\
+			\s	\} \\
+			\s	public void run() \{ \\
+			\s \s		synchronized (c) \{ \\
+			\s \s \s			c.set(name); \\
+			\s \s \s			try \{ \\
+			\s \s \s				Thread.sleep(2000); \\
+			\s \s \s			\} \\
+			\s \s \s			catch (InterruptedException e) \{\} \\
+			\s			System.out.println(Thread.currentThread().getName() + " Updated the Customer"); \\
+			\s \s 		\} \\
+			\s	\s	c.get(); \\
+			\s	\} \\
+			\s	public static void main(String[] args)  throws InterruptedException\{  \\
+			\s \s		Customer c1 = new Customer("Ramesh"); \\
+			\s \s		Demo t1 = new Demo(c1,"Ram"); \\
+			\s \s		Demo t2 = new Demo(c1,"Sham"); \\
+			\s \s		t1.start(); \\
+			\s \s		t2.start(); \\
+			\s \s		t1.join(); \\
+			\s \s		t2.join(); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Thread-0 Updated the Customer \\
+			Customer name: Ram \\
+			Thread-1 Updated the Customer \\
+			Customer name: Sham
+		}
+	
+	
+ 		\item Eg: Consider below code that uses synchronized block to obtain class lock and update a variable using multiple threads.
+		\bigskip	
+		\codeblockfull{demo.java}{
+			class MyClass \{ \\
+			\s private static int count = 0; \\
+			\s \s	public static void incrementCount() \{ \\
+			\s \s \s		synchronized (MyClass.class) \{ \\
+			\s \s \s \s			count++; \\
+			\s \s \s		\} \\
+			\s \s	\}  \\
+			\s	public static int getCount() \{ \\
+			\s \s		synchronized (MyClass.class) \{  \\
+			\s \s \s			return count; \\
+			\s \s		\} \\
+			\s	\} \\
+			\} \\
+			class ClassLevel implements Runnable \{ \\
+			\s public void run() \{ \\
+			\s \s		for (int i = 0; i < 5; i++) \{ \\
+			\s \s \s			MyClass.incrementCount(); \\
+			\s 	System.out.println(Thread.currentThread().getName() + ": Count is " + MyClass.getCount()); 
+		} 
+		\newpage
+		
+		\codecontinue{
+			\s \s \s			try \{  \\
+			\s \s \s \s				Thread.sleep(100); \\
+			\s \s \s			\} \\
+			\s \s \s			catch (InterruptedException e) \{  \\
+			\s \s \s \s				e.printStackTrace(); \\
+			\s \s \s			\} \\
+			\s \s		\} \} \} \\ 
+			class Main \{ \\
+			\s	public static void main(String[] args)  throws InterruptedException \{ \\
+			\s \s		ClassLevel c1 = new ClassLevel(); \\
+			\s \s		Thread thread1 = new Thread(c1); \\
+			\s \s		Thread thread2 = new Thread(c1); \\
+			\s \s		thread1.start(); \\
+			\s \s		thread2.start(); \\
+			\s \s		thread1.join(); \\
+			\s \s		thread2.join(); \\
+			\s		System.out.println("Final Count: " + MyClass.getCount()); \\
+			\s 	\} \\
+			\}	
+		}
+		\bigskip
+		\outputblock{
+			Thread-0: Count is 2 \\
+			Thread-1: Count is 3 \\
+			Thread-0: Count is 4 \\
+			.. \\
+			Thread-1: Count is 8 \\
+			Thread-1: Count is 10 \\
+			Thread-0: Count is 10 \\
+			Final Count: 10 
+		}
+	\end{itemize}	
+	
+	
+\end{flushleft}
+
+\newpage

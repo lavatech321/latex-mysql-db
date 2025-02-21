@@ -1,0 +1,93 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\bigskip
+\begin{itemize}
+	\item Install SSH client package.
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# yum install openssh-client -y
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\bigskip
+	
+	\item SSH command:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: ssh [options] [username@]remote\_server\_ip
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.6]{content/chapter19/images/ssh4.png}
+		\caption{SSH connection using ssh command}
+		\label{fig:stage5}
+	\end{figure}
+	
+	
+	Eg:
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.3]{content/chapter19/images/ssh6.png}
+		\caption{Sample output}
+		\label{fig:stage55}
+	\end{figure}
+		
+	
+	\newpage
+	\item \textbf{Password based SSH:}
+	\bigskip
+	\begin{itemize}
+		\item While taking SSH of remote user, you should know it's \textbf{account password}.
+		\item The first time SSH client takes access of SSH server:
+		\begin{itemize}
+			\item The host public key of SSH client is stored in SSH server's \textbf{"known\_hosts"} file.
+			\item This file authenticates the SSH client to the SSH server.
+			\item Location of known\_host file: \textbf{{"$\sim$"}/.ssh/known\_hosts}.
+		\end{itemize}
+	\end{itemize}
+	\bigskip\bigskip
+	\item Options with \textbf{ssh} command:
+	\newline
+	\textbf{-v}: Verbose mode to display debugging messages.Maximum 3 "v" options can be supplied.
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: ssh -v [username@]remote\_server\_ip
+		\newline
+		Syntax: ssh -vv [username@]remote\_server\_ip
+		\newline
+		Syntax: ssh -vvv [username@]remote\_server\_ip
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# ssh -v jack@192.168.0.105
+		\newline
+		\# ssh -vvv jack@192.168.0.105
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	
+	
+	
+	
+	
+\end{itemize}
+
+
+
+
+
+\end{flushleft}
+\newpage
+
+

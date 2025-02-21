@@ -1,0 +1,45 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A correlated subquery is a subquery which is executed repeatedly once for each row of the main query.
+		\item A correlated subquery is a nested query which is executed once for each 'candidate row' selected by the main.
+		
+		
+		\codeblock{
+			create table employee( \\
+			deptid number,	\\
+			name varchar2(20),	\\
+			salary number	\\
+			);	\\
+			insert into employee values(101, 'Ram',34000);	\\
+			insert into employee values(102, 'Ravi',56000);	\\
+			insert into employee values(103, 'Kavi',16000);	\\
+			insert into employee values(104, 'Tanvi',34000);	\\
+			insert into employee values(105, 'Juhi',34000); \\
+			insert into employee values(106, 'Josh',156000);	\\
+			insert into employee values(101, 'Jim',52000);	\\
+			insert into employee values(104, 'Jack',89000);	\\
+			insert into employee values(102, 'Anny',38000);	
+		}
+		
+		Eg: Below query display all employees who earn salaries greater than the average salary within their own department:
+		
+		\outputblock{
+			SELECT name	\\
+			FROM employee e	\\
+			WHERE salary > (	\\
+			SELECT AVG(salary) FROM employee 	\\
+			WHERE deptid = e.deptid	\\
+			);	\\
+			NAME  \s	SALARY	\\
+			Ravi  \s	56000	\\
+			Jim	 \s	52000	\\
+			Jack \s	89000
+		}
+		
+	\end{itemize}
+\end{flushleft}
+
+\newpage
+

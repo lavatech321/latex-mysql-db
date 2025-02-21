@@ -1,0 +1,91 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	Exeception handling works using four keywords:
+	
+	\begin{itemize}
+		\item try: 
+		\begin{itemize}
+			\item This block \textbf{contains code with exception}, also called risky code.
+		\end{itemize}
+		
+		\item catch: 
+		\begin{itemize}
+			\item This is optional block from Java 1.7.
+			\item It \textbf{catches exception and handles it}. 
+		\end{itemize}
+		
+		\item finally: 
+		\begin{itemize}
+			\item This is optional block from Java 1.7.
+			\item It \textbf{defines code that executes regardless of exception.}
+			\item Eg: Close open files.
+		\end{itemize}
+		\bigskip
+		\syntaxblock{
+			try \{ \\
+				\s // risky-code here \\
+			\} \\
+			catch(Exception e) \{ \\
+				\s // handling-code here \\
+			\} \\
+			finally \{ \\
+				\s // resource-to-be-closed-here \\
+			\}
+		}
+		
+		\newpage
+		
+		\newimage{0.5}{content/chapter16/images/ex3.png}
+		
+		\item Without try..catch, below code would result in “ArithmeticException: / by zero” exception:
+		
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s		System.out.println(5/0); //  ArithmeticException: / by zero \\
+			\s	\} \\
+			\}
+		}
+			\newpage
+		\item Code handling “ArithmaticException: / by zero” exception:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s	try \{ \\
+			\s \s \s			System.out.println(5/0); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s			System.out.println("Oops! Problem."); \\
+			\s \s		\} \\
+			\s \s		System.out.println("Ending demo"); \\
+			\s	\} \}	
+		}
+		\bigskip
+		\outputblock{
+			Oops! Problem. \\
+			Ending demo
+		}
+		
+		\item Code handling “ArithmaticException: / by zero” using try..catch..finally:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		try \{ \\
+			\s \s \s			System.out.println(5/0); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s \s		   System.out.println(e.getMessage()); \\
+			\s \s		\} \\
+			\s \s		finally \{ \\
+			\s \s \s			System.out.println("Ending demo"); \\
+			\s \s \} \} \}	
+		}
+		\bigskip
+		\outputblock{
+			/ by zero \\
+			Ending demo
+		}
+	\end{itemize}
+
+\end{flushleft}

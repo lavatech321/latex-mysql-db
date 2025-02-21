@@ -1,0 +1,33 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Anonymous arrays are nameless arrays.
+		\item These arrays are used for instant one-time purpose.
+		\bigskip
+		\syntaxblock{
+			Single dimension array: \textbf{new datatype[]\{\}} \\
+			Multi-dimension array: \textbf{new datatype[][]\{\{\},\{\}\}}
+		}
+
+		\item While creating anonymous arrays, you cannot mention it's size:
+		\bigskip
+		\codeblock{
+			new int[3]\{10,20,30\}	\xmark \\
+			new int[][]\{\{10,20,30\},\{40,50,60\}\} \cmark	
+		}
+		\
+		\item In below example, main() is calling sum() using an anonymous arrays:
+		\codeblockfull{Test.java}{
+			class Test \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		\textbf{sum(new int[]{1, 2, 3});} \\
+			\s	\} \\
+			\s	public static void sum(int[] x) \{ \\
+			\s \s		int total = 0; \\
+			\s \s		for(int x1: x) \\
+			\s \s \s		total += x1; \\
+			\s \s		System.out.println(total);  // 6 \\
+			\} \}
+		}
+	\end{itemize}
+\end{flushleft}

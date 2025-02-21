@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Use labeled break/continue to break/continue a particular loop.
+		\bigskip
+		\syntaxblock{
+			label-1: \\
+			for(...) \{ \\
+			\s \s break label-1; \\
+			\} 
+		}
+		
+	\end{itemize}
+	
+	Eg 1:
+	\codeblock{
+		String str = "elephant"; \\
+		char[] ch = str.toCharArray(); \\
+		\textbf{l1:} \\
+		\s for(char c : ch) \{ \\
+		\s	if(c == 'p') \\
+		\s \s	\textbf{break l1;} \\
+		\s	System.out.print(c); // Output: ele \\
+		\s \}
+	}
+
+	\bigskip
+	Eg 2:
+	\codeblock{
+		String str = "elephant"; \\
+		char[] ch = str.toCharArray(); \\
+		\textbf{l1:} \\
+		\s for(char c : ch) \{ \\
+		\s	if(c == 'p') \\
+		\s \s	\textbf{continue l1;} \\
+		\s	System.out.print(c); // Output: elehant \\
+		\s \}
+	}
+	
+	
+\end{flushleft}

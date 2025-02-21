@@ -1,0 +1,41 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Object not used in program \& not eligible for GC are called \textbf{memory leaks}.
+		\item Memory leaks results in \textbf{OutofMemoryError} exception.
+		\item Make the objects eligible for GC to avoid memory leak.
+		\item Memory leaks are result of programmer's mistake.
+		\item Memory management tools to detect memory leaks:
+		\begin{itemize}
+			\item HP-J-Meter
+			\item IBM-TIVOLI
+			\item J-PROBE
+			\item HP-PATROL
+		\end{itemize}
+	\end{itemize}
+
+	\textbf{Island of Isolation}
+	\begin{itemize}
+		\item "Island of Isolation" refers to \textbf{two or more objects reference each other}, making them inaccessible.
+		\item This causes memory leaks because these objects won't be garbage collected when they're no longer needed.
+		\codeblockfull{One.java}{
+			public class One \{ \\
+			\s	static class Node \{ \\
+			\s \s		Node n; \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Node n1 = new Node(); \\
+			\s \s		Node n2 = new Node(); \\
+			\s \s		n1.n = n2; \\
+			\s \s		n2.n = n1; // Creates island of isolation \\
+			\s \s		// Island of isolation remains in memory causing memory leak \\
+			\s \s		n1=null; \\
+			\s \s		n2=null; \\
+			\s	\} \\
+			\}
+		}
+	\end{itemize}			
+	
+\end{flushleft}
+

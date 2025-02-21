@@ -1,0 +1,48 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item FileReader class is used to \textbf{read characters from the file}.
+		
+		\item \textbf{Constructors:}
+		\syntaxblock{
+			FileReader fr = new FileReader(String fname); \\
+			FileReader fr = new FileReader(File f);	
+		}
+		
+		\item \textbf{Methods}
+		\begin{itemize}
+			\item Read character in unicode format from file:
+			\syntaxblock{
+				int read();
+			}
+			\item Read character in character format from file:
+			\syntaxblock{
+				int read(char[] ch);
+			}
+			\item To close the reader:
+			\syntaxblock{
+				void close();
+			}
+		\end{itemize}	
+	\end{itemize}	
+
+	\textbf{Example Program:}
+	
+	\begin{itemize}
+		\item Display all character in file "abc.txt".
+		\codeblockfull{Test.java}{
+			import java.io.*; \\
+			class One \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s \s		\textbf{FileReader fr = new FileReader("abc.txt");} \\
+			\s \s		\textbf{int ch;} \\
+			\s \s		\textbf{while((ch = fr.read())!= -1) \{} \\
+			\s \s \s			\textbf{System.out.println((char)ch);} \\
+			\s   \textbf{\}} 	\} \}
+		}
+	\end{itemize}	
+\end{flushleft}
+
+\newpage
+

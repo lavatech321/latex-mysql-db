@@ -1,0 +1,47 @@
+
+\begin{flushleft}
+	
+	\tabletwo{
+	\hline
+	Unary operators &  [] , x++ , x-- \newline ++x , --x , \textbf{\~} , ! \\
+	\hline
+	Arithematic operators &  * , / , \%  \newline + , - \\
+	\hline
+	Shift operators & >>  , >>> , << \\
+	\hline
+	Comparison operators & < , <= , > , >= , instanceof \\
+	\hline
+	Equality operators &  == , != \\
+	\hline
+	Bitwise operators & \& , \textbf{\^} , | \\
+	\hline
+	Short circuit operators & \&\& , || \\
+	\hline
+	Conditional operator & ?: \\
+	\hline
+	Assignment operators &  = , += , -= , *= \\
+	\hline
+	}
+
+	\textbf{Evaluation order of operands:}
+	
+	\begin{itemize}
+		\item In java, we have only operator precedence and no operands precedence.
+		\item Before applying any operator, all operands will be evaluated from left to right.
+		\item Eg:
+		\codeblock{
+			System.out.println(1+2*3/4+5*6);  // output: 32
+		}
+	
+		Output explaination:
+		\begin{itemize}
+			\item 1+2*3/4+5*6
+			\item 1+6/4+5*6
+			\item 1+1+5*6
+			\item 1+1+30
+			\item 32
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{flushleft}

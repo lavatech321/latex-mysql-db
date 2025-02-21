@@ -1,0 +1,119 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\bigskip
+
+\begin{itemize}
+	\item \textbf{iostat}: Reports "Central Processing Unit" (CPU) statistics and input/output statistics for devices and partitions.
+	\newline
+	Options with \textbf{iostat} command:
+	\begin{itemize}
+		\item \textbf{-c}: Displays CPU utilization report.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: iostat -c
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.2]{content/chapter15/images/iostat.png}
+			\caption{Sample output}
+			\label{fig:output}
+		\end{figure}
+	
+		Output explaination:
+		\begin{itemize}
+			\item \textbf{\%user}: Show CPU utilization of user application.
+			\item \textbf{\%nice}: Show CPU utilization of user application with nice priority.
+			\item \textbf{\%system}: Show CPU utilization of the system kernel.
+			\item \textbf{\%iowait}: Show CPUs idle percentage during outstanding disk I/O request.
+			\item \textbf{\%steal}: Show wait by the virtual CPUs while the hypervisor was servicing another virtual processor.
+			\item \textbf{\%ideal}: Show CPUs idle percentange when the	system did not have an outstanding disk I/O request.
+		\end{itemize}
+	\newpage
+		\item \textbf{-d}: Shows device utilization report.
+		\newline
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: iostat -d
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.25]{content/chapter15/images/iostatd.png}
+			\caption{Sample output}
+			\label{fig:output2}
+		\end{figure}
+		\newline
+		Output explaination:
+		\newline
+		All the values in the output are in percentage format.
+		\begin{itemize}
+			\item \textbf{tps}: The "tps" stands for data \textbf{Transfers Per Second} of device.
+			\item \textbf{Blk\_read/s}: Data read in number of blocks (kilobytes, megabytes) per second.
+			\item \textbf{Blk\_wrtn/s}: Data written in number of blocks (kilobytes, megabytes) per second.
+			\item \textbf{Blk\_read}: Number of blocks (kilobytes, megabytes) read.
+			\item \textbf{Blk\_wrtn}: Number of blocks (kilobytes, megabytes) written.
+		\end{itemize}
+		
+	\end{itemize}
+	\newpage
+	\item \textbf{vmstat}: 
+	\begin{itemize}
+		\item Stands for \textbf{v}irtual \textbf{m}emory \textbf{stat}stics.
+		\item It is a computer monitoring tool that collects and displays system memory, processes, interrupts, pagging and block I/O.
+	\end{itemize}
+	\bigskip
+	Option with \textbf{vmstat} command:
+	\newline
+	\textbf{-s}: Displays a table of event counters and memory statistics.
+	\newline
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: vmstat -s
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	Eg:
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.4]{content/chapter15/images/vmstat.png}
+		\caption{Sample output}
+		\label{fig:output3}
+	\end{figure}
+
+	\newpage
+	\item \textbf{sar}: 
+	\begin{itemize}
+		\item The \textbf{sar} command is a performance monitoring uitility.
+		\item It collects reports ongoing basis and saves the performance data.
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: sar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.25]{content/chapter15/images/sar.png}
+			\caption{Sample output}
+			\label{fig:output4}
+		\end{figure}
+		
+		Refer \textbf{iostat} command for output explaination.	
+			
+	\end{itemize}
+	
+	
+\end{itemize}
+
+\end{flushleft}
+\newpage
+
+

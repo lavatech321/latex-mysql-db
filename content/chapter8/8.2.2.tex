@@ -1,0 +1,73 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item If we want to execute loop body atleast once, then we should go for do-while loop.
+		\bigskip
+		\syntaxblock{
+			do \{ \\
+			\s action \\
+			\} while(condition); 
+		}
+		\bigskip
+		\item The ";" after while is compulsory.
+		\item The condition should be of boolean type.
+		\item Curly braces are optional
+		\item Without curly braces only one statement is allowed which should not be declarative statement.
+		\item Below are some valid and invlaid example of do-while:
+		\bigskip
+		\codeblock{
+			do \\
+			\s System.out.println("Hello"); \cmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do;   \cmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do \\
+			\s int x = 10; \xmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do \\
+			while(true); \xmark
+		}
+		\bigskip
+		\codeblock{
+			do \\
+			\s while(true) \cmark \\ 
+			\s \s System.out.println("Hello"); \\
+			while(false);
+		}
+		\item Unreachable statement in do-while loop also results in compile-time error. Below are some examples showing unreachable statement:
+		\bigskip
+		\codeblock{
+			do \{\\
+			\s System.out.println("Hello"); \\
+			\} while(true); \\
+			System.out.println("Hi");   \xmark // Unreachable statement error
+		}	
+		\bigskip
+		\item Final variable will be evaluated compile-time only. Thus for non-reachable condition, it will result in compile-time error.
+		
+		\bigskip
+		\codeblock{
+			final int a = 10, b = 20; \\
+			do \{ \\
+				\s System.out.println("Hello"); \\
+			\} while(a < b); \\
+			System.out.println("Hi");  \xmark 
+			\s // Unreachable statement
+		}
+	
+	\end{itemize}		
+	
+\end{flushleft}
+
+\newpage
+

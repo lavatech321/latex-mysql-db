@@ -1,0 +1,45 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item NavigableMap interface implements SortedMap interface.
+		\item It defines several methods for navigation purposes.	
+	\end{itemize}
+	
+	\textbf{NavigableMap specific methods}
+	
+	\begin{itemize}
+		\item Return highest key element which is <= e:
+		\syntaxblock{
+			Object floorKey(e)
+		}
+		\item Return highest key element which is < e:
+		\syntaxblock{
+			Object lowerKey(e)
+		}
+		\item Return lowest key element which is >= e:
+		\syntaxblock{
+			Object ceilingKey(e)
+		}
+		\item Return lowest key element which is > e:
+		\syntaxblock{
+			Object higherKey(e)
+		}
+		\item Return Navigable Map in reverse order:
+		\syntaxblock{
+			NavigableSet descendingMap()
+		}
+		\item Return and remove first key, value pair:
+		\syntaxblock{
+			pollFirstEntry()
+		}
+		\item Return and remove last key, value pair:
+		\syntaxblock{
+			pollLastEntry()
+		}
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+

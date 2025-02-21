@@ -1,0 +1,113 @@
+\setlength{\columnsep}{3pt}
+
+\begin{flushleft}
+
+		\begin{itemize}
+			\item Used to terminate the while or for loop as per a condition
+			\item break with \textbf{while} loop:
+			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=8pt
+				Syntax: 
+				\newline
+				while condition: \newline
+				\hphantom{} \hphantom{}  if condition: \newline
+				\hphantom{} \hphantom{} \hphantom{} \hphantom{} break \newline
+				\hphantom{} \hphantom{} statements..
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		
+			\item \textbf{break} with \textbf{for} loop:
+			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=8pt
+				Syntax: 
+				\newline
+				for x in iterable: \newline
+				\hphantom{} \hphantom{}  if condition: \newline
+				\hphantom{} \hphantom{} \hphantom{} \hphantom{} break \newline
+				\hphantom{} \hphantom{} statements..
+				\fontdimen2\font=4pt
+			\end{tcolorbox}			
+		
+			\bigskip
+			\item Below is the simple examples of break statement with \textbf{"while"} loop:
+
+			Sample code:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+				\color{white}
+				\fontdimen2\font=8pt
+				flag=True \newline
+				while flag: \newline
+				\hphantom{} \hphantom{} ch=input("Do you wish to continue? (y/n): ") \newline
+				\hphantom{} \hphantom{} if ch == 'n' or ch == 'no': \newline
+				\hphantom{} \hphantom{} \hphantom{} \hphantom{} break
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Output:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+				\color{black}
+				Do you wish to continue? (y/n): y \newline
+				Do you wish to continue? (y/n): y \newline
+				Do you wish to continue? (y/n): n
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		
+			\item Below is the simple examples of break statement with \textbf{"for"} loop:
+			
+			Sample code:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+				\color{white}
+				\fontdimen2\font=8pt
+				for x in 'apple': \newline
+				\hphantom{} \hphantom{} print(x) \newline
+				\hphantom{} \hphantom{} if x == 'p': \newline
+				\hphantom{} \hphantom{} \hphantom{} \hphantom{} break
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Output:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+				\color{black}
+				a \newline
+				p
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		
+			\bigskip
+			\item \textbf{break else....}
+			\newline
+			Sample code:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+				\color{white}
+				\fontdimen2\font=8pt
+				for x in "apple": \newline
+				\hphantom{} \hphantom{} print(x)  \newline
+				else: \newline
+				\hphantom{} \hphantom{} print('Loop completed successfully')
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Output:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+				\color{black}
+				a \newline
+				p \newline
+				p \newline
+				l \newline
+				e \newline
+				Loop completed successfully
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+		\end{itemize}
+	
+		
+	
+\end{flushleft}
+
+
+\newpage
+
+

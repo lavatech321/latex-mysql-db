@@ -1,0 +1,34 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item BCNF is stricter than 3NF.
+		\item If a non-primary key column is determining any other column, the table is not in BCNF.
+		
+		\item Example (without BCNF):
+		Let’s consider the following table of university class assignments:
+		
+		\newimage{0.36}{content/chapter11/images/bcnf1.png}
+			
+		\item Here, the Course\_ID determines the Instructor, but the Room\_Number is not determined by the Course\_ID alone because the same course (CS101) can be taught in different rooms by the same instructor. 
+		\item So the table violates BCNF because the Room\_Number depends on both the Course\_ID and the Instructor.
+		
+		\item To bring it into BCNF, we need to split the table:
+		
+		\newimage{0.36}{content/chapter11/images/bcnf2.png}
+		
+		\item Now, the data is in BCNF because:
+		
+		\begin{itemize}
+			\item In Table 1, Course\_ID is the candidate key, and it determines the Instructor.
+			\item In Table 2, Instructor is the candidate key, and it determines the Room\_Number.
+			
+		\end{itemize}
+			
+
+	\end{itemize}
+
+\end{flushleft}
+\newpage
+
+

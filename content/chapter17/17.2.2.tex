@@ -1,0 +1,147 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Synchronized method using object lock:
+	\begin{itemize}
+		\item \textbf{Step1: Choose an Object}
+		\begin{itemize}
+			\item Select the Java object of your choice.
+			\item Every object in Java has a unique lock. 
+		\end{itemize}
+		\item \textbf{Step 2: Acquire the Lock}
+		\begin{itemize}
+			\item A thread first gets lock of that object and enters the critical section.
+			\item Only one thread can hold the object lock at a time.
+		\end{itemize}
+		\item \textbf{Step 3: Execute Critical Section}
+		\begin{itemize}
+			\item The thread executes code inside synchronized block/method.
+			\item This code needs to be protected from concurrent access.
+			\item Other threads are not allowed to execute synchronized method on the given object. 
+			\item Other threads can execute only non-synchronised methods on the same object.
+		\end{itemize}
+		\item \textbf{Step 4: Release the Lock}
+		\begin{itemize}
+			\item The thread releases the lock, once method completes execution.
+		\end{itemize}
+	\end{itemize}
+
+	\newimage{0.5}{content/chapter17/images/six.png}
+	\newpage
+	Eg: Below code updates Customer object 2 times, notice the output without synchronised method set()
+	\codeblockfull{Demo.java}{
+		class Customer \{ \\
+		\s String name; \\
+		\s	Customer(String name) \{ \\
+		\s \s		this.name = name; \\
+		\s	\} \\
+		\s	public void set(String name) \{ \\
+		\s \s		this.name = name; \\
+		\s \s		try \{ \\
+		\s \s \s			Thread.sleep(2000); \\
+		\s \s		\} \\
+		\s \s		catch (InterruptedException e) \{\} \\
+		\s \s		System.out.println(Thread.currentThread().getName() + " Updated the Customer"); \\
+		\s	\} \\
+		\s	public void get()\{ \\
+		\s \s		System.out.println("Customer name: " + this.name); \\
+		\s	\} \\
+		\} \\
+		\\
+		class Demo extends Thread \{ \\
+		\s	Customer c; \\
+		\s	String name; \\
+		\s	Demo(Customer c, String name) \{ \\
+		\s \s		this.c = c; \\
+		\s \s		this.name = name; \\
+		\s	\} 
+	}
+	\bigskip
+	\codecontinue{
+		\s	public void run() \{ \\
+		\s \s		c.set(name); \\
+		\s \s		c.get(); \\
+		\s	\} \\
+		\s	public static void main(String[] args) throws InterruptedException\{ \\
+		\s \s		Customer c1 = new Customer("Ramesh"); \\
+		\s \s		Demo t1 = new Demo(c1,"Ram"); \\
+		\s \s		Demo t2 = new Demo(c1,"Sham"); \\
+		\s \s		t1.start(); \\
+		\s \s		t2.start(); \\
+		\s \s		t1.join(); \\
+		\s \s		t2.join(); \\
+		\s	\} \\
+		\}	 
+	}
+	\outputblock{
+		Thread-1 Updated the Customer \\
+		Thread-0 Updated the Customer \\
+		Customer name: Sham \\
+		Customer name: Sham
+	}
+	
+	\bigskip
+	
+	Eg: Below code updates Customer object 2 times, notice the output with synchronised method set().
+	
+	\codeblockfull{Demo.java}{
+		class Customer \{ \\
+		\s String name; \\
+		\s Customer(String name) \{ \\
+		\s \s this.name = name; \\
+		\s	\} 
+	}
+
+	\codecontinue{
+		\s	synchronized public void set(String name) \{ \\
+		\s \s	this.name = name; \\
+		\s \s		try \{ \\
+		\s \s \s			Thread.sleep(2000); \\
+		\s \s		\}  \\
+		\s \s		catch (InterruptedException e) \{\} \\
+		\s \s		System.out.println(Thread.currentThread().getName() + " Updated the Customer"); \\
+		\s	\} \\
+		\s	public void get()\{ \\
+		\s	\s	System.out.println("Customer name: " + this.name); \\
+		\s	\} \\
+		\} \\
+		\\
+		class Demo extends Thread \{ \\
+		\s	Customer c; \\
+		\s	String name; \\
+		\s	Demo(Customer c, String name) \{ \\
+		\s \s		this.c = c; \\
+		\s \s		this.name = name; \\
+		\s	\} \\
+		\s	public void run() \{ \\
+		\s \s		c.set(name); \\
+		\s \s		c.get(); \\
+		\s	\} \\
+		\s	public static void main(String[] args) throws InterruptedException\{ \\
+		\s \s		Customer c1 = new Customer("Ramesh"); \\
+		\s \s		Demo t1 = new Demo(c1,"Ram"); \\
+		\s \s		Demo t2 = new Demo(c1,"Sham"); 
+	}
+	\bigskip
+	\codecontinue{
+		\s \s		t1.start(); \\
+		\s \s		t2.start(); \\
+		\s \s		t1.join(); \\
+		\s \s		t2.join(); \\
+		\s	\} \\
+		\}		
+	}
+	\bigskip
+	\outputblock{
+		Thread-0 Updated the Customer \\
+		Customer name: Ram \\
+		Thread-1 Updated the Customer \\
+		Customer name: Sham
+	}
+
+	\textbf{Notice}
+	\begin{itemize}
+		\item If set() is not declared as synchnosied, then both the threads will be executed simultaneously and hence, we will get irregular output.	
+		\item If set() is synchronised, then at a time, only one thread is allowed to execute set()
+	\end{itemize}
+	
+\end{flushleft}

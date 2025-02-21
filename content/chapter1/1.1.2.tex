@@ -1,0 +1,71 @@
+
+\begin{flushleft}
+	
+	Edgar F. Codd formulated a set of 12 rules that define a true RDBMS:
+	\begin{itemize}
+		\item \textbf{Use table}: 
+		\begin{itemize}
+			\item Data should be in tables with rows and columns.
+		\end{itemize}
+		
+		\item \textbf{Guaranteed Access Rule}: 
+		\begin{itemize}
+			\item Data needs to be accessible through table name, primary key value, and column name.
+		\end{itemize}
+		
+		\item \textbf{Systematic Treatment of Null Values}:
+		\begin{itemize}
+			\item The DBMS must allow field to be null, \& operations can be performed null values.
+		\end{itemize} 
+	
+		\item \textbf{Dynamic Online Catalog Based on the Relational Model}: 
+		\begin{itemize}
+			\item The database's structure (metadata) must be stored in the same relational format as regular data, accessible to authorized users.
+		\end{itemize}
+		
+		\item \textbf{Comprehensive Data Sublanguage Rule:}
+		\begin{itemize}
+			\item DBMS must support a comprehensive DML for defining, querying, and manipulating data.
+		\end{itemize} 
+	
+		\item \textbf{Updating Rule:} 
+		\begin{itemize}
+			\item A table that is theoretically updatable should also be updatable by the system.
+		\end{itemize}
+		
+		\item \textbf{High-Level Insert, Update \& Delete:} 
+		\begin{itemize}
+			\item The DBMS must support  insert, update, and delete operations without dealing with low-level record management.
+		\end{itemize}
+		
+		\item \textbf{Physical Data Independence:} 
+		\begin{itemize}
+			\item Changes to the physical storage should not affect the user's ability to access data.
+		\end{itemize}
+		
+		\item \textbf{Logical Data Independence:} 
+		\begin{itemize}
+			\item Changes to the logical structure (table definitions, relationships) should not affect ability to access the data.
+		\end{itemize}
+		
+		\item \textbf{Integrity Independence:} 
+		\begin{itemize}
+			\item Integrity constraints ( data uniqueness, datatype etc), must be defined independently of application.
+		\end{itemize}
+		
+		
+		\item \textbf{Distribution Independence:}
+		\begin{itemize}
+			\item Distribution of database over network without impacting the schema.
+		\end{itemize} 
+	
+		\item \textbf{Nonsubversion Rule:} 
+		\begin{itemize}
+			\item DBMS with low-level language (such as assembly language), should not be able to bypass integrity constraints defined by the high-level language (SQL).
+		\end{itemize}
+		
+	\end{itemize}
+
+\end{flushleft}
+
+

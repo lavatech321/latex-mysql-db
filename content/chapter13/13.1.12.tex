@@ -1,0 +1,150 @@
+
+\begin{flushleft}
+
+	\begin{tabulary}{1.0\textwidth}{|p{5em}|p{22em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		length() &  public int length(); \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("hello world"); \\
+			System.out.println(sb.length());  // Output: 11
+		}   \\
+		\hline
+		
+		capacity() & public int capacity(); \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("hello world"); \\
+			System.out.println(sb.capacity()); // Output: 27
+		} \\
+		
+		\bottomrule
+	\end{tabulary}
+	
+	\newpage
+	
+	\begin{tabulary}{1.0\textwidth}{|p{9em}|p{18em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		append() & public StringBuffer append(String s) \newline 
+		public StringBuffer append(byte|int|long|float|double|char)
+		\newline
+		Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("hello world"); \\
+			sb.append("again"); \\
+			sb.append(10); \\
+			sb.append(2.0f); 
+		} \\
+		\hline
+		insert() & public StringBuffer insert(int index, String s) \newline 
+		public StringBuffer insert(int index, byte|int|long|float|double|char)
+		\newline
+		Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello"); \\
+			sb.insert(5," world!"); \\
+			sb.insert(0, 1); \\
+			sb.insert(0,1.0f); 
+		} \\
+		
+		\bottomrule
+	\end{tabulary}
+	
+	
+	\newpage
+	
+	\begin{tabulary}{1.0\textwidth}{|p{7em}|p{20em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		delete() &  public StringBuffer delete(int begin, int end) \newline
+		This would delete characters from begin to end-1.
+		\newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			sb.delete(0,6); \\
+			System.out.println(sb); // Output: world!
+		}   \\
+		\hline
+		
+		deleteCharAt() & public StringBuffer deleteCharAt(int index) \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			sb.deleteCharAt(5); \\
+			System.out.println(sb); // Output: Helloworld!
+		} \\
+		\hline
+		reverse() & public StringBuffer reverse() \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!");
+			System.out.println(sb.reverse()); // Output: !dlrow olleH
+		} \\		
+		\bottomrule
+	\end{tabulary}
+	
+	\newpage
+		\begin{tabulary}{1.0\textwidth}{|p{8em}|p{19em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		setLength() & public void setLength(int length) \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			sb.setLength(5); \\
+			System.out.println(sb); // Output: Hello
+		} \\
+		\hline
+		ensureCapacity() & public void ensureCapacity(int length) \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			sb.ensureCapacity(50); \\
+			System.out.println(sb.capacity()); // Output: 58
+		} \\
+		\hline
+		trimToSize() & Extra allocated free memory, can you plase deallocate 
+		\newline 
+		public void trimToSize() \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			sb.ensureCapacity(50); \\
+			sb.trimToSize(); \\
+			System.out.println(sb.capacity()); // Output: 12
+		} \\
+		\bottomrule
+	\end{tabulary}
+
+	\newpage
+	\begin{tabulary}{1.0\textwidth}{|p{8em}|p{19em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		toString() & public String toString() \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("Hello world!"); \\
+			String test = sb.toString(); \\
+			System.out.println(test);   // Output: Hello world!
+		} \\
+		\hline
+		setCharAt() & public char setAt(int  integer); \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("hello world"); \\
+			sb.setCharAt(0,'H'); \\
+			System.out.println(sb);  // Output: Hello world
+		} \\
+		\hline
+		charAt() & public char charAt(int  integer); \newline Eg:
+		\codeblock{
+			StringBuffer sb = new StringBuffer("hello world"); \\
+			System.out.println(sb.charAt(3));  // Output: l
+		} \\		
+		\bottomrule
+	\end{tabulary}
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

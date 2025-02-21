@@ -1,0 +1,37 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A marker interface is an interface that does not declare any methods. 
+		\item Its sole purpose is to mark or tag a class, indicating that the class has a certain property or behavior.
+		
+		\item A marker interface is essentially an empty interface, but by implementing that interface, a class can convey some additional information to the compiler.
+		
+		\item Here's an example of a marker interface named Serializable in Java:
+		\bigskip
+		\codeblock{
+			public interface Serializable \{ \\
+			\s	// Empty interface \\
+			\}
+		}
+		\item Below are some markers interfaces, these are marked for some ability:
+		\begin{itemize}
+			\item Serialisable (I)
+			\item Cloneable (I)
+			\item RandomAccess (I)
+		\end{itemize}
+	\end{itemize}
+	\quest{Without having any methods, how the objects will get some ability in marker interfaces?}{
+		Internally JVM is responsible to provide required ability.	
+	}
+	
+	\quest{Why JVM is providing required ability in marker interfaces?}{
+		To reduce complexity of programming \& to make java language as simple.
+	}
+	
+	\quest{Is it possible to create our own marker interface?}{
+			Yes, but customisation of JVM  is required. For this we will have to design our own JVM.
+	}
+	
+\end{flushleft}
+

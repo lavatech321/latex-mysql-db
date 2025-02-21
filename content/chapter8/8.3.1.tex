@@ -1,0 +1,50 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Use break statement in the following places:
+	\begin{itemize}
+		\item Inside switch to stop fall-through:
+		\bigskip
+		\codeblock{
+			int x = 0; \\
+			switch(x) \{ \\
+			\s case 0: \\
+			\s \s System.out.print(0); \\
+			\s \s break; \\
+			\s case 1: \\
+			\s \s System.out.print(1); \\
+			\s \s break; \\
+			\s case 2: \\
+			\s \s System.out.print(2); \\
+			\s \s break; 
+			\}
+		}
+		
+		\newpage
+		\item Inside loop to break loop execution based on some condition.
+		\bigskip
+		\codeblock{
+			for(int i=0; i < 10; i++) \{ \\
+			\s if(i==5) \\
+			\s \s break; \\
+			\s 	System.out.print(i); \\
+			\}
+		}
+		
+		\item Inside labeled blocks to break block execution based on some condition:
+		\bigskip
+		\codeblock{
+			int x = 10;  \\
+			l1: \{ \\
+			\s \s 	System.out.print("begin"); \\ 
+			\s \s if(x==10) \\
+			\s \s \s	break l1; \\
+			\s \s 	System.out.print("end"); \\
+			\} \\
+			System.out.print("Hello"); 
+		}
+		
+		
+	\end{itemize}
+
+\end{flushleft}

@@ -1,0 +1,82 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Integer wrapper class contains important methods like:
+	\begin{itemize}
+		\item parseInt()
+		\item toBinaryString()
+		\item toOctalString()
+		\item toHexString()
+	\end{itemize}
+	Let's see each of these in detail.
+	\bigskip
+	\begin{itemize}
+		\item \textbf{Integer.parseInt(String s)} - Parses the string argument as a signed decimal integer.
+		\codeblock{
+			String s1 = "101101"; \\
+			int i1 = Integer.parseInt(s1,2); \\
+			System.out.println(i1); // 45 \\
+			\\
+			String s2 = "34"; \\
+			int i2 = Integer.parseInt(s2,8); \\
+			System.out.println(i2);  // 28 \\
+			\\
+			String s3 = "aaff11"; \\
+			int i3 = Integer.parseInt(s3,16); \\
+			System.out.println(i3);  // 11206417 \\
+			\\
+			String s4 = "45"; \\
+			int i4 = Integer.parseInt(s4,10); \\
+			System.out.println(i4);  // 45
+		}
+		\newpage
+		\item \textbf{Integer.toBinaryString(int i)} - Converts a decimal, octal or hexadecimal  number to its binary (base 2) representation.
+		\codeblock{
+			int i5 = 45; \\
+			String s5 = Integer.toBinaryString(i5); \\ 
+			System.out.println(s5); // 101101 \\
+			\\
+			int i6 = 0xaa; \\
+			String s6 = Integer.toBinaryString(i6); \\
+			System.out.println(s6); // 10101010 \\
+			\\
+			int i7 = 034; \\
+			String s7 = Integer.toBinaryString(i7); \\
+			System.out.println(s7); // 11100
+		}
+		\bigskip
+		\item \textbf{Integer.toOctalString(int i)} - Converts a decimal, binary or hexadecimal number to its octal (base 8) representation.
+		\codeblock{
+			int i8 = 0B10101; \\
+			String s8 = Integer.toOctalString(i8); \\
+			System.out.println(s8); // 25 \\
+			\\
+			int i9 = 0xaaff44; \\
+			String s9 = Integer.toOctalString(i9); \\
+			System.out.println(s9); // 52577504 \\
+			\\
+			int i10 = 34; \\
+			String s10 = Integer.toOctalString(i10); \\
+			System.out.println(s10); // 42 
+		}
+		\newpage	
+		\item \textbf{Integer.toHexString(int i)} - Converts a decimal, binary or octal number to its Hex (base 8) representation.
+		\codeblock{
+	        int i11 = 0B10101; \\
+			String s11 = Integer.toHexString(i11); \\
+			System.out.println(s11); // 15 \\
+			\\
+			int i12 = 045; \\
+			String s12 = Integer.toHexString(i12); \\
+			System.out.println(s12); // 25 \\
+			\\
+			int i13 = 3489423; \\
+			String s13 = Integer.toHexString(i13); \\
+			System.out.println(s13); // 353e8f
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

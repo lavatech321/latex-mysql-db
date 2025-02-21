@@ -1,0 +1,80 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\bigskip
+
+When you say "\textbf{How many CPU(s) are present in your system?}", it either means:
+\begin{itemize}
+	\item How many physical CPU(s) are present?
+	\newline
+	To calculate physical CPU(s), the formula is:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		
+		Formula: No. of physical cpu = No. of socket X No. of cores
+		
+	\end{tcolorbox}
+	Here,
+	\begin{itemize}
+		\item Socket means physical CPU()s) present on the motherboard.
+		\item Core means full CPU cores there are present per physical CPU.
+	\end{itemize}
+	
+	\bigskip
+	\bigskip
+	\item How many logical CPU(s) are present?
+	\newline
+	To calculate logical CPU(s), the formula is:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		
+		Formula: No. of physical cpu = No. of socket X No. of cores X No. of threads
+		
+	\end{tcolorbox}
+	Here,
+	\begin{itemize}
+		\item Socket means physical CPU()s) present on the motherboard.
+		\item Core means full CPU cores there are present per physical CPU.
+		\item Threads means number of threads present on single core.
+	\end{itemize}
+\end{itemize}
+
+\newpage
+
+\textbf{How to check number of CPU cores, number of threads and number of sockets in OS?}
+\bigskip
+
+\textbf{Solution: All these details are stored in /proc/cpuinfo.}
+\newline
+\bigskip
+Display number of socket:
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+	\color{black}
+	\fontdimen2\font=9pt
+	Syntax: grep "physical id" /proc/cpuinfo | sort | uniq | wc -l
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+\bigskip
+Display number of logical CPU:
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+	\color{black}
+	\fontdimen2\font=9pt
+	Syntax: grep "\^{}processor" /proc/cpuinfo | wc -l
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+\bigskip
+Display number of CPU cores:
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+	\color{black}
+	\fontdimen2\font=9pt
+	Syntax: grep "cpu cores" /proc/cpuinfo | uniq
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+
+
+
+\end{flushleft}
+
+\newpage
+
+

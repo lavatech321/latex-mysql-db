@@ -1,0 +1,35 @@
+
+\begin{flushleft}
+	
+	When you execute COMMIT, the following actions occur:
+		\begin{itemize}
+			\item Changes of all transaction are saved permanently to database.
+			\item Locks acquired during the transaction are released, allowing other users to access the affected data.
+			\item The changes become visible to other transactions and users.
+		\end{itemize}
+	All DDL commands causes implicit commit, while you would need to perform implicit command for all DML commands.
+
+	\bigskip	
+	\syntaxblock{
+		COMMIT;
+	}
+	Eg:
+	\commandblock{
+		// Implicit commit \\
+		CREATE TABLE product(no NUMBER, name VARCHAR2(20)); \\
+		\\	
+		// Explicit commit required \\
+		INSERT INTO demo VALUES(101,'chair'); \\
+		INSERT INTO demo VALUES(102,'mirror'); \\
+		COMMIT; \\
+		\\
+		// Implicit commit \\
+		ALTER TABLE product RENAME COLUMN no TO id; \\
+		\\
+		// Explicit commit required \\
+		UPDATE product SET id=103 WHERE id=102; \\
+		COMMIT; 
+	}
+\end{flushleft}
+
+\newpage

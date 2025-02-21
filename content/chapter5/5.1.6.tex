@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Consider below table:
+	\commandblock{
+		create table sample(id number, phno number); \\
+		insert into sample values(101, 8723452312); \\
+		insert into sample values(102, 9723051302); \\
+		insert into sample values(103, NULL); 
+	}
+	\begin{itemize}
+		\item \textbf{NOT}: Display row if the condition is false.
+		\newline
+		Eg:
+		\outputblock{
+			select * from sample where phno NOT LIKE '8723\%'; \\
+			ID \s	PHNO	\\
+			102 \s	9723051302
+		}
+		\item \textbf{AND}: Display row only if both conditions are true.
+		\newline
+		Eg:
+		\outputblock{
+			select * from sample where id=101 AND phno LIKE '8723\%'; \\
+			ID \s	PHNO	\\
+			101 \s	8723452312
+		}
+		\item \textbf{OR}: Display row even if one of the condition is true.
+		\newline
+		Eg:
+		\outputblock{
+			select * from sample where id=103 OR phno LIKE '8723\%'; \\
+			ID \s	PHNO	\\
+			101 \s	8723452312	\\
+			103	\s  - 
+		}
+	\end{itemize}
+\end{flushleft}
+
+\newpage
+

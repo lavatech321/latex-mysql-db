@@ -1,0 +1,48 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\bigskip
+\begin{itemize}
+	\item Install SSH server package.
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# yum install openssh-server -y
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\bigskip
+	\item The package installation provides configuration file named \textbf{/etc/ssh/sshd\_config}.
+	\bigskip
+	\item Important entries in \textbf{/etc/ssh/sshd\_config} configuration file:
+	\begin{itemize}
+		\item \textbf{Line 17 - "Port 22"}: You can change port on this line, default SSH port is 22.
+		\item \textbf{Line 43 - "PermitRootLogin yes"}: You can disable/enable root login on this line.
+		\item \textbf{Line 70 - "PasswordAuthentication no"}: You can disable/enable password authentication on this line.
+	\end{itemize}
+	\bigskip
+	\item Changes in the configuration file are reflected only after the restarting SSH daemon named \textbf{"sshd"}:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# systemctl restart sshd
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	
+	\bigskip
+	
+
+	
+	
+\end{itemize}
+
+
+
+
+
+\end{flushleft}
+\newpage
+
+

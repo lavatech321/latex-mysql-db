@@ -1,0 +1,236 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	Prevent thread execution using below methods:
+	\begin{itemize}
+		\item yield()
+		\item join()
+		\item sleep()
+		\item interrupt()
+		\item stop() (deprecated)
+		\item suspend() \& resume() (deprecated)
+	\end{itemize}	
+
+	\textbf{yield()}:
+		\begin{itemize}
+			\item yield() \textbf{pauses current thread} \& \textbf{runs same priority waiting threads}.
+			\item Low priority waiting threads causes same thread to run.
+			\bigskip
+			\syntaxblock{
+				public static native void yield()
+			}
+			\item Here, native means method is in non-java language.
+			\item yield() \& thread life cycle - 
+			\newimage{0.37}{content/chapter17/images/three.png}
+			\item Eg: In below code, if you uncomment "Line 1", then both threads (main \& DemoThread) will be executed. As "Line 1" is commented, it first executes main thread and then DemoThread.
+			\bigskip
+			\codeblockfull{demo.java}{
+			   class DemoThread extends Thread \{ \\
+			   \s	public void run() \{ \\
+			    \s \s	for (int i = 0; i <5; i++) \{ \\
+				\s \s		System.out.println("Child Thread"); \\
+				\s \s		Thread.yield();   // Line 1 \\
+				\s	\} \\
+			   	\s 	\} \\
+				\}  \\
+				public class demo \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		DemoThread t1 = new DemoThread(); \\
+				\s \s		t1.start(); \\
+				\s \s		for(int i = 0; i < 5; i++) \{ \\
+				\s \s			System.out.println("Main Thread"); \\
+				\s \s		\} \\
+				\s	\} \\
+				\}
+			}
+			\bigskip
+			\outputblock{
+				Main Thread \\
+				..\\
+				Child Thread \\
+				..
+			}
+			\noteblock{
+			Some platforms wont provide proper support for yield().
+			}
+		\end{itemize}
+	
+		\newpage
+	\textbf{sleep()}:
+		\begin{itemize}
+			\item \textbf{Pauses a thread for given time}.
+			\bigskip
+			\syntaxblock{
+				public static native void sleep(long ms) throws InterruptedException \\
+				\\
+				public static native void sleep(long millisec, int nanosec) throws InterruptedException
+			}
+			\item sleep() \& thread life-cycle:
+			\newimage{0.5}{content/chapter17/images/four.png}
+			\newpage
+			\item Eg: Below code causes thread to sleep for 2000 seconds:
+			\bigskip
+			\codeblockfull{demo.java}{
+				public class demo \{ \\
+				\s public static void main(String[] args) throws InterruptedException\{ \\
+				\s \s for(int i=0; i<5; i++) \{ \\
+				\s \s System.out.println("Main-Thread"); \\
+				\s \s \s			Thread.sleep(2000); \\
+				\s \s		\} \\
+				\s	\} \\
+				\}	
+			}
+			\bigskip
+			\outputblock{
+			Main-Thread \\
+			.. 
+			}
+		\end{itemize}
+	
+		\bigskip
+		
+	\textbf{join()}: 
+			\begin{itemize}
+				\item \textbf{Cause a thread to wait until completing another thread}.
+				\item ThreadA calls ThreadB.join(), if it wants to wait until ThreadB completes.
+			\end{itemize}
+			\bigskip
+			\syntaxblock{
+				public final void join() throws InterruptedException \\ 
+				\\
+				public final void join(long milliseconds) throws InterruptedException \\
+				\\
+				public final void join(long milliseconds, int nanoseconds) throws InterruptedException
+			}
+			\newpage
+			Impact of join() in thread lifecycle:
+			\newimage{0.4}{content/chapter17/images/five.png}
+						
+			\bigskip
+			Eg: In below code, main \& new thread are not in sync. There is no guarantee when the new thread's run() method will complete. Hence count is showing 0.
+
+			\codeblockfull{demo.java}{
+				class ThreadX extends Thread \{ \\
+				\s int count; \\
+				\s	public void run() \{ \\
+				\s \s		count=10; \\	
+				\s	\} \} \\
+				public class demo \{ \\
+				\s	public static void main(String[] args) throws InterruptedException \{ \\
+				\s \s 		ThreadX t1 = new ThreadX(); \\
+				\s \s		t1.start(); \\
+				\s \s	System.out.println(t1.count); // Output: 0 \\
+				\s	\} 	\}
+			}
+			\bigskip
+			Eg2: join() ensures that main thread waits for the new thread to finish.
+			\bigskip
+			\codeblockfull{demo.java}{
+				class ThreadX extends Thread \{ \\
+				\s	int count; \\
+				\s	public void run() \{ \\
+				\s \s		count=10; \\
+				\s	\} 	\} 				\\
+				public class demo \{ \\
+				\s	public static void main(String[] args) throws InterruptedException \{ \\
+				\s \s		ThreadX t1 = new ThreadX(); \\
+				\s \s		t1.start(); \\
+				\s \s		t1.join(); \\
+				\s \s		System.out.println(t1.count); // Output: 10 \\
+				\s	\} \}	
+			}
+		\noteblock{
+		\textbf{Thread Deadlock}: ThreadA calls join() on ThreadB \& vice-a-versa results in wait forever. This is called \textbf{thread deadlock}.
+		}
+
+		\textbf{stop()}:
+	\begin{itemize}
+		\item \textbf{stop() causes thread to enter dead state}.
+		\item stop() is \textbf{deprecated}. Eg:
+		\codeblockfull{demo.java}{
+			class NewThread extends Thread \{\} \\
+			class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		NewThread t1 = new NewThread(); \\
+			\s \s		t1.start(); t1.stop(); \\
+			\s	\} \}
+		}
+	\end{itemize}
+
+	\textbf{interrupt()}:
+		\begin{itemize}
+			\item Interrupt a sleeping/waiting thread using interrupt().
+			\item It works only on sleeping/waiting thread.
+			\bigskip
+			\syntaxblock{
+				public void interrupt()
+			}
+			\item Eg: In below code, if we comment "Line 1", then main thread wont interrupt child thread. Child thread will execute for loop 10 times. 
+			If we are not commenting "Line 1", then main thread interrupts child thread. 
+			\bigskip
+			\codeblockfull{demo.java}{
+				class DemoThread extends Thread \{ \\
+				\s	public void run() \{ \\
+				\s \s		try\{ \\
+				\s \s \s			for (int i = 0; i<5; i++) \{ \\
+				\s \s \s				System.out.println("Child Thread-1");   \\
+				\s \s \s				Thread.sleep(2000); \\
+				\s \s \s	\} 	\} \\
+				\s	\s	catch(InterruptedException e)\{ \\
+				\s \s \s			System.out.println("OOps thread interrupted"); \\
+				\s \s		\} \} \} \\
+				public class new3 \{ \\
+				\s 	public static void main(String[] args) throws InterruptedException\{ \\
+				\s \s		DemoThread t1 = new DemoThread(); \\
+				\s \s		t1.start(); \\
+				\s \s		t1.interrupt();  // Line 1 \\
+				\s \s		System.out.println("End of Main Thread"); \\
+				\s 	\} \}
+			}
+			\bigskip
+			\outputblock{
+				End of Main Thread \\
+				Child Thread-1 \\
+				OOps thread interrupted
+			}
+		\end{itemize}
+		
+		\textbf{suspend() \& resume()} 
+		\begin{itemize}
+			\item You can suspend a thread by using suspend() from Thread class.
+			\item The thread will be entered into suspended state.
+			\item You can resume a suspended thread using resume() from Thread class.
+			\syntaxblock{
+				public void suspend() \\
+				public void resume()
+			}
+			\item These methods are deprecated and not recommended to use.
+		\end{itemize}
+		
+
+
+
+
+	\newpage
+	\textbf{Comparison tables for yield(), join() and sleep()}
+	
+	\tablefour{
+		\textbf{Property} & \textbf{yield()} & \textbf{join()} & \textbf{sleep()} \\
+		\hline
+		\textbf{Purpose} &  If a thread wants to pass it’s execution to give the chance for remaining threads of same priority, then we should go for yield() & If a thread wants to wait until completing some other thread, then we should go for join() & If a thread dont want to perform any operation, for a particular amount of time, then we should go for sleep()  \\
+		\hline
+		\textbf{  Is it overloaded()} & No & yes & yes \\
+		\hline
+		\textbf{Is it final()} & No & yes & No \\
+		\hline
+		\textbf{It it throws IE (interrupted exception)?} & No & yes & yes \\
+		\hline
+		\textbf{Is it native} & yes & no & sleep(long m1) → native
+		sleep(long milliseconds, int nanoseconds) → non-native \\
+		\hline
+		\textbf{It is static} & yes & no & yes \\
+	}
+	
+\end{flushleft}
+
+\newpage

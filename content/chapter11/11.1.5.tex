@@ -1,0 +1,26 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	A table is in 4NF if:
+	\begin{itemize}
+		\item It is already in BCNF.
+		\item 4NF helps when you have multiple, independent pieces of information about the same entity that don't depend on each other but are stored together. 
+		\item It separates these into different tables to avoid redundancy.
+		
+		\item Example (without 4NF): Consider a table where we store information about a student's courses and their hobbies:
+		
+		\newimage{0.36}{content/chapter11/images/4nf1.png}
+		
+		\item This table has a multi-valued dependency because the courses and hobbies are unrelated, but they are being stored together.
+		
+		\item To bring it into 4NF, we need to split the table:
+
+		\newimage{0.36}{content/chapter11/images/4nf2.png}		
+		
+		
+	\end{itemize}	
+	
+\end{flushleft}
+
+\newpage
+

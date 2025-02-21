@@ -1,0 +1,22 @@
+
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Introduced in Oracle 10g, the PURGE statement permanently removes object from the \textbf{Recycle Bin}. 
+		\bigskip
+		\syntaxblock{
+			PURGE TABLE table\_name
+		}
+		\item Eg:
+		\commandblock{
+			PURGE TABLE product; 
+		}
+		Confirm table is deleted from Recycle Bin.
+		\bigskip
+		\outputblock{
+			SHOW RECYCLEBIN;	
+		}
+		
+	\end{itemize}	
+	
+\end{flushleft}

@@ -1,0 +1,194 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	The ALTER command modify existing tables, indexes, constraints, etc. 
+	
+	\syntaxblock{
+		ALTER TABLE table\_name ADD/MODIFY/DROP/RENAME/SET UNUSED/ENABLE/DISABLE;
+	}
+	\begin{itemize}
+		\item \textbf{Rename column}
+		
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{RENAME} column old\_column TO new\_column;	
+		}
+
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER); \\
+			ALTER TABLE product \textbf{RENAME} column no TO id;
+		}
+	
+		\item \textbf{Add single column}
+		\bigskip
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{ADD} column\_name datatype;	 \\
+			or \\
+			ALTER TABLE table\_name \textbf{ADD} (column\_name datatype);
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER); \\
+			ALTER TABLE product \textbf{ADD} name VARCHAR2(30); \\
+			or \\
+			ALTER TABLE product ADD (name VARCHAR2(30));
+		}
+		\bigskip
+		\outputblock{
+			DESC product; \\
+			Column \s	Null? \s	Type \\
+			NO	\s  - \s 	NUMBER \\
+			NAME	\s  - \s	VARCHAR2(30)
+		}
+		\item \textbf{Add multiple column}
+		\bigskip
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{ADD}(column1\_name datatype,column2\_name datatype); 
+		}
+
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER); \\ 
+			ALTER TABLE product ADD(name VARCHAR2(20), grade CHAR(3));
+		}
+		\bigskip
+		\outputblock{
+			DESC product; \\
+			Column \s	Null? \s	Type \\
+			NO \s	 - \s 	NUMBER \\
+			NAME	\s - \s 	VARCHAR2(20) \\
+			GRADE \s	 - \s 	CHAR(3)
+		}
+	
+		\bigskip
+		\item \textbf{Modify single column size}
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{MODIFY} column\_name DATATYPE(SIZE);  \\
+			or \\
+			ALTER TABLE table\_name \textbf{MODIFY}(column\_name DATATYPE(SIZE)); 
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(name VARCHAR2(10)); \\
+			ALTER TABLE product MODIFY(name VARCHAR2(25)); 
+		}
+		\bigskip
+		\outputblock{
+			DESC product; \\
+			Column \s	Null? \s	Type   \\
+			NAME  \s  -  \s 	VARCHAR2(25)   
+		}
+
+		\item \textbf{Modify multiple column size}
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{MODIFY}(column1\_name DATATYPE(SIZE), 
+			column2\_name DATATYPE(SIZE)); 
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER(2), name VARCHAR2(10)); \\
+			ALTER TABLE product MODIFY(no NUMBER(3), name VARCHAR2(25)); 
+		}
+		\bigskip
+		\outputblock{
+			DESC product; \\
+			Column \s 	Null? \s	Type \\
+			NO	 \s - \s 	NUMBER(3,0)  \\
+			NAME \s	 - \s 	VARCHAR2(25)
+		}
+		
+		\item \textbf{Drop single column}
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{DROP} COLUMN column\_name;  \\
+			or \\
+			ALTER TABLE table\_name \textbf{DROP}(column\_name);
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER(2), name VARCHAR2(10)); \\
+			ALTER TABLE product DROP COLUMN name;
+		}
+
+		\outputblock{
+			DESC product; \\
+			Column \s	Null? \s	Type \\
+			NO	\s -  \s	NUMBER(2,0)
+		}
+		\item \textbf{Drop multiple column}
+		\syntaxblock{
+			ALTER TABLE table\_name \textbf{DROP}(column1\_name, column2\_name);
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER(2), name VARCHAR2(10), grade CHAR(2)); \\
+			ALTER TABLE product DROP(name, grade);
+		}
+		\bigskip
+		\outputblock{
+			DESC product; \\
+			Column \s	Null? \s	Type \\
+			NO \s	 - \s 	NUMBER(2,0)
+		}
+		\item \textbf{Hide single column}
+		\syntaxblock{
+			ALTER TABLE product SET UNUSED COLUMN column\_name; \\
+			or \\
+			ALTER TABLE product SET UNUSED(column\_name);
+		}
+
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER(2), name VARCHAR2(10), grade CHAR(2)); \\
+			insert into product values(11, 'cadbury','AB'); \\
+			insert into product values(12, 'munch','AC'); \\
+			alter table product set unused column grade; 
+		}
+		\bigskip
+		\outputblock{
+			select * from product; \\
+			NO \s	NAME \\
+			11 \s	cadbury \\
+			12 \s	munch
+		}
+	
+		\item \textbf{Hide multiple column}
+		\syntaxblock{
+			ALTER TABLE product SET UNUSED(column1\_name, column2\_name);
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER(2), name VARCHAR2(10), grade CHAR(2)); \\
+			insert into product values(11, 'cadbury','AB'); \\
+			insert into product values(12, 'munch','AC'); \\
+			alter table product set unused(name,grade); 
+		}
+		\bigskip
+		\outputblock{
+			select * from product; \\
+			NO \\
+			11 \\
+			12 
+		}
+
+		\quest{Why should we hide the column and not drop it directly?}{
+			\begin{itemize}
+				\item Dropping column with high volume of data during working hours can consume a lot of time.
+				\item Hence, during working hours, we can hide the column instead of dropping it
+				\item In non-working hours, we can remove the column.
+			\end{itemize}
+		}
+		\bigskip
+		\quest{After hiding a column, can we add a new column with same name?}{
+			\begin{itemize}
+				\item Yes, as once the column is hidden, we cannot unhide it again. We can only drop the column after hiding it.
+				\item Hence we can add a colum with same name.
+			\end{itemize}
+		}
+	
+	\end{itemize}
+
+\end{flushleft}
+
+
+\newpage
+

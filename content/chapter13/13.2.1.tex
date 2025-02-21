@@ -1,0 +1,45 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	\begin{itemize}
+		\item \textbf{"at"} allows you to schedule commands to be executed at a particular time. 
+		\item Jobs created with "at" are executed only once.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: echo "command\_to\_be\_run" | at time
+			\newline
+			or
+			\newline
+			Syntax: at time -f script
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+		\item Eg 1: Create a job that would execute script \textbf{/home/jack/one.sh} at 4:30am:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
+			\color{white}
+			\fontdimen2\font=1em
+			\# at 04:30 -f /home/jack/one.sh
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item Eg 2: Create a job that would execute command \textbf{ifconfig} at 9:00am:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
+			\color{white}
+			\fontdimen2\font=1em
+			\# at 09:00 ifconfig
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+	\end{itemize}
+	
+	
+	
+\end{flushleft}
+\newpage
+
+
+
+
+

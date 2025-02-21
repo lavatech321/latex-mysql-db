@@ -1,0 +1,210 @@
+
+\begin{flushleft}
+		
+
+		\begin{table}[]
+			\begin{tabular}{|p{8em}|p{8em}|p{8em}|}
+				
+				\multicolumn{3}{l}{}  \\
+				\multicolumn{3}{l}{\textbf{List functions}}   \\
+				\multicolumn{3}{l}{}                                                        \\ 
+				
+				\multicolumn{3}{l}{} \\
+				\multicolumn{3}{l}{\textbf{append()} - Add single member at the end of string}    \\
+				\multicolumn{3}{l}{}                                                        
+				\\ \hline
+				\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+				\\ \hline
+				\multicolumn{1}{|l|}{list.append(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=[1,2]\\ 
+				a.append("apple") \\
+			    print(a)\end{tabular}}   &  
+				[1,2,"apple"]  \\ 
+				\hline
+				
+				\multicolumn{3}{l}{}  \\
+				\multicolumn{3}{l}{\textbf{extend()} - Add multiple member at the end of string}   \\
+				\multicolumn{3}{l}{}                                                        \\ \hline
+				\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+				\hline
+				\multicolumn{1}{|l|}{list.extend(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=[1,2]\\ 
+						a.extend([3,4,5]) \\
+						print(a)\end{tabular}}   &  
+				[1,2,3,4,5]  \\ 
+				\hline				
+				
+				\multicolumn{3}{l}{}  \\
+				\multicolumn{3}{l}{\textbf{insert()} - Insert an item at the defined index}   \\
+				\multicolumn{3}{l}{}                                                        \\ \hline
+				\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+				\hline
+				\multicolumn{1}{|l|}{list.insert(index,element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango'] \\
+						l1.insert(1,'orange') \\
+						print(l1)\end{tabular}}   &  
+				['apple', 'orange', 'mango'] \\ 
+				\hline				
+				
+				\multicolumn{3}{l}{}  \\
+				\multicolumn{3}{l}{\textbf{remove()} - Removes an item from the list.}   \\
+				\multicolumn{3}{l}{}                                                        \\ \hline
+				\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+				\hline
+				\multicolumn{1}{|l|}{list.remove(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango'] \\
+						l1.remove('mango') \\
+						print(l1)\end{tabular}}   &  
+				['apple']\\ 
+				\hline				
+				
+				
+				\multicolumn{3}{l}{}  \\
+				\multicolumn{3}{l}{\textbf{clear()} - Removes all item from the list}   \\
+				\multicolumn{3}{l}{}                                                        \\ \hline
+				\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+				\hline
+				\multicolumn{1}{|l|}{list.clear()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango'] \\
+						l1.clear() \\
+						print(l1)\end{tabular}}   &  
+				[] \\ 
+				\hline				
+
+			\end{tabular}
+		\end{table}
+		
+
+	\begin{table}[]
+		\begin{tabular}{|p{8em}|p{8em}|p{8em}|}
+			
+			\multicolumn{3}{l}{} \\
+			\multicolumn{3}{l}{\textbf{index()} - Return index of first matched item}    \\
+			\multicolumn{3}{l}{}                                                        
+			\\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+			\\ \hline
+			\multicolumn{1}{|l|}{list.index(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=["apple","mango"]\\ 
+					print(a.index("apple")) \end{tabular}}   &  
+			0  \\ 
+			\hline
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{count()} - Returns the count of number of items passed as an argument}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{list.count(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=[1,2,2,1,2]\\ 
+					a.count(2) \\
+					print(a)\end{tabular}}   &  
+			3  \\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{sort()} - Sort items in a list in ascending order}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{list.sort()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango','guava'] \\
+					print(l1.sort()) \end{tabular}}   &  
+			['apple', 'guava', 'mango'] \\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{reverse()} - Reverse the order of items in the list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{list.reverse()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango'] \\
+					print(l1.reverse()) \end{tabular}}   &  
+			['mango','apple']\\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{copy()} - Performs shallow copy}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{list.copy()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=['apple','mango'] \\
+					l2=l1 \\
+					l3=l1.copy() \\
+				    l1[0]="orange" \\
+			        print(l1,l2,l3) \end{tabular}}   &  
+		     ['orange','mango'] ['orange','mango'] ['apple','mango'] \\
+			\hline				
+
+
+			
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[]
+		\begin{tabular}{|p{3em}|p{3em}|p{4em}|}
+			
+			\multicolumn{3}{l}{} \\
+			\multicolumn{3}{l}{\textbf{len()} - Return length of list}    \\
+			\multicolumn{3}{l}{}                                                        
+			\\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+			\\ \hline
+			\multicolumn{1}{|l|}{len(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=["apple","mango"]\\ 
+					print(len(a)) \end{tabular}}   &  
+			2  \\ 
+			\hline
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{list()} - Convert other datatype to list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{list()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a="app"\\ 
+					var=list(a) \\
+					print(var)\end{tabular}}   &  
+			['a','p','p'] \\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{max()} - Find maximum integer in a list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{max(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=[4500,3400,1200] \\
+					print(max(l1)) \end{tabular}}   &  
+				4500 \\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{min()} - Find minimum integer in a list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{min(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=[4500,3400,1200] \\
+					print(min(l1)) \end{tabular}}   &  
+			1200\\ 
+			\hline				
+			
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{sum()} - Perform sum of all items in list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{sum(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}l1=[10,20,30] \\
+					print(sum(l1)) \end{tabular}}   &  
+			60 \\
+			\hline				
+
+			\multicolumn{3}{l}{}  \\
+			\multicolumn{3}{l}{\textbf{enumerate()} - Enumerate all items in the list}   \\
+			\multicolumn{3}{l}{}                                                        \\ \hline
+			\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+			\hline
+			\multicolumn{1}{|l|}{enumerate(list,start\_pos)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=["A","B","C"] \\
+					print(list(enumerate(a,1))) \end{tabular}}   &  
+			[(1, 'A'), (2, 'B'), (3, 'C')] \\
+			\hline				
+			
+		\end{tabular}
+	\end{table}	
+		
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,49 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{TO\_DATE}: Convert a character string into a date or timestamp data type.
+		\outputblock{
+			SELECT TO\_DATE('2023-10-15', 'YYYY-MM-DD') AS converted\_date
+			FROM dual; \\
+			CONVERTED\_DATE \\
+			15-OCT-23 \\
+			\\
+			SELECT TO\_DATE('2023-10-15 14:30:00 Asia/Kolkata', 'YYYY-MM-DD HH24:MI:SS TZR') AS converted\_timestamp
+			FROM dual; \\
+			CONVERTED\_DATE \\
+			15-OCT-23 \\
+			\\
+			SELECT TO\_DATE('22-10-23', 'RR-MM-DD') AS converted\_date FROM dual; \\
+			CONVERTED\_DATE \\
+			23-OCT-22
+		}
+		\bigskip
+		\item \textbf{TO\_NUMBER}: Convert a character string into a numeric data type. 
+		\outputblock{
+			SELECT TO\_NUMBER('123.45') AS converted\_number FROM dual; \\
+			CONVERTED\_NUMBER \\
+			123.45
+		}
+
+		\item \textbf{TO\_TIMESTAMP}: Convert a character string representing a timestamp into a TIMESTAMP data type. 
+		\outputblock{
+			SELECT TO\_TIMESTAMP('2023-10-15 14:30:00', 'YYYY-MM-DD \\  HH24:MI:SS') AS converted\_timestamp \\
+			FROM dual; \\
+			CONVERTED\_TIMESTAMP \\
+			15-OCT-23 02.30.00.000000 PM
+		}
+		\bigskip
+		\item \textbf{TO\_TIMESTAMP\_TZ}: Convert a character string representing a timestamp with time zone information into a TIMESTAMP WITH TIME ZONE data type.
+		
+		\outputblock{
+			SELECT TO\_TIMESTAMP\_TZ('2023-10-15 14:30:00 Asia/Kolkata', \\ 'YYYY-MM-DD HH24:MI:SS TZR') AS converted\_timestamp\_tz \\
+			FROM dual; \\
+			CONVERTED\_TIMESTAMP\_TZ \\
+			15-OCT-23 02.30.00.000000 PM ASIA/KOLKATA
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+

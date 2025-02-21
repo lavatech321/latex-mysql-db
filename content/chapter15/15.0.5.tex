@@ -1,0 +1,80 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item BufferedWriter \textbf{writes character data} to the file.
+		\item It can’t write directly in the file \& require some writer object.
+		
+		\item Constructor:
+		\bigskip
+		\syntaxblock{
+			BufferedWriter bw = new BufferedWriter(Writer w); \\
+			BufferedWriter bw = new BufferedWriter(Writer w, int buffersize);
+		}
+		
+		\item \textbf{Methods}
+		\begin{itemize}
+			\item Write a single character to file:
+			\bigskip
+			\syntaxblock{
+				void write(int ch);
+			}
+			\item Write an array of character to file:
+			\bigskip
+			\syntaxblock{
+				void write(char[] ch);
+			}
+
+			\item Write a string to file:
+			\bigskip
+			\syntaxblock{
+				void write(String s);
+			}
+			\item To give the guarantee that total data including last character will be written to the file.
+			\bigskip
+			\syntaxblock{
+				void flush();
+			}
+			
+			\item To close the writer. On closing Bufferedwriter, the internal FileWriter object will be closed automatically.
+			\bigskip
+			\syntaxblock{
+				void close();
+			}
+		
+			\item To insert a line separator:
+			\bigskip
+			\syntaxblock{
+				void newline();
+			}	
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\textbf{Example Program:}
+	\begin{itemize}
+		\item Create a file "xyz.txt" and write string and characters to it.
+		\codeblockfull{Test.java}{
+			import java.io.*; \\
+			class Test \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s \s		\textbf{FileWriter f = new FileWriter("xyz.txt");} \\
+			\s \s		\textbf{BufferedWriter bw = new BufferedWriter(f);} \\
+			\s \s		\textbf{bw.write(108);} \\
+			\s \s		\textbf{bw.newLine();} \\
+			\s \s		\textbf{char[] c = \{'a','b','c'\};} \\
+			\s \s		\textbf{bw.write(c);} \\
+			\s \s		\textbf{bw.newLine();} \\
+			\s \s		\textbf{bw.write("Lavatech Technology");} \\
+			\s \s		\textbf{bw.flush();} \\
+			\s \s		\textbf{bw.close();} \\
+			\s	\} 	\}
+		}
+
+	\end{itemize}
+	
+	
+\end{flushleft}
+
+\newpage
+

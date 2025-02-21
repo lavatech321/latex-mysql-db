@@ -1,0 +1,205 @@
+
+\begin{flushleft}
+
+	\begin{tabulary}{1.0\textwidth}{|p{5em}|p{3em}|p{7em}|p{5em}|p{5em}|}
+		\toprule
+		\textbf{Data Type} & \textbf{Size} & \textbf{Range} & \textbf{Wrapper class} & \textbf{Default Value}   \\
+		\midrule
+		byte & 1 byte & -$2^\textbf{7}$ to $2^\textbf{7}$ -1 & Byte & 0  \\
+		\hline
+		short & 2 byte & -$2^\textbf{15}$ to $2^\textbf{15}$ -1 & Short & 0  \\
+		\hline
+		int & 4 byte & -$2^\textbf{31}$ to $2^\textbf{31}$ -1 & Integer & 0 \\
+		\hline
+		long & 8 byte & -$2^\textbf{63}$ to $2^\textbf{63}$ -1 & Long & 0 \\
+		\hline
+		float & 4 byte & -$3.4^\textbf{38}$ to $3.4^\textbf{38}$ & Float & 0.0 \\
+		\hline
+		double & 8 byte & -$1.7^\textbf{308}$ to $1.7^\textbf{308}$ & Double & 0.0  \\
+		\hline
+		boolean & 1 byte & true, false & Boolean & false  \\
+		\hline
+		char & 2 byte  & 0 to 65535 & Character & 0 [represents space character] \\
+		\bottomrule
+	\end{tabulary}
+	
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-1pt,colback=yellow,colframe=yellow]
+		\color{black}
+		Note: \textbf{null} value
+		\begin{itemize}
+			\item You cannot provide "\textbf{null}" value to primitive data types.
+			\item \textbf{null} is default value for object reference like String, Array etc.
+			\item Trying to use \textbf{null} for primitive data types will result in compile time error.
+			\newline
+			Eg: char ch = null; <-- will result in error
+		\end{itemize}
+	\end{tcolorbox}
+	
+	\newpage
+	\textbf{Program}: Below code gives the size of each data type in Java:
+	
+	\codeblock{
+		package Starter; \newline
+		class Test \newline
+		\{ \newline
+		\hphantom{} \hphantom{} public static void main (String[] args) \newline
+		\hphantom{} \hphantom{}	\{ \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} 	System.out.println("Size of byte: " + (Byte.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of short: " + (Short.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of int: " + (Integer.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of long: " + (Long.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of char: " + (Character.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of float: " + (Float.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}		System.out.println("Size of double: " + (Double.SIZE/8) + " bytes."); \newline
+		\hphantom{} \hphantom{}	\} \newline
+		\}
+	}
+	\newpage
+	\outputblock{
+			Size of byte: 1 bytes. \newline
+		Size of short: 2 bytes. \newline
+		Size of int: 4 bytes. \newline
+		Size of long: 8 bytes. \newline
+		Size of char: 2 bytes. \newline
+		Size of float: 4 bytes. \newline
+		Size of double: 8 bytes.
+	}	
+	
+	\textbf{Program}: Below code gives the class of each data type in Java:
+	\codeblock{
+			package Starter; \newline
+		class Test \newline
+		\{ \newline
+		\hphantom{} \hphantom{} public static void main (String[] args) \newline
+		\hphantom{} \hphantom{}	\{ \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} byte b = 56; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} short s = 6789; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} int x = 10; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} long l = 10L; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} long n = 10; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} float f = 1.0F; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} double d = 123.456; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)b).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)s).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)x).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)l).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)n).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)f).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} System.out.println(((Object)d).getClass().getSimpleName()); \newline
+		\hphantom{} \hphantom{}	\} \newline
+		\}
+	}
+
+	\outputblock{
+		Byte \newline
+		Short \newline
+		Integer \newline
+		Long \newline
+		Long \newline
+		Float \newline
+		Double
+	}
+
+	
+	
+\end{flushleft}
+
+\newpage
+
+
+
+
+% ===============================
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\textbf{length variable}:
+	\begin{itemize}
+		\item length is \textbf{final} (means constant) variable is used to display \textbf{size of an array}.
+		\item Value returned by length is fixed as array once created cannot change it's size.
+		\bigskip
+		\codeblock{
+			int[] x = new int[6]; \\
+			System.out.println(x.length);  
+		}
+		\bigskip
+		\outputblock{
+			6
+		}
+		
+		\item length variable is \textbf{not} applicable on string objects.
+		\bigskip
+		\codeblock{
+			String s="lavatech"; \\
+			System.out.println(s.length); \xmark
+		}
+		
+		\item In multi-dimensional arrays, length variable represents only base size, but not total size.
+		\bigskip
+		\codeblock{
+			int[][] x = new int[6][3]; \\
+			System.out.println(x.length);
+		}
+		\bigskip
+		\outputblock{
+			6
+		}
+		
+	\end{itemize}
+	
+	\textbf{length()}:
+	\begin{itemize}
+		\item length() is present in \textbf{String class}.
+		\item length() method is final variable applicable for string objects.
+		\item It returns number of characters present in the string.
+		\bigskip
+		\codeblock{
+			String s="lavatech"; \\
+			System.out.println(s.length()); \cmark
+		}
+		\bigskip
+		\outputblock{
+			8
+		}
+		\bigskip
+		
+		\item length variable is applicable for arrays, but not for string objects.
+		\item length() is applicable for string objects, but not for arrays.
+		
+		
+		Example:
+		\codeblock{
+			String[] s= \{"A","AA","AAA"\}; \\
+			System.out.println(s.length); \cmark \\
+			System.out.println(s.length()); \xmark  \\
+			System.out.println(s[0].length); \xmark \\
+			System.out.println(s[0].length()); \cmark
+		}
+		\bigskip	
+		\outputblock{
+			3 \\
+			error \\
+			error \\
+			1
+		}
+		
+		\bigskip
+		
+		\item There is no direct way to find total length of multi-dimensional array. Total length of multi-dimensional array can be found as follows:
+		
+		\codeblock{
+			int[][] x = new int[3][3]; \\
+			System.out.println(x.length); \\
+			System.out.println(x[0].length+x[1].length+x[2].length);
+		}
+		\outputblock{
+			3 \\
+			9
+		}
+				
+		
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

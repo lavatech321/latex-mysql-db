@@ -1,0 +1,84 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{Checked exceptions needs to be handled compulsorily}, else it might result in compile-time error as below:
+		\bigskip
+		\errorblock{
+				“Unreported exception XXX: must be caught or declared to be thrown”
+		}
+		\item Below code results in \ecode{error} as FileNotFound exception needs to be handled:
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s	FileReader reader = new FileReader("abc.txt"); \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\errorblock{
+			Exception in thread "main" java.lang.Error: Unresolved compilation problems:  \\
+			FileReader cannot be resolved to a type \\
+			FileReader cannot be resolved to a type \\
+			at demo.main(demo.java:5) 
+		}
+		\bigskip
+		\item There are 2 ways to handle above error:
+		\begin{itemize}
+			\item Using the traditional try..catch block
+			\item Using throws keyword
+		\end{itemize}
+		\newpage	
+	\end{itemize}	
+
+		\begin{itemize}
+			\item \textbf{Using the traditional try..catch block:}
+			\bigskip
+			\codeblockfull{demo.java}{
+				import java.io.*; \\
+				public class demo \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		try \{ \\
+				\s \s \s	  FileReader reader = new FileReader("abc.txt"); \\
+				\s \s		\} \\
+				\s \s		catch (FileNotFoundException e) \{  \\
+				\s \s \s			System.out.println(e); \\
+				\s \s		\} \\
+				\s	\} \\
+				\}	
+			}
+			\bigskip
+			\item \textbf{Using throws keyword:}
+			\begin{itemize}
+				\item throws keyword delegates responsibility of exception handling to the caller (it maybe another method or JVM).
+				\bigskip
+				\codeblockfull{demo.java}{
+					import java.io.*;  \\
+					public class demo \{ \\
+					\s	public static void main(String[] args) throws FileNotFoundException \{ \\
+					\s		FileReader reader = new FileReader("abc.txt"); \\
+					\s	\} \\
+					\}
+				}
+				
+			\end{itemize}
+		\end{itemize}
+		
+		\newpage
+		\textbf{Important things to note for throws keyword:}
+		\begin{itemize}
+			\item Throws keyword can be used for \textbf{methods and constructors}, but not for classes.
+			\item You can use throws keyword only for throwable types. 
+			\item Throws keyword is \textbf{required only for checked exceptions}.
+			\item Usage of throws keyword for \textbf{unchecked exceptions is of no use}.
+			\item Throws keyword is required only for convenience of compiler however,\textbf{ it does not prevent abnormal termination of program}.
+		\end{itemize}
+	
+\end{flushleft}
+
+
+
+
+
+

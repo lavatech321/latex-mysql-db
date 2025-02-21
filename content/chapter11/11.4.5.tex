@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Method hiding is same overriding except:
+	\tabletwo{
+		\hline
+		Method hiding & Method overriding \\
+		\hline
+		It is like sticking poster on black board & It is like erasing board and writing new content \\
+		\hline
+		Require static parent and child method & Require non-static parent and child method \\
+		\hline
+		Compiler does method resolution & JVM does method resolution \\
+		\hline
+		Known as compile-time/static polymorphism or early binding & Known as runtime/dynamic polymorphism or late binding \\
+		\hline
+	}
+	Eg:
+	\codeblockfull{Test.java}{
+		class Parent \{ \\
+		\s public static void m1() \{ \\
+		\s \s	System.out.println("Parent"); \\
+		\s	\} \} \\
+		class Child extends Parent \{ \\
+		\s	public static void m1() \{ \\
+		\s \s		System.out.println("Child"); \\
+		\s 	\} \}  \\
+		class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		Parent p1 = new Parent(); \\
+		\s \s		p1.m1();  \s // Output: Parent \\
+		\s \s		Child c1 = new Child();  \\
+		\s \s		c1.m1();  \s // Output: Child \\
+		\s \s		Parent p2 = new Child(); \\
+		\s \s		p2.m1();  \s  // Output: Parent \\
+		\s	\} \\
+		\}
+	}	
+	
+\end{flushleft}
+
+\newpage

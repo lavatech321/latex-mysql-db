@@ -1,0 +1,21 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A composite key (or compound key) consists of two or more columns in a table, used together to uniquely identify each row. 
+		\item A composite key relies on multiple columns to ensure uniqueness. 
+		\item It can be defined only on unique key, primary key  \& foreign key. 
+		\item Composite key is possible only at table level.
+		\item Eg:
+		\commandblock{
+			create table product( \\
+			\s no number, \\
+			\s name varchar2(30), \\
+			\s constraint pk primary key (no,name) \\
+			);	
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+

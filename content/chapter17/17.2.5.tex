@@ -1,0 +1,86 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+
+		Methods for inter-thread communication and synchronization:
+		\begin{itemize}
+			\item wait()
+			\item notify()
+			\item notifyAll() 
+		\end{itemize}	
+		\textbf{Features of these methods:}
+		\begin{itemize}
+		\item They are part of the Object class.
+		\item \textbf{Used with the synchronized keyword.}
+		\item They implement thread-safe operations.
+		\item \textbf{Used when you want a specific condition to meet for multiple threads to continue execution.}
+		\end{itemize}
+		
+		Let's see each of these methods in detail:
+		\begin{itemize}
+			\item \textbf{wait()}:
+			\begin{itemize}
+				\item \textbf{Causes the current thread to wait until another thread invokes notify() or notifyAll()} method on the same object. 
+				\item Must be \textbf{called within synchronized context}, as it releases the monitor lock on the object, allowing other synchronized methods to execute.
+				\bigskip
+				\syntaxblock{
+					public final void wait() throws InterruptedException \\
+					\\
+					public final native void wait(long milliseconds) throws InterruptedException \\
+					\\
+					public final void wait(long milliseconds, int nanoseconds) throws InterruptedException \\
+				}
+			\end{itemize}
+			\newpage
+			\item \textbf{notify()}:
+			\begin{itemize}
+				\item Wakes up a waiting thread that called wait() on the same object. 
+				\item The awakened thread will compete with other threads to reacquire the monitor lock.
+				\bigskip
+				\syntaxblock{
+					public final native void notify()
+				}
+			\end{itemize}
+			
+			\item \textbf{notifyAll()}:
+			\begin{itemize}
+				\item Wakes up all waiting threads that called wait() on the same object. 
+				\item Each thread will then compete for the monitor lock to proceed with its execution.
+				\bigskip
+				\syntaxblock{
+					public final native void notifyAll()
+				}
+			\end{itemize}
+		
+		\end{itemize}
+
+		\item Impact of wait(), notify() and notifyAll() on Thread lifecycle:
+		\newimage{0.58}{content/chapter17/images/wait.png}
+		\item Eg:
+		\codeblockfull{demo.java}{
+			class ThreadX extends Thread \{ \\
+			\s	int count; \\
+			\s	public void run() \{ \\
+			\s \s		synchronized (this) \{ \\
+			\s \s			for(int i=0;i<=100;i++)\{ \\	
+			\s \s \s			count = count+i; \\
+			\s \s			\} \\
+ 			\s \s			this.notify(); \\
+			\s \s		\} \\
+			\s	\} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) throws InterruptedException \{ \\
+			\s \s		ThreadX t1 = new ThreadX();  \\
+			\s \s		synchronized (t1) \{ \\
+			\s \s			t1.start(); \\
+			\s \s			t1.wait(); \\
+			\s \s			System.out.println(t1.count); // Output: 5050 \\
+			\s \s		\} \\
+			\s	\} \\
+			\}
+		}
+		
+	
+\end{flushleft}
+\newpage

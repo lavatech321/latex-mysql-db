@@ -1,0 +1,67 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\paragraph{}
+	\bigskip
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.2]{content/practise.jpg}
+	\end{figure}	
+	\begin{enumerate}
+		\item \textbf{Which of the following command is valid to redirect "find" command output to \textbf{/tmp/data} file?}
+		\begin{enumerate}[label=(\alph*)]
+			\item find / -type f > /tmp/data   %correct
+			\item find / -type f < /tmp/data   
+			\item grep / -type f > /tmp/data   
+			\item locate / -type f > /tmp/data
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+		
+		\item \textbf{Which of the following command appends the output of \textbf{"echo"} command to \textbf{/tmp/data} file?}
+		\begin{enumerate}[label=(\alph*)]
+			\item echo "Welcome" > /tmp/data
+			\item echo "Welcome" {$\textgreater$}{$\textgreater$} /tmp/data  %correct
+			\item echo "Welcome" < /tmp/data
+			\item echo "Welcome" \&> /tmp/data
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		
+		
+		\item \textbf{Which of the following is a valid command to append errors of "find" command to \textbf{/tmp/data}?}
+		\begin{enumerate}[label=(\alph*)]
+			\item find / -type f 2{$\textgreater$}{$\textgreater$} /tmp/data   %correct
+			\item find / -type f 2> /tmp/data   
+			\item find / -type f {$\textgreater$}{$\textgreater$} /tmp/data   
+			\item find / -type f < /tmp/data
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		
+		\item \textbf{Which of the following command is used to count number of lines in \textbf{"ifconfig"} command?}
+		\begin{enumerate}[label=(\alph*)]
+			\item ifconfig | sort -n
+			\item ifconfig | wc -l         %correct
+			\item ifconfig | wc -w 
+			\item ifconfig | sort -w
+		\end{enumerate}
+
+		\bigskip
+		\bigskip
+		\item \textbf{Which of the following are valid commands to redirect output \& error to a file? (Select all that applies.)}
+		\begin{enumerate}[label=(\alph*)]
+			\item ls -l file1 /root  \&> /tmp/output.txt   %coorect
+			\item ls -l file1 /root  \&{$\textgreater$}{$\textgreater$} /tmp/output.txt %correct
+			\item ls -l file1 /root  2> /tmp/output.txt
+			\item ls -l file1 /root  2{$\textgreater$}{$\textgreater$} /tmp/output.txt
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	
+\end{flushleft}
+
+\newpage
+

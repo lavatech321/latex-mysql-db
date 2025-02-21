@@ -1,0 +1,61 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Every class in Java extends \textbf{Object} class.
+		\item Object class is the mother of all classes.
+	\end{itemize}	
+	\textbf{So what’s in this Object class?}
+	\newimage{0.9}{content/chapter12/images/img5.png}
+
+ 	\textbf{equals(Object o)}: Used to check if 2 objects are considered "equal".
+			\codeblockfull{Test.java}{
+			class Dog \{\} \\
+			class Cat \{\} \\
+			class Test \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		Dog a = new Dog(); \\
+			\s \s		Cat b = new Cat(); \\
+			\s \s		if (a.equals(b)) \\
+			\s \s \s			System.out.println("true"); \\
+			\s \s		 else \\
+			\s \s			System.out.println("false");  // Output: false \\
+			\s	\} \}
+			}
+	\textbf{getClass()}: Used to display the class of the object.
+			\codeblockfull{Test.java}{
+			class Cat \{\} \\
+			class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Cat a = new Cat(); \\
+			\s 	System.out.println(a.getClass()); // Output: class Cat \\
+			\s	\} \}
+			}
+	
+			\textbf{hashCode()}: Prints out a hashcode for the object (think of it as a unique code).
+			\codeblockfull{Test.java}{
+				class Cat \{\} \\
+				class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+					\s \s		Cat a = new Cat(); \\
+					\s 	System.out.println(a.hashCode()); // Output: 117845 \\
+					\s	\} \\
+					\}	
+			}
+			\textbf{toString()}: Prints out a string message with the name of the class and random number.
+			\codeblockfull{Test.java}{
+				class Cat \{\} \\
+				class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Cat a = new Cat(); \\
+				\s 	System.out.println(a.toString()); // Output: Cat@515f550a \\
+				\s	\} \\
+				\}
+			}
+
+	
+	
+\end{flushleft}
+
+\newpage
+

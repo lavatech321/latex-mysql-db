@@ -1,0 +1,96 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item If you know number of iterations in advance then for loop is the best choice. 
+		\newimage{0.6}{content/chapter8/images/for.png}
+		
+		\item Curly braces are optional, without curly braces only one statement is allowed, which should not be declarative statement.
+		\item All 3 parts of for loop are independent of each other and optional.	
+		
+		\item Egs:
+		\bigskip
+		\codeblock{
+			for(int i = 0; true; i++) \\
+			\s System.out.println("Hello");   \cmark
+		}
+		\bigskip
+		\codeblock{
+			for(int i = 0; i < 10; i++) ; \cmark
+		}
+		\bigskip
+		\codeblock{
+			for(int i = 0; i < 10; i++) \\
+			\s int x = 10; \xmark
+		}
+		\item Let's see each section of for loop in detail:
+		\begin{itemize}
+			\item \textbf{Initialisation section:}
+			\begin{itemize}
+				\item This section will be executed only once.
+				\item It declares and initialises local variables.
+				\item Any valid Java statement is allowed in this section.
+				\bigskip
+				\codeblock{
+					for(\textbf{int i = 0}; i < 10; i++) \{\} \cmark \\
+					for(\textbf{int i = 0, j=0}; i < 10; i++) \{\} \cmark \\
+					for(\textbf{int i = 0, String = "a"}; i < 10; i++) \{\} \xmark \\
+					for(\textbf{int i = 0, int j = 0}; i < 10; i++) \{\} \xmark 
+				}
+				
+
+			\end{itemize}
+		
+			\item \textbf{Conditional section:}
+			\begin{itemize}
+				\item It contains expression of the type boolean.
+				\item If nothing is added here, the compiler will always place true.
+				\item Eg:
+				\bigskip
+				\codeblock{
+					for(int i = 0; \textbf{true} ; i++)
+				}
+				
+			\end{itemize}
+		
+			\item \textbf{Increment/decrement section:}
+			\begin{itemize}
+				\item It contains any valid Java statement, mostly increment and decrement operation.
+				\item Eg:
+				\bigskip
+				\codeblock{
+					for(int i=0; i < 3; i++)  \\
+					\s	System.out.print("Hi ");
+				}
+				\bigskip
+				\outputblock{
+				Hi Hi Hi
+				}
+			\end{itemize}
+		
+		\end{itemize}
+		
+		\item Infinite loop examples:
+		\bigskip
+		\codeblock{
+			for(;;) \cmark  \\ 
+			\s System.out.println("Hello"); \\
+			or \\
+			for(;;); \cmark
+		}
+		
+		\item Unreachable statement in for loop, results in compile-time error. 
+		\newline
+		Eg:
+		\bigskip
+		\codeblock{
+			for(int i = 0; \textbf{true} ; i++) \{ \\
+			\s System.out.println("Hello"); \\
+			\} \\
+			System.out.println("Hello");  \xmark // Unreachable statement
+		}
+				
+	\end{itemize}
+	
+\end{flushleft}
+

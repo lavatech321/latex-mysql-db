@@ -1,0 +1,165 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{valueOf():}
+		\begin{itemize}
+			\item Create wrapper class object for the given Primitives and Strings.
+			\item All wrapper classes contains the valueOf() method:
+			\item Eg:
+			\codeblock{
+				Integer I = Integer.valueOf(10); \\
+				Float F = Float.valueOf(10.5f); \\
+				Double D = Double.valueOf(10.5); \\
+				Boolean B = Boolean.valueOf(true); \\
+				Character C = Character.valueOf('a'); 
+			}
+			\item Constructor V/S valueOf():
+			\begin{itemize}
+				\item Using constructor, \textbf{"=="} operator check for object reference equality.
+				\item valueOf() creates only 1 object and references same object using == operator.
+				\codeblock{
+					Integer i1 = new Integer(10); \\
+					Integer i2 = new Integer(10); \\
+					System.out.println(i1 == i2); // false  \\
+					\\
+					Integer i3 = Integer.valueOf(10); \\
+					Integer i4 = Integer.valueOf(10); \\
+					System.out.println(i3 == i4); // true
+				}
+			\end{itemize}
+			
+			\item Forms of valueOf():
+			\begin{itemize}
+				\item Form 1: All wrapper classes except Character class contains static factory valueOf() method to create wrapper object for given string.
+				\item Eg:
+				\codeblock{
+					Integer I = Integer.valueOf("10"); \\
+					Float F = Float.valueOf("10.5f"); \\
+					Double D = Double.valueOf("10.5"); \\
+					Boolean B = Boolean.valueOf("true");
+				}
+			
+				\bigskip
+				\item Form 2: Only Integral Type wrapper classes(Byte, Short, Integer, Long)
+				\bigskip
+				\syntaxblock{
+					public static wrapper valueOf(String s, int radix)
+				}
+				Allowed radix range is 2 to 36, where:
+				\begin{itemize}
+					\item 2 -> 0,1
+					\item 8 -> 0 to 7
+					\item 10 -> 0 to 9
+					\item 11 -> 0 to 9, a
+					\item 12 -> 0 to 9, a to b
+					\item 16 -> 0 to 9, a to f
+					\item 36 -> 0 to 9, a to z
+				\end{itemize}
+				\item Eg:
+				\codeblock{
+					Integer I = Integer.valueOf("1110",2);
+				}
+				\bigskip
+				\quest{Predict the output for I in below code:
+					\codeblock{
+					Integer I = Integer.valueOf("1111",15);
+					}
+				}{
+					 $(1111)_\textbf{10}$ = $15^{3}$ + $15^{2}$ + $15^{1}$ + $15^{0}$  \\
+					 $(1111)_\textbf{10}$ = 3616 \\
+					 Hence, I = 3616
+				}
+				
+			\end{itemize}
+		\end{itemize}
+
+
+		\newpage
+		\item \textbf{xxxValue():}
+		\begin{itemize}
+			\item Used to find primitive value for a given wrapper object.
+			\item Below are available methods:
+			\begin{itemize}
+				\item byteValue()
+				\item shortValue()
+				\item intValue()
+				\item longValue()
+				\item floatValue()
+				\item doubleValue()
+			\end{itemize}
+			\item Eg:
+			\codeblockfull{demo.java}{
+				Integer I = new Integer(130); \\
+				System.out.println(I.byteValue()); // -126 \\
+				System.out.println(I.shortValue()); // 130 \\
+				System.out.println(I.intValue()); // 130 \\
+				System.out.println(I.longValue()); // 130 \\
+				System.out.println(I.floatValue()); // 130.0 \\
+				System.out.println(I.doubleValue()); // 130.0 \\ \\
+				Character ch = new Character('a'); \\
+				char c = ch.charValue(); // c = 'a' 
+			}
+			\bigskip
+			\quest{Why is the byte output showing -126 for 130 integer value?}{
+					130(Integer size 32 bits) == 00000...010000010 \\
+					Byte 8-size -- 10000010 \\
+					As first digit is 1, the number is represented in 2's complement form. \\
+					2's complement = 1's complement + 1  \\
+					i.e 01111101 + 1 = 11111110 \\
+					Hence $(11111110)_\textbf{10}$ = -126 
+			}
+		\end{itemize}
+
+
+
+		\newpage
+		
+		\item \textbf{parseXxxx()}:
+		\begin{itemize}
+			\item Used to find primitive value for given String object.
+			\item Available parseXxxxx() methods:
+			\begin{itemize}
+				\item \textbf{Integer.parseInt(String s)} - Parses the string argument as a signed decimal integer.
+				\item \textbf{Long.parseLong(String s)} - Parses the string argument as a signed decimal long.
+				\item \textbf{Float.parseFloat(String s)} - Parses the string argument as a floating-point number.
+				\item \textbf{Double.parseDouble(String s)} - Parses the string argument as a double-precision floating-point number.
+				\item \textbf{Boolean.parseBoolean(String s)} - Parses the string argument as a boolean.
+			\end{itemize}
+			\item Eg:
+			\codeblock{
+				int i = Integer.parseInt("-45"); \\
+				long l = Long.parseLong("983452"); \\
+				float f = Float.parseFloat("45.4"); \\
+				double d = Double.parseDouble("23423.65"); \\
+				boolean b = Boolean.parseBoolean("true"); \\
+				System.out.println(i);  // -45 \\
+				System.out.println(l);  // 983452  \\
+				System.out.println(f);  // 45.4  \\
+				System.out.println(d);  // 23423.65 \\
+				System.out.println(b); // true
+			}
+			
+		\end{itemize}
+		\newpage
+		\item \textbf{toString()} - Converts primitive datatype to String object.
+		\newline
+		Eg: Below code converts primitive datatype to String Object.
+		\codeblock{
+			int i = 13; \\
+			System.out.println(Integer.toString(i)); // 13 \\
+			 \\
+			float f = 1.0f; \\
+			System.out.println(Float.toString(f)); // 1.0 \\
+			\\
+			long l = 5634; \\
+			System.out.println(Long.toString(l)); // 5634 \\
+			\\
+			double d = 783.3; \\
+			System.out.println(Double.toString(d)); // 783.3
+		}
+		
+	\end{itemize}
+\end{flushleft}
+
+\newpage

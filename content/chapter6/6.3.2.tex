@@ -1,0 +1,158 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\textbf{/etc/sudoers}: This file is used to create sudo users.
+	\begin{itemize}
+		\item This file can be edited only using \textbf{visudo} command:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# visudo
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item Syntax of lines in this file:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			users hosts=(user:group) commands
+			\newline
+			OR
+			\newline
+			users hosts=(user) commands
+			\newline
+			OR
+			\newline
+			users hosts= commands
+			\newline
+			OR
+			\newline
+			\color{blue}
+			\# To avoid password prompt everytime user runs admin commands
+			\newline
+			\color{black}
+			users hosts=(user:group) NOPASSWD: commands  
+			\fontdimen2\font=4pt
+			
+		\end{tcolorbox}
+		\item Sample entry: Root can run all commands as per below entry in \textbf{/etc/sudoers}. Do not comment out this line.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			root ALL=(ALL:ALL) ALL
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		This means, \textbf{root} user can run \textbf{ALL commands} on \textbf{ALL hosts} as \textbf{ALL user} and \textbf{ALL group}.
+		
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\paragraph{Creating sudo user with all command access}
+	This can be done in 2 ways:
+	\begin{itemize}
+		\item Way I:
+		\begin{itemize}
+			\item Find below line in the file \textbf{/etc/sudoers} \& remove comment\textbf{(\#)}.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# visudo
+				\newline
+				\color{white}
+				\%wheel ALL=(ALL) ALL
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Line explaination:
+			\begin{enumerate}
+				\item \%wheel: "\%" indicates group is wheel.
+				\item The line means, \textbf{ALL members of wheel group} can run \textbf{ALL commands} on \textbf{ALL hosts} as \textbf{ALL user} and \textbf{ALL group}. 
+			\end{enumerate}
+			\item Add the user you want to give sudo access to (eg. neo) to the wheel group.
+			\newline
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# usermod -aG wheel neo
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		\end{itemize}
+		\bigskip
+		\item Way II:
+		\newline
+		To give user \textbf{bob} and \textbf{bunny} sudo access without password prompt:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# visudo
+			\newline
+			\color{white}
+			bob,bunny ALL=(ALL) NOPASSWD: ALL
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\end{itemize}
+	
+	\newpage
+	
+	\paragraph{Granting specific command's sudo access to user}
+	\bigskip
+	\begin{itemize}
+		\item Give user \textbf{Peter} access to \textbf{/bin/kill, /usr/bin/kill \& /usr/bin/pkill} command:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# visudo
+			\newline
+			\color{white}
+			Peter ALL=/bin/kill, /usr/bin/kill, /usr/bin/pkill
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+	\end{itemize}
+	
+	
+	\paragraph{Using aliases in the sudoers file}
+	\begin{itemize}
+		\item Users can be grouped and assigned a nickname or alias which is used throughout the \textbf{/etc/sudoers} file. 
+		\item Commands can also be grouped and assigned an aliases.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# visudo
+			\newline
+			\color{white}
+			User\_Alias ADMINS = peter, bob
+			\newline
+			Cmnd\_Alias CMND = /usr/bin/useradd, /usr/bin/userdel 
+			\newline
+			ADMINS ALL=CMND
+			\fontdimen2\font=4pt
+		\end{tcolorbox}	
+	\end{itemize}
+	
+	
+	\paragraph{sudo command}
+	\begin{itemize}
+		\item Sudo users can run admin commands by using \textbf{sudo} command in front of every command.
+		\newline
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\$ sudo useradd testuser
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{itemize}
+	
+
+	
+\end{flushleft}
+
+\newpage
+

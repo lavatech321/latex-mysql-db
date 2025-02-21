@@ -1,0 +1,39 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The ROWID pseudo column uniquely identifies a row in a table. 
+		\item It is used in queries and for row-level operations.
+		\item Eg: Consider below table
+		\bigskip
+		\commandblock{
+			CREATE TABLE employees (	\\
+			id NUMBER,	\\
+			name VARCHAR2(50),	\\
+			dept\_id NUMBER	\\
+			);	\\
+			\\
+			insert into employees values(101,'Raman',201);
+		}
+		
+		\bigskip
+		\outputblock{
+			SELECT ROWID \\
+			FROM employees	\\
+			WHERE id = 101;	\\
+			\\
+			ROWID	\\
+			------------------------- \\
+			ALhNUcAAkAAAA7WAAA \\
+			\\
+			UPDATE employees	\\
+			SET name = 'John Doe'	\\
+			WHERE ROWID = 'ALhNUcAAkAAAA7WAAA';
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

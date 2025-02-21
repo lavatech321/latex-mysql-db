@@ -1,0 +1,50 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item A constructor has the code that runs when you use \textbf{new} operator. 
+		\item Main purpose of constructor is to perform \textbf{initialsation} of an object.	
+		\item Every class has a constructor, even if you don’t write it yourself.
+		\item Rules for creation of constructor:
+		\begin{itemize}
+			\item Constructor has the \textbf{same name as the class.} 
+			\item Access modifiers for constructors allowed are \textbf{public, private, protected and default(which means no access modifier at all)}.
+			\item Constructor \textbf{does not have a return type, not even void.}
+			\item Constructors can accept parameters.
+			\bigskip
+			\syntaxblock{
+				public/private/protected/default  Classname(args) \{ \\
+				\s // Code here \\
+				\}
+			}
+		\end{itemize}
+
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			public class Test \{ \\
+			\s	\textbf{public Test()} \{ \\
+			\s \s		System.out.println("Constructor called"); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		\textbf{Test t1 = new Test();}  // Output: Constructor called \\
+			\s	\} \\
+			\}
+		}
+				
+		\newpage
+		\quest{Who write the constructor if you hav'nt?}
+		{
+				You can write a constructor for your class, but if you don’t, \textbf{the compiler writes one for you!}. Compiler write a no-arg constructor as shown below:
+				\codeblock{
+					class Test \{ \\
+					\s public Test() \{\} \\
+					\}
+				}
+		}		
+	\end{itemize}
+
+\end{flushleft}
+
+
+

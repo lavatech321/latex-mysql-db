@@ -1,0 +1,28 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Daemon thhread are thread executing in the background.
+		\item Eg:
+		\begin{itemize}
+			\item Garbage Collector
+			\item Singal Dispacter
+			\item Attach Listener etc.
+		\end{itemize}
+		\item Daemon thread support non-daemon threads(like main thread).
+		\item Eg: Main thread running with low memory, causes JVM to runs garbage collector to free memory.
+		\item Usually daemon threads have low priority, but can have high priority also.
+		\item Method to check daemon nature of a thread:
+		\bigskip
+		\syntaxblock{
+			public boolean isDaemon()
+		}
+		\item Method to change daemon nature of a thread:
+		\bigskip
+		\syntaxblock{
+			public void setDaemon(boolean b)
+		}
+		\item Daemon nature can be changed before starting of a thread. 
+		\item After starting a thread, nature of thread can't be changed.
+	\end{itemize}
+\end{flushleft}
+\newpage

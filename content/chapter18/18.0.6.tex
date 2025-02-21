@@ -1,0 +1,59 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\textbf{Defaut serialsation cause loss of information due to transient keyword.} \textbf{Customised serialsation avoids this loss of information.}
+	\newline
+	\textbf{Methods:}
+		\begin{itemize}
+			\item \textbf{writeObject()} executes automatically for serialisation.
+			\bigskip
+			\syntaxblock{
+				private void writeObject(ObjectOutputStream os) throws Exception
+			}
+		
+			\textbf{readObject()} executes automatically for deserialisation.
+			\syntaxblock{
+				private void readObject(ObjectInputStream is) throws Exception
+			}
+
+			\item Eg: Below code overrides the writeObject() and readObject() using serialisation:
+			\bigskip
+			\codeblockfull{demo.java}{
+				import java.io.*; \\
+				\textbf{class Account implements Serializable} \{ \\
+				\s	\textbf{String username = "Lavatech";}  \\
+				\s	\textbf{transient String pwd = "lava@1234";} \\
+				\textbf{private void writeObject(ObjectOutputStream os)  throws Exception} \{ \\
+				\s \s	\textbf{os.defaultWriteObject();} \\
+				\s \s	\textbf{String epwd = "678"+pwd;} \\
+				\s \s	\textbf{os.writeObject(epwd);} \\
+				\s	\} \\
+				\textbf{private void readObject(ObjectInputStream is) throws Exception} \{ \\
+				\s \s	\textbf{is.defaultReadObject();} 
+			}	
+			\newpage
+			\codecontinue{
+				\s \s	\textbf{String epwd = (String)is.readObject();} \\
+				\s \s		\textbf{pwd = epwd.substring(3);} \\
+				\s	\} \} \\
+				public class demo \{ \\
+				\s	public static void main(String[] args) throws Exception \{ \\
+				\s \s		\textbf{Account a1 = new Account();}
+				\s		\textbf{System.out.println(a1.username+"..."+a1.pwd);} \\
+				\s		\textbf{FileOutputStream fos = new FileOutputStream("abc.ser");} \\
+				\s		\textbf{ObjectOutputStream oos = new ObjectOutputStream(fos);} \\
+				\s \s		\textbf{oos.writeObject(a1);} \\
+				\s		\textbf{FileInputStream fis = new  FileInputStream("abc.ser");} \\
+				\s		\textbf{ObjectInputStream ois = new ObjectInputStream(fis);} \\
+				\s \s	\textbf{Account a2 =  (Account)ois.readObject();} \\
+				\s \s	\textbf{System.out.println(a2.username+"..."+a2.pwd);} \\
+				\s	\} \\
+				\}			
+			}
+			\bigskip
+			\outputblock{
+				Lavatech...lava@1234 \\
+				Lavatech...lava@1234
+			}		
+		\end{itemize}
+\end{flushleft}
+\newpage

@@ -1,0 +1,70 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item When JVM executes GC to destroy objects can't be predicted.
+		\item \textbf{You can request JVM to run GC programmatically}.
+		\item JVM may or may not accept the request. Mostly JVM accepts the request.
+		\item  Ways for requesting JVM to run GC:
+		\begin{itemize}
+			\item Using System class
+			\item Using Runtime class
+		\end{itemize}
+	\end{itemize}
+
+		\textbf{Using System class:}
+				\syntaxblock{
+				System.gc();
+				}
+		\newpage
+		\textbf{Using Runtime class:}
+			\begin{itemize}
+				\item Runtime singleton class is present in \textbf{java.lang} package.
+				\item Create Runtime object using getRuntime() factory method:
+				\syntaxblock{
+					Runtime obj = Runtime.getRuntime();
+				}
+				
+				\bigskip
+				\quest{What is a singleton class?}{
+					A class whose's only 1 object can be created is called singleton class.	
+				}
+				\bigskip
+				\quest{What is factory method?}{
+					A method that returns objects of same class  is called a factory method. Eg:
+					\codeblock{
+						Runtime r = Runtime.getRuntime(); \\
+						DateFormat df = DateFormat.getInstance();
+					}
+				}
+				\item \textbf{Methods of Runtime class:}
+				\begin{enumerate}
+					\item \textbf{totalMemory():} Returns \textbf{total heap memory} in bytes. (i.e heapSize).
+					\item \textbf{freeMemory():} Returns \textbf{free heap memory} in bytes.
+					\item \textbf{gc():} Requesting JVM to run GC.
+				\end{enumerate}
+				\bigskip
+				\noteblock{
+					It is recommended to use Runtime class \textbf{gc()} compared to System class \textbf{gc()} as System class gc() internally calls Runtime class gc().
+				}
+				\newpage
+				\codeblockfull{demo.java}{
+					import java.util.Date; \\
+					public class demo \{ \\
+					\s public static void main(String[] args) \{ \\
+					\s \s		Runtime r = Runtime.getRuntime(); \\
+					\s \s		System.out.println(r.totalMemory()); \\
+					\s \s		System.out.println(r.freeMemory()); \\
+					\s \s		for(int i=0; i<10000; i++)\{ \\
+					\s \s			Date d = new Date();  \\
+					\s \s \s			d = null; \\
+					\s \s		\} \\
+					\s \s		System.out.println(r.freeMemory()); \\
+					\s \s		r.gc(); \\
+					\s \s		System.out.println(r.freeMemory()); \\
+					\s	\} \}	
+				}
+
+				\end{itemize}
+				
+\end{flushleft}

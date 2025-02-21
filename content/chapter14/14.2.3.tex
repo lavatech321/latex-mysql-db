@@ -1,0 +1,54 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\begin{itemize}
+	\item The Deque interface \textbf{adds \& remove elements from both ends} of queue.
+	\item Deque can be used as a \textbf{stack} or a \textbf{queue}. 
+	\item \textbf{Stack supports LIFO} operation, and \textbf{Queue supports FIFO}. 
+	\item \textbf{Deque supports both LIFO and FIFO} and hence the acronym \textbf{"double ended queue"}.
+	
+	\newimage{0.18}{content/chapter14/images/de.png}
+	
+\end{itemize}
+	
+	\textbf{Deque specific methods}
+	
+	\begin{itemize}
+		
+		\item Insert object to deque:
+		\syntaxblock{
+			boolean offer(Object o)
+		}
+		\item Inserts object at front \& return true/false:
+		\syntaxblock{
+			boolean offerFirst(Object o)
+		}
+		\item Inserts object at last \& return true/false:
+		\syntaxblock{
+			boolean offerLast(Object o)
+		}
+		\item Return first object \& remove:
+		\syntaxblock{
+			Object pollFirst()
+		}
+	
+		\item Return last object \& remove:
+		\syntaxblock{
+			Object pollLast()
+		}
+		
+		\item Return first object but not remove:
+		\syntaxblock{
+			Object peekFirst()
+		}
+		\item Return last object but not remove:
+		\syntaxblock{
+			Object peekLast()
+		}
+		\item Remove \& return object from head:
+		\syntaxblock{
+			Object remove()
+		}		
+	\end{itemize}
+	
+\end{flushleft}

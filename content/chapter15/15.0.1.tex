@@ -1,0 +1,149 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+		File class provides methods for creating, deleting, renaming, and obtaining information about files and directories. 
+		\begin{itemize}
+			\item Create file object in current working directory:
+			\bigskip
+			\syntaxblock{
+				File f  = new File(String name);	
+			}
+			
+			\item Creates a file object for a specified sub directory:
+			\syntaxblock{
+				File f = new File(String subdirname, String name); \\
+				File f = new File(File subdir, String name);
+			}
+		\item \textbf{Methods}
+		
+		\begin{itemize}
+			\item Check if file/directory is available:
+			\bigskip
+			\syntaxblock{
+				boolean exits();
+			}
+		
+			\item Create a new file if not present:
+			\bigskip
+			\syntaxblock{
+				boolean createNewFile();
+			}
+			
+			\item Create a new directory if not present:
+			\bigskip
+			\syntaxblock{
+				boolean mkdir();
+			}
+			
+			\item Check if file object points to given file:
+			\bigskip
+			\syntaxblock{
+				boolean isFile();
+			}
+			
+			\item Check if file object points to given directory:
+			\bigskip
+			\syntaxblock{
+				boolean isDirectory();
+			}
+		
+			\item List the names of all file/diretory present in a directory:
+			\bigskip
+			\syntaxblock{
+				Stringp[] list();
+			}
+		
+			\item Returns number of characters present in specified file:
+			\bigskip
+			\syntaxblock{
+				long length();
+			}
+		
+			\item Delete specified file or directory:
+			\bigskip
+			\syntaxblock{
+				boolean delete();
+			}
+			
+		\end{itemize}
+	
+		\end{itemize}
+		
+	\textbf{Example programs:}
+	\begin{itemize}
+		\item Create a file named "abc.txt" and a folder named "abc" in current working directory:
+		
+		\codeblockfull{Test.java}{
+			\textbf{import java.io.File;} \\
+			class Test \{ \\
+			public static void main(String[] args) \textbf{throws Exception} \{ \\
+			\s \s		\textbf{File f1 = new File("abc");} \\
+			\s \s		\textbf{f1.mkdir();} // Create a directory \\
+			\s \s		\textbf{File f = new File("abc.txt");} \\
+			\s \s		\textbf{f.createNewFile();} // Create a file \\
+			\s	\} \} 
+		}
+		\item Create a directory named "inner" in folder named "outer", assuming "outer" already exists:
+		
+		\codeblockfull{Test.java}{
+			import java.io.File; \\
+			class Test \{ \\
+			public static void main(String[] args) throws Exception \{ \\
+			\s \s		\textbf{File f1 = new File("outer");} \\
+			\s \s		\textbf{if (f1.exists())} \{ 		 \\
+			\s \s \s			\textbf{File f2 = new File(f1, "inner");} \\
+			\s \s \s			\textbf{f2.mkdir();} \\
+			\s \s		\} \\
+			\s \s		else \\
+			\s			System.out.println("Outer directory does not exist"); \\
+			\s 	\} \\
+			\}
+		}
+		\bigskip
+		\item Create a file named "abc.txt" only if it exists else display message "File exits".
+		\bigskip
+		\codeblockfull{Test.java}{
+		import java.io.File; \\
+		class B \{ \\
+		 public static void main(String[] args) throws Exception \{ \\
+		\s \s		\textbf{File f = new File("abc.txt");} \\
+		\s \s		\textbf{if (f.exists())} \\
+		\s \s \s		System.out.println("File exists"); \\
+		\s \s		else  \\
+		\s \s \s			\textbf{f.createNewFile();} \\
+		\s	\} \\
+		\}
+		}
+	
+		\item Display all files present in folder "outer/inner" folder:
+		\bigskip
+		\codeblockfull{Test.java}{
+			import java.io.File; \\
+			class Test \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s \s	\textbf{File f1 = new File("outer", "inner");} \\
+			\s \s	\textbf{String[] files = f1.list();} \\
+			\s \s	\textbf{for (String x: files)}  \\
+			\s \s \s	\textbf{System.out.println(x);} \\
+			\s \} \\
+			\}
+		}
+		\newpage
+		\item Display only files present in "lavatech" folder, but not directory present under "lavatech" folder:
+		\codeblockfull{Test.java}{
+			import java.io.File; \\
+			class Test \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s \s		\textbf{File f1 = new File("lavatech");} \\
+			\s \s		\textbf{String[] files = f1.list();} \\
+			\s \s		\textbf{for (String x: files) \{} \\
+			\s \s \s			\textbf{File f = new File(f1,x);}  \\
+			\s \s \s			\textbf{if (f.isFile())} \\
+			\s \s \s \s				\textbf{System.out.println(x);} \\
+			\s \s 		\} \\
+			\s	\} \\
+			\}
+		}
+		
+	\end{itemize}		
+	
+\end{flushleft}

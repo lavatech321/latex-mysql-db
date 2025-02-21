@@ -1,0 +1,79 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Every thread has priority provided by \textbf{JVM} or \textbf{programmer}.
+		\item Thread priority range: \textbf{1(minimum) to 10(maximum)}.
+		\item \textbf{Thread schedular} \& \textbf{Thread priority}:
+		\begin{itemize}
+			\item Thread schedular uses priority while allocating processors. 
+			\item \textbf{Highest priority thread gets first chance}.
+			\item Same priority thread execution order depends on thread scheduler.
+		\end{itemize}
+		
+		\item Thread class defined constants for priorities:
+		\bigskip
+		\codeblock{
+			System.out.println(\textbf{Thread.MIN\_PRIORITY}); \\
+			// Output: 1 \\
+			System.out.println(\textbf{Thread.MAX\_PRIORITY}); \\
+			// Output: 10 \\
+			System.out.println(\textbf{Thread.NORM\_PRIORITY}); \\
+			// Output: 5 
+		}
+		\item Thread class defined methods to get/set priority of a thread:
+		\bigskip
+		\syntaxblock{
+			public final int getPriority() \\
+			public final void setPriority(int p)
+		}
+	\bigskip
+	\item \textbf{Default Thread Priority}:
+	\begin{itemize}
+		\item \textbf{main} \textbf{thread priority is} \textbf{5}.
+		\item Default priority for normal thread is \textbf{inherited from parent to child}.
+	\end{itemize}
+
+	\newpage
+	Eg: Create a thread with greater priority compared to main thread.
+		\bigskip
+		\codeblockfull{demo.java}{
+			class DemoThread \textbf{extends Thread} \{ \\
+			\s	\textbf{public void run()}\{ \\
+			\s \s		for (int i = 0; i <5; i++) \{ \\
+			\s \s \s			System.out.println("Child Thread");  \\
+			\s \s		\} \\
+			\s	\} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		DemoThread demoThread = new DemoThread(); \\
+			\s \s		\textbf{demoThread.setPriority(10)}; \\
+			\s \s		\textbf{demoThread.start()}; \\
+			\s \s		for(int i = 0; i < 5; i++) \{ \\
+			\s \s \s			System.out.println("Main Thread"); \\
+			\s \s		\} \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\outputblock{
+			Child Thread \\
+			Child Thread \\
+			Child Thread \\
+			Child Thread \\
+			Child Thread \\
+			Main Thread \\
+			Main Thread \\
+			Main Thread \\
+			Main Thread \\
+			Main Thread
+		}
+
+
+	\end{itemize}
+
+
+\end{flushleft}
+
+\newpage

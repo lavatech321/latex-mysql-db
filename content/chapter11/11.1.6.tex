@@ -1,0 +1,37 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	A table is in 5NF if:
+	
+	\begin{itemize}
+		\item It is already in 4NF.
+		
+		\item We need to decompose a table to avoid redundancy and maintain data integrity.
+		
+		\item Example (without 5NF): Imagine a company where you have employees, projects, and the roles that employees perform on each project. 
+		
+		\item Suppose you have the following table:
+		
+		\newimage{0.36}{content/chapter11/images/5nf1.png}		
+		
+		\item Problems: In this table:
+		
+		\begin{itemize}
+			\item Employee 1 (ID = 1) works on Project 101 as both Manager and Designer.
+			\item Employee 2 (ID = 2) works on Project 101 as a Developer and on Project 102 in the same role.
+			\item Employee 3 (ID = 3) works on Project 102 as both Manager and Designer.
+		\end{itemize}
+		
+		\item Decomposing into 5NF: We can break this table into smaller tables to remove redundancy while preserving all relationships. 
+		
+		\newpage
+		\newimage{0.5}{content/chapter11/images/5nf2.png}		
+		
+	\end{itemize}	
+
+	
+
+	
+\end{flushleft}
+
+\newpage

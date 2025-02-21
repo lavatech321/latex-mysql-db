@@ -1,0 +1,67 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Map represents a group of objects as key-value pairs.	
+		\newimage{0.8}{content/chapter14/images/map.png}
+		
+		\item Map is \textbf{not} child interface of collections.
+		\newimage{0.66}{content/chapter14/images/ex6.png}
+		
+
+
+		\item Both keys and values are objects.
+		\item Duplicate keys are not allowed, but values can be duplicated.
+		\item Each key-value pair is called \textbf{entry}, hence map is considered as a collection of entry objects.
+		
+	\end{itemize}
+
+	\textbf{Map interface methods:}
+	
+	\begin{itemize}
+		\item Add one key-value pair to the map. If the key is already present then, old value will be replaced with new value and returns old value:
+		\syntaxblock{
+			Object put(Object key, Object value)
+		}
+		\newpage
+		\item  Insert the specified map in the map.
+		\syntaxblock{
+			void putAll(Map map)	
+		}
+		\bigskip
+		\item Returns the object that contains the value associated with the key.
+		\syntaxblock{
+			Value get(Object key)	
+		}
+		\bigskip
+		\item Delete an entry for the specified key.
+		\syntaxblock{
+			boolean remove(Object key, Object value)	
+		}
+		\bigskip
+		\item Returns true if some key equal to the key exists within the map, else return false.
+		\syntaxblock{
+			boolean containsKey(Object key)	
+		}
+		\bigskip
+		\item Returns true if some value equal to the value exists within the map, else return false.
+		\syntaxblock{
+			boolean containsValue(Object value)	
+		}
+		\bigskip
+		\item Returns true if the map is empty; returns false if it contains at least one key.
+		\syntaxblock{
+			boolean isEmpty()	
+		}
+		\bigskip
+		\item Returns the number of entries in the map.
+		\syntaxblock{
+			int size()	
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

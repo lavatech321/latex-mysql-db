@@ -1,0 +1,78 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+		\textbf{FullyChecked}:
+		\begin{itemize}
+			\item A checked exception is said to be fully checked, if and only if all it’s child classes also checked.
+			\item Eg: 
+			\begin{itemize}
+				\item IOException
+				\item InterruptedException
+				\item FileNotFoundException
+			\end{itemize}
+			
+			\item In case of fully-check exception, you shall get compile-time error, if there is no chance of raising an exception in try block, and you still write catch block for it.
+			\item Thus, below code will result in error:
+			\bigskip
+			\codeblockfull{demo.java}{
+				public class demo \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		try \{  \\
+				\s \s \s			System.out.println("Hello World!"); \\
+				\s \s		\} \\
+				\s \s		catch (FileNotFoundException e) \{ \\
+				\s \s \s			System.out.println(e); \\
+				\s \s		\} \\		
+				\s	\}  \\
+				\}	
+			}
+			\bigskip
+			\errorblock{
+				Exception in thread "main" java.lang.Error: Unresolved compilation problem:  \\
+				Unreachable catch block for FileNotFoundException. This exception is never thrown from the try statement body
+				at demo.main(demo.java:7)
+			}
+		\end{itemize}
+		
+		\newpage
+		\textbf{PartiallyChecked}:
+		\begin{itemize}
+			\item A checked exception is said to be partially checked, if and only if some of it’s child classes are unchecked.
+			\item The only possible partially checked exception:
+			\begin{itemize}
+				\item Exception
+				\item Throwable
+			\end{itemize}
+		
+			\item You won't get compile-time error if you write catch block for partially-checked exception \& there is no chance of raising it in try block.
+			\item Thus, below code will not result in error:
+			\bigskip
+			
+			\codeblockfull{demo.java}{
+				public class demo \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		try \{ \\
+				\s \s \s			System.out.println("Hello World!"); \\
+				\s \s		\} \\
+				\s \s		catch (ArithmeticException e) \{ \\
+				\s \s \s			System.out.println(e); \\
+				\s \s		\} \\
+				\s	\} \\
+				\}	
+			}
+			\bigskip
+			\outputblock{
+				Hello World!
+			}
+		\end{itemize}
+		
+		
+
+		
+\end{flushleft}
+
+\newpage
+
+
+
+

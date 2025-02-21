@@ -1,0 +1,38 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{You can serialise only serialisable objects. }
+		\item An object is serializable if class implements serialisable interface.
+		\item Serialisable is \textbf{marker interface} present in \textbf{java.io} package with no methods. 
+		\item Serialising a non-serialisable object, results in runtime exception saying: \textbf{NotSerializableException}.
+	\end{itemize}
+	\newpage
+	
+	Eg: Serialising and deserialising object:
+	\bigskip
+	\codeblockfull{demo.java}{
+		import java.io.*; \\
+		\textbf{class New implements Serializable \{} \\
+		\s \textbf{int i= 10;} \\
+		\s \textbf{int j= 20;} \\
+		\} \\
+		public class demo \{ \\
+		\s	public static void main(String[] args) throws Exception \{ \\
+		\s \s		\textbf{New c1 = new New();} \\
+		\s		\textbf{FileOutputStream fout = new FileOutputStream("abc.ser");} \\
+		\s		\textbf{ObjectOutputStream oos = new ObjectOutputStream(fout);} \\
+		\s		\textbf{oos.writeObject(c1);} \\
+		\s \s		\textbf{FileInputStream fis = new FileInputStream("abc.ser");} \\
+		\s \s		\textbf{ObjectInputStream ois = new ObjectInputStream(fis);} \\
+		\s \s		\textbf{New c2 = (New)ois.readObject();} \\
+		\s \s		System.out.println("Deserialized Student: " + c2); \\
+		\s \s		System.out.println(c2.i+","+c2.j); \\	
+		\s	\} \}
+	}
+	\outputblock{
+		Deserialized Student: New@13a57a3b \\
+		10,20
+	}
+\end{flushleft}
+
+\newpage

@@ -1,0 +1,41 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Data hiding refers to binding attributes within a class.
+		\item It controls data visibility and accessibility from outside the class. 
+		\item Below code shows data not being hidden:
+		\codeblockfull{Test.java}{
+			class Sample \{ \\
+			\s int no; \\
+			\} \\
+			class Test \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s Sample s1 = new Sample(); \\
+			\s \s s1.no = 1;   // \color{red} No Data hiding \\ \color{black}
+			\s	\}  \}
+		}
+		\bigskip
+		\item Data hidding is done using \textbf{private} attributes.
+		
+		\item Eg: You can create public methods \textbf{setter()} and \textbf{getter()} to get and set private instance variables as shown below:
+		\bigskip
+		\codeblockfull{Sample.java}{
+			class Sample \{ \\
+			\s private int no; \\
+			\s 	public void setter(int no) \{ \\
+			\s \s		this.no = no; \\
+			\s	\} \\
+			\s	public void getter() \{ \\
+			\s \s		System.out.println(no); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Sample s1 = new Sample(); \\
+			\s \s		s1.setter(10);   // \textbf{Data hidden} \\
+			\s \s		s1.getter(); // Output: 10 \\
+			\s	\} \}
+		}
+			
+	\end{itemize}	
+	
+\end{flushleft}

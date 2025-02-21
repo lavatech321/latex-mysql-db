@@ -1,0 +1,33 @@
+
+\begin{flushleft}
+		
+		\begin{tabulary}{1.0\textwidth}{|p{7em}|p{10em}|p{7em}|}
+			\toprule
+			\textbf{Operation} & \textbf{Sample code}  & \textbf{Output} \\
+			\midrule
+			Indexing & a=["raj",[4.5, 8.9]] \newline print(a[0]) \newline print(a[-1])  \newline print(a[-1][-1]) & raj \newline [4.5, 8.9] \newline 8.9 \\
+			\hline
+			Slice Operator & a=["raj","ravi","raman"] \newline print(a[:2]) \newline print(a[-2:]) & ['raj', 'ravi'] \newline ['ravi', 'raman']  \\
+			\hline
+			Change Member & a=["raj","ravi","raman"] \newline a[-1]="jack" \newline
+			print(a) & ["jack", "ravi", "raman"]  \\
+			\hline
+			Change Multiple Member & a=["raj","ravi","raman"] \newline a[0:2]=["apple","mango"]  \newline print(a) & ['apple', 'mango', 'raman']  \\
+			\hline
+			"+" Operator & a=["jack"] \newline b=["jill"] \newline print(a) & ["jack","jill"] \\
+			\hline
+			"*" Operator & a=["jack"] \newline print(a*2) & ["jack","jack"] \\
+			\hline
+			Delete a Member & a=["raj","ravi","raman"] \newline del a[0] \newline print(a) & ["ravi","raman"] \\
+			\hline
+			Delete Multiple Member & a=["raj","ravi","raman"] \newline del a[:2] \newline
+			print(a) \newline a[:2]=[] \newline print(a) & ["raman"] \newline ["raman"] \\
+			\hline
+			Membership operator & a=["raj","ravi","raman"] \newline 
+			print("raj" in a) & True  \\
+			\bottomrule
+		\end{tabulary}
+
+	
+\end{flushleft}
+

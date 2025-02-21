@@ -1,0 +1,32 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Adapter class implements an interface with only empty implementation.
+		\item You can extend the adapter class and override only the methods they need, instead of implementing all the methods of the interface.
+		\item Eg:
+		\bigskip
+		\codeblockfull{Dog.java}{
+			interface Animal \{ \\
+			\s	public abstract void sound(); \\
+			\s	public abstract void move(); \\
+			\} \\
+			class Cannian implements Animal \{ \\
+			\s	public void sound() \{\} \\
+			\s	public void move() \{\} \\
+			\} \\
+			class Dog extends Cannian \{ \\
+			\s	public void sound() \{ \\
+			\s \s		System.out.println("Bow"); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Dog d1 = new Dog(); \\
+			\s \s		d1.sound();  // Output: Bow \\
+			\s	\} \\
+			\}
+		}
+		
+	\end{itemize}
+\end{flushleft}
+\newpage
+

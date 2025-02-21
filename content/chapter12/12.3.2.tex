@@ -1,0 +1,29 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Interface methods are always \textbf{public} \& \textbf{abstract} (even without declaring it explicitly). Below all declaration are valid:
+		\codeblock{
+			\textbf{void m1();} or \textbf{public void m1();} \\
+			\textbf{abstract void m1();}  or  \textbf{public abstract void m1();} 
+		}
+		\item Eg:
+		\codeblockfull{Dog.java}{
+			\textbf{interface} Animal \{ \\
+			\s	void sound(); \\
+			\} \\
+			\textbf{class Dog implements Animal} \{ \\
+			\s	public void sound() \{ \\
+			\s \s		System.out.println("Bow"); 	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Dog dog = new Dog(); \\
+			\s \s		dog.sound(); // Output: Bow \\
+			\} \}
+		}
+		
+	\end{itemize}
+
+	
+\end{flushleft}
+\newpage
+

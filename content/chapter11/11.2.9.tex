@@ -1,0 +1,39 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{super keyword} is used to refer parent class.
+		\item It can be used to access members of parent class from child class.
+		\item Eg:
+			\codeblockfull{Car.java}{
+				class Vehicle \{ \\
+				\s	int maxSpeed; \\
+				\s	\textbf{public void displayInfo()} \{ \\
+				\s	System.out.println("Max Speed: " + maxSpeed); \\
+				\s	\} \\
+				\} \\
+				public class Car extends Vehicle \{  \\
+				\s	int numWheels; \\
+				\s	\textbf{public void displayInfo()} \{ \\
+				\s \s		\textbf{super.displayInfo();} \\
+				\s \s		System.out.println("Wheels: "+ numWheels); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Car c1 = new Car(); \\
+				\s \s		c1.displayInfo(); \\
+				\s	\} \\
+				\}
+			}
+		
+			\bigskip
+			\outputblock{
+				Max Speed: 0 \\
+				Wheels: 0
+			}
+		
+	\end{itemize}	
+	
+	
+\end{flushleft}
+
+\newpage

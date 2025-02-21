@@ -1,0 +1,101 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Data cleaning means fixing bad data in your data set. Bad data could be:
+	\begin{itemize}
+		\item Empty cells
+		\item Data in wrong format
+		\item Wrong data
+		\item Duplicates
+	\end{itemize}	
+	
+	\textbf{Empty Cells}
+	
+	\begin{itemize}
+		\item To delete a specific column that you don't want in the dataframe:
+		\bigskip
+		\codeblock{
+			\# To delete single column: \\
+			df = df.drop('column\_name', axis=1) \\
+			 \\
+			\# To delete multiple column: \\
+			df = df.drop(['column\_name','column\_name'],axis=1)
+		}
+	
+		Example:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			df = pd.read\_csv('data3.csv') \\
+			print(df.drop('Suppressed',axis=1)) \\
+			print(df.drop(['Suppressed','Stage'],axis=1)) \\
+		}
+		
+		\item To delete a specific row that you don't want in the dataframe:
+		\bigskip
+		\codeblock{
+			\# To delete single row: \\
+			df = df.drop('row\_index', axis=0) \\
+			\\
+			\# To delete multiple row: \\
+			df = df.drop(['row\_index','row\_index'], axis=0)
+		}
+	
+		Example:
+		\bigskip
+		\codeblock{
+		import pandas as pd \\
+		df = pd.read\_csv('data3.csv') \\
+		print(df.drop(28,axis=0)) \\
+		print(df.drop([30,29],axis=0))
+		}
+		
+		
+	\end{itemize}
+	
+	\textbf{Working with rows having "NaN" cells}
+	\begin{itemize}
+		\item Use \textbf{dropna()} function to delete all rows having empty or NaN cells.
+		
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			df = pd.read\_csv('data.csv') \\
+			print(df.dropna())
+		}
+		If you want to change the original DataFrame, use the \textbf{"inplace = True"} argument:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			df = pd.read\_csv('data.csv') \\
+			df.dropna(inplace=True) \\
+			print(df)
+		}
+		
+		To replace empty values with some default values, use "\textbf{fillna()}" function:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			df = pd.read\_csv('data.csv') \\
+			df.fillna(130,inplace=True) \\
+			print(df)
+		}
+		
+		To replace empty values with some default values but only for a specific column, use "\textbf{fillna()}" function:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			df = pd.read\_csv('data.csv') \\
+			df["Data value"].fillna(130,inplace=True) \\
+			print(df)
+		}
+
+		
+	\end{itemize}
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Subquery that returns values of multiple columns (1/More rows of multiple columns).
+		\item Consider below table:
+		\bigskip
+		\commandblock{
+			CREATE TABLE EMPLOYEE( 	\\
+			\s EMPNO NUMBER(4),	\\
+			\s ENAME VARCHAR2(10),	\\
+			\s JOB VARCHAR2(9),	\\
+			\s MGR NUMBER(4),	\\
+			\s HDATE DATE	\\
+			);	\\
+			INSERT INTO EMPLOYEE VALUES (7369, 'SMITH', 'CLERK', 7902,  TO\_DATE('17-DEC-1980', 'DD-MON-YYYY')); \\
+			\\
+			INSERT INTO EMPLOYEE VALUES (7499, 'ALLEN',  'SALESMAN', 7698, TO\_DATE('20-FEB-1981', 'DD-MON-YYYY')); \\
+			\\
+			INSERT INTO EMPLOYEE VALUES (7521, 'WARD', 'SALESMAN', 7698, TO\_DATE('22-FEB-1981', 'DD-MON-YYYY'));
+		}
+		\item Consider below query:
+		\bigskip
+		\outputblock{
+			SELECT * FROM EMPLOYEE  \\
+			WHERE(JOB, MGR) IN(	\\
+			\s SELECT JOB, MGR FROM 	\\
+			\s EMPLOYEE WHERE ENAME='WARD'); 
+		}
+		\newpage
+		\outputblock{
+			EMPNO \s	ENAME \s	JOB \s	MGR \s	HDATE \\
+			----------------------------------------------------------\\
+			7521 \s	SMITH \s	SALESMAN \s	7698 \s	22-FEB-81 \\
+			7499 \s	ALLEN \s	SALESMAN \s	7698 \s	 20-FEB-81 \\
+			7521 \s	WARD \s	SALESMAN \s	7698 \s	22-FEB-81 
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+

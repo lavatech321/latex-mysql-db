@@ -1,0 +1,36 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item LinkedHashMap is child class of HashMap class. 
+		\item It is exactly same as HashMap, except:		
+		\tabletwo{
+			\textbf{HashMap} & \textbf{LinkedHashMap} \\
+			\hline
+			Data structure used is \textbf{HashTable} & Data structure is a combination of \textbf{LinkedList + HashTable} \\
+			\hline
+			Insertion \textbf{order not preserved} \& based on keys & Insertion \textbf{order  preserved} \\
+			\hline
+			Introucted in 1.2 version & Introduced in 1.4 version \\
+		}
+	\end{itemize}
+	\textbf{Example Program:} Display LinkedHashMap operations
+	\bigskip
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class one \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		\textbf{HashMap map = new LinkedHashMap();} \\
+		\s \s		\textbf{map.put("Raman",101);} \\
+		\s \s		map.put("Ravi",102); \\
+		\s \s		\textbf{Set s = map.keySet();} \\
+		\s \s		Collection c = \textbf{map.values()};  \\
+		\s \s		Set s2 = \textbf{map.entrySet()}; \\
+		\s \s		System.out.println(\textbf{map.replace("Ravi",106)}); \\
+		\s	\} \}	
+	}
+
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,96 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Data sets in Pandas are usually multi-dimensional tables, called \textbf{DataFrames}.
+		\item \textbf{Series is like a column}, a DataFrame is the whole table.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			a = \{ \\
+			\s	'Skill': ['Python','Ruby','Perl'], \\
+			\s	'Candidates': ['Ravi','Ram','Raman'] \\
+			\} \\
+			myvar = pd.DataFrame(a) \\
+			print(myvar)  
+		}
+		\bigskip
+		\outputblock{
+			\s \s    Skill \s \s Candidates \\
+			0 \s \s  Python  \s \s     Ravi \\
+			1 \s \s   Ruby   \s \s     Ram \\
+			2 \s \s   Perl   \s \s   Raman
+		}	
+	\end{itemize}	
+	\newpage
+	\textbf{Locate Row}
+	\begin{itemize}
+		\item Pandas use the \textbf{"loc"} attribute to return one or more specified row(s).
+		\item To locate single row:
+		\codeblock{
+			print(myvar.loc[0])
+		}
+		\item To locate multiple row:
+		\codeblock{
+			print(myvar.loc[[0,1]]) 
+		}
+		Example:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			a = \{ \\
+			\s	'Skill': ['Python','Ruby','Perl'], \\
+			\s	'Candidates': ['Ravi','Ram','Raman'] \\
+			\} \\
+			myvar = pd.DataFrame(a) \\
+			print(myvar.loc[0]) \\
+			print(myvar.loc[1])
+		}
+		\bigskip
+		\outputblock{
+			Skill   \s \s      Python  \\
+			Candidates  \s \s     Ravi  \\
+			Name: 0, dtype: object  \\
+			Skill    \s \s     Ruby  \\
+			Candidates  \s \s   Ram  \\
+			Name: 1, dtype: object
+		}
+
+		\newpage		
+		\item \textbf{Named Indexes}
+		\bigskip
+		\codeblock{
+			import pandas as pd  \\
+			a = \{ \\
+				'Skill': ['Python','Ruby','Perl'], \\
+				'Candidates': ['Ravi','Ram','Raman'] \\
+			\} \\
+			myvar = pd.DataFrame(a,index=['a','b','c']) \\
+			print(myvar) \\
+			print(myvar.loc['a'])
+		}
+		\bigskip
+		\outputblock{
+			\s \s    Skill Candidates  \\
+			a \s \s Python  \s \s     Ravi  \\
+			b \s \s   Ruby  \s \s      Ram  \\
+			c \s \s   Perl  \s \s    Raman  \\
+			Skill   \s \s      Python  \\
+			Candidates   \s \s   Ravi  \\
+			Name: a, dtype: object
+		}
+		
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

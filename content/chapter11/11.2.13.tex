@@ -1,0 +1,56 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Static initializer is used to initialize static attributes.
+		\item It is executed only once when the class is loaded into memory. 
+		\item Multiple static blocks are allowed \& will execute from top to bottom.
+		\bigskip
+		\syntaxblock{
+			class Classname \{ \\
+			\s static \{ \\
+			\s \s // codehere \\
+			\s\} \\
+			\}
+		}
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			class Test \{ \\
+			\s	static int count; \\
+			\s	\textbf{static \{}  \\
+			\s \s		\textbf{count = 10;} \\
+			\s \s		\textbf{System.out.println("Count: " + count);} \\
+			\s	\textbf{\}} \\
+			\s	public static void main(String[] args) \{ \\	
+			\s	\s   System.out.println("End"); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Count: 10 \\
+			End
+		}
+		
+	\end{itemize}	
+	\newpage
+	\textbf{Did you know?}
+	\quest{Without main method is it possible to print some statements to console?}{
+		\begin{itemize}
+			\item Before Java 1.7, yes by using static blocks.
+			\item Eg:
+			\codeblock{
+				class Test \{ \\
+				\s static int count;  \\
+				\s	static \{ \\
+				\s \s	count = 10; \\
+				\s \s		System.out.println("Count: " + count); \\
+				\s	\} \\
+				\}
+			}
+			\item After Java 1.7, this code will result in runtime error.
+		\end{itemize}		
+	}
+	
+\end{flushleft}

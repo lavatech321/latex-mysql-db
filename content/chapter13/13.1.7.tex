@@ -1,0 +1,138 @@
+
+\begin{flushleft}
+	\begin{tabulary}{1.0\textwidth}{|p{5em}|p{22em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		charAt() &  public char charAt(int index) \newline Eg:
+		\codeblock{
+			String s1 = "hello world"; \\
+			System.out.println(s1.charAt(3));  // Output: l
+		}   \\
+		\hline
+		
+		concat() & public String concat(String ) \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			s1 = s1.concat("tech"); \\
+			System.out.println(s1); // Output: Lavatech \\
+			s1 = s1 + " Techo"; \\
+			System.out.println(s1); // Output: Lavatech Techo \\
+			s1 += "logy"; \\
+			System.out.println(s1); // Output: Lavatech Technology
+		} \\
+		\hline
+		equals() & public boolean equals(Object o) \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+ 			System.out.println(s1.equals("lava")); // Output: false
+		} \\
+	
+		\bottomrule
+	\end{tabulary}
+	
+	\newpage
+
+		\begin{tabulary}{1.0\textwidth}{|p{9em}|p{18em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+				toCharArray() & public char[] toCharArray()
+				 \newline Eg:
+		\codeblock{
+			String result = "Lava"; \\
+			char[] ch2 = result.toCharArray(); \\
+			System.out.println(ch2);  // Output: Lava
+		} \\
+		\hline
+		isempty(): & public boolean isEmpty() \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			System.out.println(s1.isEmpty()); // false
+		} \\
+		\hline
+		length() & public int length() \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\ 
+			System.out.println(s1.length()); // Output: 4
+		} \\
+		\hline
+		replace() & public String replace(char old, char new) \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			System.out.println(s1.replace('a', 'A')); // Output: LAvA
+		} \\
+	
+		\bottomrule
+	\end{tabulary}
+			
+	
+	\newpage
+	
+	\begin{tabulary}{1.0\textwidth}{|p{5em}|p{22em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		substring() & public String substring(int begin) \newline Eg:
+		\codeblock{
+			String s1 = "Lava";
+			System.out.println(s1.substring(1)); // Output: ava
+		} 
+		 public String substring(int begin, int end) \newline 
+		 \codeblock{
+		 	String s1 = "Lava"; \\
+		 	System.out.println(s1.substring(0,2)); // Output: La
+		 } \\
+		\hline
+		indexof() & public int indexof(char ch);
+		 \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			System.out.println(s1.indexOf("L")); // Output: 0
+			System.out.println(s1.indexOf("z")); // Output: -1
+		} 
+		It always will return first occurrence index only. Returns -1 if charachter not found. \\
+		\midrule
+		lastIndexOf() & public int lastIndexOf(char ch) \newline Eg:
+		\codeblock{
+			String s1 = "Lava";
+			System.out.println(s1.lastIndexOf("L")); // Output: ava
+		}  \\
+		
+		\bottomrule
+	\end{tabulary}
+
+	\newpage
+	
+	\begin{tabulary}{1.0\textwidth}{|p{7em}|p{20em}|}
+		\toprule
+		\textbf{Function} & \textbf{Syntax \& Example} \\
+		\midrule
+		toUpperCase() & public String toUpperCase() \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			System.out.println(s1.toUpperCase()); // Output: LAVA
+		}  \\
+		\midrule
+		toLowerCase() & public String toLowerCase() \newline Eg:
+		\codeblock{
+			String s1 = "Lava"; \\
+			System.out.println(s1.toLowerCase()); // Output: lava
+		}  \\
+		\midrule
+		trim() & public String trim() \newline 
+		Used to remove space from beginning and end of a string \newline
+		Eg:
+		\codeblock{
+			String s1 = "   Lava  "; \\
+			System.out.println(s1.trim()); // Output: Lava
+		}  \\		
+		\bottomrule
+	\end{tabulary}
+
+
+
+\end{flushleft}
+
+\newpage
+

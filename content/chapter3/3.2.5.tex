@@ -1,0 +1,51 @@
+
+\begin{flushleft}
+	\begin{itemize}
+
+	\item Support insert and update statement in single statement.
+	\item Introduced in Oracle 9i.
+	\item To insert \& update records:
+	\bigskip
+	\syntaxblock{
+		MERGE INTO target\_table alias1  \\
+		\s USING source\_table alias2 \\
+		\s ON (condition) \\
+  		\s WHEN MATCHED THEN \\
+		\s UPDATE SET column1 = value1, column2 = value2, ... \\
+		\s WHEN NOT MATCHED THEN \\
+		\s INSERT (column1, column2, ...) \\
+		\s VALUES (value1, value2, ...);	
+	}
+	\bigskip
+	\noteblock{
+		Columns names present in condition statement must not be present in update clause.
+	}
+	Eg: Consider below table:
+	\bigskip
+	\commandblock{
+		create table product1(no number, name varchar2(20)); \\
+		insert into product1 values(101,'Cadbury'); \\
+		insert into product1 values(102,'Munch'); \\
+		insert into product1 values(103,'Perk');
+	}
+	Create another empty table:
+	\bigskip
+	\commandblock{
+		create table product2(no number, name varchar2(20));
+	}
+	\newpage
+	Using merge, you can insert/update records from product1 table to product2:
+	\bigskip
+	\commandblock{
+		MERGE INTO product2 p2 \\
+		\s USING product1 p1 \\
+		\s ON (p1.no = p2.no) \\
+		\s WHEN MATCHED THEN \\
+		\s UPDATE SET p2.name = p1.name \\
+		\s WHEN NOT MATCHED THEN \\
+		\s INSERT (no, name) \\
+		\s VALUES (p1.no, p1.name);
+	}
+
+	\end{itemize}
+\end{flushleft}

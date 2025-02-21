@@ -1,0 +1,63 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Unary operator uses only ONE operand
+	\syntaxblock{
+		operator operand
+	}
+	Below are two unary operators:
+	\begin{itemize}
+		\item \textbf{+(Unary)} - Makes operand Positive		
+		\item \textbf{-(Unary)} - Makes operand Negative
+	\end{itemize}
+	
+	Eg: Consider below table
+	\commandblock{
+		CREATE TABLE sample(no number); 	\\
+		INSERT INTO sample VALUES(101); 	\\
+		INSERT INTO sample VALUES(102); 	\\
+		INSERT INTO sample VALUES(-103); 	\\
+		INSERT INTO sample VALUES(104);		\\
+		INSERT INTO sample VALUES(-105);
+	}
+	\outputblock{
+		SELECT +no FROM sample; \\
+		NO \\
+		101	\\
+		102	\\
+		-103	\\
+		104	\\
+		-105
+	}
+	\newpage
+	\outputblock{
+		SELECT -no FROM sample; \\
+		-NO	\\
+		-101	\\
+		-102	\\
+		103	\\
+		-104	\\
+		105
+	}
+	\outputblock{
+		SELECT no,+3 FROM sample; \\
+		NO \s	+3 \\
+		101 \s	3 	\\
+		102 \s	3	\\
+		-103 \s	3	\\
+		104 \s	3	\\
+		-105 \s	3
+	}
+	\outputblock{
+		SELECT no,-3 FROM sample; \\
+		NO \s	-3	\\
+		101 \s	-3	\\
+		102	\s -3	\\
+		-103 \s	-3	\\
+		104	\s -3	\\
+		-105 \s	-3
+	}
+\end{flushleft}
+
+\newpage
+

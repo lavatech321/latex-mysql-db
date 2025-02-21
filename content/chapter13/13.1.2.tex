@@ -1,0 +1,33 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\textbf{Immutable Object}
+	\begin{itemize}
+		\item An immutable object \textbf{data} cannot be modified once created. 
+		\item String is immutable where its internal state remains constant.
+		\item Benefits: \textbf{thread safety, caching, and security}.
+		\item Eg: Using hashCode(), you can check if the String is changed:
+		
+		\codeblock{
+		String str1 = "Hello"; \\
+		System.out.println(\textbf{str.hashCode()}); // Output: 69609650 \\
+		str1 = str1 + ", World!"; // New object created \\
+		System.out.println(str.hashCode()); // Output: 496609612
+		}
+
+	\end{itemize}
+
+	\bigskip
+	\textbf{Mmutable Object}
+	\begin{itemize}
+		\item A mutable object is an object whose \textbf{data} can be modified after it is created. Eg: \textbf{StringBuffer class}
+		\bigskip
+		\codeblock{
+		StringBuffer str = new StringBuffer("Hello"); \\ 
+		System.out.println(str.hashCode()); // Output: 64598293  \\
+		str.append(", World"); \\
+		System.out.println(str.hashCode()); Output: 64598293
+		}
+		
+	\end{itemize}
+
+\end{flushleft}

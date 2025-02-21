@@ -1,0 +1,59 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	
+	\begin{itemize}
+		\item When number of iterations is not known in advance, you should use while loop.
+		\bigskip
+		\syntaxblock{
+			while(condition) \{ \\
+			\s	Action \\
+			\}	
+		}
+		
+		\item The condition should be of boolean type.
+		\noteblock{
+			In Java, "1" is not true or false.
+			\codeblock{
+				while(1) \{  \xmark  \\  
+				\s	System.out.println("Hello"); \\
+				\}
+			}
+		}
+		
+		\item Curly braces are optional and without curly you can take only one statement under while, and this statement \textbf{should not be declarative}.
+		
+		\item Below are some valid and invalid examples of while:
+		\bigskip
+		\codeblock{
+			while(true) \cmark \\ 
+			\s	System.out.println("Hello"); 
+		}
+		\bigskip
+		\codeblock{
+			while(true); \cmark
+		}
+		\bigskip
+		\codeblock{
+			while(true) \\
+			\s int x = 10; \xmark
+		}
+		\bigskip
+		\codeblock{
+			while(true) \{ \\
+			\s int int x = 10; \cmark \\
+			\}
+		}
+		\item Unreachable statement in while loop also results in compile-time error. Below are some examples showing unreachable statement:
+		\bigskip
+		\codeblock{
+			while(true) \{ \\
+			\s	System.out.println("Hello");  \\
+			\} \\
+			System.out.println("Hi");   \xmark // Compile-time error 
+		}
+				
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

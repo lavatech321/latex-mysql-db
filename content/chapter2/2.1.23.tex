@@ -1,0 +1,75 @@
+
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{main()} is entry point for a Java program. 
+		\item JVM looks for main() in the class \& executes it.
+		\item JVM searches for main() with below prototype:
+		\bigskip
+		\syntaxblock{
+			public static void main(String[] args)
+		}
+	
+		\begin{itemize}
+			\item \textbf{public:} Modifier to call main() from anywhere
+			\item \textbf{static:} without any object, JVM can call this method
+			\item \textbf{void:} Return nothing to JVM
+			\item \textbf{main:} Method name JVM calls by default
+			\item \textbf{String[] args:} command line argument
+		\end{itemize}
+		\bigskip
+		\noteblock{
+			\begin{itemize}
+				\item main() syntax is strict \& any change in this will result in runtime error: "NoSuchMethodError: main".
+				\item Compiler does not check Whether class contains main() or not.
+				\item JVM is responsible to check main.
+				\item JVM will throw runtime exception if main() is not declared correctly.
+			\end{itemize}
+			}
+		\item Changes allowed in main():
+		\begin{itemize}
+			\item Order of modifier can be changed:
+			\newline
+			Eg: \textbf{static public void main(String[] args)}
+			\item The command line argument’s string array identifier can change:
+			\newline
+			Eg: \textbf{public static void main(String temp[])}
+			\item String array can be taken as var\_arg parameter
+			\newline
+			Eg: \textbf{public static void main(String… args)}
+			\item main() method can be declared with following modifiers:
+			\begin{itemize}
+				\item final
+				\item synchroised
+				\item strictfop
+			\end{itemize}
+			Eg:
+			\codeblockfull{New.java}{
+				class New \{ \\
+				\s static final synchronized strictfp public void main(String... name)\{ \\
+				\s \s System.out.println("Valid main method"); \\
+				\s \} \\
+				\} 
+			}
+		\end{itemize}
+		\bigskip
+		\item Multiple main() methods i.e method over-loading is possible!. However JVm will always call String[] argument main method only.
+		\bigskip
+		\codeblockfull{New.java}{
+			class New \{ \\
+			\s	public static void main(String[] args)\{ \\
+			\s	\s	System.out.println("Starting");  // Output: Starting \\
+			\s	\} \\
+			\s	public static void main(int[] args)\{ \\
+			\s \s		System.out.println("Sample 2"); \\
+			\s	\} \}
+		}
+
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+
+

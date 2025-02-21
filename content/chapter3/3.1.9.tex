@@ -1,0 +1,45 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Create comments on tables and columns to provide descriptions.
+		\item Create comment on table:	
+		\bigskip
+		\syntaxblock{
+			COMMENT ON TABLE table\_name IS 'Table comment';
+		}
+		\item Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER); \\	
+			COMMENT ON TABLE product IS 'Product table'; 
+		}
+		View comments stored in \textbf{user\_tab\_comments} table:
+		\bigskip
+		\outputblock{
+			SELECT COMMENTS FROM USER\_TAB\_COMMENTS WHERE TABLE\_NAME='PRODUCT'; \\
+			COMMENTS \\
+			--------------- \\
+			Product Details
+		}
+		\item Create comment on column:
+		\bigskip
+		\syntaxblock{
+			COMMENT ON COLUMN table\_name.column\_name IS 'Your column comment';
+		}	
+		Eg:
+		\commandblock{
+			CREATE TABLE product(no NUMBER); \\	
+			COMMENT ON COLUMN product.no IS 'Product ID';
+		}
+		View comments stored in \textbf{user\_col\_comments} table:
+		\bigskip
+		\outputblock{
+			SELECT comments FROM USER\_COL\_COMMENTS WHERE table\_name='PRODUCT'; \\
+			COMMENTS \\
+			--------------- \\
+			Product ID
+		}	
+	\end{itemize}
+	 	
+\end{flushleft}
+\newpage

@@ -1,0 +1,114 @@
+\setlength{\columnsep}{5pt}
+\begin{flushleft}
+
+	On Ubuntu, open terminal \& follow below steps:
+	\begin{itemize}
+		\item First check if Java is already installed:
+		\commandblock{
+			\$ \textbf{java -version} \\
+			Command 'java' not found
+		}
+		\item Install the Java Development Kit (JDK) with the following command:
+		\commandblock{
+			\$ \textbf{sudo apt install default-jdk -y} \\
+			Setting up default-jdk-headless (2:1.11-72build2) ...
+		}
+		
+		\item Install JRE with the following command:
+		\bigskip
+		\commandblock{
+			\$ \textbf{sudo apt install default-jre -y} \\
+			Setting up default-jre (2:1.11-72build2) ...
+		}
+		
+		\item Optionally, you can install source code of Java:
+		\bigskip
+		\commandblock{
+		\$ sudo apt-get install openjdk-11-source -y
+		}
+		\item Configure JAVA\_HOME on Ubuntu, for this locate your Java installation on Ubuntu using below command:
+		\commandblock{
+			\$ update-alternatives --config java \\
+			There is only one alternative in link group java (providing /usr/bin/java): 
+			\textbf{/usr/lib/jvm/java-11-openjdk-amd64/bin/java}
+		}
+	
+		\item Add JAVA\_HOME to the environment:
+		\bigskip
+		\commandblock{
+		\$ sudo vi /etc/environment \\
+		JAVA\_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/java"	
+		}
+	
+		\item Reload the environment configuration file:
+		\bigskip
+		\commandblock{
+			source /etc/environment
+		}
+		\item Confirm Java is installed:
+		\bigskip
+		\commandblock{
+			\$ java -version \\
+			openjdk version "11.0.20" 2023-07-18
+		}
+		
+	\end{itemize}
+	
+	On Windows, follow below steps:
+	
+	\begin{itemize}
+		\item Open a command prompt by typing \textbf{cmd} in the search bar and press \textbf{Enter}.
+		
+		\item Check if Java is installed by running following command:
+		\newimage{0.65}{content/chapter1/images/one.png}
+
+		\item Navigate to the https://www.oracle.com/java/technologies/downloads/\#jdk17-windows  \& click the x64 Installer download link:
+		\newimage{0.5}{content/chapter1/images/two.png}
+		
+		Double-click the downloaded file to start the installation.
+		\newpage
+		\item Configure the Installation Wizard:
+		\newimage{0.5}{content/chapter1/images/three.png}
+		
+		\item Choose the destination folder for the Java installation files or stick to the default path. Click Next to proceed.
+		\newimage{0.5}{content/chapter1/images/four.png}
+		
+		\item Click Close to exit the wizard.
+		\newimage{0.5}{content/chapter1/images/five.png}
+		
+		\item Add Java to system variables. Open the Start menu and search for environment variables. Select the Edit the system environment variables result.
+		\newpage		
+		\newimage{0.5}{content/chapter1/images/siz.png}
+		
+		\item In the System Properties window, under the Advanced tab, click Environment Variables…
+
+		\newimage{0.35}{content/chapter1/images/seven.png}
+		
+		\item Under the System variables category, select the Path variable and click Edit:
+		
+		\newimage{0.4}{content/chapter1/images/eight.png}
+		\newpage
+		\item Click the New button and enter the path to the Java bin directory:
+		
+		\newimage{0.5}{content/chapter1/images/nine.png}
+		
+		\item Add \textbf{\textbf{JAVA\_HOME}} variable. In the Environment Variables window, under the System variables category, click the New… button to create a new variable.
+
+		\newimage{0.5}{content/chapter1/images/ten.png}
+		
+		\item Name the variable as \textbf{JAVA\_HOME}. 
+		
+		\item In the variable value field, paste the path to your Java jdk directory and click OK.
+		\newpage
+		\newimage{0.5}{content/chapter1/images/11.png}
+		
+		\item Confirm the changes by clicking OK in the Environment Variables and System properties windows.
+		
+		\item Test the Java Installation:
+		
+		\newimage{0.6}{content/chapter1/images/12.png}
+		
+		
+	\end{itemize}
+	
+\end{flushleft}

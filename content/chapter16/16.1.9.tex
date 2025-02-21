@@ -1,0 +1,55 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Throwable class defines the following methods to print exception information:
+	\tabletwo{
+			\textbf{Method} & \textbf{Printable format} \\
+			\hline
+			printStackTrace() & Name of exception: Description  \newline
+			Stack Trace \newline
+			\newline
+			Internally, default exception handler will use  printStackTrace() method to print exception information to the console \\
+			\hline
+			toString() & Name of exception: Description \\
+			\hline
+			getMessage() & Description \\
+		}
+		
+		 Eg:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s try \{ \\
+			\s \s \s System.out.println(5/0); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s		// toString() \\
+			\s \s \s 	System.out.println("Output for:  toString()"); \\
+			\s \s \s 	System.out.println(e); \\
+			\s \s \s 	System.out.println(e.toString()); \\
+			\s \s 	//printStackTrace() \\
+			\s \s \s 	System.out.println("Output for:  printStackTrace()"); \\
+			\s \s \s 	e.printStackTrace(); \\
+			\s \s 	//getMessage() \\
+			\s \s \s 	System.out.println("Output for: getMessage()"); \\
+			\s \s \s 	System.out.println(e.getMessage()); \\
+			\s \s		\} \} \}
+		}
+
+		\outputblock{
+			Output for: toString() \\
+			java.lang.ArithmeticException: / by zero \\
+			java.lang.ArithmeticException: / by zero \\
+			Output for: printStackTrace() \\
+			java.lang.ArithmeticException: / by zero \\
+			at demo.main(demo.java:5) \\
+			Output for: getMessage() \\
+			/ by zero 
+		}
+
+	
+\end{flushleft}
+
+\newpage
+
+

@@ -1,0 +1,54 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Solve the problems of default SerialVersionUID using custom SerialVersionUID.
+		\item Create a custom serialVersionUID as shown below:
+		\bigskip
+		\codeblock{
+			private static final long serialVersionUID=1L;
+		}
+		\item Eg: In below program, after serialisation if you perform any change to the “.class” file at receiver side, you wont get any problem at the time of deserialisation. In this case, sender and receiver not required to maintain same JVM versions.
+		\bigskip
+		\codeblockfull{Sample.java}{
+			import java.io.*; \\
+			class Sample implements Serializable \{ \\
+			\s	private static final long serialVersionUID = 1L; \\
+			\s	int i = 10; \\ 
+			\s	int j = 20; \\
+			\} 
+		}
+		\newpage
+		\codeblockfull{Sender.java}{
+			import java.io.*; \\
+			public class Sender \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s \s		Sample d1 = new Sample(); \\
+			\s \s		FileOutputStream fos = new FileOutputStream("abc.ser"); \\
+			\s \s		ObjectOutputStream oos = new ObjectOutputStream(fos); \\
+			\s \s		oos.writeObject(d1); \\
+			\s	\} \} 
+		}
+		\bigskip
+		\codeblockfull{Receiver.java}{
+			import java.io.*; \\
+			public class Receiver \{ \\
+			\s	public static void main(String[] args) throws Exception \{ \\
+			\s		FileInputStream fis = new FileInputStream("abc.ser"); \\
+			\s		ObjectInputStream ois = new ObjectInputStream(fis); \\
+			\s \s		Sample d2 = (Sample)ois.readObject(); \\
+			\s \s		System.out.println(d2.i+"..."+d2.j); \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\commandblock{
+			\$ javac Sample.java \\
+			\$ javac Sender.java \\
+			\$ javac Receiver.java \\
+			\$ java Receiver \\
+			10...20
+		}
+	\end{itemize}
+
+\end{flushleft}

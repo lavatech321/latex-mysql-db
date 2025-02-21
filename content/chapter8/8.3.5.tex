@@ -1,0 +1,114 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+After the swap partition is created, you will need to perform below steps to proceed:
+\begin{itemize}
+	\item Step 1: Setup partition as swap area using \textbf{"mkswap"} command.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: mkswap partition\_name
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# mkswap /dev/sdb5
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	\bigskip
+	\bigskip
+	
+	\item Step 2: Mount swap partition permanently. Add the partition in \textbf{"/etc/fstab"} file.
+	\newline
+	Sample entry:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# cat /etc/fstab
+		\newline
+		\color{white}
+		/dev/hdb2 swap swap defaults 0 0
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+		
+	\bigskip
+	\bigskip
+		
+	\item Step 3: Enable the swap partition for usage using \textbf{"swapon"} command.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: swapon partition\_name
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# swapon /dev/sdb5
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Options with \textbf{swapon} command:
+	\begin{itemize}
+		\item 	\textbf{-s}: Verify swap area is available for your use
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# swapon -s
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item \textbf{-a}: Enable all swap partitions for use in \textbf{/etc/fstab} file
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# swapon -a
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+
+	\item You can also disable swap partition in \textbf{/etc/fstab} file if you don't want to use swap space.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: swapoff partition\_name
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# swapoff /dev/sdb5
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Options with \textbf{swapoff} command:
+	\begin{itemize}
+		\item \textbf{-a}: Disable all swap partitions for use in \textbf{/etc/fstab} file
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# swapoff -a
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+	
+\end{itemize}
+
+	
+\end{flushleft}
+
+\newpage
+

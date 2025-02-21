@@ -1,0 +1,60 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+\bigskip
+\begin{itemize}
+	\item Network address represents entire network.
+	\item  It represents group of IP addresses that can be used on that network.
+	\item \textbf{It is not a usable IP}.
+	\item \textbf{It is only used by routers} for packet transmission.
+\end{itemize}
+
+
+\textbf{How to write network address for a given IP?}
+\begin{itemize}
+	\item Solution: Network address is decided according to the netmask as follows:
+	\begin{itemize}
+		\item Keep the network part of the IP address fix
+		\item Replace the host part of the IP address with 0
+		\item Eg 1:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			IP address: \textbf{195.34.23.128}
+			\newline
+			Netmask: \textbf{255.255.255.0}
+			\newline
+			Network Address: \textbf{195.34.23.0}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item Eg 2:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			IP address: \textbf{10.4.2.3}
+			\newline
+			Netmask: \textbf{255.0.0.0}
+			\newline
+			Network Address: \textbf{10.0.0.0}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\item Eg 3:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		IP address: \textbf{129.89.32.12}
+		\newline
+		Netmask: \textbf{255.255.0.0}
+		\newline
+		Network Address: \textbf{129.89.0.0}
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\end{itemize}
+
+
+\end{itemize}
+
+\end{flushleft}
+\newpage

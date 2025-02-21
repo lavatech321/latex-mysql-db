@@ -1,0 +1,61 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item You can explicitly throw an exception using the throw keyword.
+		\bigskip
+		\syntaxblock{
+			throw new ExceptionType("Error message");
+		}
+		Syntax explanation:
+		\begin{itemize}
+			\item \textbf{throw}: Use the throw keyword to throw the exception object.
+			\item \textbf{new}: Create exception object.
+			\item \textbf{ExceptionType}: Select correct exception classes such as RuntimeException, IOException, NullPointerException, IllegalArgumentException, etc.
+			\item \textbf{"Error message"}:  Optionally provide an error message describing the exception.
+		\end{itemize}
+		
+		\item Consider below code that throws \textbf{ArithematicException} explicitly:
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static int divide(int dividend, int divisor) \{ \\
+			\s \s		if (divisor == 0) \{ \\
+			\s \s			\textbf{throw new  ArithmeticException("Cannot divide by zero.")}; 
+		}
+		\newpage
+		\codecontinue{
+			\s \s		\} \\
+			\s \s		return dividend/divisor; \\
+			\s \}  \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		try \{  \\
+			\s \s \s			int result = divide(10, 0);
+			\s \s \s			System.out.println("Result: " + result); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s \s			System.out.println("Error: " + e.getMessage()); \\
+			\s \s		\} \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+		Error: Cannot divide by zero	
+		}
+	\end{itemize}
+
+	\noteblock{
+		\begin{itemize}
+			\item throw keyword cannot be used to throw empty object. It will result in "NullPointerException".
+			\item You cannot write any statement after throw keyword. It will result in "Unreachable statement".
+			\item You can use throw keyword only for throwable types.
+		\end{itemize}
+	}
+	
+\end{flushleft}
+
+\newpage
+
+
+
+

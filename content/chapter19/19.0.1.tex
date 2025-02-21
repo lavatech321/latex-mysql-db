@@ -1,0 +1,61 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Make an object eligible for GC, if it is no longer.
+		\item Object is eligible for GC, if there's no reference variable.
+	\end{itemize}
+
+		\begin{itemize}
+			\item \textbf{Case 1: Nullify the reference variable }
+			\begin{itemize}
+				\item Assign null to all object's reference variable.
+				\codeblockfull{demo.java}{
+					import java.io.*; \\
+					class Test \{\} \\
+					public class demo \{ \\
+					\s public static void main(String[] args) throws Exception \{ \\
+					\s \s	Test t1 = new Test(); \\
+					\s \s		t1=null;  \s // eligible for GC \\
+					\s	\} \\
+					\}	
+				}
+			\end{itemize}
+			\item \textbf{Case 2: Reassigning the reference variable}
+			\begin{itemize}
+				\item Re-assign objectA reference variable to objectB, makes objectA eligible for GC.
+				\codeblockfull{demo.java}{
+					import java.io.*; \\
+					class Test \{\} \\
+					public class demo \{ \\
+					\s	public static void main(String[] args) throws Exception 
+						\{ \\
+					\s \s		Test t1 = new Test(); \\
+					\s \s		Test t2 = new Test(); \\
+					\s \s		t1 = new Test();   // eligible for GC \\
+					\s \s		t2=t1;   // eligible for GC \\
+					\s	\} \}
+				}
+			\end{itemize}
+			\bigskip
+			\item \textbf{Case 3: Objects inside method}
+			\begin{itemize}
+				\item Objects created inside method are eligible for GC once the method completes.
+				\codeblockfull{demo.java}{
+					import java.io.*; \\
+					class Test \{\} \\
+					public class demo \{ \\
+					\s	public static void main(String[] args) throws Exception \{ \\
+					\s \s		test1();   \textbf{// t1,t2 eligible for GC} \\
+					\s	\} \\
+					\s	public static void test1() \{ \\
+					\s \s		Test t1 = new Test(); \\
+					\s \s		Test t2 = new Test(); \\
+					\s	\} \}	
+				}
+			\end{itemize}
+		\end{itemize}
+			
+	
+\end{flushleft}
+

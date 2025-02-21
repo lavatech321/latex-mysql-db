@@ -1,0 +1,31 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Revokes granted permissions from a user \& role. 
+		\bigskip
+		\syntaxblock{
+			REVOKE privilege\_list ON object\_name FROM user [CASCADE CONSTRAINTS];
+		}
+		where,
+		\begin{itemize}
+			\item \textbf{privilege\_list}: Include SELECT, INSERT, UPDATE, DELETE, EXECUTE, and ALL (which revokes all available privileges).
+			
+			\item \textbf{object\_name}: Name of object (e.g., table, view, procedure).
+			
+			\item \textbf{user}: User or other entity.
+			
+			\item \textbf{CASCADE CONSTRAINTS}: Revokes privilege \& any dependent privileges.
+		\end{itemize}
+		
+		Eg:
+		\commandblock{
+			REVOKE SELECT ON employees FROM user1; \\
+			REVOKE ALL ON employees FROM user2;  \\
+			REVOKE CREATE SESSION FROM user3; \\
+			REVOKE SELECT, INSERT ON employees FROM user4 CASCADE CONSTRAINTS; 
+		}
+			
+	\end{itemize}
+	
+\end{flushleft}

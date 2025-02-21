@@ -1,0 +1,49 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+	\item Redirects output \& error of command to some file.
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: command \&{$\textgreater$} output\_erorr\_input\_file
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\item "\&{$\textgreater$}" performs below operations:
+	\begin{itemize}
+		\item It creates the file if it does not exists.
+		\item It overwrites the file if it exists.
+	\end{itemize}
+	\item
+	Eg: Redirect output \& error of a command to some file:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# ls -l fin /root \&{$\textgreater$} one.txt
+		\newline
+		\newline
+		\color{yellow}
+		\# Read content of error\_file
+		\color{green}
+		\newline
+		\# cat one.txt
+		\newline
+		\color{white}
+		ls: cannot access 'fin': No such file or directory
+		\newline
+		/root:
+		\color{white}
+		\newline
+		total 4
+		\color{white}
+		\newline
+		\color{white} -rw-r--r--. 1 root root 51 Apr 10 13:36 one.txt
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+\end{itemize}
+\end{flushleft}
+
+
+

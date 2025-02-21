@@ -1,0 +1,71 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item TreeSet are \textbf{unordered} collection of \textbf{heterogenous objects} wherein \textbf{duplicate objects \& null} \textbf{is not} allowed. 
+		\item TreeSet class implements NavigableSet interface.
+		\item \textbf{Objects are inserted based on some sorting order}. Order maybe  natural or customised sorting order.
+		\item Underlying data structure is balanced tree.
+		\newimage{0.2}{content/chapter14/images/tree.png}
+			
+	\end{itemize}
+	
+	\textbf{Ways of initializing TreeSet}
+	
+	\begin{itemize}
+		\item Creating am empty TreeSet:
+		\bigskip
+		\syntaxblock{
+			TreeSet t1 = new TreeSet(); \\
+		}
+		
+		\bigskip
+				
+		\item Creating an empty TreeSet with custom Comparator:
+		\bigskip
+		
+		\syntaxblock{
+			TreeSet t  =  new TreeSet(Comparator c);
+		}		
+	\end{itemize}
+	
+	\newpage
+	\textbf{Example Program}:
+	\newline
+	Java program to display TreeSet operations:
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		Integer[] nos = \{ 12,3,10,15,23,30,1,3,40 \}; \\
+		\s \s		\textbf{TreeSet t1 = new TreeSet(Arrays.asList(nos))}; \\
+		\s \s		System.out.println(\textbf{t1}); \\
+		\s \s		System.out.println(\textbf{t1.first()}); \\
+		\s \s		System.out.println(\textbf{t1.last()}); \\
+		\s \s		System.out.println(\textbf{t1.headSet(34)}); \\
+		\s \s		System.out.println(\textbf{t1.tailSet(34)});  \\
+		\s \s		System.out.println(\textbf{t1.subSet(5,34)}); \\
+		\s \s 		System.out.println(\textbf{t1.descendingSet()}); \\
+		\s \s 		System.out.println(\textbf{t1.lower(23)}); \\
+		\s \s		System.out.println(\textbf{t1.higher(23)}); \\
+		\s	\} \\
+		\} 
+	}
+	\bigskip
+	\outputblock{
+	\textbf{[}1, 3, 10, 12, 15, 23, 30, 40\textbf{]} \\
+	1 \\
+	40 \\
+	\textbf{[}1, 3, 10, 12, 15, 23, 30\textbf{]} \\
+	\textbf{[}40\textbf{]} \\
+	\textbf{[}10, 12, 15, 23, 30\textbf{]} \\
+	\textbf{[}40, 30, 23, 15, 12, 10, 3, 1\textbf{]} \\
+	15 \\
+	30
+	}
+	
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,122 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\textbf{private constructor}
+	\tablethree{
+		\hline
+		Syntax & Accessibility & Uses \\
+		\hline
+		private Classname \{\} & Only accessible within the same class & Used to \textbf{prevent direct instantiation} of the class \\
+		\hline
+	}
+	\newline
+	Eg:
+		\codeblockfull{A.java}{
+				class A \{ \\
+				\s \textbf{private A()} \{ \\
+				\s \s		System.out.println("Working"); \\
+				\s	\} \\
+				\s 	public static void main(String[] args) \{ \\
+				\s \s 		\textbf{A a1 = new A();}  // Output: Working \\
+				\s	\} \} \\
+				public class B extends A \{ \\
+				\s 	public static void main(String[] args) \{ \\
+				\s \s	\textbf{B b1 = new B();} \xmark \s // Cannot instantiate \\
+				\s \}
+				\} 
+		}
+		
+		\newpage
+		\textbf{protected constructor}		
+		\tabletwo{
+			Syntax & Accessibility \\
+			\hline
+			protected Classname \{\} & \begin{itemize}
+				\item Can be access from same class \& subclasses or classes within the same package
+				\item Cannot be accessed from different package where class is not subclass.
+			\end{itemize} 
+			 \\
+		}
+		Eg:
+		\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{protected A()} \{ \\
+				\s \s		System.out.print("One"); \\
+				\s	\}  \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.print("Two"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} // Output: OneTwo \\
+				\s	\} 	 \\
+				\}
+			}
+		\newpage
+		\textbf{public constructor}
+
+		\tabletwo{
+			Syntax & Accessibility \\
+			\hline
+			public Classname \{\} & Accessible from: \begin{itemize}
+				\item Other classes
+				\item Subclasses
+				\item Different packages
+			\end{itemize} \\
+		}
+			
+		\begin{itemize}
+			\item Eg 1:
+			\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{public A()} \{ \\
+				\s \s	System.out.print("A"); \\
+				\s	\} \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.print("B"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} // Output: AB \\
+				\s	\} 	\\
+				\}
+			}
+		\end{itemize}
+	
+		\newpage
+		\textbf{default constructor}: Means no access modifier specified.
+		\newline
+		\tablethree{
+			\hline
+			Syntax & Accessibility & Uses \\
+			\hline
+			Classname \{\} & Accessible within the same package but not accessible from classes outside the package.
+			& 
+			If no constructor is defined, a default constructor is automatically provided by the compiler. \\
+			\hline
+		}
+		
+		\bigskip
+		Eg:
+			\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{A()} \{ \\
+				\s \s		System.out.println("A constructor called"); \\
+				\s	\} \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.println("B constructor called"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} // Output: AB \\
+				\s	\} 	 \\
+				\}
+			}
+	
+	
+\end{flushleft}
+
+\newpage

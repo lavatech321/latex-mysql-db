@@ -1,0 +1,35 @@
+
+\begin{flushleft}
+	\begin{itemize}
+		\item The variable is the basic unit of storage in a Java program.
+		\bigskip
+		\syntaxblock{
+			type identifier = value; \\
+			or  \\
+			type identifier = value, identifier = value, identifier = value ... ;
+		}
+		Here, 
+		\begin{itemize}
+			\item type = datatype or name of class or interface
+			\item identifier = name of variable
+		\end{itemize}
+		
+		\bigskip
+		To declare more than one variable of the specified type, use a comma-separated list.
+		\bigskip
+		\codeblockfull{New.java}{
+			class New \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s	int a, b, c; \\
+			\s \s	int d = 3, e, f = 5; \\
+			\s \s	byte z = 22; \\
+			\s \s	double pi = 3.14159; \\
+			\s \s	char x = 'x'; \\
+			\s	\} \\
+			\} 
+		}
+			
+	\end{itemize}	
+		
+\end{flushleft}
+\newpage

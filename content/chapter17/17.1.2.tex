@@ -1,0 +1,56 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Runnable interface present in \textbf{java.lang} package.
+		\item It contain only 1 method:
+		\bigskip
+		\syntaxblock{
+			public void run()
+		}
+		\newpage
+		\item Creating custom thread:
+		\bigskip
+		\syntaxblock{
+			class RunnableName \textbf{implements Runnable} \{ \\
+			\s	\textbf{public void run()} \{ \\
+			\s \s		// overriding thread code \\
+			\s	\} \} 
+		}
+		\item Creating thread object and starting it:
+		\bigskip
+		\syntaxblock{
+			RunnableName obj = new RunnableName(); \\
+			\textbf{Thread t1 = new Thread(obj)}; \\
+			\textbf{t1.start()};
+		}
+		
+		\item Eg:
+		\codeblockfull{demo.java}{
+			class ThreadX \textbf{implements Runnable} \{ \\
+			\s	\textbf{public void run()} \{ \} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \\ throws InterruptedException \{  \\
+			\s \s		\textbf{ThreadX obj = new ThreadX()}; \\
+			\s \s		\textbf{Thread t1 = new Thread(obj)}; \\
+			\s \s		\textbf{t1.start()}; \\
+			\s	\} \}
+		}
+		\bigskip
+		\noteblock{
+			start() cannot be executed for runnable object. Thus obj.start() in above code will result in compile-time error.
+		}
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\quest{Which approach is better? Extending Thread class or implementing Runnable interface?}{
+	\textbf{Implementing Runnable interface is better}. Reason: Extending Thread class wont allow extending any other class. Thus missing inheritance benefit.
+	}
+	
+\end{flushleft}
+
+
+

@@ -1,0 +1,20 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item During serialisation, \textbf{object state travels from sender to receiver \& not it's ".class" file.}
+		\item \textbf{While serialising, JVM creates and saves a unique identifier with every object} on sender side based on ".class" file.
+		\item At the time of deserialisation, \textbf{recevier side JVM compares sender side unique identifier with local class unique identifier. }
+		\item If both are same, then deserialisation will be performed. 
+		\item Otherwise it will result in runtime exception: \textbf{InvalidClassException}
+		\item This unqiue identifier is \textbf{SerialVersionUID}.
+	\end{itemize}	
+	\newpage
+	\textbf{Problem with JVM generated default SerialVersionUID:}
+	\begin{itemize}
+		\item Sender and receiver's \textbf{JVM version should be same}.
+		\item Sender and receiver should use \textbf{same ".class" file version}. 
+		\item After serialisation, if there is any change in ".class" file, at receiver side then receiver will be unable to deserialise.
+		\item JVM uses \textbf{complex algorithm to generate SerialVersionUID} causing performance problems.
+	\end{itemize}
+\end{flushleft}
+

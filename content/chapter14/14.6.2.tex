@@ -1,0 +1,73 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Iterator is applicable for any collection object, hence it is universal cursor.
+		\item It can perform both the read and remove operations.
+		\item Iterator object is created using \textbf{iterator()} method of collection interface
+	\end{itemize}
+	
+	\textbf{Iterator specific methods:}
+	
+	\begin{itemize}
+		\item Create iterator object:
+		\syntaxblock{
+			public Iterator iterator()
+		}
+		\bigskip
+		\item Check for next element in collection: 
+		\syntaxblock{
+			public boolean hasNext()
+		}
+		\bigskip
+		\item Get next element in collection: 
+		\syntaxblock{
+			public Object next()
+		}
+		\bigskip
+		\item Remove element in collection:
+		\syntaxblock{
+			public void remove()
+		}
+	\end{itemize}
+	
+	\noteblock{
+		\begin{itemize}
+			\item Enumeration and Iterator can move only in forward direction and not backward direction.
+			\item These are single direction cursors but not bi-directional cursor.
+			\item Iterator can perform only read \& remove operations and not replace or addition of new objects.
+			\item To overcome these limitations, go for \textbf{ListIterator}
+		\end{itemize}
+	}
+	
+	\newpage
+	\textbf{Example:}
+	\newline
+	Java program to iterate over vector object and display even numbers only:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test\{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		ArrayList a1 = new ArrayList(); \\
+		\s \s		a1.add(123); \\
+		\s \s		a1.add(788); \\
+		\s \s		a1.add(545); \\
+		\s \s		a1.add(642); \\
+		\s \s		Iterator t1 = a1.iterator(); \\
+		\s \s		while(t1.hasNext()) \{ \\
+		\s \s \s			Integer i = (Integer)t1.next(); \\
+		\s \s \s			if (i\%2 != 0) \\
+		\s \s \s \s			t1.remove(); \\
+		\s \s \s		\} \\
+		\s \s		System.out.println(a1); \\
+		\s	\} \\
+		\}
+	}
+	\bigskip
+	\outputblock{
+		\textbf{[}788, 642\textbf{]}
+	}
+\end{flushleft}
+
+\newpage
+

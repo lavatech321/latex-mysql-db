@@ -1,0 +1,96 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\textbf{Comparable}
+	
+	\begin{itemize}
+		\item Comparable interface is present in \textbf{java.lang} package.
+		\item It contains only \textbf{compareTo()} method:
+		\syntaxblock{
+			int compareTo(Object obj)
+		}
+		Eg:
+		\codeblock{
+			int value = obj1.compareTo(obj2)
+		}
+		where value can be:
+		\begin{itemize}
+			\item \textbf{-1} if and only if obj1 comes before obj2.
+			\item \textbf{+ve} no if and only if obj1 comes after obj2.
+			\item \textbf{0} if and only if obj1 and obj2 are equal.
+		\end{itemize}
+	
+		Eg:
+		\codeblockfull{Test.java}{
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		System.out.println("A".compareTo("B")); \\
+			\s \s		System.out.println("Z".compareTo("A")); \\
+			\s \s		System.out.println("A".compareTo("A")); \\
+			\s	\}  \\
+			\}	
+		}
+		\bigskip
+		\outputblock{
+			-1 \\
+			25 \\
+			0
+		}
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Comparator}:
+	\begin{itemize}
+		\item The Comparator interface is part of the \textbf{java.util} package.
+		\item It defines \textbf{custom ordering of objects}. 
+		\item It provides a way to compare two objects \& find order. 
+		\item It contains a single method \textbf{compare()}, that takes two objects and returns an integer indicating their order.
+		\item Eg: Java program to create custom comparator:
+		\bigskip
+		\codeblockfull{Test.java}{
+			import java.util.*;	 \\
+			class Custom implements Comparator \{ \\
+			\s	public int compare(Object o1, Object o2) \{ \\
+			\s \s		Integer i1 = (Integer)o1; \\
+			\s \s		Integer i2 = (Integer)o2; \\
+			\s \s		if (i1 > i2) \\
+			\s \s \s		return 1; \\
+			\s \s		else if (i1 < i2) \\
+			\s \s \s		return -1; \\
+			\s \s		else \\
+			\s \s \s		return 0; \\
+			\s	\} \} \\
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{  \\
+			\s \s		Custom c = new   Custom(); \\
+			\s \s		int value = c.compare(64,134); \\
+			\s \s		if (value != 0) \\
+			\s \s \s		if (value == 1)   \\
+			\s \s \s		System.out.println("First number is greater"); 
+			\s \s \s		else \\
+			\s \s \s		System.out.println("2nd number is greater"); \\
+			\s	\}  \}			
+		}
+		\newpage
+		\outputblock{
+			2nd number is greater
+		}
+		
+		
+	\end{itemize}
+	
+	\textbf{Difference between Comparable and Comparator}
+	
+	\tabletwo{
+		\textbf{Comparable} & \textbf{Comparator} \\
+		\hline
+		Present in \textbf{java.lang} package	& Present in \textbf{java.util} package \\
+		\hline
+		Contains \textbf{compareTo()} method & Contains \textbf{compare()} \& equals() method \\
+		\hline
+		Provides default natural sorting order & Allows sorting customisation \\
+	}
+	
+\end{flushleft}

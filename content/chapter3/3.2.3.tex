@@ -1,0 +1,22 @@
+
+\begin{flushleft}
+	
+	UPDATE statement modifies existing records in a table. 
+	
+	\syntaxblock{
+		Updating all records: \\
+		UPDATE table\_name SET col1 = value1, col2 = value2,...; 
+		\\
+		Updating particular record: \\
+		UPDATE table\_name SET col = value WHERE CONDITION; 
+	}
+	Eg: Update all records
+	\commandblock{
+		UPDATE emp SET ename = 'test';
+	}
+	Eg: Update particular records
+	\commandblock{
+		UPDATE emp SET ename = 'test' WHERE eno = 101;
+	}
+	
+\end{flushleft}

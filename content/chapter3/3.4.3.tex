@@ -1,0 +1,56 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Svepoint is temporary saving point within the transaction.
+		\item Savepoints store within the buffer only(not in DB).
+		\item Number limit for the number of savepoints within the transaction.
+		\item Use unique names for the savepoints within the transaction.
+		\item It is useful when you want to undo part of a transaction without rolling back the entire transaction. 
+		\item Create a savepoint:
+		\syntaxblock{
+			SAVEPOINT savepoint\_name;
+			
+		}
+		\item Rollback to a Savepoint:
+		\bigskip
+		\syntaxblock{
+			ROLLBACK TO savepoint\_name;
+		}
+		
+		Eg:
+		\commandblock{
+			INSERT INTO product VALUES(101,'Cadbury'); \\
+			INSERT INTO product VALUES(102,'Munch'); \\
+			savepoint s1; \\
+			DELETE FROM product WHERE no=102; \\
+			SAVEPOINT s2; \\
+			INSERT INTO product VALUES(103,'5-star'); \\
+			SAVEPOINT s3; \\
+			ROLLBACK TO s1;
+		}
+		\bigskip
+		\outputblock{
+			SELECT * FROM product; \\
+			NO NAME \\
+			---------- ----------------- \\
+			101 Cadbury \\
+			102 Munch
+		}
+		\bigskip
+		\noteblock{
+			There is no way of seeing all savepoint names, so you need to remember the same.
+		}
+		\newpage
+		\item Release a Savepoint: 
+		\begin{itemize}
+			\item If you decide that you no longer need a savepoint, you can release it using the RELEASE SAVEPOINT statement.
+			\bigskip
+			\syntaxblock{
+				RELEASE SAVEPOINT savepoint\_name;
+			}
+		\end{itemize}
+	\end{itemize}
+
+\end{flushleft}
+

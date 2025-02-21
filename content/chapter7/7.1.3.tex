@@ -1,0 +1,49 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Append operator is similar to output redirection.
+		\item Append redirection is done using the "\textbf{{$\textgreater$}}\textbf{{$\textgreater$}}".
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: command \textbf{{$\textgreater$}}\textbf{{$\textgreater$}} output\_file
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+		\item "\textbf{{$\textgreater$}}\textbf{{$\textgreater$}}" performs below operations:
+		\begin{itemize}
+			\item If the file exists, it will \textbf{append} new content to the existing content.
+			\item If the file does not exist, "\textbf{{$\textgreater$}}\textbf{{$\textgreater$}}" operator will create it.
+		\end{itemize}
+	
+		\item 	Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\$ uname > my\_files 
+			\newline
+			\$ echo "Hello World!" \textbf{{$\textgreater$}}\textbf{{$\textgreater$}} my\_files 			
+			\newline
+			\newline
+			\color{yellow}
+			\# Read content of my\_files
+			\color{green}
+			\newline
+			\color{green}
+			\$ cat my\_files    
+			\newline
+			\color{white}
+			Linux 
+			\newline
+			\color{white}
+			Hello World!
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+	\end{itemize}
+
+	
+\end{flushleft}
+

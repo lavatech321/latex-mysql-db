@@ -1,0 +1,39 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item SortedMap interface implements Map interface.
+		\item It represent a group of \textbf{key,value pairs according to some sorting order of keys}.
+		\item Sorting is based on the key, \& not on value.
+		
+	\end{itemize}
+	
+	\textbf{SortedMap specific methods:}
+	\begin{itemize}
+		\item Returns the first key of the sorted map.
+		\syntaxblock{
+			Object firstKey()
+		}
+		\bigskip
+		\item Returns the last key of the sorted map.
+		\syntaxblock{
+			Object lastKey()
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys are less than the specified key.
+		\syntaxblock{
+			SortedMap headMap(Object key)
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys are greater than or equal to the specified key.
+		\syntaxblock{
+			SortedMap tailMap(Object key)
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys lies in between key1 and key2 including key1	
+		\syntaxblock{
+			SortedMap subMap(Object key1, Object key2)
+		}
+	\end{itemize}
+\end{flushleft}
+\newpage

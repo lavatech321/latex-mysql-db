@@ -1,0 +1,33 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Instance block is defined within a class \& executed object is created. 
+		\item It can initialises object attributes.
+		\item It is \textbf{executed before the constructor of the class}. 
+		\item Eg:
+		\codeblockfull{Demo.java}{
+			public class Demo \{ \\
+			\s	int value;  \\
+			\s \textbf{\{}	 	\\
+			\s \s \textbf{value = 8080;}	\\
+			\s \textbf{\}}	\\
+			\s public Demo() \{\}	\\
+			\s public Demo(int value) \{	\\
+			\s \s this.value = value;		\\
+			\s \}	\\
+			\s public static void main(String[] args) \{	\\
+			\s \s \textbf{Demo d1 = new Demo();}	\\
+			\s \s \textbf{Demo d2 = new Demo(10);}		\\
+			\s \s System.out.println(d1.value); // Output: 8080	\\
+			\s \s System.out.println(d2.value); // Output: 10	\\
+			\s \}	\\
+			\}
+		}
+				
+	\end{itemize}	
+	
+	
+\end{flushleft}
+
+\newpage

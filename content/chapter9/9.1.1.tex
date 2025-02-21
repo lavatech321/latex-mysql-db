@@ -1,0 +1,62 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Subquery that returns a single value(1 row of 1 column only).
+		\item Single value subquery is also called scalar subquery or single row subquery.
+		\bigskip
+		\commandblock{
+			CREATE TABLE employee(	\\
+			\s id NUMBER, 	\\
+			\s name VARCHAR2(20), 	\\
+			\s salary NUMBER	\\
+			);	\\
+			INSERT INTO employee VALUES(101, 'Ram',34000);	\\
+			INSERT INTO employee VALUES(102, 'Ravi',56000);	\\
+			INSERT INTO employee VALUES(103, 'Kavi',16000);	\\
+			INSERT INTO employee VALUES(104, 'Tanvi',34000);	\\
+			INSERT INTO employee VALUES(105, 'Juhi',34000);
+		}
+		\bigskip
+		\outputblock{
+			SELECT * FROM employee \\
+			WHERE salary = ( \\
+			\s SELECT salary  \\
+			\s FROM employee  \\
+			\s WHERE name = 'Ram' \\
+			); \\
+			\\
+			ID	\s	NAME	\s	SALARY	\\
+			-------------------------------------\\
+			101 \s	Ram	\s	34000	\\
+			104	\s	Tanvi	\s	34000	\\
+			105	\s	Juhi	\s	34000
+		}
+		\newpage
+		\outputblock{
+			SELECT * FROM employee WHERE	\\
+			salary = (	\\
+			\s SELECT max(salary) 	\\
+			\s FROM employee \\
+			);	\\
+			ID \s	NAME	\s	SALARY	\\
+			--------------------------------------------\\
+			102	\s	Ravi	\s	56000	\\
+			\\
+			DELETE from employee WHERE salary = (	\\
+			SELECT MAX(salary) FROM employee)	\\
+			\\
+			SELECT * FROM ( \\
+			\s SELECT * FROM employee 	\\
+			\s WHERE salary > 16000)	\\
+			WHERE name = 'Ram' OR name = 'Kavi'; \\
+			\\
+			ID	\s	NAME	\s	SALARY	\\
+			----------------------------------------\\
+			101 \s	Ram	\s	34000	
+		}
+	\end{itemize}	
+\end{flushleft}
+
+\newpage
+

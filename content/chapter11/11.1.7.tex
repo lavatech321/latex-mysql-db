@@ -1,0 +1,34 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item 6NF is quite rare and used in highly specialized cases where data representation needs to be extremely precise. 
+		\item It deals with scenarios where complex and interrelated multi-valued dependencies exist within the data. 
+		\item Consider below example:
+		\newimage{0.7}{content/chapter11/images/6nf.png}
+		
+		\item To achieve 6NF in this scenario, decompose the table into multiple tables to fully capture the complex relationships.
+		
+		\newpage
+		\item Table: Student
+		\newimage{0.7}{content/chapter11/images/61nf.png}
+		
+		\item Table: Courses
+		\newimage{0.7}{content/chapter11/images/62nf.png}
+
+		\item Table: Books
+		\newimage{0.7}{content/chapter11/images/63nf.png}
+		\newpage
+		\item Table: StudentCourses
+		\newimage{0.7}{content/chapter11/images/64nf.png}
+		
+		\item Table: CourseBooks
+		\newimage{0.7}{content/chapter11/images/65nf.png}
+		
+		
+	\end{itemize}	
+	
+\end{flushleft}
+
+\newpage
+

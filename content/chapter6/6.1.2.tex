@@ -1,0 +1,83 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{SYSDATE}: Retrieve the current date and time from the system clock
+		\outputblock{
+			select sysdate from dual; \\
+			SYSDATE \\
+			24-OCT-23
+		}
+		\item \textbf{CURRENT\_DATE}: Same as SYSDATE
+		\outputblock{
+			select current\_date from dual; \\
+			CURRENT\_DATE \\
+			24-OCT-23
+		}
+		\item \textbf{ADD\_MONTHS()}: Add a specified number of months to a given date. 
+		\outputblock{
+			SELECT ADD\_MONTHS(SYSDATE, 3) AS future\_date from dual; \\
+			FUTURE\_DATE \\
+			24-JAN-24
+		}
+		\newpage
+		\item \textbf{LAST\_DAY}: Determine the last day of the month for a given date. 
+		\outputblock{
+			SELECT LAST\_DAY(SYSDATE) AS last\_day\_of\_month FROM dual; \\
+			LAST\_DAY\_OF\_MONTH \\
+			31-OCT-23
+		}
+		\bigskip
+		\item \textbf{NEXT\_DAY}: Find the date of the next specified day of the week that follows a given date.
+		\outputblock{
+			SELECT NEXT\_DAY(SYSDATE, 'SUNDAY') AS last\_day\_of\_month FROM dual; \\
+			LAST\_DAY\_OF\_MONTH \\
+			29-OCT-23
+		}
+		\bigskip
+		\item \textbf{MONTHS\_BETWEEN()}: Used to calculate the number of months between two dates.
+		\outputblock{
+			SELECT MONTHS\_BETWEEN(TO\_DATE('2023-12-31', 'YYYY-MM-DD'), TO\_DATE('2023-01-01', 'YYYY-MM-DD')) AS months\_difference
+			FROM dual; \\
+			MONTHS\_DIFFERENCE \\
+			11.967741935483870967
+		}
+		\bigskip
+		\item \textbf{EXTRACT}: Used to extract and retrieve a specific component (such as year, month, day, etc.) from a date or timestamp value. 
+		\outputblock{
+			SELECT EXTRACT(YEAR FROM SYSDATE) FROM dual; \\
+			EXTRACT(YEARFROMSYSDATE) \\
+			2023
+		}
+		\newpage
+		\outputblock{
+			SELECT EXTRACT(MONTH FROM SYSDATE) FROM dual; \\
+			EXTRACT(MONTHFROMSYSDATE) \\
+			10 \\
+			\\
+			SELECT EXTRACT(DAY FROM SYSDATE) FROM dual; \\
+			EXTRACT(DAYFROMSYSDATE) \\
+			24
+		}
+		
+		\bigskip
+		\item \textbf{TO\_CHAR}: Used to convert a date or timestamp value into a character string, allowing you to format and represent the date or time in various ways. 
+		
+		\outputblock{
+			SELECT TO\_CHAR(SYSDATE, 'YYYY-MM-DD') FROM dual; \\
+			TO\_CHAR(SYSDATE,'YYYY-MM-DD') \\
+			2023-10-24 \\
+			\\
+			SELECT TO\_CHAR(SYSDATE, 'DD-MON-YYYY HH:MI:SS AM') FROM dual; \\
+			TO\_CHAR(SYSDATE,'DD-MON-YYYYHH:MI:SSAM') \\
+			24-OCT-2023 01:47:54 PM \\
+			\\
+			SELECT TO\_CHAR(SYSDATE, 'Day, DD-MON-YYYY') FROM dual; \\
+			TO\_CHAR(SYSDATE,'DAY,DD-MON-YYYY') \\
+			Tuesday  , 24-OCT-2023
+		}
+	\end{itemize}	
+
+\end{flushleft}
+
+\newpage

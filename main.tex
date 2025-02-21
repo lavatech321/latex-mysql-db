@@ -1,0 +1,613 @@
+%https://www.overleaf.com/learn/latex/Subscripts_and_superscripts
+\RequirePackage[2020-02-02]{latexrelease}
+\documentclass[14pt,fleqn]{extbook} % Default font size and left-justified equations
+\usepackage{graphicx}
+\usepackage{setspace}
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\definecolor{light}{rgb}{0.5, 0.5, 0.5}
+\definecolor{back}{RGB}{245, 214, 235}
+\definecolor{sborder}{RGB}{255, 230, 234}
+\definecolor{scontent}{RGB}{255, 191, 191}
+\definecolor{oborder}{RGB}{214, 245, 214}
+\definecolor{ocontent}{RGB}{148, 201, 115}
+\definecolor{eborder}{RGB}{255, 153, 153}
+\definecolor{econtent}{RGB}{255, 0, 0}
+\definecolor{ans}{RGB}{242, 242, 242}
+\def\light#1{{\color{light}#1}}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{tabulary}
+\usepackage{adjustbox}
+\usepackage{subfig}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{afterpage}
+
+\tcbuselibrary{breakable}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{multirow}
+% tickmarks and wrong mark
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\definecolor{ncontent}{RGB}{255, 242, 0}
+\definecolor{nborder}{RGB}{255, 255, 179}
+
+\definecolor{border}{RGB}{245,245,245}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\fancyfoot[R]
+{
+	\includegraphics[scale=0.6]{content/logo.png}%
+}
+
+
+\usepackage{framed}
+
+
+\newcommand{\codeblockfull}[2] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{#1},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#2
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\codeblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Code:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+
+\newcommand{\codecontinue}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+
+\newcommand{\datablock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Dataset:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\syntaxblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=scontent,
+		title=\textbf{Syntax:},
+		colframe=sborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\noteblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=ncontent,
+		title=\textbf{Note:},
+		colframe=nborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\outputblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=ocontent,
+		title=\textbf{Query:},
+		colframe=oborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\errorblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=econtent,
+		title=\textbf{Error:},
+		colframe=eborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\n} {
+	\newline
+}
+
+\newcommand{\boximage}[2] {
+	\includegraphics[width=#1\textwidth]{#2}
+}
+
+
+\newcommand{\s} {
+	\hphantom{} \hphantom{} \hphantom{}
+}
+
+\newcommand{\bspace} {
+	\bigskip
+}
+
+\newcommand{\tabletwo}[1] {
+	\bspace
+	\begin{tabular}{ |p{7cm}|p{7cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\tableinsidebox}[1] {
+	\bspace
+	\begin{tabular}{ |p{6cm}|p{6cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\commandblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Query:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\tablethree}[1] {
+	\bspace
+	\begin{tabular}{ |p{4cm}|p{4cm}|p{4cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+
+\newcommand{\tablefour}[1] {
+	\bspace
+	\begin{tabular}{ |p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\error}[1] {
+	\color{red}\# Error: \newline
+	#1 \color{black}
+}
+
+\newcommand{\ecode}[1] {
+	\color{red}
+	#1 \color{black}
+}
+
+
+\newcommand{\correct}[1] {
+	\color{correctans}\# Output: \newline
+	#1 \color{black}
+}
+
+\newcommand{\answer}[1] {
+	
+	\begin{tcolorbox}[space to upper,
+		colback=ans,
+		collower=white,
+		coltitle = black, 
+		colframe=border,
+		title={Answer:},]
+		#1
+	\end{tcolorbox}
+}
+
+\newcommand{\quest}[2] {
+	\begin{tcolorbox}[space to upper,
+		colback=ans,
+		collower=white,
+		coltitle = white, 
+		title={\textbf{#1}},]
+		Ans: #2
+	\end{tcolorbox}
+}
+
+\newcommand{\anscontinue}[1] {
+	\begin{tcolorbox}
+		#1
+	\end{tcolorbox}
+}
+
+\newcommand{\newimage}[2] {
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=#1]{#2}
+	\end{figure}			
+}
+
+\thispagestyle{plain}
+%\hypersetup{pdftitle={Title},pdfauthor={Author}} % Uncomment and fill out to include PDF metadata for the author and title of the book
+
+%----------------------------------------------------------------------------------------
+\setstretch{1.25}
+%\definecolor[new][h=9A957A, a=1, t=.3]
+\definecolor{code}{RGB}{248,248,248}
+\definecolor{output}{RGB}{148, 201, 115}
+\definecolor{error}{RGB}{255, 77, 77}
+\definecolor{trick}{RGB}{242, 204, 255}
+%%%%%%%%%%%%%%%%%%%%%%%   This block adds watermark  %%%%%%%%%%%%%%%%%
+%\newsavebox\mybox
+%\savebox\mybox{\tikz[color=mycolor,opacity=0.2]\node{lavatechtechnology.com};}
+%\newwatermark*[
+%allpages,
+%angle=45,
+%scale=2.5,
+%xpos=-20,
+%ypos=15
+%]{\usebox\mybox}
+%%%%%%%%%%%%%%%%%%%%%%%   This block adds watermark  %%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth, height=\paperheight]{db.pdf}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+
+
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2024 Lavatech Technology\\ % Copyright notice
+
+The contents of this course and all its modules and related materials, including handouts are
+Copyright ©
+
+No part of this publication may be stored in a retrieval system, transmitted or reproduced in any way, including, but not limited to, photocopy, photograph, magnetic, electronic or other record, without the prior written permission of Lavatech Technology.
+
+If you believe Lavatech Technology training materials are being used, copied, or otherwise improperly distributed please e-mail: 
+\newline
+\textbf{info@lavatechtechnology.com}
+
+\noindent \textsc{Published by Lavatech Technology}\\ % Publisher
+
+\noindent \textit{lavatechtechnology.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\  License information, replace this with your own license (if any)
+%
+\noindent \textit{January 2024} % Printing/edition date
+
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+\usechapterimagetrue % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{image1.png} % Table of contents heading image
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+
+\tableofcontents
+
+
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+\pagestyle{fancy} % Enable headers and footers again
+
+%----------------------------------------------------------------------------------------
+%	PART One
+%----------------------------------------------------------------------------------------
+
+%\part{System Admin Level I}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 0
+%----------------------------------------------------------------------------------------
+%\input{content/chapter1/1.0.tex}
+\chapterimage{oracle.png}
+\chapter{Oracle RDBMS}
+\subsection{Data, database \& DBMS}
+\input{content/chapter1/1.1.tex}
+%\subsection{Database users}
+%\input{content/chapter1/1.1.1.tex}
+\subsection{What is RDBMS?}
+\input{content/chapter1/1.1.5.tex}
+%\subsection{RDBMS features}
+%\input{content/chapter1/1.1.4.tex}
+%\subsection{Brief on E.F CODD}
+%\input{content/chapter1/1.1.2.tex}
+\subsection{RDBMS v/s DBMS}
+\input{content/chapter1/1.1.3.tex}
+\subsection{What is database server?}
+\input{content/chapter1/1.1.6.tex}
+\subsection{RDBMS in Business}
+\input{content/chapter1/1.1.7.tex}
+%\subsection{History of Oracle Database}
+%\input{content/chapter1/1.1.8.tex}
+\subsection{Oracle Database Installation}
+\input{content/chapter1/1.1.10.tex}
+\subsection{Oracle DB User}
+\input{content/chapter1/1.1.9.tex}
+\subsection{What is SQL?}
+\input{content/chapter1/1.1.11.tex}
+
+
+%\input{content/chapter1/1.0.tex}
+\chapterimage{index3.png}
+\chapter{ERD}
+\section{ERD}
+\subsection{Entity Relationship Diagram (ERD)}
+\input{content/chapter1/1.1.12.tex}
+\subsection{Relationship types}
+\input{content/chapter1/1.1.13.tex}
+\subsection{ERD example}
+\input{content/chapter1/1.1.15.tex}
+%\subsection{Physical data model}
+%\input{content/chapter1/1.1.14.tex}
+%\subsection{Physical data model example}
+%\input{content/chapter1/1.1.16.tex}
+%\section{DFD}
+%\subsection{Data Flow Diagram (DFD)}
+%\input{content/chapter1/1.1.17.tex}
+
+
+\chapterimage{index4.png}
+\chapter{Datatypes in Oracle DB}
+\subsection{Identifiers}
+\input{content/chapter2/2.1.tex}
+\subsection{Datatypes}
+\input{content/chapter2/2.1.1.tex}
+\section{Constraints}
+\input{content/chapter4/4.1.tex}
+\subsection{Domain Integrity Constraints}
+\input{content/chapter4/4.1.2.tex}
+\subsection{Entity Integrity Constraints}
+\input{content/chapter4/4.1.3.tex}
+\subsection{Referential Integrity Constraints}
+\input{content/chapter4/4.1.4.tex}
+\section{Composite key}
+\input{content/chapter4/4.1.5.tex}
+
+\chapterimage{index5.png}
+\chapter{SQL commands}
+\input{content/chapter3/3.1.tex}
+\section{Data Definition Language (DDL)}
+\input{content/chapter3/3.1.1.tex}
+\subsection{CREATE}
+\input{content/chapter3/3.1.2.tex}
+\subsection{TRUNCATE}
+\input{content/chapter3/3.1.4.tex}
+\subsection{RENAME}
+\input{content/chapter3/3.1.5.tex}
+\subsection{ALTER}
+\input{content/chapter3/3.1.3.tex}
+\subsection{DROP}
+\input{content/chapter3/3.1.6.tex}
+\subsection{FLASHBACK}
+\input{content/chapter3/3.1.7.tex}
+\subsection{PURGE}
+\input{content/chapter3/3.1.8.tex}
+%\subsection{COMMENT}
+%\input{content/chapter3/3.1.9.tex}
+\section{Data Manipulation Language (DML)}
+\input{content/chapter3/3.2.tex}
+\subsection{INSERT}
+\input{content/chapter3/3.2.1.tex}
+\subsection{UPDATE}
+\input{content/chapter3/3.2.3.tex}
+\subsection{DELETE}
+\input{content/chapter3/3.2.4.tex}
+\subsection{MERGE}
+\input{content/chapter3/3.2.5.tex}
+\section{Data Query Language (DQL)}
+\input{content/chapter3/3.2.6.tex}
+\subsection{SELECT}
+\input{content/chapter3/3.2.2.tex}
+\subsection{DESCRIBE}
+\input{content/chapter3/3.2.10.tex}
+\section{Data Control Language (DCL)}
+\input{content/chapter3/3.3.tex}
+\subsection{GRANT}
+\input{content/chapter3/3.3.1.tex}
+\subsection{REVOKE}
+\input{content/chapter3/3.3.2.tex}
+%\subsection{SET ROLE}
+%\input{content/chapter3/3.3.3.tex}
+\section{Transaction Control Language (TCL)}
+\input{content/chapter3/3.4.tex}
+\subsection{COMMIT}
+\input{content/chapter3/3.4.1.tex}
+\subsection{ROLLBACK}
+\input{content/chapter3/3.4.2.tex}
+%\subsection{SAVEPOINT}
+%\input{content/chapter3/3.4.3.tex}
+%\subsection{SET TRANSACTION}
+%\input{content/chapter3/3.4.4.tex}
+
+%\chapterimage{index6.png}
+%\chapter{Operators in Oracle DB}
+%\input{content/chapter5/5.1.1.tex}
+%\section{Unary Operators}
+%\input{content/chapter5/5.1.tex}
+%\section{Binary Operators}
+%\subsection{Arithematic Operators}
+%\input{content/chapter5/5.1.2.tex}
+%\subsection{Concatenation Operators}
+%\input{content/chapter5/5.1.3.tex}
+%\subsection{Relational/Comparison Operators}
+%\input{content/chapter5/5.1.4.tex}
+%\subsection{Other Relational Operators}
+%\input{content/chapter5/5.1.5.tex}
+%\subsection{Logical Operators}
+%\input{content/chapter5/5.1.6.tex}
+%\section{Set Operators}
+%\input{content/chapter5/5.1.8.tex}
+
+%\chapterimage{index7.png}
+%\chapter{Pseudo Columns}
+%\subsection{Introduction on Pseudo Columns}
+%\input{content/chapter10/10.1.tex}
+%\subsection{ROWID}
+%\input{content/chapter10/10.1.1.tex}
+%\subsection{ROWNUM}
+%\input{content/chapter10/10.1.2.tex}
+%\subsection{SYS\_GUID}
+%\input{content/chapter10/10.1.3.tex}
+%\subsection{ORA\_ROWSCN}
+%\input{content/chapter10/10.1.4.tex}
+
+%\chapterimage{index8.png}
+%\chapter{SQL Functions}
+%\input{content/chapter6/6.1.4.tex}
+%\subsection{Character Functions}
+%\input{content/chapter6/6.1.tex}
+%\subsection{Number Functions}
+%\input{content/chapter6/6.1.1.tex}
+%\subsection{Date Functions}
+%\input{content/chapter6/6.1.2.tex}
+%\subsection{Conversion Functions}
+%\input{content/chapter6/6.1.3.tex}
+
+\chapterimage{index9.png}
+\chapter{Joins}
+\section{Set Operators}
+\input{content/chapter5/5.1.8.tex}
+\section{What is Join?}
+\input{content/chapter7/7.1.tex}
+\subsection{Inner Join}
+\input{content/chapter8/8.1.1.tex}
+\subsection{Outer Join}
+\input{content/chapter8/8.1.2.tex}
+\subsection{Self-Join}
+\input{content/chapter8/8.1.3.tex}
+\subsection{Cartesian Join}
+\input{content/chapter8/8.1.4.tex}
+
+\chapterimage{index10.png}
+\chapter{Subquery}
+\subsection{What is subquery?}
+\input{content/chapter9/9.1.tex}
+\subsection{Single value/row subquery}
+\input{content/chapter9/9.1.1.tex}
+\subsection{Multi value/row subquery}
+\input{content/chapter9/9.1.2.tex}
+\subsection{Multi-column subquery}
+\input{content/chapter9/9.1.4.tex}
+\subsection{Correlated subquery}
+\input{content/chapter9/9.1.3.tex}
+
+%\chapterimage{index11.png}
+%\chapter{Normalization}
+%\subsection{Introduction to Normalization}
+%\input{content/chapter11/11.1.tex}
+%\subsection{1NF (First Normal Form)}
+%\input{content/chapter11/11.1.1.tex}
+%\subsection{2NF (Second Normal Form)}
+%\input{content/chapter11/11.1.2.tex}
+%\subsection{3NF (Third Normal Form)}
+%\input{content/chapter11/11.1.3.tex}
+%\subsection{BCNF (Boyce-Codd Normal Form)}
+%\input{content/chapter11/11.1.4.tex}
+%\subsection{4NF (Fourth Normal Form)}
+%\input{content/chapter11/11.1.5.tex}
+%\subsection{5NF (Fifth Normal Form)}
+%\input{content/chapter11/11.1.6.tex}
+%\subsection{6NF (Sixth Normal Form)}
+%\input{content/chapter11/11.1.7.tex}
+
+\end{document}
+
+
+
+
+

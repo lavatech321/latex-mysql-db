@@ -1,0 +1,59 @@
+
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{Unordered collection of key and value pair}, enclosed in "\{\}", wherein key is unique and values can be duplicate. Key and value can be any datatype.
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=8pt
+			Syntax: \{key:value, key:value, ...\}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg:	
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			a=\{ "name":"Raman" , "age":56 , "skill":"Python" \}
+			\newline
+			print(a,type(a))
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			\{'name': 'Raman', 'age': 56, 'skill': 'Python'\} <class 'dict'>
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		
+		\item Dictionary is mutable datatype. You cannot add, remove or change existing list members.
+		\newline
+		Eg:			
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			info=\{ "name":"Raman" , "age":56 , "skill":"Python" \} \newline
+			info['name']="Ram" \newline
+			info['city']="Pune" \newline
+			print(info)
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			{'name': 'Ram', 'age': 56, 'skill': 'Python', 'city': 'Pune'}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		\item Being mutable datatype, memory address of similar tuple datatype is different.
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

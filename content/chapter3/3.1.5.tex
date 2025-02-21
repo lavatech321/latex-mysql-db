@@ -1,0 +1,43 @@
+
+\begin{flushleft}
+	
+	Use RENAME command to rename a table or a column. 
+	\begin{itemize}
+		\item Renaming a table:
+		\bigskip
+		\syntaxblock{
+			RENAME old\_table\_name TO new\_table\_name;	
+		}		
+		Eg:
+		\commandblock{
+			RENAME employees TO staff;
+		}
+		\bigskip
+		\item Renaming a column:
+		\bigskip
+		\syntaxblock{
+			ALTER TABLE table\_name RENAME COLUMN old\_column\_name TO new\_column\_name;
+		}
+		Eg:
+		\commandblock{
+			alter table employee rename column name TO first\_name;
+		}
+		\bigskip
+		\item Renaming a constraint:
+		\syntaxblock{
+			ALTER TABLE table\_name RENAME CONSTRAINT old\_name TO new\_name;
+		}
+		\newpage
+		Eg:
+		\commandblock{
+			CREATE TABLE products( \\
+			\s no number, \\
+			\s name varchar2(20), \\
+			\s CONSTRAINT p PRIMARY KEY(no) \\
+			); \\
+			ALTER TABLE products RENAME CONSTRAINT p TO pk;
+		}
+	\end{itemize}
+	
+	
+\end{flushleft}

@@ -1,0 +1,135 @@
+\begin{flushleft}
+	
+	\newimage{0.4}{content/chapter1/images/4.png}
+	
+	Create a local user in Oracle 21c.
+	\begin{itemize}
+		\item Login as system DBA:
+		
+		\syntaxblock{
+			sqlplus sys/<password>@<TNS service name> as sysdba
+		}
+		where,
+		\begin{itemize}
+			\item <password> is the password that you set during oracle installation.
+			\item <TNS service name> where Transparent Network Substrate (TNS) operates for connection to Oracle databases.
+		\end{itemize}
+		\noteblock{
+			You can find the current database name using below query:
+			\commandblock{
+				SELECT ora\_database\_name FROM dual;
+			}	
+		}
+		Eg:
+		\commandblock{
+		>sqlplus sys/Admin12345@orcl as sysdba
+		}
+		
+		Optionally, you can connect using command prompt with username/password:
+		\commandblock{
+		> sqlplus / as sysdba
+		}
+		
+		
+		\item Once connected to database, alter the session:	
+		\commandblock{
+		SQL> alter session set "\_oracle\_script"=true;
+		}
+	
+		\item Create a local user using below syntax:
+		\syntaxblock{
+			SQL> create user <username> identified by <password>; \\
+			SQL> grant resource,connect,dba to <username>;
+		}
+		\item Eg:
+		\commandblock{
+			SQL> create user jack identified by Admin12345; \\
+			SQL> grant resource,connect,dba to jack;
+		}
+		
+		\item Login as local user:
+		\syntaxblock{
+			sqlplus user/password	
+		}
+		Eg:
+		\commandblock{
+			C:$\backslash$Users$\backslash$Admin> \textbf{sqlplus jack/Admin12345}
+		}
+		
+		\newpage
+		\item You can check current user using below command:
+		\commandblock{
+		SQL> \textbf{show user;} \\
+		USER is "Jack"
+		}
+	
+		\item You can switch user using below command:
+		\commandblock{
+			SQL> \textbf{conn jack} \\
+			Enter password: \\
+			Connected.
+		}
+	
+		\item You can check all user details in "ALL\_USER" table:
+		\commandblock{
+			SQL> \textbf{select username from ALL\_USER;}
+		}
+		
+		\item You can clear the screen using below command:
+		\commandblock{
+			SQL> \textbf{cl scr;}
+		}
+	
+		\item You can drop user account using below command:
+		\bigskip
+		\syntaxblock{
+			drop user username; \\
+			or \\
+			drop user username CASCADE;  
+		}
+		Eg:
+		\commandblock{
+			SQL> drop user jack;
+		}
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Connecting to Oracle SQL developer}
+	
+	\begin{itemize}
+		\item Start the Oracle SQL developer
+		\item Create a new connection by clicking the "+" symbol as shown in screenshot below:
+
+		\newimage{0.4}{content/chapter1/images/image1.png}
+		
+		\item Enter the connection details as shown and click "Test". 
+		\newimage{0.4}{content/chapter1/images/image2.png}
+		
+		Once the test is successful, select "Connect".
+		
+		\item Enlarge the "NewConnection" dropdown and notice all the tables are displayed:
+		\newpage
+		\newimage{0.4}{content/chapter1/images/image3.png}
+		
+		\item Create a new table by executing below query in worksheet. Click the green run logo on top of worksheet to execute the query.
+
+		\commandblock{
+			create table employee(no int, name varchar2(20));
+		}
+		
+		\item Refresh the table to see new table entry:
+		\newimage{0.4}{content/chapter1/images/image4.png}
+		
+		\item Optionally you can execute below query to display all tables:
+		\commandblock{
+			select * from tab;
+		}
+		
+		
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

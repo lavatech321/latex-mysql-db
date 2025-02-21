@@ -1,0 +1,103 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\textbf{unique}
+	\begin{itemize}
+		\item \textbf{Unique} does not allow \textbf{duplicate} values
+		\item It allows \textbf{NULL} values (Any number of NULLs)
+		\item Can be defined at single or multiple \textbf{columns} or at \textbf{table level}
+		\syntaxblock{
+			// Column level \\
+			CREATE TABLE table\_name ( \\
+			\s column1 datatype UNIQUE, \\
+			\s column2 datatype CONSTRAINT constraint\_name UNIQUE \\
+			);  \\
+			// Table level \\
+			CREATE TABLE table\_name ( \\
+			\s column1 datatype, \\
+			\s column2 datatype, \\
+			CONSTRAINT constraint\_name UNIQUE(column1, column2,..)\\
+			); 
+		}
+		Eg: Column level
+		\commandblock{
+			CREATE TABLE product( \\
+			\s	id number UNIQUE, \\
+			\s	name varchar(50) UNIQUE \\
+			); \\
+			CREATE TABLE product( \\
+			name varchar(50) CONSTRAINT con1 UNIQUE(column\_name) \\
+			);
+		}
+		\newpage
+		Eg: Table level
+		\commandblock{
+			create table product1( \\
+			\s no number, \\
+			\s constraint constraint\_name unique\_no unique(no) \\
+			); \\
+			create table product2( \\
+			\s no number, \\
+			\s name varchar2(20), \\
+			\s unique(no,name) \\
+			);
+		}
+	\end{itemize}
+
+	\textbf{Primary key}
+	\begin{itemize}
+		\item A primary key(PK) constraint can:
+		\begin{itemize}
+			\item Enforces data uniqueness.
+			\item Prevent duplicate or NULL values in column
+		\end{itemize}
+		\item Other tables can reference the PK column(s) as foreign keys.
+		\item PK on multiple columns is called composite primary key.
+		\item Oracle database automatically creates a unique index on the primary key column(s). 
+		\newimage{0.3}{content/chapter4/images/new.png}
+		\syntaxblock{
+			// Single column primary key \\
+			CREATE TABLE example ( \\
+			\s column1 datatype PRIMARY KEY, \\
+			\s column2 datatype, \\
+			); \\	 
+ 			// Multiple column primary key \\
+			CREATE TABLE example ( \\
+			\s column1 datatype, \\
+			\s column2 datatype, \\
+			\s CONSTRAINT pk\_example PRIMARY KEY(column1, column2...) \\
+			);	
+		}
+		Eg:
+		\commandblock{
+			create table product( \\
+			\s no number primary key, \\
+			\s name varchar2(30) \\
+			); \\
+			CREATE TABLE sample( \\
+			\s no number, \\
+			\s name varchar2(30), \\
+			\s CONSTRAINT pk PRIMARY KEY(no, name) \\
+			);
+		}
+			
+	\end{itemize}
+ 	
+\end{flushleft}
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+\begin{flushleft}
+	
+	\begin{tabulary}{1.0\textwidth}{|p{7em}|p{12em}|p{7em}|}
+		\toprule
+		\textbf{Operation} & \textbf{Sample code}  & \textbf{Output} \\
+		\midrule
+		Create empty dictionary & a=\{\} \newline print(a,type(a)) & \{\} <class 'dict'> \\
+		\hline
+		Display a specific dictionary key & info=\{ "name":"Raman" , "age":56  \} \newline print(info["name"]) & Raman \\
+		\hline
+		Change an existing key's value & info=\{ "name":"Raman" , "age":56  \} \newline info["name"]="Ram" \newline print(info) & \{'name': 'Ram', 'age': 56\} \\
+		\hline
+		Add new key value pair & info=\{ "name":"Raman" \} \newline info["city"]="Pune" \newline print(info) & \{'name': 'Raman', 'city': 'Pune'\} \\
+		\hline
+		Delete a key value pair & info=\{ "name":"Raman" , "age":56 \}  \newline
+		del info['age'] \newline print(info) & \{'name': 'Raman'\} \\
+		\hline
+		Membership Operator & info={ "name":"Raman" , "age":56  } \newline
+		print('age' \textbf{in} info) & True \\
+		\bottomrule
+	\end{tabulary}
+	
+	
+\end{flushleft}
+\newpage
+

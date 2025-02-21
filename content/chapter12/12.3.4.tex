@@ -1,0 +1,39 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Every interface variable is always \textbf{public, static, final whether we are declaring or not}.
+		\item For interface variables, you should perform initialisation at the time of declaration else you will get compile-time error.
+		\bigskip
+		\codeblock{
+			interface Test1 {
+				int x = 10;
+			}
+		}
+	
+		\bigskip
+		\item Why interface variable is public static and final always?
+		\begin{itemize}
+			\item \textbf{public}: To make variable available to every implementing class.
+			\item \textbf{static}: Without any object also, implementing class should be able to access the variable.
+			\item \textbf{final}: If one implementing class changes value then remaining implementation class will be affected. To restrict this, every interface variable is final.
+		\end{itemize}
+		\item Hence within the interface, the following variable declarations are equal:
+		\bigskip
+		\codeblock{
+			interface Test1 \{ \\
+			\s	int x = 10; \\
+			\s	public int x = 10; \\
+			\s	public static int x = 10; \\
+			\s	public static final int x = 10; \\
+			\s	static final int x = 10; \\
+			\}
+		}
+		
+		
+	\end{itemize}
+	
+	
+\end{flushleft}
+\newpage
+

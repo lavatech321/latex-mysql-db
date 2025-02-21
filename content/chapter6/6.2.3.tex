@@ -1,0 +1,46 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\paragraph{}
+	\bigskip
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.2]{content/practise.jpg}
+	\end{figure}	
+	\begin{enumerate}
+		\item \textbf{Which of the following command is used to display ACL rule of file or directory?}
+		\begin{enumerate}[label=(\alph*)]
+			\item cat
+			\item getfacl  %correct
+			\item visudo
+			\item setfacl  
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+		
+		\item \textbf{Select the correct syntax of \textbf{setfacl} command to add ACL rule.}
+		\begin{enumerate}[label=(\alph*)]
+			\item setfacl -m user:username:permission  file-or-directory  
+			\item setfacl -d -m user:username:permission  file-or-directory
+			\item setfacl -m g:groupname:permission  file-or-directory    %correct
+			\item setfacl -x -m g:groupname:permission  file-or-directory
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		
+		
+		\item \textbf{Select the correct syntax of setfacl command to remove ACL rule.}
+		\begin{enumerate}[label=(\alph*)]
+			\item setfacl -x u:username  file-or-directory  %correct
+			\item setfacl -x g:groupname  file-or-directory   %correct
+			\item setfacl -m g:groupname:permission  file-or-directory
+			\item setfacl -R -m g:groupname:permission  file-or-directory   
+		\end{enumerate}
+	
+	\end{enumerate}
+	
+	
+\end{flushleft}
+
+\newpage

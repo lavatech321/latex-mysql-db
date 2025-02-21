@@ -1,0 +1,165 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\textbf{foreign key}
+	\begin{itemize}
+		\item A foreign key establishes link between two tables.
+		\item It ensures one table's column(foreign key) correspond to another table's primary/unique key(referenced key).
+		\item Reference column may be present in same/different table.
+		\item It allows:
+		\begin{itemize}
+			\item Duplicate values
+			\item NULL values	
+		\end{itemize}
+		\item It can be defined on single/multiple column (compsite key).
+		\item Can be defined at table level or column level.
+		
+		\newimage{0.4}{content/chapter4/images/new.png}
+	
+		\newpage
+		\syntaxblock{
+			// Table level \\
+			CREATE TABLE child\_table ( \\
+			\s column1 datatype, \\
+			\s column2 datatype, \\
+			\s referenced\_column datatype, \\
+			\s CONSTRAINT fk\_name FOREIGN KEY \\ 
+			\s (referenced\_column) \\ 
+			\s REFERENCES parent\_table (primary\_key\_column) \\
+			); \\
+			// Column level \\
+			CREATE TABLE child\_table ( \\
+			\s column1 datatype, \\
+			\s column2 datatype, \\
+			\s referenced\_column datatype CONSTRAINT fk\_name \\
+			\s REFERENCES parent\_table(primary\_key\_column) \\
+			);
+		}
+		Eg:
+		\commandblock{
+			CREATE TABLE product( \\
+			\s pno number PRIMARY KEY, \\
+			\s pname varchar(20), \\
+			); \\
+			CREATE TABLE productOrder( \\
+			\s no number, \\
+			\s pno number CONSTRAINT fk  \\
+			\s REFERENCES product(pno) \\
+			); 
+		}	
+		\newpage
+		\codecontinue{
+			CREATE TABLE productOrder( \\
+			\s no number, \\
+			\s CONSTRAINT fk FOREIGN KEY(pno)  \\
+			\s REFERENCES product(pno) \\
+			);
+		}
+	\end{itemize}
+	
+	\textbf{ON DELETE SET NULL}
+	\begin{itemize}
+		\item Specify a foreign key column should be set NULL when corresponding row in parent table is deleted. 
+		\bigskip
+		\syntaxblock{
+			CREATE TABLE child\_table ( \\
+			\s column1 datatype, \\
+			\s parent\_reference datatype, \\
+			\s CONSTRAINT fk\_parent\_reference  \\
+			\s FOREIGN KEY (parent\_reference) \\
+			\s REFERENCES parent\_table(parent\_id) \\
+			\s \textbf{ON DELETE SET NULL} \\
+			);
+		}
+		\item Eg:
+		\commandblock{
+			CREATE TABLE product( \\
+			\s pno number PRIMARY KEY, \\
+			\s pname varchar(20) \\
+			); 
+		}
+		\newpage
+		\codecontinue{
+			create table productOrder( \\
+			\s id number, \\
+			\s pno number, \\
+			\s odate date, \\
+			\s constraint fk foreign key(pno)  \\
+			\s references product(pno) \\
+			\s \textbf{on delete set null} \\
+			); \\
+			insert into product values(101,'cadbury'); \\
+			insert into product values(102,'5-star'); \\
+			insert into product values(103,'kitkat'); \\
+			insert into productOrder values(201,101,SYSDATE); \\
+			insert into productOrder values(202,101,SYSDATE); \\
+			insert into productOrder values(203,103,SYSDATE); \\
+			insert into productOrder values(204,102,SYSDATE);  \\
+			delete from product where pno=101; 
+		}
+		\bigskip
+		\outputblock{
+		select * from productOrder; \\
+		ID 	\s	PNO \s	ODATE \\
+		201	\s  - 	\s	06-OCT-23 \\
+		202	\s -  	\s	06-OCT-23 \\
+		203 \s	103 \s	06-OCT-23 \\
+		204	\s 	102 \s	06-OCT-23 
+		}
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{ON DELETE CASCADE}
+	\begin{itemize}
+		\item Specify when a row in the parent table is deleted, all related rows in the child table should be deleted. 
+		\bigskip
+		\syntaxblock{
+			CREATE TABLE child\_table ( \\
+			\s column1 datatype, \\
+			\s parent\_reference datatype, \\
+			\s CONSTRAINT fk\_parent\_reference  \\
+			\s FOREIGN KEY (parent\_reference) \\
+			\s REFERENCES parent\_table(parent\_id) \\
+			\s \textbf{ON DELETE CASCADE} \\
+			);
+		}
+		\item Eg:
+		\commandblock{
+			CREATE TABLE product( \\
+			\s pno number PRIMARY KEY, \\
+			\s pname varchar(20) \\
+			); \\ 
+			create table productOrder( \\
+			\s id number, \\
+			\s pno number, \\
+			\s odate date, \\
+			\s constraint fk foreign key(pno)  \\
+			\s references product(pno) \\
+			\s \textbf{on delete cascade} \\
+			); \\
+			insert into product values(101,'cadbury'); \\
+			insert into product values(102,'5-star'); \\
+			insert into product values(103,'kitkat'); \\
+			insert into productOrder values(201,101,SYSDATE); 
+
+		}
+		\newpage
+		\codecontinue{
+			insert into productOrder values(202,101,SYSDATE); \\
+			insert into productOrder values(203,103,SYSDATE); \\
+			insert into productOrder values(204,102,SYSDATE);  \\
+			delete from product where pno=101; 
+		}	
+		\bigskip
+		\outputblock{
+			select * from productOrder; \\
+			ID \s	PNO \s	ODATE \\
+			203 \s	103 \s	06-OCT-23 \\
+			204 \s	102 \s	06-OCT-23
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+

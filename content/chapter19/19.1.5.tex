@@ -1,0 +1,70 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\begin{itemize}
+	\item \textbf{scp}: Stands for \textbf{S}ecure \textbf{C}o\textbf{P}y. It is used to copy data securely from one Linux server to another.
+	\newline
+	scp command will ask for remote SSH server's user account password or key passphrase.
+	\bigskip
+		
+	\item \textbf{Copy file using scp:}
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+
+		Syntax: scp [option] [user@]SRC\_HOST:]file1 [user@]DEST\_HOST:]file2
+
+	\end{tcolorbox}
+	
+	\bigskip
+	
+	Eg: Copy file from remote SSH server to SSH client's /tmp folder.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# scp jack@192.168.0.108:~/one.txt  /tmp
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	\bigskip
+	
+	Eg: Copy file from SSH client's /home/jim/data.txt to remote SSH server's /tmp folder.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# scp  /home/jim/data.txt  jack@192.168.0.108:/tmp
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	\item \textbf{Copy folder using scp:}
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: scp -R [user@]SRC\_HOST:]folder1 [user@]DEST\_HOST:]folder2
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	\bigskip
+
+	Eg: Copy folder from remote SSH server to SSH client's /tmp folder.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# scp -R jack@192.168.0.108:~/data  /tmp
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	\bigskip
+	Eg: Copy folder /home/jim/data of SSH client to remote SSH server's /tmp folder.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# scp -R /home/jim/data  jack@192.168.0.108:/tmp
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+		
+\end{itemize}
+
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,88 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	An outer join returns matching rows in both tables, as well as any unmatched rows from one or both tables, depending on the type of outer join used.
+	
+	Consider below 2 tables:
+	\commandblock{
+		CREATE TABLE employee(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		INSERT INTO employee VALUES(101, 'Ravi', 'Sharma');	\\
+		INSERT INTO employee VALUES(102, 'Kavi', 'Verma');	\\
+		INSERT INTO employee VALUES(103, 'Jimmy', 'Kumar');	\\
+		INSERT INTO employee VALUES(104, 'Josh', 'Kumar');	\\
+		\\
+		CREATE TABLE contractor(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		INSERT INTO contractor VALUES(101, 'Jimmy', 'Kumar');	\\
+		INSERT INTO contractor VALUES(102, 'Jack', 'Snow');	\\
+		INSERT INTO contractor VALUES(103, 'Penny', 'Copper');	\\
+		INSERT INTO contractor VALUES(104, 'Kavi', 'Verma');
+	}
+
+	\begin{itemize}
+		\item \textbf{LEFT OUTER JOIN (or LEFT JOIN):}
+		Returns all rows from the LEFT-hand table specified in the ON condition and only those rows from the other table where the joined fields are equal (join condition is met).
+		\newimage{0.6}{content/chapter8/images/left.png}
+		\outputblock{
+			SELECT * FROM employee  \\
+			LEFT OUTER JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name; \\
+			or \\
+			SELECT * FROM employee  \\
+			LEFT JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name; \\
+			\\
+			ID \s	FIRST\_NAME \s	SECOND\_NAME \s	ID \s	FIRST\_NAME \s	SECOND\_NAME \\
+			------------------------------------------------------------------\\
+			103 \s	Jimmy \s	Kumar \s	101 \s	Jimmy \s	Kumar \\
+			102 \s	Kavi \s	Verma \s	104 \s	Kavi \s	Verma \\
+			101 \s	Ravi \s	Sharma \s	 - \s 	 - \s 	 -  \\
+			104 \s	Josh \s	Kumar \s	 -  \s 	 -  \s 	 - 
+		}
+		\item \textbf{RIGHT OUTER JOIN (or RIGHT JOIN):} 
+		Returns all rows from the RIGHT-hand table specified in the ON condition and only those rows from the other table where the joined fields are equal (join condition is met).
+		
+		\newimage{0.7}{content/chapter8/images/right.png}
+		
+		\outputblock{
+			SELECT * FROM employee  \\
+			RIGHT OUTER JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name; \\
+			or \\
+			SELECT * FROM employee  \\
+			RIGHT JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name; \\
+			\\
+			----------------------------------------------------------------- \\
+			ID \s	FIRST\_NAME \s	SECOND\_NAME \s	ID \s	FIRST\_NAME  \s	SECOND\_NAME \\
+			102  \s	Kavi  \s	Verma  \s	104  \s	Kavi  \s	Verma \\
+			103  \s	Jimmy  \s	Kumar  \s	101  \s	Jimmy	 \s Kumar \\
+			-   \s	 -   \s	 -  \s 	103  \s	Penny  \s	Copper \\
+			- 	 \s -  \s 	 -  \s 	102  \s	Jack  \s	Snow
+		}
+		\item \textbf{Full Outer Joins or Full Joins:}
+		Returns all rows from the LEFT-hand table and RIGHT-hand table with nulls in place where the join condition is not met.
+		\newimage{0.7}{content/chapter8/images/full.png}
+		\newpage
+		\outputblock{
+			SELECT * FROM employee  \\
+			FULL JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name; \\
+			or \\
+			SELECT * FROM employee  \\
+			FULL OUTER JOIN contractor \\
+			ON employee.first\_name = contractor.first\_name;  \\
+			\\
+			ID \s	FIRST\_NAME \s	SECOND\_NAME \s	ID \s	FIRST\_NAME  \s	SECOND\_NAME \\
+			-------------------------------------------------------------------------\\
+			103 \s	Jimmy \s	Kumar \s	101 \s	Jimmy \s	Kumar \\
+			-  \s	 -  \s	 - \s 	102  \s	Jack  \s	Snow \\
+			-  \s	 -  \s	 -  \s	103 \s	Penny \s	Copper \\
+			102 \s	Kavi \s	Verma \s	104 \s	Kavi \s	Verma \\
+			101 \s	Ravi \s	Sharma \s	 -  \s	 -  \s	 -  \\
+			104 \s	Josh \s	Kumar \s	 - 	 \s -  \s	 - 
+		}
+	\end{itemize}
+		
+\end{flushleft}
+
+\newpage

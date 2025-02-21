@@ -1,0 +1,20 @@
+
+\begin{flushleft}
+	\begin{itemize}
+		\item TRUNCATE deletes all rows from table.
+		\item TRUNCATE does not generate any undo logs, so you cannot roll back the operation.
+		\item Truncate does not reclaim space immediately; it releases space to the tablespace, making it available for future inserts. \item Use DROP STORAGE option to immediately release the space.
+		\bigskip
+		\syntaxblock{
+			truncate table table\_name [drop storage];
+		}
+		\bigskip
+		\commandblock{
+			truncate table dummy; \\
+			truncate table dummy drop storage;
+		}
+		
+	\end{itemize}
+	
+	
+\end{flushleft}

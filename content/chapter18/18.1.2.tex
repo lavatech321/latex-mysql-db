@@ -1,0 +1,44 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+\bigskip
+
+\textbf{/}: This is the compulsory partition. Minimum size of this partition is \textbf{20 GB}. 
+\newline
+Below partition can be created separately to have more structured filesystem:
+\begin{itemize}
+	\item \textbf{/boot}: Minimum size for this partition is 512 MB.
+	\item \textbf{swap}: Recommended swap partition size:
+	\begin{tabulary}{1.0\textwidth}{|p{10em}|p{10em}|}
+		\toprule
+		\textbf{Amount of RAM installed in system} & \textbf{Recommended swap space}\\
+		\midrule
+		≤ 2GB & 2xRAM \\
+		\hline
+		2GB – 8GB & = RAM \\
+		\hline
+		8GB – 64GB & 4G to 0.5xRAM \\
+		\hline
+		>64GB & Minimum 4G, depends on type of application installed, number of user etc.\\
+		\bottomrule
+	\end{tabulary}
+	
+	\bigskip\bigskip
+	\item \textbf{/var}: It is recommended to have \textbf{/var} as separate partition to have a separate space for logs, libraries \& temporary files. Minimum space required is \textbf{5GB}.
+	\item \textbf{/home}: It is recommended to have \textbf{/home} as separate partition. Minimum recommended size of \textbf{8GB}.
+	
+\end{itemize}
+ 
+ 
+ \begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
+ 	\color{black}
+ 	Note: It is recommended to install Linux OS using LVM rather than normal partitions.
+ \end{tcolorbox}
+ 
+ 
+ 
+
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,37 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Method overriding means method in the child class has the \textbf{same name, return type, arguments} as a method in the parent class.
+		\item Key points:
+		\begin{itemize}
+			\item \textbf{Signature:} \textbf{Same signature} (name, return type, arguments) is required for overriding \& overridden method.
+			\item \textbf{Access modifier:} Overriding method \textbf{cannot have a more restrictive access modifier} than overridden method.
+			\item \textbf{@Override annotation:} Optionally, use \textbf{@Override} annotation.
+		\end{itemize}
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			class Animal \{ \\
+			\s	public void makeSound() \{ \\
+			\s \s		System.out.println("Animal makes a sound"); \\
+			\s	\} \\
+			\} \\
+			class Cat extends Animal \{ \\
+			\s	\textbf{@Override} \\
+			\s 	\textbf{public void makeSound()} \{ \\
+			\s \s		System.out.println("Cat meows"); \\
+			\s	\} \\
+			\} \\
+			class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Animal animal1 = new Cat(); \\
+			\s \s		\textbf{animal1.makeSound();} // Output: Cat meows \\
+			\s	\} \\
+			\}
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

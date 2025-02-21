@@ -1,0 +1,124 @@
+
+\begin{flushleft}
+		
+	\begin{tabular}{|p{8em}|p{8em}|p{6em}|}
+
+	\multicolumn{3}{l}{} \\
+	\multicolumn{3}{l}{\textbf{index()} - Return index of first matched item}    
+	\\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	\multicolumn{1}{|l|}{list.index(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=("Ram","Raman","Ravi") \\
+			print(t1.index('Raman')) \end{tabular}}   &  
+	1  \\ 
+	\hline
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{count()} - Returns the count of number of items passed as an argument}   \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{list.count(element)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=("Raman","Ravi","Raman") \\
+			print(t1.count('Raman'))
+			\end{tabular}}   &  
+	2  \\ 
+	\hline				
+	
+	\multicolumn{3}{l}{} \\
+	\multicolumn{3}{l}{\textbf{len()} - Return length of list}                  
+	\\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	\multicolumn{1}{|l|}{len(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=("apple","mango")\\ 
+			print(len(a)) \end{tabular}}   &  
+	2  \\ 
+	\hline
+	
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{tuple()} - Convert other datatype to tuple}   \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{list()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a="app"\\ 
+			var=tuple(a) \\
+			print(var)\end{tabular}}   &  
+	('a','p','p') \\ 
+	\hline				
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{max()} - Find maximum integer in a list}  \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{max(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=[4500,3400,1200] \\
+			print(max(t1)) \end{tabular}}   &  
+	4500 \\ 
+	\hline				
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{} \\ 
+	\multicolumn{3}{l}{} \\ 			
+	
+	\end{tabular}
+	
+\begin{tabular}{|p{8em}|p{8em}|p{6em}|}
+
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{min()} - Find minimum integer in a list} \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{min(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=(4500,3400,1200) \\
+			print(min(t1)) \end{tabular}}   &  
+	1200\\ 
+	\hline				
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{sum()} - Perform sum of all items in list} \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{sum(list)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=(10,20,30) \\
+			print(sum(t1)) \end{tabular}}   &  
+	60 \\
+	\hline				
+
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{enumerate()} - Enumerate all items in the tuple}  \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{enumerate(tuple,start\_pos)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=("A","B") \\
+			data=tuple(enumerate(a,1))\\
+			print(data) \end{tabular}}   &  
+	\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}((1, 'A'),  \\
+			(2, 'B')) \end{tabular}}
+	 \\
+	\hline				
+	
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{zip()} - Map items in multiple tuple}   \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 			\hline
+	\multicolumn{1}{|l|}{zip(list1,list2,list3,..)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a=("ca1","pal") \\
+			b=(10,20) \\
+			data=tuple(zip(a,b)) \\
+			print(data) \end{tabular}}   &  
+	\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}(('ca1', 10),  \\
+			 ('pal', 20)) \end{tabular}}
+	 \\
+	\hline				
+
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{sorted()} - Sort items in tuple}   \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 			\hline
+	\multicolumn{1}{|l|}{sorted(tuple)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}t1=(4500,3400,1200) \\
+			print(sorted(t1)) \end{tabular}}   &  
+	\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}[1200,  \\
+			3400, 4500]
+	 \end{tabular}}
+	\\
+	\hline				
+	
+	
+\end{tabular}
+
+
+\end{flushleft}
+
+
+\newpage

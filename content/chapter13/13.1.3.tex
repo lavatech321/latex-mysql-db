@@ -1,0 +1,31 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Ways of creating new String object:
+	\syntaxblock{
+		String s = <String literal>; \\
+		String s = new String();  \\
+		String s = new String(String literal); \\
+		String s = new String(StringBufer sb); \\
+		String s = new String(StringBuilder sb);		
+	}
+	Creating String object using character array:
+	\syntaxblock{
+		String s = new String(char[] ch);
+	}
+	\codeblock{
+		char[] ch = \{'a','b','c','d','e'\}; \\
+		String s1 = new String(ch); // Output: abcde 
+	}
+	Creating String object using byte array:
+	\bigskip
+	\syntaxblock{
+		String s = new String(byte[] b);
+	}
+	\bigskip
+	\codeblock{
+		byte[] b = \{97,98,99,100\}; \\
+		String s1 = new String(b); // Output: abc 
+	}
+
+\end{flushleft}
+

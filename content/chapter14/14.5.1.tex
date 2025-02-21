@@ -1,0 +1,113 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item HashMap class implements Map interface.
+		\item The underlying data structure is \textbf{hash table}.
+		\newimage{0.2}{content/chapter14/images/hash.png}		
+		\item Features:
+		\begin{itemize}
+			\item It is \textbf{resizable array}.
+			\item \textbf{Duplicate keys not allowed}, but duplicate values are allowed.
+			\item \textbf{Insertion} order is not \textbf{preserved} and it is based on hashCode of objects.
+			\item \textbf{Hetrogenous keys and values are allowed.}
+			\item \textbf{Null key is allowed (only once) , null value is allowed any number of times}.
+		\end{itemize}
+		\item Best choice for frequent \textbf{search operation}.		
+	\end{itemize}
+	
+	\textbf{Ways of initializing HashMap}
+	
+	\begin{itemize}
+		\item Creating am empty HashMap:
+		\bigskip
+		\syntaxblock{
+			HashMap s1 = new HashMap(); \\
+		}
+		\bigskip
+		\item \textbf{HashMap capacity \& fill ratio}:
+		\begin{itemize}
+			\item Above syntax will create HashMap with \textbf{default capacity of 16}.
+			\item Default fill ratio is \textbf{0.75}: Fill ratio is after filling 16th element, when 17th element is added, it’s new capacity should be increased by 75\%. Fill ratio is also called Load factor			
+		\end{itemize}		
+		\item Creating am empty HashMap with initial capacity:
+		\bigskip
+		\syntaxblock{
+			HashMap h = new HashMap(int initialcapacity);
+		}
+		
+		\item Creating an empty HashMap with initial capacity and fill ratio:
+		\bigskip
+		
+		\syntaxblock{
+			HashMap h = new HashMap(int initialcapacity, float fillratio);
+		}
+		Eg:
+		\codeblock{
+			HashMap h = new HashMap(1000, 0.9);
+		}
+	\end{itemize}
+	
+	\textbf{HashMap specific methods}
+	
+	\begin{itemize}
+		\item Return a collection view of the mappings contained in this map.
+		\syntaxblock{
+			Set entrySet()	
+		}
+		\bigskip
+		\item Return a set view of the keys contained in this map.
+		\syntaxblock{
+			Set keySet()	
+		}
+		\bigskip
+		\item Return a set view of the keys contained in this map.
+		\syntaxblock{
+			Set keySet()	
+		}
+		\bigskip
+		\item Returns a collection view of the values contained in the map.
+		\syntaxblock{
+			Collection<V> values()	
+		}
+		\bigskip
+		\item Replaces the specified value for a specified key.
+		\syntaxblock{
+			Value replace(K key, V value)	
+		}
+	\end{itemize}
+
+	\textbf{Example Program}: Display HashMap operations:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class one \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		\textbf{HashMap map = new HashMap();} \\
+		\s \s		\textbf{map.put("Raman",101);} \\
+		\s \s		map.put("Ravi",102); \\
+		\s \s		map.put("Kavi",103); \\
+		\s \s		System.out.println(map); \\
+		\s \s		\textbf{Set s = map.keySet()}; \\
+		\s \s		System.out.println(s); \\
+		\s \s		\textbf{Collection c = map.values();}  \\
+		\s \s		System.out.println(c); \\
+		\s \s		\textbf{Set s2 = map.entrySet();} \\
+		\s \s		System.out.println(s2); \\
+		\s \s		System.out.println(\textbf{map.replace("Ravi",106)}); \\
+		\s \s		System.out.println(map);		 \\
+		\s	\} \}	
+	}
+
+	\outputblock{
+		\{Ravi=102, Raman=101, Kavi=103\} \\
+		\textbf{[}Ravi, Raman, Kavi\textbf{]} \\
+		\textbf{[}102, 101, 103\textbf{]} \\
+		\textbf{[}Ravi=102, Raman=101, Kavi=103\textbf{]} \\
+		102 \\
+		\{Ravi=106, Raman=101, Kavi=103\}
+	}
+	
+\end{flushleft}
+\newpage
+
+

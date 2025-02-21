@@ -1,0 +1,65 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\tabletwo{
+	\hline
+	Interface & Abstract Class \\
+	\hline
+	Used when you dont know anything about implementation, you just have requirement specification &
+	Used when you know about partial implementation \\
+	\hline	
+	Every method is always public and abstract whether we are declaring or not. It is 100\% abstract class & 
+	Methods need not be public and abstract. Methods can be concrete \\
+	\hline
+	You can't declare with the following modifiers 
+	\begin{itemize}
+		\item Private
+		\item Protected
+		\item Static
+		\item Final
+		\item Native
+		\item Syncronised
+		\item Strictfp		
+	\end{itemize} &
+	There are no restrictions on abstract class method modifiers. \\
+	\hline	
+	Variable is always “public static final” whether we are declaring it or not & 
+	Variable present inside abstract class need not be public static final.  \\
+	\hline
+	
+	Variables should perform initialization at the time of declaration & 
+	Variables are not required to perform initialsation at the time of declaration \\
+	\hline
+	
+	Interface can’t declare static and instance blocks & Can contain static and instance blocks
+	\\
+	
+	\hline
+	
+	Cannot contain constructors & Can declare constructors \\
+	\hline
+	}	
+
+	\newpage
+	
+	\quest{Why abstract class can contain constructor but interface does not contain constructor?}
+	{
+	\begin{itemize}
+		\item The main purpose of constructor is to perform initialisation for the instance variables.
+		\item Abstract class can contain instance variables, (for child object to perform initialsation of those instance variable) hence constructor is required for abstract.
+		\item But, every variable present inside interface is always \textbf{public static final} whether you are declaring or not.
+		\item Also there are no instance variables inside interface, hence constructor concept is not required for interface.		
+	\end{itemize}
+	}
+	\bigskip
+	\quest{Inside interface, every method is always abstract and abstract class also contains abstract methods. Is it possible to replace interface with abstract class?
+	}{
+	\begin{itemize}
+		\item You can replace interface with abstract class, but it is not a good programming practise.
+		\item If everything is abstract, then it is highly recommended to go interface \& not abstract class.
+	\end{itemize}
+	}
+
+\end{flushleft}
+\newpage
+

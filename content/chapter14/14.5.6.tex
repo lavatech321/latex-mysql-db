@@ -1,0 +1,78 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item TreeMap class implements Map interface.
+		\item The underlying data structure is \textbf{RED-BLACK tree}.
+		
+		\newimage{0.23}{content/chapter14/images/hash.png}		
+		\item Features:
+		\begin{itemize}
+			\item It is \textbf{resizable array}.
+			\item \textbf{Duplicate keys not allowed}, but duplicate values are allowed.
+			\item \textbf{Insertion} order is \textbf{not} \textbf{preserved} and it is based on some sorting order of keys.
+			\item \textbf{Homogenous keys} allowed for default \textbf{natural sorting order}.
+			\item \textbf{Hetrogenous keys} allowed if you are defining \textbf{custom sorting by comparator}.
+			\item \textbf{Null key is not allowed}.
+		\end{itemize}			
+	\end{itemize}
+
+	
+	\textbf{Ways of initializing TreeMap}
+	\begin{itemize}
+		\item Creating am empty TreeMap with default natural sorting order:
+		\bigskip
+		\syntaxblock{
+			TreeMap t1 = new TreeMap();
+		}
+		
+		\bigskip
+		
+		\item Creating an empty TreeSet with custom Comparator:
+		\bigskip
+		
+		\syntaxblock{
+			TreeMap t  =  new TreeMap(Comparator c);
+		}		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Example Program:} Display TreeMap with custom comparator to add string keys in descending order:
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		\textbf{class Custom implements Comparator \{} \\
+		\s	\textbf{public int compare(Object o1, Object o2)} \{ \\
+		\s \s		\textbf{String s1 = o1.toString();} \\
+		\s \s		\textbf{String s2 = o2.toString();} \\
+		\s \s		\textbf{return s2.compareTo(s1);} \\
+		\s	\} \\
+		\} \\
+		public class two \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		\textbf{TreeMap t1 = new TreeMap(new Custom());} \\
+		\s \s		\textbf{t1.put("Apple",101);} \\
+		\s \s		t1.put("Mango",102); \\
+		\s \s		t1.put("Banana", 103); \\
+		\s \s		t1.put("Orange",104); \\
+		\s \s		System.out.println(t1); \\
+		\s \s		System.out.println(\textbf{t1.floorKey("Banana")}); \\
+		\s \s 		System.out.println(\textbf{t1.lowerKey("Banana")}); \\
+		\s \s 		System.out.println(\textbf{t1.descendingMap()}); \\
+		\s	\} \\
+		\}
+	}
+	\bigskip
+	\outputblock{
+		\{ Orange=104, Mango=102, Banana=103, Apple=101 \} \\
+		Banana \\
+		Mango \\
+		\{Apple=101, Banana=103, Mango=102, Orange=104\}
+	}
+	
+	
+\end{flushleft}
+\newpage
+
+

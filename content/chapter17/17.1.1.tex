@@ -1,0 +1,31 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+
+	\begin{itemize}
+		\item Creating custom thread:
+		\syntaxblock{
+			class ThreadName \textbf{extends Thread} \{ \\
+			\s	\textbf{public void run()} \{ \\
+			\s \s		// overriding thread code \\
+			\s	\} \} 
+		}
+		\item Creating thread object and starting it:
+		\syntaxblock{
+			ThreadName objname = new ThreadName(); \\
+			\textbf{obj.start()}
+		}
+		\item Eg:
+		\codeblockfull{demo.java}{
+			class DemoThread \textbf{extends Thread} \{\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		DemoThread demoThread = new DemoThread(); \\
+			\s	\} \}	
+		}
+	\end{itemize}
+
+\end{flushleft}
+
+
+

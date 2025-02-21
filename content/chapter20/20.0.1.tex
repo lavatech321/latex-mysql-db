@@ -1,0 +1,71 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Wrapper class constructor contain argument as shown below:
+		\bigskip
+		\tabletwo{
+			\textbf{Wrapper class} & \textbf{Constructor arguments}	 \\
+			\hline
+			Byte & byte, String \\
+			\hline
+			Short & short, String \\
+			\hline
+			Integer & int, String \\
+			\hline
+			Long & long, String \\
+			\hline
+			Float & float,double, String \\
+			\hline
+			Double & double, String \\
+			\hline
+			Boolean & boolean, String \\
+			\hline
+			Character & char \\
+		}
+		
+		\bigskip
+		\noteblock{
+			Since Java 1.9 version, above constructors are deprecated. Instead use valueOf() for better performance.
+		}
+	
+		\item Things to note for Boolean constructor:
+		\begin{itemize}
+			\item If you are passing boolean primitive as argument the only allowed values are: \textbf{true} or \textbf{false}
+			\item If you are passing String argument then case is not important and content is also important.
+		\end{itemize}
+	
+		\codeblock{
+			Boolean b1 = new Boolean(true);  // true \\
+			Boolean b2 = new Boolean(false); // false \\
+			//Boolean b3 = new Boolean(True); // invalid \\
+			Boolean b4 = new Boolean("lavatech"); // false \\
+			Boolean b5 = new Boolean("yes"); // false \\
+			Boolean b6 = new Boolean("no"); // false \\
+			Boolean b7 = new Boolean("true"); // true \\
+			Boolean b8 = new Boolean("True"); // \\ true			
+		}
+		\newpage
+		\item Eg: Converting byte to Byte object:
+		\bigskip
+		\codeblock{
+			byte b1 = 23; \\
+			Byte b2 = new Byte(b1); \\
+			Byte b3 = new Byte("67"); \\
+			System.out.println(b2);  // 23 \\
+			System.out.println(b3); // 67
+		}
+		\bigskip
+		\item Eg: Converting int to Integer object:
+		\bigskip
+		\codeblock{
+			int i1 = 451; \\
+			Integer I1 = new Integer(i1); \\
+			Integer I2 = new Integer("451");  \\ 
+			System.out.println(I1); // 451 \\
+			System.out.println(I2);  // 451
+		}
+	\end{itemize}
+\end{flushleft}
+
+\newpage

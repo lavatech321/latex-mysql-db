@@ -1,0 +1,66 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Exception propagation is process by which an exception is passed from one method to another in the call stack until:
+		\begin{itemize}
+			\item It is either caught and handled
+			\item Or causes the program to terminate if left uncaught
+		\end{itemize}
+		\item When a method throws an exception but does not catch it, the exception is propagated up the call stack to the calling method. 
+		
+		\item Consider below code where exception is handled by main() ultimately:
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		try \{ \\
+			\s \s \s    	test1();   \\
+			\s \s		\} \\
+			\s \s		catch(Exception e) \{ \\
+			\s \s \s			System.out.println("Caught exception:"); \\
+			\s \s \s			e.printStackTrace(); \\
+			\s \s		\} \\
+			\s \s	\} 
+		}
+		\newpage
+		\codecontinue{
+			\s  	public static void test1() \{ \\
+			\s \s		test2(); \\
+			\s	\} \\
+			\\
+			\s	public static void test2() \{ \\
+			\s \s		test3(); \\
+			\s	\} \\
+			\\
+			\s 	static void test3() \{ \\
+			\s \s		int arr[] = new int[2]; \\
+			\s \s		System.out.println(arr[9]); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Caught exception: \\
+			java.lang.ArrayIndexOutOfBoundsException: Index 9 out of bounds for length 2 \\
+			at demo.test3(demo.java:20) \\
+			at demo.test2(demo.java:16) \\
+			at demo.test1(demo.java:13) \\
+			at demo.main(demo.java:5)
+		}
+		\bigskip
+		\textbf{Explanation:}
+		\begin{itemize}
+			\item When method3() is called, it tries to access an element in the array with an index that is out of bounds. 
+			\item This results in an ArrayIndexOutOfBoundsException. 
+			\item Since method3() does not catch this exception, it is propagated up the call stack through method2() to method1() and finally caught in the main() method.
+		\end{itemize}
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+
+
+
+

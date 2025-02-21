@@ -1,0 +1,105 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item For integral datatypes like byte, short, int \& long, we can specify literal value in the following base:
+		\begin{itemize}
+			\item \textbf{Decimal literal (base-10)}:
+			\begin{itemize}
+				\item Allowed digits are 0-9
+				\codeblock{
+					int x = 10;
+				}
+			\end{itemize}
+
+		\item \textbf{Binary literal (base-2)}:
+		\begin{itemize}
+			\item From Java 1.7 version, integral literal can be represented as binary value.
+			\item Allowed digits are 0 and 1
+			\item Literal value should be pre-fixed with "0B" or "0b"
+			\codeblock{
+				int x = 0B10; \newline
+				int y = 0b10101;
+			}
+		\end{itemize}
+
+			
+		\item \textbf{Octal literal (base-8)}:
+		\begin{itemize}
+			\item Allowed digits are 0-7
+			\item Literal value should be pre-fixed with 0
+			\codeblock{
+					int x = 017;
+			}
+		\end{itemize}
+	
+		\item \textbf{Hexadecimal literal (base-16)}:
+		\begin{itemize}
+			\item Allowed digits are 0-9, a-f or A-F
+			\item Literal value should be pre-fixed with "0X" or "0x"
+			\codeblock{
+				int x = 0X13aA; \\
+				int x = 0x45Fe;
+			}
+		\end{itemize}
+
+		\item \textbf{Usage of \_ in numeric literal}:
+		\begin{itemize}
+			\item From Java 1.7 version, we can use "\_" in middle of big numbers to increase integer's readability.
+			\item At the time of compilation, these "\_" symbols will be removed automatically.
+			\bigskip
+			\codeblock{
+				int x = 78\_32\_34\_23; \newline
+				int y = 0Xaa\_ff\_11; \newline
+				int z = 034\_12\_10; \newline
+				int a = 0B11\_\_00\_10\_11;
+			}
+			\item "\_" symbol cannot be used in the starting or end of integer. Below are \textbf{invalid} declarations:
+			\bigskip
+			\codeblock{
+				int x = \_78\_32\_34\_23; \newline
+				int y = 0Xaa\_ff\_11\_; 
+			}
+						
+			
+		\end{itemize}
+	\end{itemize}
+		
+	\end{itemize}
+
+	\newpage
+	\textbf{Program to convert octal and hexadecimal form of integer to decimal form:}
+
+	\codeblockfull{test.java}{
+		package Starter; \newline
+		class test \newline
+		\{ \newline
+		\s	public static void main (String[] args) \newline
+		\hphantom{} \hphantom{}	\{ \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}	int x = 10; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}	int y = 061; \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} int z = 0x9a; \newline
+		\hphantom{} \hphantom{} \hphantom{}	\hphantom{}	System.out.println(x+","+y+","+z); \newline
+		\hphantom{} \hphantom{}	\} \newline
+		\} 	
+	}
+	\outputblock{
+		10,49,154
+	}
+
+	\textbf{Output Explaination:}
+	
+	In Java, integeral literals are always represents in decimal literals forms: 
+			\begin{itemize}	
+				\item Octal to decimal form: 
+					\[ (61)_8 = (?)_{10} \]
+					\[ 6 \times 8^{1} + 1 \times 8^{0} = 49  \]
+				\item Hexadecimal to decimal form:
+					\[ (9a)_{16} = (?)_{10} \]
+					\[ 9 \times 16^{1} + 10 \times 16^{0} = 154  \]
+			\end{itemize}
+			
+\end{flushleft}
+
+\newpage
+

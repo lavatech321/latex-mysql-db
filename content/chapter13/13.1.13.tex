@@ -1,0 +1,37 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The StringBuilder class is a \textbf{mutable sequence of characters}, similar to the StringBuffer class present in \textbf{java.lang} package.
+		\item \textbf{StringBuffer \& StringBuilder has same methods.}
+	\end{itemize}
+	
+	
+	\tabletwo{
+		\textbf{StringBuilder} & \textbf{StringBuffer} \\
+		\hline
+		Introduced in Java 1.5 & Introduced in Java 1.0 \\
+		\hline
+		\textbf{Not thread-safe} & Thread-safe \\
+		\hline
+		\textbf{Not used for multi-threading} & \textbf{Used for multi-threading} \\
+		\hline
+		Performance is high & Performance is low \\
+		\hline
+		Used for single-threaded application & Not recommended for single-threaded application \\
+	}
+	
+	\newimage{0.4}{content/chapter13/images/sb.png}	
+	
+\textbf{String method chaining}: Method chaining is possible for String, StringBuffer and StringBuilder object methods.
+			\codeblock{
+		String text = "   Hello, World!   "; \\
+		String result = \textbf{text.trim().toUpperCase().replace("WORLD", "Java").substring(7);} \\
+		System.out.println(result); // Output: JAVA!
+	}
+	
+
+\end{flushleft}
+
+
+

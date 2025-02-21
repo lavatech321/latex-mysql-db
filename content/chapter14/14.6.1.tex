@@ -1,0 +1,71 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Enumeration interface is used to \textbf{enumerate} (or iterate over) elements in \textbf{certain legacy collection classes} like:
+		\begin{itemize}
+			\item Vector
+			\item Stack
+			\item Hashtable
+			\item Properties
+		\end{itemize}
+		\item It is part of the \textbf{java.util} package.		
+	\end{itemize}
+	
+	\textbf{Enumeration specific methods:}
+	
+	\begin{itemize}
+		\item Check whether collection is empty or not:
+		\syntaxblock{
+			boolean hasMoreElements()
+		}
+		\item Check for the next element:
+		\syntaxblock{
+			Object nextElement()
+		}
+	\end{itemize}
+
+	\noteblock{
+		\begin{itemize}
+			\item Enumeration concept is applicable only for legacy classes.
+			\item Only read access is allowed, and you cant perform remove operation. 
+			\item To overcome these limitations, go for iterator
+		\end{itemize}
+	}
+	
+	\newpage
+	\textbf{Example:}
+	\newline
+	Java program to iterate over vector object and display even numbers only:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test\{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		Vector v1 = new Vector(); \\
+		\s \s		v1.add(340);  \\
+		\s \s		v1.add(123);  \\ 
+		\s \s		v1.add(342);  \\
+		\s \s		v1.add(541);  \\
+		\s \s		Enumeration e = v1.elements(); \\
+		\s \s		while (e.hasMoreElements()) \{ \\
+		\s \s \s			Integer i = (Integer) e.nextElement(); \\
+		\s \s \s			if(i\%2 == 0) \\
+		\s \s \s \s			System.out.println(i); \\
+		\s \s \s		\} \\
+		\s	\} \\
+		\}	
+	}
+	\bigskip
+	\outputblock{
+		340 \\
+		342 
+	}
+
+	\quest{If Enumeration, Iterator and ListIterator is an interface, then how we are creating it’s object?}{
+	Vector class internally implements Enumeration, Iterator and ListIterator as \textbf{anonymous class}.}
+	
+	
+\end{flushleft}
+
+\newpage
+

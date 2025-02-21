@@ -1,0 +1,33 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The degree of dependency between the components is called \textbf{coupling}.
+		\item If dependency is more, then it is considered as \textbf{tightly coupling}.
+		\item If dependency is less, then it is considered as \textbf{lossly coupling}.
+		\item Eg:
+		\codeblockfull{A.java}{
+			class B \{ \\
+			\s	static int i=100; \\
+			\} \\
+			class A \{ \\
+			\s	static int i = B.i; // \textbf{Tightly coupled} \\
+			\s	public static void main(String[] args) \{ \\
+			\s	\s	System.out.println(A.i); // Output: 100 \\
+			\s	\} \\
+			\}
+		}
+
+		\item \textbf{Tightly coupling is not good} programming practise.
+		\item Lossly coupling is a good programming practice.
+		\newpage
+		\item Problem with tightly coupling:
+		\begin{itemize}
+			\item Cannot modify component without dependency problem.
+			\item Reduce reuseability. 
+			\item Reduce code mainitainabilty.
+		\end{itemize}
+	
+	\end{itemize}	
+	
+\end{flushleft}

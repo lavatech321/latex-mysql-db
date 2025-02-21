@@ -1,0 +1,35 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Object serialise \& deserialise order should be same.
+		\item If object order is not same, \textbf{ClassCastException} occurs. Eg:
+		\codeblockfull{abc.java}{
+			import java.io.*; \\
+			\textbf{class Cat implements Serializable \{ int a=10; \}} \\
+			\textbf{class Dog implements Serializable \{ int b=20; \}} \\
+			\textbf{class Rat implements Serializable \{ int c=30; \}} \\
+			public class abc \{  \\
+			\s	public static void main(String[] args) \\ throws Exception \{ \\
+			\s \s		\textbf{Cat c1 = new Cat();} \\
+			\s \s		\textbf{Dog d1 = new Dog();} \\
+			\s \s		\textbf{Rat r1 = new Rat();} \\
+					\textbf{FileOutputStream fout = new FileOutputStream("abc.ser");} \\
+			\s		\textbf{ObjectOutputStream oos = new ObjectOutputStream(fout);} \\
+			\s \s		\textbf{oos.writeObject(c1);} \\
+			\s \s		\textbf{oos.writeObject(d1);} \\
+			\s \s		\textbf{oos.writeObject(r1);}  \\
+					\textbf{FileInputStream fis = new FileInputStream("abc.ser");} \\
+					\textbf{ObjectInputStream ois = new ObjectInputStream(fis);} \\
+			\s		\textbf{Cat c2 = (Cat) ois.readObject();} \\
+			\s		\textbf{Dog d2 = (Dog) ois.readObject();} \\
+			\s		\textbf{Rat r2 = (Rat) ois.readObject();} \\
+			\s \s		System.out.println("Deserialized:"); \\
+			\s \s		System.out.println(\textbf{c2.a}); // Output: 10 \\
+			\s \s		System.out.println(\textbf{d2.b}); // Output: 20 \\
+			\s \s		System.out.println(\textbf{r2.c}); // Output: 30 \\
+			\s	\} \}		
+		}
+		\end{itemize}
+				
+\end{flushleft}
+\newpage

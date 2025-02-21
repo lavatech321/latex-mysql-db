@@ -1,0 +1,392 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{\@mypartnumtocformat {I}{System Admin Level I}}{7}{part.1}%
+\ttl@starttoc {default@1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Introduction to Operating System}{9}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}What is an Operating System (OS)?}{10}{subsection.1.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Architecture of OS}{11}{subsection.1.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{11}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Types of OS}{12}{subsection.1.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{12}{section*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.4}Practice}{13}{subsection.1.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Introduction to Linux}{14}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}What is Open Source Software (OSS)?}{15}{subsection.1.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{15}{section*.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}What is Linux?}{16}{subsection.1.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{16}{section*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}Linux V/S Windows}{17}{subsection.1.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{17}{section*.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.4}Understanding console, terminal, command line and shell}{18}{subsection.1.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is a console and terminal?}{18}{section*.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is a command line?}{18}{section*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is a shell?}{18}{section*.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.5}Linux distributions}{19}{subsection.1.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{19}{section*.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is upstream and downstream?}{19}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.6}Practice}{20}{subsection.1.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{20}{section*.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Linux basics}{23}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Linux directory structure}{23}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Filesystem Hierarchy Standard (FHS)}{24}{subsection.2.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Important directory you should know about}{25}{subsection.2.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Practice}{28}{subsection.2.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{28}{section*.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Linux commands}{31}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Basic commands}{32}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Using the command line}{32}{section*.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command syntax}{33}{section*.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Now let's get started with some actual commands.}{34}{section*.30}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Advance commands}{39}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Practice}{48}{subsection.2.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{48}{section*.31}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Vi/Vim Editor}{53}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Understanding vi/vim editor}{53}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}About vi/vim editor}{54}{subsection.3.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{54}{section*.33}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{54}{section*.34}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{54}{section*.35}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}Moving around in the file}{55}{subsection.3.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.3}Searching for text}{56}{subsection.3.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.4}Saving and/or quiting the file}{57}{subsection.3.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.5}More functions}{58}{subsection.3.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.6}Practice}{59}{subsection.3.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{59}{section*.37}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}User administration}{63}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}User and group basics}{63}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}What is a user?}{64}{subsection.4.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}What is a group?}{65}{subsection.4.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Types of group}{66}{section*.40}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Where is the relevant information stored?}{67}{subsection.4.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.4}Practice}{72}{subsection.4.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{72}{section*.47}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Working with Linux user}{74}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}User commands}{75}{subsection.4.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to create a new user?}{75}{section*.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command options}{75}{section*.50}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to assign or change user’s password?}{77}{section*.51}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command options}{77}{section*.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to modify an existing user?}{78}{section*.53}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command options}{78}{section*.54}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to delete a user?}{80}{section*.55}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command options}{80}{section*.56}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Content of /etc/skel directory}{81}{subsection.4.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}Group commands}{82}{subsection.4.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Practice}{83}{subsection.4.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{83}{section*.57}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Permissions in Linux}{87}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Permissions}{87}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Introduction to permissions}{88}{subsection.5.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Type of files}{89}{subsection.5.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}Type of users}{90}{subsection.5.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.4}Types of permissions}{91}{subsection.5.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Read means:}{92}{section*.65}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Write means:}{92}{section*.67}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Execute means:}{92}{section*.69}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.5}Permission commands}{93}{subsection.5.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Octal representation}{94}{section*.71}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Symbolic representation}{96}{section*.74}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command to change user and group ownership}{99}{section*.76}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Command to change group ownership}{100}{section*.77}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.6}Umask}{101}{subsection.5.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is a umask?}{101}{section*.78}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Final default permission for a file is calculated as shown below:}{101}{section*.79}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Final default permission for a directory is calculated as shown below:}{101}{section*.80}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Changing the umask value}{101}{section*.81}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.7}Practice}{102}{subsection.5.1.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{102}{section*.82}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Advance permissions}{105}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Sudo user}{105}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}What is a sudo user?}{106}{subsection.6.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Creating sudo users}{106}{subsection.6.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Granting all command's sudo access to users}{107}{section*.84}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Granting specific command's sudo access to user}{107}{section*.85}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Using aliases in the sudoers file}{108}{section*.86}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{sudo command}{108}{section*.87}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Practice}{109}{subsection.6.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Special permissions}{110}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}SUID}{111}{subsection.6.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is SUID?}{111}{section*.88}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Real world example for SUID}{112}{section*.91}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Where is SUID used?}{112}{section*.92}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to apply SUID permission?}{113}{section*.93}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to remove SUID permission?}{113}{section*.94}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}SGID}{114}{subsection.6.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is SGID?}{114}{section*.95}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Real world example for SGID}{115}{section*.98}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to apply SGID permission?}{116}{section*.99}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to remove SGID permission?}{116}{section*.100}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.3}Sticky bit}{117}{subsection.6.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.4}Practice}{118}{subsection.6.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Access control list(ACL)}{119}{section.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}What is ACL?}{120}{subsection.6.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.2}ACL commands}{121}{subsection.6.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.3}Practice}{125}{subsection.6.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Processing commands \& operators}{127}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Text processing}{127}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.1}Practice}{136}{subsection.7.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}I/ORedirection}{137}{section.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}What are standard input and standard output?}{138}{subsection.7.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Output redirection ( > )}{139}{subsection.7.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.3}Output append operator ( >> )}{139}{subsection.7.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.4}Input Redirection ( < )}{140}{subsection.7.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.5}Error redirection ( 2> )}{141}{subsection.7.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.6}Error append redirection ( 2>> )}{141}{subsection.7.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.7}Redirection Summary}{142}{subsection.7.2.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.8}The pipe operator}{143}{subsection.7.2.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.9}Practice}{144}{subsection.7.2.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Archives \& Compression}{145}{section.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.1}Practice}{149}{subsection.7.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Links in Linux}{151}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Inodes \& Links}{151}{section.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}What are inodes?}{152}{subsection.8.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.2}Inode number and filesystem}{153}{subsection.8.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.3}Links and it's types}{154}{subsection.8.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is a link?}{154}{section*.108}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.4}Difference between links}{155}{subsection.8.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.5}Practice}{156}{subsection.8.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Partition}{157}{chapter.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}What is a partition?}{157}{section.9.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.1}Devices}{158}{subsection.9.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{158}{section*.110}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{158}{section*.111}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{158}{section*.112}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.2}SCSI Drives}{159}{subsection.9.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{159}{section*.114}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{159}{section*.115}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{159}{section*.116}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1.3}Practice}{160}{subsection.9.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Welcome}{160}{section*.118}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.2}Partition Types}{160}{section.9.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.1}Primary Partitions}{161}{subsection.9.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{161}{section*.119}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{161}{section*.120}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{161}{section*.121}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.2}Logical Partitions}{162}{subsection.9.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{162}{section*.123}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{162}{section*.124}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{162}{section*.125}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.3}Swap Partitions}{163}{subsection.9.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{163}{section*.127}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{163}{section*.128}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{163}{section*.129}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.4}Practice}{164}{subsection.9.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Welcome}{164}{section*.131}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.3}Partitioning}{164}{section.9.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.1}fdisk command}{165}{subsection.9.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{165}{section*.132}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{165}{section*.133}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{165}{section*.134}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.2}Standard Formatting Filesystems}{166}{subsection.9.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{166}{section*.136}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{166}{section*.137}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{166}{section*.138}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.3}Mounting Partitions}{167}{subsection.9.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{167}{section*.140}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{167}{section*.141}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{167}{section*.142}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.4}Managing /etc/fstab}{168}{subsection.9.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{168}{section*.144}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{168}{section*.145}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{168}{section*.146}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.5}Setting Up Swap Space}{169}{subsection.9.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vi editor?}{169}{section*.148}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{What is vim editor?}{169}{section*.149}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{How to use vi or vim editor?}{169}{section*.150}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.3.6}Practice}{170}{subsection.9.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Welcome}{170}{section*.152}%
+\contentsfinish 

@@ -1,0 +1,88 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		
+		\item \textbf{Case 1:} If 2 interfaces contains method \textbf{with same signature and same return type}, then in the implementation class, you have to provide implementation for only one method.
+		\newline
+		Eg:
+		\bigskip
+		
+		\codeblockfull{Test.java}{
+		interface A \{ \\
+		\s public void m1(); \\
+		\} \\
+		interface B \{ \\
+		\s public void m1(); \\
+		\} \\
+		class Test implements A, B \{ \\
+		\s public void m1() \{ \\
+		\s \s System.out.println("Method implemented"); \\
+		\s	\} \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		Test t1 = new Test(); \\
+		\s \s		t1.m1(); \\
+		\s	\} \\
+		\}
+		}
+		\bigskip
+		\outputblock{
+		Method implemented
+		}
+		\bigskip
+		\item \textbf{Case 2}: If 2 interface contians methods with \textbf{same name but different argument types}, then in implementation class we have to provide implementation for both methods and these methods acts as overload methods.
+		\newpage
+		Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			interface A \{ \\
+			\s public void m1(); \\
+			\} \\
+			interface B \{ \\
+			\s public void m1(int i); \\
+			\} \\
+			class Test implements A, B \{ \\
+			\s public void m1() \{ \\
+			\s \s System.out.println("Method implemented"); \\
+			\s	\} \\
+			\s public void m1(int i) \{  \\
+			\s \s	System.out.println("Value passed:"+i); \\
+			\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Test t1 = new Test(); \\
+			\s \s		t1.m1(); \\
+			\s \s		t1.m1(50); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Method implemented \\
+			Value passed:50
+		}
+		\bigskip
+		\item \textbf{Case 3}: If 2 interfaces contains a method with \textbf{same signature but different return types}, then it is \textbf{impossible to implement} both interfaces simultaneously.
+		
+		\newpage
+		
+		\codeblock{
+		// Below interface method cannot be overriden: \\
+		interface A \{ \\
+		\s	public void m1(); \\
+		\}
+		interface B \{ \\
+		\s	public int m1(); \\
+		\}
+		}
+	
+		\bigskip
+		\quest{Can java class be implemented any number of interfaces sumultanoutsly?}{
+		Yes, except a particular case. If 2 interfaces contains a method with same signature but different return types then it is impossible to implement both interfaces simultaneously.
+		}
+		
+	\end{itemize}
+	
+	
+\end{flushleft}
+
+

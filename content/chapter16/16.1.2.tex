@@ -1,0 +1,63 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item The method containing exception creates \textbf{exception object}.
+		\item Exception object includes:
+		\begin{itemize}
+			\item Exception name
+			\item Exception description
+			\item Stack trace containing exception location
+		\end{itemize}
+		\item Exception results in abnormal program termination.
+		\item \textbf{Exception handlers prints exception} information as shown below:
+		\bigskip
+		\codecontinue{
+			Exception in thread "xxxxxx" <Name of Exception>: <Description> \\
+			Stack Trace
+		}
+		\bigskip
+		\item Eg 1: Below code result in ArithematicException.
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		int i=5; \\
+			\s \s		int j=0; \\
+			\s \s		System.out.println(i/j); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\errorblock{
+			Exception in thread "main" java.lang.ArithmeticException: / by zero
+			at demo.main(demo.java:5)
+		}
+
+		\newpage	
+		\item Eg 2: Consider below example where main() exception works with multiple method calls.
+		
+			\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		\textbf{doStuff();} \\
+			\s \s		System.out.println(10/0); \\
+			\s	\} \\
+			\s	public static void \textbf{doStuff()} \{ \\
+			\s \s		\textbf{doMoreStuff();} \\
+			\s \s		System.out.println("From Java"); \\
+			\s	\} \\
+			\s	public static void \textbf{doMoreStuff()} \{ \\
+			\s \s		System.out.println("Hello world"); \\
+			\s	\} \\
+			\}
+			}
+			\textbf{Output with stack trace and exception:}
+			\newimage{0.4}{content/chapter16/images/stack.png}
+			
+	\end{itemize}
+
+\end{flushleft}
+\newpage
+
+

@@ -1,0 +1,60 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item The \textbf{"|"} character is pipe operator.
+		\item A pipe is a technique for passing output of one command to another command:
+		\bigskip
+		\bigskip
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[scale=0.5]{content/chapter7/images/pipe.png}
+			\caption{Pipe operator}
+			\label{fig:pipe_operator}
+		\end{figure}
+
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: command1 | command2 | command3
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+		Eg: 
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\$ who | wc -l 			\color{yellow} \#[press Enter]
+			\newline
+			\color{white}
+			4
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+	\end{itemize}
+	
+	\paragraph{Pipelines, redirection, and tee}
+	\textbf{tee}: In a pipeline, tee will copy its standard input to its standard output(i.e monitor screen) and will also redirect its standard output to the files named as arguments to the command.
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: command1 | tee file-name
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\$ ls -t | head -n 10 | tee /tmp/ten-last-changed-files
+		\newline
+		\$ ls -l | tee /tmp/saved-output | less
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+		
+	
+	
+\end{flushleft}
+
+\newpage
+

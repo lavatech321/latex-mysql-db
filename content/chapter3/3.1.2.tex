@@ -1,0 +1,58 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\textbf{CREATE} query is used to create:
+	\begin{itemize}
+		\item \textbf{TABLE}: Table is made up of rows and columns.
+	\end{itemize}
+	
+	Let's see each of these in detail.
+	\newline
+	\textbf{CREATE TABLE}: Used to create a table
+	\begin{itemize}
+		\item Create table schema:
+		\bigskip
+			\syntaxblock{
+			CREATE TABLE your\_table\_name ( \\
+			\s column1\_name datatype1, \\
+			\s column2\_name datatype2, \\
+			\s column3\_name datatype3, \\
+			\s -- Add more columns as needed \\
+			);	
+			}
+			Eg:
+			\bigskip
+			\commandblock{
+				CREATE TABLE employees ( \\
+				\s employee\_id NUMBER(5) PRIMARY KEY, \\
+				\s first\_name VARCHAR2(50), \\
+				\s last\_name VARCHAR2(50), \\
+				\s hire\_date DATE, \\
+				\s salary NUMBER(10, 2) \\
+				);
+			}
+		\newpage
+		\item Create table using existing tables (with data)
+		\bigskip
+		\syntaxblock{
+			CREATE TABLE your\_table\_name as select column\_name from table\_name;
+		}
+		Egs:
+		\bigskip
+		\commandblock{
+			create table sample1 as select * from dual; \\
+			create table sample2 as select dummy from dual; \\
+			create table sample1 as select * from dual where 1 = 1; \\
+			create table sample1 as select * from dual where dummy = 'x';		
+		}
+		\bigskip
+		\item Create table using existing tables (only structure)
+		\bigskip
+		\commandblock{
+			create table sample1 as select * from dual where 1 = 2;
+		}
+	
+	\end{itemize}	
+	
+
+\end{flushleft}

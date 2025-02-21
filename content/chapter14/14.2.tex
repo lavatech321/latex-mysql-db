@@ -1,0 +1,57 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Queue is an ordered list which enables \textbf{insert operations} to be performed at one end \textbf{(i.e REAR)} and \textbf{delete operations} to be performed at another end \textbf{(i.e FRONT)}.
+		\item Queue is referred to be as \textbf{First In First Out (FIFO)} list.
+		\item Eg: People waiting in line in library form a queue.
+		
+		\newimage{0.32}{content/chapter14/images/fifo2.png}
+		
+		\newimage{0.5}{content/chapter14/images/queue.png}
+	
+		
+		\item Queue is the child interface of Collection interface.
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Queue interface specific methods}
+	\begin{itemize}
+		\item Add object to queue:
+		\syntaxblock{
+			boolean offer(Object o);
+		}
+		\bigskip
+		\item Return head of the queue. If queue is empty, it will return null.
+		\syntaxblock{
+			Object peek();
+		}
+		\bigskip
+		\item Return head of the queue. If queue is empty, error is returned.
+		\syntaxblock{
+			Object element();
+		}
+		\bigskip
+		\item Return and remove head of the queue. If queue is empty, it will return null.
+		\syntaxblock{
+			Object poll();
+		}
+		\bigskip
+		\item Return and remove head of the queue. If queue is empty, error is returned.
+		\syntaxblock{
+			Object remove();
+		}
+		\bigskip
+		\item Check whether queue is empty or not:
+		\syntaxblock{
+			boolean isEmpty();
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,83 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\textbf{length variable}:
+	\begin{itemize}
+		\item length is final variable applicable for arrays.
+		\item length variable is used to display size of an array.
+		\item Value returned by length is fixed as array once created cannot change it's size.
+		\bigskip
+		\codeblock{
+			int[] x = new int[6]; \\
+			System.out.println(x.length);  \cmark
+		}
+		\bigskip
+		\outputblock{
+			6
+		}
+		
+		\item length variable is \textbf{not} applicable on string objects.
+		\bigskip
+		\codeblock{
+			String s="lavatech"; \\
+			System.out.println(s.length); \xmark
+		}
+		
+		\item In multi-dimensional arrays, length variable represents only base size, but not total size.
+		\codeblock{
+			int[][] x = new int[6][3]; \\
+			System.out.println(x.length);
+		}
+		\bigskip
+		\outputblock{
+			6
+		}
+		
+	\end{itemize}
+	
+	\textbf{length()}:
+	\begin{itemize}
+		\item length() is present in String class.
+		\item length() method is final variable applicable for string objects.
+		\item It returns number of characters present in the string.
+		\bigskip
+		\codeblock{
+			String s="lavatech"; \\
+			System.out.println(s.length()); \cmark
+		}
+		\bigskip
+		\outputblock{
+			8
+		}
+		\bigskip
+		
+		\item length variable is applicable for arrays, but not for string objects.
+		\item length() is applicable for string objects, but not for arrays.
+		Example:
+		\codeblock{
+			String[] s= \{"A","AA","AAA"\}; \\
+			System.out.println(s.length); \cmark \\
+			System.out.println(s.length()); \xmark  \\
+			System.out.println(s[0].length); \xmark \\
+			System.out.println(s[0].length()); \cmark
+		}
+		\bigskip	
+		\outputblock{
+			3 \\
+			error \\
+			error \\
+			1
+		}
+		\bigskip
+		\item There is no direct way to find total length of multi-dimensional array. Total length of multi-dimensional array can be found as follows:
+		\codeblock{
+			int[][] x = new int[3][3]; \\
+			System.out.println(x.length); \\
+			System.out.println(x[0].length+x[1].length+x[2].length);
+		}
+		\outputblock{
+			3 \\
+			9
+		}
+	\end{itemize}
+\end{flushleft}

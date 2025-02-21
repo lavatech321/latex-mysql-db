@@ -1,0 +1,46 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+		\begin{itemize}
+			\item \textbf{this()} invokes one constructor from another constructor. 
+			\item this() needs \textbf{to be first statement in the constructor body}.
+			\item Eg:
+			\codeblockfull{Test.java}{
+				class Rectangle \{ \\
+				\s	float l, w, h; \\
+				\s	public Rectangle() \{ \\
+				\s \s		\textbf{this(0,0,0);} \\
+				\s \} \\
+				\s	public Rectangle(int length, int width, int height) \{ \\
+				\s \s 	this.l = length; \\
+				\s \s 	this.w = width; \\
+				\s \s 	this.h = height; \\
+				\s	\} \\
+				\s 	public float getArea() \{ \\
+				\s \s 	float area; \\
+				\s \s 	area = 2*(l*w) + 2*(l*h) + 2*(h*w); \\
+				\s \s 	return area; \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s 	Rectangle r1 = new Rectangle(3,4,5); \\
+				\s \s 	System.out.println(r1.getArea()); // Output: 94.0 \\
+				\s \s 	Rectangle r2 = new Rectangle(); \\
+				\s \s 	System.out.println(r2.getArea()); // Output: 0.0 \\
+				\s \} \\
+				\} 
+			}
+					
+		\end{itemize}
+	
+		\noteblock{
+			\begin{itemize}
+				\item Constructor can have super() or this(), not both at a time.
+				\item Use super() or this() only inside constructor.
+			\end{itemize}	
+		}
+		
+	
+\end{flushleft}
+
+\newpage
+

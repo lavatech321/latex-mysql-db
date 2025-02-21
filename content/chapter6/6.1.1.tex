@@ -1,0 +1,106 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{ABS}: Returns the positive value of the number, whether the original number is positive or negative.
+		\bigskip
+		\outputblock{
+			SELECT ABS(-123), ABS(123) from dual; \\
+			ABS(-123) \s	ABS(123)	\\
+			----------------------------- \\
+			123		\s\s	123	
+		}
+		\item \textbf{CEIL}: Round a numeric value up to the nearest integer that is greater than or equal to the original number.
+		\bigskip
+		\outputblock{
+			SELECT CEIL(-123.345), CEIL(123.567) from dual; \\
+			CEIL(-123.345) \s	CEIL(123.567)	\\
+			----------------------------- \\
+			-123 \s\s	124
+		}
+		\newpage
+		\item \textbf{POWER}: Calculate a number raised to a specified power or exponent.
+		\outputblock{
+			SELECT POWER(2,4) from dual; \\
+			POWER(2,4)	\\
+			16
+		}
+		\item \textbf{MOD}: 
+		\outputblock{
+			SELECT MOD(4,2) from dual;	\\
+			MOD(4,2)	\\
+			0
+		}
+		\item \textbf{SQRT}:
+		\outputblock{
+			SELECT SQRT(64) from dual; \\
+			SQRT(64) \\
+			8
+		}
+		
+		\item \textbf{TRUNC}: Rounds down the number to the nearest integer less than or equal to the original number.
+		\outputblock{
+			SELECT TRUNC(34.89) from dual; \\
+			TRUNC(34.89) \\
+			34
+		}
+		
+	\end{itemize}
+	
+	\textbf{GROUP/AGGREGATE function}
+	\begin{itemize}
+		\item \textbf{MIN}
+		\outputblock{
+			select min(id) from employee; \\
+			MIN(ID) \\
+			101
+		}
+		\item \textbf{MAX}
+		\outputblock{
+			select max(id) from employee; \\
+			MAX(ID) \\
+			104
+		}
+		\item \textbf{SUM}
+		\outputblock{
+			select sum(id) from employee; \\
+			SUM(ID) \\
+			410
+		}
+		\item \textbf{AVG}
+		\outputblock{
+			select avg(id) from employee; \\
+			AVG(ID) \\
+			102.5
+		}
+		\item \textbf{COUNT}
+		\outputblock{
+			select count(id) from employee; \\
+			COUNT(ID) \\
+			4
+		}
+		\item \textbf{DISTINCT}: DISTINCT keyword is used to eliminate duplicate rows from the result set.
+		\outputblock{
+			select distinct first\_name from employee; \\
+			FIRST\_NAME	\\
+			Kavi	\\
+			Jimmy	\\
+			Ravi	\\
+			Josh
+		}
+		\newpage
+		\item \textbf{UNIQUE}: Used to enforce that the values in a column or a set of columns must be unique across all rows in a table. 
+		\outputblock{
+			select unique first\_name from employee; \\
+			FIRST\_NAME	\\
+			Kavi	\\
+			Jimmy	\\
+			Ravi	\\
+			Josh	
+		}
+		
+		
+	\end{itemize}
+\end{flushleft}
+
+

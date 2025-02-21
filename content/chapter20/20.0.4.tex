@@ -1,0 +1,41 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+
+	\begin{itemize}
+		\item Until Java 1.4 version, primitive values can't be provided in place of wrapper object \& vice versa is not possible.
+		\item Starting Java1.5 version, all required conversions will be performed automatically by compiler.
+		\item These automatic conversions are called \textbf{autoboxing and auto-unboxing}.
+		
+		\newimage{0.5}{content/chapter20/images/auto.png}
+		
+	\end{itemize}
+
+	\textbf{Autoboxing}:
+	\begin{itemize}
+		\item At time of compilation, compiler will automatically use \textbf{valueof() to perform autoboxing}.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			int i = 45; \\
+			Integer I1 = i; // autoboxing \\
+			System.out.println(I1); // 45
+		}
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{AutoUnboxing}:
+	\begin{itemize}
+		\item At time of compilation, compiler will internally use \textbf{xxxValue()} to perform autounboxing.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			Integer I1 = new Integer(56); \\
+			int i = I1; \\
+			System.out.println(i); // 56
+		}
+	\end{itemize}
+	
+\end{flushleft}

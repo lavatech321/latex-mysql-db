@@ -1,0 +1,50 @@
+
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item long keyword is 64-bit signed integer. 
+		
+		\tabletwo{
+			\hline
+			Size & \textbf{8 byte (64 bits)} \\
+			\hline
+			MAX\_VALUE & $2^\textbf{63}$-1 \\
+			\hline
+			MIN\_VALUE & -$2^\textbf{63}$ \\
+			\hline
+			Range & \textbf{-$2^\textbf{63}$} to \textbf{$2^\textbf{63}$-1}   \\
+			\hline
+		}
+		
+		\bigskip
+		\item \textbf{Where is long data type used?}
+		\begin{itemize}
+			\item Eg: Amount of distance travelled by light in 1,000 days. To hold this value integer is not enough. Hence, long is used.
+			\newline
+			long l = 1,26,000 X 60 X 60 X 24 X 1000 miles.
+			\bigskip
+			
+		\end{itemize}	
+	
+		\textbf{Long literals}
+		\begin{itemize}
+			\item \textbf{long} data type can be suffixed with "l" or "L".
+			
+			\item Below are valid \textbf{long} data type:
+			\codeblock{
+				long l = 10L; \cmark \\
+				long b = 10; \cmark
+			}
+			
+			\item However, below declaration will result in error:
+			\codeblock{
+					int x = 10L; \xmark
+			}
+
+		\end{itemize}
+		
+		
+	\end{itemize}
+	
+\end{flushleft}

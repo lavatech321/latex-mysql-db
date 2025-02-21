@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Error redirection \textbf{"2>"} is used to redirect only standard error to some file.	
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: command 2> erorr\_input\_file
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item \textbf{"2>"} performs below operations:
+		\begin{itemize}
+			\item It creates the file if it does not exists.
+			\item It overwrites the file if it exists.
+		\end{itemize}
+		\item Eg: Redirect error \textbf{"No such file or directory"} error of \textbf{ls} command to some file:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\$ ls foo 2> error\_file
+			\newline
+			\newline
+			\color{yellow}
+			\# Display content of error\_file
+			\color{green}
+			\newline
+			\$ cat error\_file
+			\newline
+			\color{white}
+			ls: cannot access 'foo': No such file or directory
+			\fontdimen2\font=4pt
+			
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{itemize}
+\end{flushleft}
+
+

@@ -1,0 +1,45 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item LinkedHashSet is child class of HashSet.
+		\item It is \textbf{exactly same as HashSet}, except:
+		\tabletwo{
+			\textbf{HashSet} & \textbf{LinkedHashSet} \\
+			\hline
+			Datastructure is \textbf{HashTable} & Datastructure is combination of \textbf{LinkedList + HashTable} \\
+			\hline
+			Insertion \textbf{order not preserved} & Insertion \textbf{order preserved} \\
+			\hline
+			Introduced in 1.2 version & Introduced in 1.4 version \\
+			\hline
+		}
+	
+		\item Used to develop \textbf{cache based applications where duplicates are not allowed and insert order is preserved}.	
+		
+	\end{itemize}
+	
+	\textbf{Example Program:}
+	\newline
+	Display LinkedHashSet operations:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		\textbf{HashSet set = new LinkedHashSet();} \\
+		\s \s		\textbf{set.add("Banana")}; \\
+		\s \s		set.add("Apple"); \\
+		\s \s		set.add("Apple"); \\
+		\s \s		\textbf{set.remove("Mango")}; \\
+		\s \s		System.out.println(set);  \\
+		\s	\} \\
+		\}
+	}
+	\bigskip
+	\outputblock{
+		\textbf{[}Banana, Apple\textbf{]}
+	}
+	
+\end{flushleft}
+\newpage
+
+

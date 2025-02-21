@@ -1,0 +1,27 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Multiple interfaces can have variable naming conflicts. 
+		\item But we can solve this problem by using interface names:
+		\item Eg:
+		
+		\codeblockfull{Test.java} {
+		interface A \{ \\
+		\s int x = 777; \\
+		\} \\
+		interface B \{ \\
+		\s int x = 888; \\
+		\} \\
+		class Test implements A, B \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		System.out.println(A.x); // Output: 777 \\
+		\s \s		System.out.println(B.x); // Output: 888 \\
+		\s	\} \}
+		}
+	\end{itemize}
+	
+	
+\end{flushleft}
+\newpage
+

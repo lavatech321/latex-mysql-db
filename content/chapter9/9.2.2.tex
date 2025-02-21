@@ -1,0 +1,535 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+		\bigskip
+	
+		\textbf{Physical Volumes (PVs) Commands:}
+		
+		\begin{itemize}
+			\item 		\textbf{How to create physical volumes (PVs)?}
+			
+			\textbf{pvcreate}: Initialize physical volume(s) for use by LVM
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=9pt
+				Syntax: pvcreate device\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			
+			Eg: Create physical volume of HDD \textbf{/dev/sda}:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# pvcreate /dev/sda
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Eg: Create physical volume of HDD \textbf{/dev/sdb9}:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# pvcreate /dev/sdb9
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+		\end{itemize}
+	
+	
+	\bigskip
+	\bigskip
+	\begin{itemize}
+		\item 	\textbf{How to display all physical volumes (PVs)?}
+		
+		\textbf{pvdisplay}: Display various attributes of physical volume(s)
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: pvdisplay [device\_name]
+			\newline
+			Syntax: pvs [device\_name]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Display all the available physical volumes:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# pvdisplay
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg: Display a specific physical volume:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# pvdisplay /dev/sda1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+		\bigskip
+		\bigskip
+		\item  \textbf{How to delete a physical volumes (PVs)?}
+		
+		\textbf{pvremove}: Delete a physical volume(s).
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: pvremove device\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Remove \textbf{/dev/sda1} physical volumes:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# pvremove /dev/sda1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Volume Group (VGs) Commands}
+	
+	\begin{itemize}
+		\item \textbf{How to create new volume group (VGs)?}
+			
+			\textbf{vgcreate}: Create a volume group.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=9pt
+				Syntax: vgcreate VG\_new PV
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+					
+			Eg: Create volume group named \textbf{vg0} of PV \textbf{/dev/sda}:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# vgcreate vg0 /dev/sda
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Eg: Create volume group named \textbf{vg0} of PV \textbf{/dev/sdb9} and \textbf{/dev/sdc}:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# vgcreate vg0 /dev/sdb9 /dev/sdc
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+	\end{itemize}
+
+	\bigskip
+		\begin{itemize}
+		
+		\item 	\textbf{How to extend an existing volumes groups (VGs)?}
+		
+		\textbf{vgextend}: Add one or more initialized PVs to an existing VG to extend it in size
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: vgextend [VG\_name] [PV\_name]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Extend VG named \textbf{vg0} by adding PV \textbf{/dev/sdb2}:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# vgextend vg0  /dev/sdb2
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		\bigskip
+
+
+		\item 	\textbf{How to remove a PV from an existing volumes groups (VGs)?}
+
+		\textbf{vgreduce}: Remove a PV from a VG.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: vgreduce [VG\_name] [PV\_name]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Remove PV named \textbf{/dev/sdb2} from VG named \textbf{vg0}
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# vgreduce vg0  /dev/sdb2
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\newpage	
+		\item 	\textbf{How to display all volumes groups (VGs)?}
+		
+		\textbf{vgdisplay}: Display various attributes of volume group(s).
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: vgdisplay [VG\_name]
+			\newline
+			Syntax: vgs [VG\_name]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		 	
+		Eg: Display all the available volume groups:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# vgdisplay
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg: Display a specific volume group:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# vgdisplay vg0
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		\bigskip
+		\item  \textbf{How to delete a volume group (VGs)?}
+		
+		\textbf{vgremove}: Remove a specific volume group.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: vgremove VG\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Remove \textbf{vg0} volume group:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# vgremove vg0
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Logical Volume (LV) Commands}
+	
+	\begin{itemize}
+		\item \textbf{How to create new logical volume (LV)?}
+		
+		\textbf{lvcreate}: Create a new logical volume
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: lvcreate -L size[G,M,K] -n vg\_name  lv\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		
+		\bigskip
+		
+		Eg: Create logical volume named \textbf{lv1} from volume group \textbf{vg0} of size 50GB.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# lvcreate -L 50G -n vg0 lv1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+				
+	\end{itemize}
+	
+
+	\bigskip
+	\begin{itemize}
+	
+	\item 	\textbf{How to display logical volumes (LVs)?}
+	\newline
+	\textbf{lvdisplay}: Check for the LV properties
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: lvdisplay [LV\_name]
+		\newline
+		Syntax: lvs [LV\_name]
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg: Display all the available logical volumes:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# lvdisplay
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	Eg: Display a specific logical volume:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# lvdisplay /dev/vg0/lv1
+		\newline
+		or
+		\newline
+		\# lvdisplay /dev/maper/vg0-lv1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	\bigskip
+	\bigskip	
+	
+	\item \textbf{Once LV partition is ready, you can give it filesystem like normal partition}.
+	\newline
+	Eg: Apply \textbf{xfs} filesystem to LV named \textbf{/dev/mapper/vg0-lv1}
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+	\color{green}
+	\fontdimen2\font=9pt
+	\# mkfs -t xfs /dev/mapper/vg0-lv1
+	\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	\bigskip
+	\bigskip
+	
+	\item \textbf{Mount the LV partition like normal partition}.
+	\newline
+	Eg: Temporary mounting
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# mount /dev/mapper/vg0-lv1 /mnt
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	Eg: Permanent mounting
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# tail -1 /etc/fstab
+		\color{white}
+		\newline
+		/dev/mapper/vg0-lv1  /mnt xfs defaults 0 0
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+\end{itemize}	
+	\bigskip
+	\bigskip
+	\begin{itemize}
+
+	\item 	\textbf{How to delete an existing logical volume (LVs)?}
+	
+	\textbf{lvremove}: Removes one or more logical volumes.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: lvremove [LV\_name]
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg: Remove logical volume \textbf{/dev/mapper/vg0-lv1}
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\# lvremove /dev/mapper/vg0-lv1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=red,colframe=red]
+		\color{white}
+		Warning: Make sure to unmount the LV partition before deleting it.
+	\end{tcolorbox}
+	
+	
+	\bigskip
+	\bigskip
+	\item  \textbf{How to extend an existing logical volume (LVs)?}
+
+	\begin{itemize}
+		\item Step 1:
+		\newline
+			\textbf{lvextend}: Extend the logical volume(s)
+			\newline
+			To give the final size to logical volume:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=9pt
+				Syntax: lvextend -L size[G,M,K] logical\_volume\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			To give the additional size to logical volume:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=0.8em
+				Syntax: lvextend -L +size[G,M,K] logical\_volume\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Eg: Extend logical volume with total size of 8GB:
+		
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# lvextend -L 8G /dev/test-volume/data
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		
+			Eg: Provide additional 5GB size to logical volume:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# lvextend -L +5G /dev/test-volume/data
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: No need to unmount the LV partition while extending it.
+			\end{tcolorbox}
+			
+			
+			\item Step 2:
+			\newline
+			Once the LV partition is extended, it is important to resize the filesystem.
+			\begin{itemize}
+				\item To extend \textbf{ext2, ext3, ext4} filesystems:
+				\newline
+				\textbf{resize2fs}: This command is used to resize ext, ext2, ext3 and ext4 filesystems
+					\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+						\color{black}
+						\fontdimen2\font=0.8em
+						Syntax: resize2fs logical\_volume\_name
+						\fontdimen2\font=4pt
+					\end{tcolorbox}
+					
+					Eg: To resize filesystem of logical volume:
+					\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+						\color{green}
+						\fontdimen2\font=9pt
+						\# resize2fs /dev/mapper/vg0-lv1
+						\fontdimen2\font=4pt
+					\end{tcolorbox}
+
+			\item To extend \textbf{xfs} filesystem:
+			\newline
+			\textbf{xfs\_growfs}: Expands an existing XFS filesystem.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=0.8em
+				Syntax: xfs\_growfs logical\_volume\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			Eg: To resize filesystem of logical volume:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=9pt
+				\# xfs\_growfs /dev/mapper/vg0-lv1
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			\end{itemize}
+	\end{itemize}				
+	
+	\bigskip
+	\bigskip
+	
+	\item  \textbf{How to reduce an existing logical volume (LVs)?}
+	
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
+		\color{black}
+		Note: You cannot reduce \textbf{xfs} filesystem. You can reduce \textbf{ext2, ext3 \& ext4} filesystems.
+	\end{tcolorbox}
+	
+	\begin{itemize}
+		\item Step 1: 
+		\newline
+		\textbf{Unmount} the LV partition. 
+		\newline Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# umount /dev/mapper/vg0-lv1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item Step 2:
+		\newline
+		\textbf{e2fsck}: Used to check the ext2/ext3/ext4 family of file systems for any errors.
+		The \textbf{-f} option is used to force the checking.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=0.8em
+			Syntax: e2fsck -f logical\_volume\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Check the filesystem of logical volume:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# e2fsck -f /dev/mapper/vg0-lv1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item Step 3:
+		\newline
+		\textbf{resize2fs}: Allows you to resize ext2, ext3, or ext4 file systems 
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=0.8em
+			Syntax: resize2fs logical\_volume\_name [desired size]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Resize the filesystem of LV:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# resize2fs /dev/mapper/vg0-lv1 3G
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item Step 4:
+		\newline
+		\textbf{lvreduce}: Shrink the LV and the filesystem applied on it
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=0.8em
+			Syntax: lvreduce -L size[G,M,K] logical\_volume\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg: Resize the filesystem of logical volume:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# lvreduce -L 3G /dev/mapper/vg0-lv1
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item Step 5:
+		\newline
+		Finally mount the filesystem again:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# mount /dev/mapper/vg0-lv1  /mnt
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+
+	
+	\end{itemize}
+
+	
+\end{flushleft}
+\newpage
+	

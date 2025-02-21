@@ -1,0 +1,97 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item This is enhanced for loop introduced in Java 1.5 version.
+		\item It is used to retrieve elements of arrays and collections.
+		\bigskip
+		\syntaxblock{
+			for (type var : array) \{  \\
+			\s	statements using var; \\
+			\}	
+		}
+		\item Eg 1: Print elements of 1-dimensional array -
+		\end{itemize}
+		\tabletwo{
+			Normal for loop & Enhanced for loop \\
+			\hline
+			\codeblock{
+				int[] x = \{10,20,30\}; \\
+				for(int i=0;i<x.length;i++)  \\
+				\s	System.out.println(x[i]); \\
+			} &
+			\codeblock{
+				int[] x = \{10,20,30\}; \\
+				for(int x1; x)  \\
+				\s	System.out.println(x1); \\
+			} \\ 
+		}
+	
+	\newpage
+	
+	\begin{itemize}
+		\item Eg 2: Print elements of 2-dimensional array -
+	\end{itemize}
+
+	\tabletwo{
+		Normal for loop & Enhanced for loop \\
+		\hline
+		\codeblock{
+			int[][] x=\{\{10,20\},\{40,50\}\}; \\
+			for(int i=0;i<x.length; i++) \\
+			for(int j=0;j<x[i].length;j++) \\
+			\s	System.out.println(x1);
+		} &
+		\codeblock{
+			int[][] x=\{\{10,20\},\{40,50\}\}; \\
+			for(int[] x1: x) \\
+			for(int x2: x1)     \\
+			\s	System.out.println(x1); 
+		}   \\
+	}
+	
+	\begin{itemize}
+		
+		\item Eg 3: Print 3-dimensional array using for-each loop -
+		\codeblock{
+			
+			int[][][] x = \{ \\
+			\s	\{ \{1, 2\}, \{3, 4\}, \{5, 6\}, \{7, 8\} \}, \\
+			\s	\{ \{9, 10\}, \{11, 12\}, \{13, 14\}, \{15, 16\} \}, \\
+			\s	\{ \{17, 18\}, \{19, 20\}, \{21, 22\}, \{23, 24\} \} \\
+			\}; \\
+			for(int[]][] x1:x)  \\
+			\s for(int[] x2: x1 )  \\
+			\s \s for(int x3: x2)  \\
+			\s \s \s System.out.println(x3); 
+		}
+		
+		\item Eg 4: Print String characters using for-each -
+		\bigskip
+		\tabletwo{
+			Normal for loop & Enhanced for loop \\
+			\hline
+			\codeblock{
+				String n = "lavatech"; \\
+				for(int i = 0; i < n.length(); i++) \\
+				System.out.print(n.charAt(i));
+			} &
+			\codeblock{
+				String s = "lavatech"; \\
+				char[] ch = s.toCharArray(); \\
+				for(char c: ch) \\
+				System.out.print(c);
+			}   \\
+		}
+		
+	\end{itemize}
+
+
+	Drawback of for-each loop:
+	\begin{itemize}
+		\item Applicable only for arrays and collections.
+		\item Using for-each loop, you can print array elements in original order but not in reverse order.	
+	\end{itemize}
+	
+\end{flushleft}
+

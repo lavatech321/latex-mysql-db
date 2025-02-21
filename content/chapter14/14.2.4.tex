@@ -1,0 +1,30 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item ArrayDeque class \textbf{implements the Deque and the Queue} interface.
+		\item It uses \textbf{head and tail} where, \textbf{head takes care of insertion \& deletion from front}, and the \textbf{tail takes care of insertion \& deletion from end}.
+		\newimage{0.22}{content/chapter14/images/rr.png}
+	\end{itemize}
+
+	\newpage
+	\textbf{Example Program}: Display ArrayDeque operations:
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		\textbf{Deque<Integer> queue = new ArrayDeque<Integer>();} \\
+		\s \s		\textbf{queue.offer(13);} \\
+		\s \s		\textbf{queue.offerFirst(12);} \\
+		\s \s		\textbf{queue.offerLast(10);} \\
+ 		\s \s		int value1 = \textbf{queue.peekFirst()}; \\
+		\s \s		int value2 = \textbf{queue.peekLast()}; \\
+		\s \s		\textbf{queue.pollFirst();} \\
+		\s \s		\textbf{queue.pollLast();} \\
+		\s	\} \} 
+	}
+\end{flushleft}
+
+
+

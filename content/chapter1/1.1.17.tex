@@ -1,0 +1,103 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Data flow diagrams (DFD) are used to graphically \textbf{represent data flow}. 		
+		\item DFD is divided into:
+		\begin{itemize}
+			\item \textbf{Logical}: Describes data flow through a system to perform certain functionality. 
+			\item \textbf{Physical}: Describes implementation of the logical data flow.
+		\end{itemize} 
+	\end{itemize}	
+
+	\textbf{DFD Symbols}: 
+	\begin{itemize}
+		
+		\item \textbf{External Entity}
+		\begin{itemize}
+			\item An external entity is a person, department, etc. that provides data to the system or receives outputs from the system. 
+			\item They do not process data.
+			\item \textbf{Symbol}:
+			\newimage{1}{content/chapter1/images/note3.png}	
+		\end{itemize}
+		
+		\item \textbf{Process}
+		\begin{itemize}
+			\item A process receives input data and produces output in different form.
+			\item Process has a name and function.
+			\item Eg: Apply Payment, Calculate Commission, Verify Order
+			\item \textbf{Symbol}:
+			\newimage{0.5}{content/chapter1/images/note1.png}
+		\end{itemize}
+		\newpage
+		
+		\item \textbf{Data Store}
+		\begin{itemize}
+			\item A data store is a symbol for data storage.
+			\item \textbf{Symbol}:
+			\newimage{0.7}{content/chapter1/images/note2.png}
+		\end{itemize}
+		
+		\item \textbf{Data Flow}
+		\begin{itemize}
+			\item A data-flow is a path for data to move from one part of the information system to another. 
+			\item \textbf{Symbol}:
+			\begin{itemize}
+				\item Straight lines with incoming arrows are input data flow
+				\item Straight lines with outgoing arrows are output data flows
+			\end{itemize}
+			\newimage{0.6}{content/chapter1/images/arrow.png}
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\newpage
+	\textbf{Rule of Data Flow}
+	
+	\begin{itemize}
+		\item All flow must begin with and end at a processing step. 
+		\newimage{0.7}{content/chapter1/images/arow1.png}
+		\item An entity cannot provide data to another entity without processing.
+		\newimage{0.7}{content/chapter1/images/note4.png}
+		\item Data cannot move directly from an entity to a data story without being processed.
+		\newimage{0.7}{content/chapter1/images/note5.png}
+		\item Data cannot move directly from a data store without being processed.
+		\newimage{0.7}{content/chapter1/images/note6.png}
+		
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Context-Level Diagram (CLD)}
+	\begin{itemize}
+		\item A context diagram is the highest level in a data flow diagram.
+		\item It contains only one process numbered "\textbf{0.0}" for the entire system. 
+		\item CLD split into major processes which give greater detail.
+		\item Eg: Library management CLD
+		\bigskip
+		\newimage{0.55}{content/chapter1/images/CLD.png}
+	\end{itemize}
+	\newpage
+	\textbf{Level 1 DFD}
+	\begin{itemize}
+		\item CLD can further be exploded to represent details of the processing activities into level 1 DFD.
+		\item Each process is numbered as 1.0, 2.0 and so on.
+		\item Level 1 DFD is next level of process explosion.
+		\item Eg: Level 1 DFD of library management system:
+		\bigskip
+		\newimage{1.1}{content/chapter1/images/im1.png}
+	\end{itemize}
+
+	\newpage
+	\textbf{Level 2 DFD}
+	\begin{itemize}
+		\item A Level 2 DFD provides a more detailed view of a system than a Level 1 DFD. 
+		\item The processes identified in the Level 1 DFD are broken down into sub-processes in level 2 DFD.
+		\item It provide a more detailed flow at granular level.
+		\item Eg: Level 2 DFD of library management system:
+		\bigskip
+		\newimage{1.1}{content/chapter1/images/im2.png}
+	\end{itemize}
+	
+\end{flushleft}

@@ -1,0 +1,68 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item A thread waiting for other thread forever is called deadlock.
+		\item \textbf{Synchronized} keyword is \textbf{reason for deadlock} situation.
+		\item Theres is no solution for deadlock, only prevention is possible.
+		
+		\item Eg: Both functions are synchronized, hence the deadlock situation:
+		\bigskip		
+		\codeblockfull{demo.java}{
+			class A \{ \\
+			\s	public synchronized void d1(B b) \{ \\
+			\s \s		System.out.println("Thread 1 starts execution of d1()"); \\
+			\s \s		try \{ \\
+			\s \s \s			Thread.sleep(2000); \\
+			\s \s		\} \\
+			\s \s		catch (InterruptedException e) \{\} \\
+			\s \s		System.out.println("Thread 1 trying to call B's last()"); \\
+			\s \s		b.last(); \\
+			\s	\} \\
+			\s	public synchronized void last() \{ \\
+			\s \s		System.out.println("Inside A, this is last()"); \\
+			\s	\} \\
+			\} \\
+			\s	public synchronized void d2(A a) \{ \\
+			\s \s		System.out.println("Thread 2 starts execution of d2()"); \\
+			\s \s		try \{ \\
+			\s \s \s			Thread.sleep(2000); \\
+			\s \s		\} 
+		}
+		\newpage
+		\codecontinue{
+			class B \{ \\
+			\s \s		catch (InterruptedException e) \{\} \\
+			\s		System.out.println("Thread 2 trying to call A's last()"); \\
+			\s \s		a.last(); \\
+			\s	\} \\
+			\s	public synchronized void last() \{ \\
+			\s \s		System.out.println("Inside B, this is last()"); \\
+			\s	\} \} \\
+			class Deadlock1 extends Thread \{ \\
+			\s	A a = new A(); \\
+			\s 	B b = new B(); \\
+			\s	public void m1() \{ \\
+			\s \s		this.start(); \\
+			\s \s		a.d1(b); \\
+			\s	\} \\
+			\s	public void run() \{ \\
+			\s \s		b.d2(a); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Deadlock1 d = new Deadlock1(); \\
+			\s \s		d.m1(); \\
+			\s	\} \} 		
+		}		
+		\outputblock{
+			Thread 1 starts execution of d1() \\ 
+			Thread 2 starts execution of d2() \\
+			Thread 1 trying to call B's last() \\
+			Thread 2 trying to call A's last() \\
+			Press CTRL+C to break
+		}
+	
+		If atleast 1 synchrnoinsed keyword is removed, the program wont enter into deadlock. 
+		
+		
+	\end{itemize}
+\end{flushleft}

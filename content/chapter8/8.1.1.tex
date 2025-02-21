@@ -1,0 +1,50 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Inner join returns all rows from multiple tables where the join condition is met.
+	
+	\newimage{1.3}{content/chapter8/images/inner.png}
+	
+	Consider below 2 tables:
+	\codeblock{
+		create table employee(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		insert into employee values(101, 'Ravi', 'Sharma');	\\
+		insert into employee values(102, 'Kavi', 'Verma');	\\
+		insert into employee values(103, 'Jimmy', 'Kumar');	\\
+		insert into employee values(104, 'Josh', 'Kumar');	\\
+		\\
+		create table contractor(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		insert into contractor values(101, 'Jimmy', 'Kumar');	\\
+		insert into contractor values(102, 'Jack', 'Snow');	\\
+		insert into contractor values(103, 'Penny', 'Copper');	\\
+		insert into contractor values(104, 'Kavi', 'Verma');
+	}
+
+		\newpage
+		Eg: Inner Join
+		\outputblock{
+			select * from employee  \\
+			inner join contractor \\
+			on employee.first\_name = contractor.first\_name; \\
+			\\
+			ID \s	FIRST\_NAME \s	SECOND\_NAME \s ID	\s FIRST\_NAME \s	SECOND\_NAME \\
+			-----------------------------------------------------------\\
+			103 \s	Jimmy \s	Kumar \s	101 \s	Jimmy \s	Kumar \\
+			102	\s Kavi \s	Verma \s	104 \s	Kavi \s	Verma 
+		}
+		
+		\item INNER JOIN could be rewritten using the older implicit syntax as follows:
+		\bigskip
+		\outputblock{
+			SELECT * \\
+			FROM employee, contractor \\
+			WHERE employee.first\_name = contractor.first\_name;
+		}		
+		
+	
+\end{flushleft}
+
+\newpage
+
+
+

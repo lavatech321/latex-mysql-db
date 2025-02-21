@@ -1,0 +1,124 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+		
+	\textbf{default}:
+	\begin{itemize}
+		\item DEFAULT constraint specify default value for column in table. 
+		\item Used when INSERT statement does not provide a value for that column. 
+
+		\syntaxblock{
+			CREATE TABLE table\_name ( \\
+			\s column1 datatype DEFAULT default\_value, \\
+			\s column2 datatype DEFAULT default\_value, \\
+			\s -- other columns \\
+			);
+		}
+		Eg: 
+		\commandblock{
+			CREATE TABLE employees ( \\
+			\s employee\_id NUMBER(5), \\
+			\s first\_name VARCHAR2(50) DEFAULT 'John', \\
+			\s dob date DEFAULT SYSTIMESTAMP, \\
+			\s joining\_date date DEFAULT SYSDATE, ); \\
+			\\
+			insert into employees(employee\_id, first\_name) values (101, 'Ravi'); \\
+			\\
+			insert into employees(employee\_id, first\_name, dob\_date, joining\_date ) values (101, default, default, default); \\
+			\\
+			CREATE TABLE employees ( \\
+			\s first\_name VARCHAR2(50) DEFAULT 'John', \\
+			\s dob date DEFAULT SYSTIMESTAMP, \\
+			\s joining\_date date DEFAULT SYSDATE, \\
+			); 
+		}
+		\newpage
+		\codecontinue{
+			insert into employees(first\_name, dob\_date, joining\_date ) values (default, default, default);
+		}
+	\end{itemize}
+
+
+	\textbf{not null}:
+	\begin{itemize}
+		\item NOT NULL ensures a column cannot contain NULL values. 
+		\bigskip
+		\noteblock{
+			Default has highest priority than Not NULL, so first define default than not null.
+		}
+		\syntaxblock{
+			CREATE TABLE table\_name ( \\
+			\s column\_name datatype NOT NULL, \\
+			\s -- other columns \\
+			); \\
+			or \\
+			CREATE TABLE table\_name ( \\
+			\s column\_name datatype CONSTRAINT constraint\_name NOT NULL, \\
+			\s -- other columns \\
+			); 
+		}
+		Eg:
+		\commandblock{
+			create table student( \\
+			\s no number CONSTRAINT c1 not null \\
+			); \\
+			CREATE TABLE students ( \\
+			\s student\_id NUMBER(5) NOT NULL, \\
+			\s first\_name VARCHAR2(50) NOT NULL,	\\
+			); 	
+		}
+		\newpage
+		\codecontinue{
+			create table students( \\
+			\s no number DEFAULT 0 NOT NULL,  \\
+			); 
+		}
+	\end{itemize}
+
+	\textbf{check}
+	\begin{itemize}
+		\item CHECK constraint enforces a condition on column or entire table. 
+		\item It ensures data entered into the column meets specific criteria or rules. 
+		\item Column level check constraints:
+		\bigskip
+		\syntaxblock{
+			CREATE TABLE table\_name ( \\
+			column\_name datatype CONSTRAINT constraint\_name CHECK (condition), \\
+			-- other columns \\
+			);	 \\
+			or \\
+			CREATE TABLE table\_name ( \\
+			column\_name datatype CHECK (condition), \\
+			-- other columns \\
+			);	 
+		}
+		\item Table level check constraints:
+		\bigskip
+		\syntaxblock{
+			CREATE TABLE table\_name ( \\
+			column\_name datatype, \\
+			CONSTRAINT constraint\_name CHECK (condition) \\
+			);	 
+		}
+		Eg: 
+		\commandblock{
+			CREATE TABLE orders ( \\
+			\s order\_id NUMBER(5), \\
+			\s order\_total NUMBER(10, 2) CHECK (order\_total > 0) \\
+			);
+		}
+
+		\commandblock{
+			CREATE TABLE emp( \\
+			\s eno number,  \\
+			\s CONSTRAINT con1 CHECK(eno IN (1,2,3)) \\
+			); \\
+			CREATE TABLE emp1( \\
+			\s eno number  \\
+			\s DEFAULT 10 CHECK(eno in (10,20,30))  \\
+			\s NOT NULL \\
+			);
+		}
+		
+	\end{itemize}	
+\end{flushleft}
+\newpage

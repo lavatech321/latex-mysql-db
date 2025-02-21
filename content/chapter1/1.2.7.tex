@@ -1,0 +1,154 @@
+\setlength{\columnsep}{5pt}
+\begin{flushleft}
+	
+		\codeblockfull{MyFirstApp.java}{
+			public class MyFirstApp \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		System.out.println("I Rule!"); \\
+			\s \s		System.out.println("The World"); \\
+			\s	\} \\
+			\}	
+			
+		}
+		\bigskip
+		\commandblock{
+			javac MyFirstApp.java \\
+			java MyFirstApp 
+		}
+		\bigskip
+		\outputblock{
+			I Rule! \\
+			The World
+		}
+		
+	
+	\newpage
+	\textbf{Understanding javac command}
+	\begin{itemize}
+		\item \textbf{javac} command is used to compile a single or group of java source files.
+		\bigskip
+		\syntaxblock{
+			javac [options] code1.java code2.java ....
+		}
+		\item Eg:
+		\bigskip
+		\commandblock{
+			javac Test.java \\
+			javac A.java B.java C.java \\
+			javac *.java
+		}
+		\item Important options:
+		\begin{itemize}
+			\item -version: Display java compiler version.
+			\bigskip
+			\commandblock{
+				\textbf{\$ javac -version} \\
+				javac 11.0.20
+			}
+			\item -d: Specify where to place generated class files.
+			\bigskip
+			\commandblock{
+				\$ mkdir code \\
+				\$ javac -d code Test.java \\
+				\$ ls code \\
+				apply.class 
+			}
+			\item -source: Provide specific Java release.
+			\bigskip
+			\commandblock{
+				\$ javac -source 11 Test.java 
+			}
+			
+			\newpage
+			\item -verbose: Output messages about what the compiler is doing.
+			\bigskip
+			\commandblock{
+				\$ javac -verbose Test.java 
+			}
+		\end{itemize}
+	\end{itemize}
+	
+	\textbf{Understanding java command}	
+	\begin{itemize}
+		\item Use java command to run a single class file. You can run only one “.class” file at a time.
+		\bigskip
+		\syntaxblock{
+			java [options] classname arg1 arg2 arg3 ....
+		}
+		\item Eg:
+		\bigskip
+		\commandblock{
+			\$ java Test
+		}
+		\item Important options:
+		\begin{itemize}	
+			\item -version: Print product version.
+			\bigskip
+			\commandblock{
+				\$ java -version \\
+				openjdk version "11.0.20" 2023-07-18
+			}		
+			\item -D: Used to set the system property to customise behaviour program. 
+			\begin{itemize}
+				\item To display all properties of system, execute below code:
+				\bigskip
+				\codeblockfull{info.java}{
+					import java.util.*; \\
+					public class info \{ \\
+					\s public static void main(String[] args) \{ \\
+					\s \s	Properties p = System.getProperties(); \\
+					\s \s		p.list(System.out); \\
+					\s	\} \}
+				}
+				\newpage
+				\item You can set the property using \textbf{-D} option and use it in program as below:
+				\bigskip
+				\codeblockfull{info.java}{
+					public class info \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s \s		String fp = System.getProperty("fname"); \\
+					\s \s		System.out.println("File name is:"+fp); \\
+					\s	\} \\
+					\}
+				}
+				\bigskip
+				\commandblock{
+					\$ \textbf{javac info.java}  \\
+					\$ \textbf{java -Dfname=app.txt info }\\
+					File name is:app.txt \\
+					\\
+					\$ \textbf{java info }\\
+					File name is:null
+				}
+			\end{itemize}
+			
+			\bigskip
+			\item \textbf{-cp}: Classpath describes the location where the required “.class” files are available. By default, JVM searches in current working directory for the required “.class” file. Classpath can be set in the following 3 ways:
+			\begin{itemize}
+				\item \textbf{Using environment variable}: This is permanent and  preserved across system restarts. Recommended when you are installing a permanent software.
+				\item \textbf{Using “set” command}: Preserved only for particular command prompt.
+				\bigskip
+				\commandblock{					
+					\$ set classpath=C:$\backslash$lavatech\_classes
+				}
+				\item \textbf{Using “-cp” option}: Preserved only for particular command. Eg:
+				\bigskip
+				\codeblockfull{apply.java}{
+					public class apply \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s \s System.out.println("Welcome"); \\
+					\s	\} \}
+				}
+				\bigskip
+				\commandblock{
+					\$ mkdir app \\
+					\$ javac -d app/ apply.java  \\
+					\$ java -cp app apply  \\
+					Welcome	
+				}
+			\end{itemize}				
+			
+			
+		\end{itemize}	
+	\end{itemize}
+\end{flushleft}

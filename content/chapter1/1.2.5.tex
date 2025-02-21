@@ -1,0 +1,65 @@
+\setlength{\columnsep}{5pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Introduced in Java9, JShell is a Read-Eval-Print Loop (REPL)
+		\item It evaluates declarations, statements, and expressions as they are entered, and then it immediately shows the results.
+		\item To use jshell, type “jshell” command in command prompt:
+		\bigskip
+		\commandblock{
+			\$ jshell  \\
+			jshell> int i=42; \\
+			i ==> 42 \\
+			\\
+			jshell> float j=3.4f; \\
+			j ==> 3.4 \\
+			\\
+			jshell> i+j \\
+			\$3 ==> 45.4 \\
+			\\
+			jshell> String text = "Welcome To World of Java"; \\	
+			text ==> "Welcome To World of Java" 
+		}
+		
+		\newpage
+		\item To display all variables declared:
+		\bigskip
+		\commandblock{
+			jshell> /vars \\
+			|    int i = 42 \\
+			|    float j = 3.4 \\
+			|    float \$3 = 45.4 \\
+			|    String text = "Welcome To World of Java" \\
+			|    String \$5 = "WELCOME TO WORLD OF JAVA"
+		}
+	
+		\item To save all valid statements of Jshell to a file:
+		
+		\commandblock{
+			jshell> /save filename.java \\
+			\\
+			jshell> /exit \\
+			|  Goodbye
+		}
+		
+		\item Content of filename.java:
+		\codeblockfull{filename.java}{
+			int i=42; \\
+			float j=3.4f; \\
+			i+j \\
+			String text = "Welcome To World of Java"; \\
+			text.toUpperCase()
+		}
+		
+		\item You can open the file back in the jshell using open command:
+			\commandblock{
+				jshell> /open filename.java \\
+				 \\
+				jshell> i \\
+				i ==> 42
+			}
+		
+	\end{itemize}
+
+\end{flushleft}
+

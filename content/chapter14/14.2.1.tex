@@ -1,0 +1,88 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+		The PriorityQueue class implements Queue interface.
+		\newline
+		It provides a \textbf{priority-based ordering} of elements. 
+		\newline
+		Elements are ordered as per \textbf{natural order} or a \textbf{custom comparator} that you can specify.
+
+		\newimage{0.4}{content/chapter14/images/pri.png}
+		\newpage
+		\item Features:
+		\begin{itemize}
+			\item The priority can be either \textbf{default natural sorting order or customised} sorting order defined by comparator.
+			\item It is \textbf{resizable array}.
+			\item \textbf{Duplicates} are \textbf{not} \textbf{allowed}.
+			\item \textbf{Insertion} order is \textbf{not} \textbf{preserved}.
+			\item With default natural sorting order, \textbf{homogenous} objects are \textbf{allowed}.
+			\item If we are defining our own sorting by comparator then objects can be \textbf{hetrogenous}.
+			\item \textbf{Null} insertion is \textbf{not allowed}.
+		\end{itemize}
+		
+		\textbf{Creating PriorityQueue}
+		\begin{itemize}
+			\item Creating an empty PriorityQueue:
+			\bigskip			
+			\syntaxblock{
+				PriorityQueue queue = new PriorityQueue();
+			}
+			\textbf{Capacity}:
+			\begin{itemize}
+				\item Default initial capacity of 11 elements. 
+				\item Once 11 objects are added, then a new array list object will be created with new capacity as shown below:
+				\bigskip
+				\codecontinue{
+					\textbf{New capacity = current capacity * 2}
+				}
+			\end{itemize}
+		
+			\item Creating an empty PriorityQueue with initial capacity:
+			\bigskip			
+			\syntaxblock{
+				PriorityQueue queue = new PriorityQueue(int capacity);
+			}	
+			Eg:
+			\codeblock{
+				PriorityQueue queue = new PriorityQueue(20);
+			}
+			\newpage
+			\item Creating a PriorityQueue with custom capacity and Comparator:
+			\bigskip
+			\syntaxblock{
+				PriorityQueue queue = new PriorityQueue(int capacity, Comparator c);
+			}
+		\end{itemize}
+
+	\textbf{Example Program:}
+	\newline
+	PriorityQueue with custom comparator that would add elements in descending order:
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		\textbf{class Custom implements Comparator<Integer>\{} \\
+		\s	\textbf{public int compare(Integer num1, Integer num2)} \{ \\
+		\s \s		\textbf{return num2.compareTo(num1);} \\
+		\s	\} \} \\
+		class CustomComparatorExample \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		\textbf{PriorityQueue<Integer> pq = new PriorityQueue<>(new Custom());} \\
+		\s \s		pq.offer(10); \\
+		\s \s		pq.offer(5); \\
+		\s \s		\textbf{pq.offer(12);} \\
+		\s \s		while (\textbf{!pq.isEmpty()}) \{ \\
+		\s \s \s			int element = \textbf{pq.poll()}; \\
+		\s \s \s			System.out.println(element); \\
+		\s \s	\} \} \}		
+	}
+	\bigskip
+	\outputblock{
+		10 \\
+		5 
+	}
+	
+	
+\end{flushleft}
+\newpage
+
+

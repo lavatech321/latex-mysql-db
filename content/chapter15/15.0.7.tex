@@ -1,0 +1,130 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}	
+	
+	\begin{itemize}
+		\item PrintWriter is the most enhanced writer.
+		\item PrintWriter can \textbf{write primitive data directly to the file}.
+		
+		\item \textbf{Constructor}:
+		\bigskip
+		\syntaxblock{
+			PrintWriter pw = new PrintWriter(String fname); \\
+			PrintWriter pw = new PrintWriter(File f); \\
+			PrintWriter pw = new PrintWriter(Writer w); 
+		}
+		\bigskip
+		\noteblock{
+		PrintWriter can comminucate directly with the file and can communicate via some writer object also.
+		}
+		\newpage
+		\item \textbf{Method}:
+		\begin{itemize}
+			\item Write a single character to file:
+			\bigskip
+			\syntaxblock{
+				void write(int ch);
+			}
+			\item Write an array of character to file:
+			\bigskip
+			\syntaxblock{
+				void write(char[] ch);
+			}
+		
+			\item Write a string to file:
+			\bigskip
+			\syntaxblock{
+				void write(String s);
+			}
+
+			\item To give the guarantee that total data including last character will be written to the file.
+			\bigskip
+			\syntaxblock{
+				void flush();
+			}
+			
+			\item To close the writer:
+			\bigskip
+			\syntaxblock{
+				void close();
+			}			
+
+			\item To print a single character to file:
+			\bigskip
+			\syntaxblock{
+				void print(char ch);
+			}
+			
+			\item To print an integer to file:
+			\bigskip
+			\syntaxblock{
+				void print(int i);
+			}
+		
+			\item To print a double to file:
+			\bigskip
+			\syntaxblock{
+				void print(double d);
+			}
+			
+			\item To print a boolean to file:
+			\bigskip
+			\syntaxblock{
+				void print(boolean b);
+			}
+		
+			\item To print a string to file:
+			\bigskip
+			\syntaxblock{
+				void print(String s);
+			}
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\textbf{Example Program:}
+	\begin{itemize}
+		\item Create a file named "mno.txt" and write some content to it:
+		\bigskip
+		\codeblockfull{Test.java}{
+			import java.io.*; \\
+			class Test \{ \\
+			\s public static void main(String[] args) throws Exception \{ \\
+			\s \s		\textbf{FileWriter fw = new FileWriter("mno.txt");} \\
+			\s \s		\textbf{PrintWriter out = new PrintWriter(fw);} \\
+			\s \s		\textbf{out.write(100);} \\ 
+			\s \s		\textbf{out.println(100);}  \\
+			\s \s		\textbf{out.println(true);}   \\
+			\s \s		\textbf{out.println('c');}  \\
+			\s \s		\textbf{out.println("lavatech"); }\\
+			\s \s		\textbf{out.flush();}  \\
+			\s \s		\textbf{out.close();}  \\
+			\s	\}  \}
+		}
+		
+		This will create fill named "mno.txt" with below content:
+		\bigskip
+		\outputblock{
+		d100 \\
+		true \\
+		c \\
+		lavatech
+		}
+		\bigskip
+		
+		\noteblock{
+			write() v/s print()
+			\begin{itemize}
+				\item write(100) would result in 'd'
+				\item print(100) would result in 100
+			\end{itemize}
+		}	
+	\end{itemize}
+	
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

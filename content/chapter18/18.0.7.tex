@@ -1,0 +1,74 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item JVM can \textbf{save complete \& not part of object} to the file during serialisation.
+		\item \textbf{Using externalisation, programmer can save part or complete object to a file.}
+		\item Performance wise, externalisation is best choice.
+		\item Externalizable is child interface of Serializable.
+		
+		\newimage{0.4}{content/chapter18/images/obj4.png}
+
+		\item Rules for externalisation:
+		\begin{itemize}
+			\item \textbf{Override readExternal() \& writeExternal()} as they execute automatically during serialisation \& deserialisation.
+			\item Externalisable implemented class should contain “public no-arg” constructor. 
+		\end{itemize}
+		\item Eg: Creates an object and overrides readExternal() and writeExternal() to write part of object to file "abc.ser":
+		\newpage
+		\codeblockfull{demo.java}{
+			import java.io.*; \\
+			\textbf{class External implements Externalizable \{} \\
+			\s	String s; \\
+			\s	int i, j; \\
+			\s	\textbf{public External() \{\}} \\
+			\s	\textbf{public External(String s, int i, int j)} \{ \\
+			\s \s		\textbf{this.s = s; this.i = i; this.j = j;} \\
+			\s	\} \\
+			\s	\textbf{public void writeExternal(ObjectOutput out) throws IOException} \{ \\
+			\s \s		\textbf{out.writeObject(s);} \\
+			\s \s		\textbf{out.writeInt(i);} \\
+			\s	\} \\
+			\s	\textbf{public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException} \{ \\
+			\s \s		\textbf{s = (String)in.readObject();} \\
+			\s \s		\textbf{i = in.readInt();} \\
+			\s	\}  \\
+			public static void main(String[] args) throws Exception \{  \\
+			\s		\textbf{External t1 = new External("lavatech",10,20);} \\
+			\s		\textbf{FileOutputStream fos = new FileOutputStream("abc.ser");} \\
+			\s		\textbf{ObjectOutputStream oos = new ObjectOutputStream(fos);} \\
+			\s \s		\textbf{oos.writeObject(t1);} \\
+			\s		\textbf{FileInputStream fis = new FileInputStream("abc.ser");} \\
+			\s		\textbf{ObjectInputStream ois = new ObjectInputStream(fis);} \\
+			\s		\textbf{External t2 = (External)ois.readObject();} \\
+			\s \s		System.out.println(t2.s+"..."+t2.i+"..."+t2.j); \\
+			\s	\} \}
+			
+		}
+		\bigskip
+		\outputblock{
+			lavatech...10...0
+		}
+	\end{itemize}
+	
+	\textbf{Serialisation V/S Externalisation}
+	\bigskip
+	\tabletwo{
+		\textbf{Serialisation} & \textbf{Externalisation} \\
+		\hline
+		Meant for \textbf{default} serialisation & Meant for \textbf{customised} serialisation \\
+		\hline
+		\textbf{JVM} has control & \textbf{Programmer} has control \\
+		\hline
+		Save \textbf{complete object} to the file & 	Save \textbf{either complete or part of the object} to the file \\
+		\hline
+		\textbf{Performance is low} & \textbf{Performance is high} \\
+		\hline
+		It is a marker interface \& does'nt contain any methods & Contains 2 methods: \textbf{writeExternal()} and \textbf{readExternal()} \\
+		\hline
+		Does not contain  "public no-argument" constructor & Contain public no-argument constructor \\
+		\hline
+		\textbf{Tranient used} in serialisation & \textbf{Transient cant} be used in externalisation \\	
+	}
+	
+\end{flushleft}
+

@@ -1,0 +1,263 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Consider below table:
+	\commandblock{
+		create table employee(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		insert into employee values(101, 'Ravi', 'Sharma');	\\
+		insert into employee values(102, 'Kavi', 'Verma');	\\
+		insert into employee values(103, 'Jimmy', 'Kumar');	\\
+		insert into employee values(104, 'Josh', 'Kumar');		
+	}
+	
+	\textbf{Case manipulation functions}
+	\begin{itemize}
+		\item \textbf{UPPER(col/ char\_string)}
+		\outputblock{
+			SELECT UPPER(first\_name) as fname from employee; \\
+			FNAME	\\
+			-------------- \\
+			RAVI	\\
+			KAVI	\\
+			JIMMY	\\
+			JOSH
+		}
+		\item \textbf{LOWER(col/ char\_string)}
+		\outputblock{
+			SELECT LOWER(first\_name) as fname from employee; \\
+			FNAME	\\
+			--------------- \\
+			ravi	\\
+			kavi	\\
+			jimmy	\\
+			josh
+		}
+		\newpage
+		\item \textbf{INITCAP(col/ char\_string)}:  Capitalize the first letter of each word.
+		\outputblock{
+			SELECT INITCAP(first\_name) as fname from employee; \\
+			FNAME	\\
+			-------------\\
+			Ravi	\\
+			Kavi	\\
+			Jimmy	\\
+			Josh
+		}
+	\end{itemize}
+
+	\textbf{String Manipulation functions}
+	\begin{itemize}
+		\item \textbf{CONCAT()}
+		\outputblock{
+			SELECT CONCAT(first\_name, second\_name) as fname from employee; \\
+			FNAME \\
+			------------------------\\
+			RaviSharma	\\
+			KaviVerma	\\
+			JimmyKumar	\\
+			JoshKumar	\\
+			\\
+			SELECT CONCAT(CONCAT(first\_name,' '),second\_name) as fname from employee;	 \\
+			FNAME	\\
+			---------------------------\\
+			Ravi Sharma	\\
+			Kavi Verma	\\
+			Jimmy Kumar	\\
+			Josh Kumar 	
+		}
+		\newpage
+		You can also use "||" operator to concatenate multiple strings. Performance-wise, operator || is more faster than concat function.
+		\outputblock{
+			SELECT first\_name || ' ' || second\_name as fname from employee; \\
+			FNAME	\\
+			Ravi Sharma	\\
+			Kavi Verma	\\
+			Jimmy Kumar	\\
+			Josh Kumar
+		}
+		
+		\item \textbf{LENGTH()}
+		\outputblock{
+			SELECT LENGTH(first\_name) as fname from employee; \\
+			FNAME	\\
+			4	\\
+			4	\\
+			5	\\
+			4
+		}
+		\item \textbf{SUBSTR()}: Return a set of string. 
+		\syntaxblock{
+			SUBSTR(STRING,start,end) \\
+			where, \\
+			\s start and end  can be positive or negative.
+		}
+		Note on start:
+		\begin{itemize}
+			\item Start is optional.
+			\item Can be 0 or 1, which means it will start from beginning.
+			\item If no start is specified, then it will start from beginning.
+		\end{itemize}
+		Note on end:
+		\begin{itemize}
+			\item End is not optional.
+			\item If no end is specified, the end will be end of string.
+			\item End specifies the total number of characters to select.
+		\end{itemize}
+		\outputblock{
+			SELECT SUBSTR('ORACLE',1,3) as Example from dual; \\
+			EXAMPLE \\
+			-----------\\
+			ORA	 \\
+			\\
+			SELECT SUBSTR('ORACLE',0,3) as Example from dual; \\
+			EXAMPLE \\
+			-----------\\
+			ORA	 \\
+			\\
+			SELECT SUBSTR('ORACLE',3,3) as Example from dual; \\
+			EXAMPLE \\
+			-----------\\
+			ACL	 \\
+			\\
+			SELECT SUBSTR('ORACLE',3) as Example from dual; \\
+			EXAMPLE \\
+			-----------\\
+			ACLE	 \\
+		}
+		\bigskip
+		\outputblock{
+			SELECT SUBSTR('ORACLE',-2) as Example from dual;	\\
+			SELECT SUBSTR('ORACLE',-3) as Example from dual;	\\
+			SELECT SUBSTR('ORACLE',-4) as Example from dual;
+			
+		}
+		\newpage
+		\item \textbf{INSTR()}: Used to find the position of a substring within a string. 
+		\syntaxblock{
+			INSTR(source\_string, search\_string, [start\_position], [occurrence])
+		}
+		\bigskip
+		\outputblock{
+			SELECT INSTR('LAVATECH TECHNOLOGY','A',1,2) as Example from dual; \\
+			EXAMPLE \\
+			-----------\\
+			4 \\
+			\\
+			SELECT INSTR('LAVATECH TECHNOLOGY','O',1,2) as Example from dual; \\
+			EXAMPLE	\\
+			-----------\\
+			17	\\
+			\\
+			SELECT INSTR('LAVATECH TECHNOLOGY','O',-1,2) as Example from dual; \\
+			EXAMPLE	\\
+			-----------\\
+			15
+		}
+
+		\item \textbf{REVERSE()}
+		\outputblock{
+			SELECT REVERSE('ORACLE') as Example from dual; \\
+			EXAMPLE	\\
+			-----------\\
+			ELCARO
+		}
+		\newpage
+		\item \textbf{LPAD()}
+		\outputblock{
+			SELECT LPAD(first\_name, 20, ' ') as fname from employee; \\
+			\s FNAME	\\
+			-------------------\\
+			\s \s \s Ravi	\\
+			\s \s \s Kavi	\\
+			\s \s \s Jimmy	\\
+			\s \s \s Josh 	\\
+			\\
+			SELECT LPAD(first\_name, 20, '*') as fname from employee; \\
+			\s \s FNAME	\\
+			--------------------------\\
+			****************Ravi	\\
+			****************Kavi	\\
+			***************Jimmy	\\
+			****************Josh	\\
+			\\
+			SELECT LPAD(first\_name, 10) as fname from employee;	\\
+			\s FNAME	\\
+			--------------------------\\
+			\s Ravi	\\
+			\s Kavi	\\
+			\s Jimmy	\\
+			\s Josh	
+		}
+		\newpage
+		\item \textbf{RPAD()}
+		\outputblock{
+			SELECT RPAD(first\_name, 10, '*') as fname from employee;	\\
+			FNAME	\\
+			--------------------------\\
+			Ravi******	\\
+			Kavi******	\\
+			Jimmy*****	\\
+			Josh******
+		}
+		\bigskip
+		\item \textbf{LTRIM()}
+		\outputblock{
+			SELECT LTRIM('\%\%\%ORACLE','\%') as Example from dual; \\
+			EXAMPLE \\
+			---------------------\\
+			ORACLE
+		}
+		\bigskip
+		\item \textbf{RTRIM()}
+		\outputblock{
+			SELECT RTRIM('ORACLE\%\%\%','\%') as Example from dual; \\
+			EXAMPLE \\
+			---------------------\\
+			ORACLE
+		}
+		\newpage
+		\item \textbf{TRIM()}
+		\outputblock{
+			SELECT TRIM('\%' FROM '\%\%\%ORACLE\%\%\%') as Example from dual;\\
+			EXAMPLE \\
+			--------------------------\\
+			ORACLE \\
+			\\
+			SELECT TRIM(' ORACLE ') as Example from dual; \\
+			EXAMPLE \\
+			--------------------------\\
+			ORACLE 	\\
+			\\
+			SELECT TRIM(LEADING '\%' FROM '\%\%\%ORACLE\%\%\%') as Example from dual; \\
+			EXAMPLE	\\
+			--------------------------\\
+			ORACLE\%\%\%	\\
+			\\
+			SELECT TRIM(TRAILING '\%' FROM '\%\%\%ORACLE\%\%\%') as Example from dual; \\
+			EXAMPLE	\\
+			--------------------------\\
+			\%\%\%ORACLE	
+		}
+
+		\item TRANSLATE()
+		\outputblock{
+			SELECT TRANSLATE('ORACLE', 'OC','12') as Example from dual; \\
+			EXAMPLE	\\
+			1RA2LE
+		}
+		\newpage
+		\item \textbf{REPLACE()}
+		\outputblock{
+			SELECT REPLACE(second\_name, 'Kumar','Kumaar') as Example from employee; \\
+			EXAMPLE	\\
+			--------------------------\\
+			Sharma	\\
+			Verma	\\
+			Kumaar	\\
+			Kumaar
+		}
+	
+	\end{itemize}
+	
+\end{flushleft}
+

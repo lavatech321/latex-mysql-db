@@ -1,0 +1,280 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Based on who is raising an exception, all exceptions are divided into 2 categories:
+
+	\textbf{JVM exceptions}
+	\begin{itemize}
+		\item These are raised automatically by JVM, whenever a particular event occurs.
+	\end{itemize}
+
+	\item \textbf{Programmatic Exceptions}
+	\begin{itemize}
+		\item These are raised explicitly either by programmer or API developer to handle exceptional situations.
+	\end{itemize}
+
+	Below are some classifications of exception:
+	
+	\tabletwo{
+		\textbf{JVM Exceptions} & \textbf{Programmatic Exceptions} \\
+		\hline
+		ArrayIndexOutofBoundsException & IllegalArgumentException \\
+		\hline
+		NullPointerException & NumberFormatException \\
+		\hline
+		ClassCastException & IllegalStateException \\
+		\hline
+		StackOverflowException & AssertionException \\
+		\hline
+		& NoClassDefFoundError \\
+		\hline
+		& ExceptionInInitializerError \\
+	}
+	
+	\newpage
+	\textbf{ArrayIndexOutofBoundsException}
+	\begin{itemize}
+		\item Parent Class: \textbf{RuntimeClassException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Trying to access array element with out of range index.
+		\item Eg:
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		int[] arr = new int[4]; \\
+			\s \s		System.out.println(arr[0]); \\
+			\s \s		System.out.println(arr[5]); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			0 \\
+			Exception in thread "main" \\
+			java.lang.\textbf{ArrayIndexOutOfBoundsException}: Index 5 out of bounds for length 4 \\
+			at demo.main(demo.java:7)
+			
+		}
+	\end{itemize}
+	
+	\textbf{NullPointerException}
+	\begin{itemize}
+		\item Parent Class: \textbf{RuntimeClassException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Trying to perform any operation on null.
+		\item Eg:
+		\newpage
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s	String s=null; \\
+			\s \s	System.out.println(s.length()); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Exception in thread "main" java.lang.\textbf{NullPointerException}
+			at demo.main(demo.java:6)
+		}
+	\end{itemize}
+
+	\textbf{ClassCastException:}
+	\begin{itemize}
+		\item Parent Class: \textbf{RuntimeClassException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Trying to type cast parent object to child type.
+		\item Eg:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Object o = new Object(); \\
+			\s \s		String s = (String)o; \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Exception in thread "main" java.lang.\textbf{ClassCastException}...
+			
+		}
+	\end{itemize}
+	\newpage
+	\textbf{StackOverflowException:}
+	\begin{itemize}
+		\item Parent Class: \textbf{Error}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Trying to perform recursive method class.
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void test1() \{ \\
+			\s \s	test2(); \\
+			\s	\} \\
+			\s	public static void test2() \{ \\
+			\s \s	test1(); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s	test1(); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Exception in thread "main" java.lang.StackOverflowError \\
+			at demo.test2(demo.java:7) \\
+			at demo.test1(demo.java:4) \\
+			at demo.test2(demo.java:7) \\
+			.. \\
+			.. \\
+			.. \\
+			.. \\
+			..
+		}
+	\end{itemize}
+
+	\newpage
+	\textbf{ClassNotFoundException:}
+	\begin{itemize}
+		\item Parent Class: \textbf{Error}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Raised when JVM unable to be find required "\textbf{.class}" file.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			\$ java Demo \\
+			Error: Could not find or load main class Demo \\
+			Caused by: java.lang.ClassNotFoundException: Demo
+		}
+	\end{itemize}
+	
+	\textbf{ExceptionInInitialiserError:}
+	\begin{itemize} 
+		\item Parent Class: \textbf{Error}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{JVM}
+		\item Reason: Raised when exception occurs while executing static variable assignments and static blocks.		
+		\item Eg:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	static int i = 10/0; \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Error: Main method not found in class demo, please define the main method as: \\
+			public static void main(String[] args) \\
+			or a JavaFX application class must extend \\ javafx.application.Application
+		}
+	\end{itemize}
+	
+	\textbf{IllegalArgumentException}
+	\begin{itemize}
+		\item Parent Class: \textbf{RuntimeException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{Programmer or API developer}
+		\item Reason: Indicate that a method has been invoked with illegal argument.
+		\item Eg: The valid range of thread priorities is 1-10. Invalid thread priority will result in IllegalArgument exception:
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		Thread t1 = new Thread(); \\
+			\s \s		t1.setPriority(7); \\
+			\s \s		t1.setPriority(15); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Exception in thread "main" java.lang.IllegalArgumentException \\
+			at java.base/java.lang.Thread.setPriority(Thread.java:1141) \\
+			at demo.main(demo.java:7)
+		}
+	\end{itemize}
+	
+	\textbf{NumberFormatException:}
+	\begin{itemize}
+		\item Parent Class: \textbf{IllegalArgumentException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{Programmer or API developer}
+		\item Reason: Trying to convert string to number and the string is not properly formatted.
+		\bigskip
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s	int i1 = Integer.parseInt("67"); \\
+			\s \s	int i2 = Integer.parseInt("one"); \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\outputblock{
+			Exception in thread "main" java.lang.\textbf{NumberFormatException}: at java.base/java.lang.Integer.parseInt(Integer.java:652) \\
+			at java.base/java.lang.Integer.parseInt(Integer.java:770) \\
+			at demo.main(demo.java:6)
+		}
+	\end{itemize}
+	
+	
+	\textbf{IllegalThreadStateException:}
+	\begin{itemize}
+		\item Parent Class: \textbf{RuntimeException}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{Programmer or API developer}
+		\item Reason: Indicate that a method has been invoked at a wrong time.
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		Thread t1 = new Thread(); \\
+			\s \s		t1.start(); \\
+			\s \s		t1.start(); // Output: \textbf{IllegalThreadStateException} \\
+			\s	\} \\
+			\}
+		}
+	\end{itemize}
+	
+	\newpage
+	\textbf{AssertionError}
+	\begin{itemize}
+		\item Parent Class: \textbf{Error}
+		\item Type: \textbf{Unchecked Exception}
+		\item Raised By: \textbf{Programmer or API developer}
+		\item Reason: 
+		\begin{itemize}
+			\item Used for debugging and testing purposes. 
+			\item Indicates that certain condition is true during execution. 
+			\item If the condition is false, the assert statement will throw an AssertionError.
+			\item To enable the assertion checks, JVM with the \textbf{-ea} or \textbf{-enableassertions} command-line option.
+		\end{itemize}
+
+		\item Eg:
+		\codeblockfull{demo.java}{
+			public class demo \{	 \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s 	int num = 14; \\
+			\s	// Example 1: Simple assertion check \\
+			\s		assert num >= 0; 
+			// No AssertionError as num > 0 \\				
+			\s	// Example 2: Assertion \& error message \\
+			\s \s	int age = -5; \\
+			\s \s	assert age >= 0 : "Age cannot be negative"; \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\outputblock{
+			\$ javac demo.java  \\
+			\$ java -ea demo \\
+			Exception in thread "main" java.lang.\textbf{AssertionError}: Age cannot be negative 
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}

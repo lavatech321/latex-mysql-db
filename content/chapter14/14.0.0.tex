@@ -1,0 +1,29 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{Size}: Arrays once created cannot be increased or decreased in size.
+		\item \textbf{Homogeneous data}: Array can hold only homogeneous data/
+		\newline
+		Eg:
+		\codeblock{
+			Student[] s = new Student[100]; \\
+			s[0] = new Student(); \cmark \\
+			s[1] = new Customer(); \xmark
+		}
+		
+		Only way to solve this problem is by using \textbf{object} arrays:
+		\codeblock{
+			Object[] o = new Object[100]; \\
+			o[0] = new Student(); \cmark \\
+			o[1] = new Customer(); \cmark
+		}
+		
+		\item \textbf{No data structure}: No standard data structure, hence builtin method support not available.
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+
+

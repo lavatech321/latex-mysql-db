@@ -1,0 +1,123 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\paragraph{}
+	\bigskip
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.2]{content/practise.jpg}
+	\end{figure}	
+	\begin{enumerate}
+		
+		\item \textbf{State whether true or false. Once a filesystem is full, you cannot resize it if it's not an LVM partition.}
+		\begin{enumerate}[label=(\alph*)]
+			\item True %correct
+			\item False
+		\end{enumerate}
+	
+		\bigskip
+		\bigskip	
+		\item \textbf{Which of the following are valid LVM component? (Select all that applies.)}
+		\begin{enumerate}[label=(\alph*)]
+			\item Phyiscal volume  %correct
+			\item Volume logical  
+			\item Volume group   %correct
+			\item Logical volume %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+		
+		\item \textbf{State whether true or false. Volume group is collection of logical volumes.}
+		\begin{enumerate}[label=(\alph*)]
+			\item True 
+			\item False  %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		\newpage
+		\item \textbf{Which of the following statements are true about device mapper?}
+		\begin{enumerate}[label=(\alph*)]
+			\item It is a Linux kernel module. %correct
+			\item It creates a mapping for logical volume named as /dev/vg1/lv5 with name /dev/mapper/vg1-lv5. %correct
+			\item It creates a mapping for logical volume named as /dev/vg1/lv5 with name /dev/vg1-lv5. 
+			\item It jobs is to map logical volume's name correctly to physical devices. %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+
+		\item \textbf{Which of the following are valid pyhical volume commands? (Select all that applies.)}
+		\begin{enumerate}[label=(\alph*)]
+			\item pvcreate, pvdisplay, pvs, pvremove %correct
+			\item pv-create, pv-display, pv-s, pv-remove 
+			\item pv create, pv display, pv s, pv remove 
+			\item pcreate, pdisplay, ps, premove 
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		
+		
+		\item \textbf{Which of the following are valid volume group commands? (Select all that applies.)}
+		\begin{enumerate}[label=(\alph*)]
+			\item vg-create, vg-display, vg-s, vg-remove 
+			\item vg-create, vg-display, vg-s, vg-remove , vg-extend
+			\item vg create, vg display, vg s, vg remove , vg extend
+			\item vgcreate, vgextend, vgredue, vgdisplay, vgs %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip
+	
+
+		\item \textbf{Which of the following are valid syntax for logical volume commands? (Select all that applies)}
+		\begin{enumerate}[label=(\alph*)]
+			\item lvcreate -L 5G -n volumename  lvname  %correct
+			\item lvextend -L +5G  lvname  %correct
+			\item lvreduce -L 5G  lvname  %correct
+			\item lvremove lvname  %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+		\newpage
+		\item \textbf{State whether true or false. You can reduce an LVM having ext2, ext3 or ext4 filesystem, but you cannot reduce an LVM having xfs filesystem.}
+		\begin{enumerate}[label=(\alph*)]
+			\item True %correct
+			\item False
+		\end{enumerate}
+		\bigskip
+		\bigskip
+		
+
+		\item \textbf{Which of the following command is used to resize ext2, ext3 \& ext4 filesystem?}
+		\begin{enumerate}[label=(\alph*)]
+			\item blkid
+			\item e2fsck
+			\item resize2fs   %correct 
+			\item e4fsck
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+
+
+		\item \textbf{What is the default PE size?}
+		\begin{enumerate}[label=(\alph*)]
+			\item 8 MB
+			\item 16 MB
+			\item 6 4MB
+			\item 4 MB   %correct
+		\end{enumerate}
+		\bigskip
+		\bigskip	
+
+		\item \textbf{Which of the following command is used to change PE size?}
+		\begin{enumerate}[label=(\alph*)]
+			\item vgcreate -s  %correct
+			\item vgextend -s  
+			\item vgmodify -s 
+			\item vgdevelop -s  %correct
+		\end{enumerate}
+
+	\end{enumerate}
+	
+\end{flushleft}
+
+

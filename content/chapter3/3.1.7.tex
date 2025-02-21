@@ -1,0 +1,47 @@
+
+\begin{flushleft}
+
+	\begin{itemize}
+		
+		\item A deleted table is present in recycle bin.
+		\item Eg: Checking table in recycle bin
+		\outputblock{
+			SHOW RECYCLEBIN; \\
+			no rows selected
+		}
+		\bigskip
+		\commandblock{
+			CREATE TABLE emp(no NUMBER); \\
+			INSERT INTO emp VALUES(101); \\
+			DROP TABLE emp;
+		}
+		\bigskip
+		\outputblock{
+			SHOW RECYCLEBIN; \\
+			ORIGINAL NAME \s RECYCLEBIN NAME \s OBJECT TYPE \s DROP TIME \\
+			--------------------------------------------------------------\\
+			EMP \S BIN9820203/==2930 \s TABLE \s 2023-02-08:13:11:11
+		}
+		
+		\item A Flashback Query allows to retrieve deleted table.
+		\bigskip
+		\syntaxblock{
+			FLASHBACK TABLE table\_name TO BEFORE DROP;
+		}
+		
+		\item Eg:
+		\commandblock{
+			FLASHBACK TABLE emp TO BEFORE DROP; 
+		}
+		\newpage
+		\outputblock{
+			SELECT * FROM emp; \\
+			NO \\
+			------\\
+			101
+		}
+		
+	\end{itemize}
+		
+		
+\end{flushleft}

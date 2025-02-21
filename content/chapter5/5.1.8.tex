@@ -1,0 +1,137 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Consider below 2 tables:
+	\codeblock{
+		create table employee(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		insert into employee values(101, 'Ravi', 'Sharma');	\\
+		insert into employee values(102, 'Kavi', 'Verma');	\\
+		insert into employee values(103, 'Jimmy', 'Kumar');	\\
+		insert into employee values(104, 'Josh', 'Kumar');	\\
+		\\
+		create table contractor(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+		insert into contractor values(101, 'Jimmy', 'Kumar');	\\
+		insert into contractor values(102, 'Jack', 'Snow');	\\
+		insert into contractor values(103, 'Penny', 'Copper');	\\
+		insert into contractor values(104, 'Kavi', 'Verma');
+	}
+	
+	\begin{itemize}
+		\item \textbf{UNION}: 
+		\begin{itemize}
+			\item Combine the result set of two or more queries without duplication.
+			\item Sort data in ascending order based on the first column.
+			\item Column names of the first query are displayed as column headings of the iutput.
+			\item Do not use the query with NULL columns as the first, if so, use aliases for the NULL columns.
+			\item Number of columns should match in all the queries.
+			\item Use NULL columns, where sufficient number of columns are not present.
+			\item Datatypes of the corresponding columns should match.
+			
+			\newpage
+			
+			\outputblock{
+				SELECT id, first\_name, second\_name \\
+				FROM employee \\
+				UNION \\
+				SELECT id, first\_name, second\_name \\
+				FROM contractor; \\
+				ID \s	FIRST\_NAME \s	SECOND\_NAME \\
+				101 \s	Jimmy	\s	Kumar	\\
+				101 \s	Ravi	\s	Sharma	\\
+				102 \s	Jack	\s	Snow	\\
+				102	\s	Kavi	\s	Verma	\\
+				103	\s	Jimmy	\s	Kumar	\\
+				103	\s	Penny	\s	Copper	\\
+				104	\s	Josh	\s	Kumar	\\
+				104 \s	Kavi	\s	Verma 	\\
+				\\
+				SELECT first\_name, second\_name	\\
+				FROM employee	\\
+				UNION	\\
+				SELECT first\_name, second\_name	\\
+				FROM contractor;	\\
+				FIRST\_NAME	\s	SECOND\_NAME \\
+				Jack	\s	Snow \\
+				Jimmy	\s	Kumar	\\
+				Josh	\s	Kumar	\\
+				Kavi	\s	Verma	\\
+				Penny	\s	Copper	\\
+				Ravi	\s	Sharma
+			}
+			
+		\end{itemize}
+		
+		\newpage
+		\item \textbf{UNION ALL}: 
+		\begin{itemize}
+			\item If you want to include duplicate rows in the result set, use \textbf{UNION ALL} operator instead of UNION.
+			\bigskip
+			\outputblock{
+				SELECT first\_name, second\_name	\\
+				FROM employee	\\
+				\textbf{UNION ALL}	\\
+				SELECT first\_name, second\_name	\\
+				FROM contractor;	\\
+				\\
+				FIRST\_NAME	SECOND\_NAME 	\\
+				Ravi	\s	Sharma	\\
+				Kavi	\s	Verma	\\
+				Jimmy	\s	Kumar	\\
+				Josh	\s	Kumar	\\
+				Jimmy	\s	Kumar	\\
+				Jack	\s	Snow	\\
+				Penny	\s	Copper	\\
+				Kavi	\s	Verma	
+			}
+			
+		\end{itemize}
+		
+		\newpage
+		\item \textbf{INTERSECT}: 
+		\begin{itemize}
+			\item Common records from two or more queries without duplication.
+			\item Sorts data in ascending order based on the first column.
+			\item Column names of the first query are displayed as Column headings of the output.
+			\item Do not use the query with NULL columns as the first, if so, use aliases for the NULL columns.
+			\item Number of columns should match in all the queries.
+			\item Must use NULL columns, where sufficient number of columns are not present.
+			item Datatypes of the corresponding columns should match.
+			\bigskip
+			\outputblock{
+				SELECT first\_name, second\_name \\
+				FROM employee	\\
+				\textbf{INTERSECT}	\\
+				SELECT first\_name, second\_name	\\
+				FROM contractor; \\
+				\\
+				FIRST\_NAME \s	SECOND\_NAME \\
+				Jimmy \s 	Kumar \\
+				Kavi \s	Verma
+			}
+		\end{itemize}
+		\newpage
+		\item \textbf{MINUS}: 
+		\begin{itemize}
+			\item Resultant rows in the first query after eliminating the common rows of the second query.
+			\item Sorts data in ascending order based on the first column.
+			\item Column names of the first query are displayed as column headings of the output.
+			\item Do not use the query with NULL columns as the first, if so, use aliases for the NULL columns.
+			\item Number of columns should match in all the queries.
+			\item Must use NULL columns, where sufficient number of columns are not present.
+			\item Datatypes of the corresponding columns should match.
+		\end{itemize}
+
+		\bigskip
+		\outputblock{
+			SELECT first\_name, second\_name \\
+			FROM employee	\\
+			MINUS	\\
+			SELECT first\_name, second\_name	\\
+			FROM contractor;	\\
+			FIRST\_NAME	\s	SECOND\_NAME	\\
+			Josh	\s	Kumar	\\
+			Ravi	\s	Sharma
+		}
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

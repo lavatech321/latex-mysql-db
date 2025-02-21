@@ -1,0 +1,34 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item An abstract method has no body!
+		\item Abstract method are created in abstract class abstract only.
+		\bigskip
+		\syntaxblock{
+			\textbf{abstract} class Classname() \{ \\
+			\s modifier \textbf{abstract} return-type methodname(args);  \\
+			\}
+		}
+		\bigskip
+		\item Abstract method are compulsorily overridden by child class. 
+		\item Eg:
+		\codeblockfull{Dog.java}{
+			abstract class Animal \{ \\
+			\s	public abstract void sound(); \\
+			\} \\
+			class Dog extends Animal \{ \\
+			\s	public void sound() \{ \\
+			\s \s		System.out.println("Bow"); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Dog dog = new Dog(); \\
+			\s \s		dog.sound(); // Output: Bow \\
+			\s	\}
+			\}
+		}
+	\end{itemize}
+
+\end{flushleft}
+
+

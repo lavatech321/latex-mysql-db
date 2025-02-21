@@ -1,0 +1,34 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item Thread has name given by \textbf{JVM} or \textbf{programmer}.
+		\item Methods to get/set name of thread:
+		\bigskip
+		\syntaxblock{
+			public final String \textbf{getName}() \\
+			public final void \textbf{setName}(String name)
+		}
+		\item Get current thread object using \textbf{Thread.currentThread()}. 
+		\item Eg:
+	\end{itemize}
+		\codeblockfull{demo.java}{
+		   class DemoThread extends Thread \{\}  \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+					System.out.println(\textbf{Thread.currentThread().getName()}); // Output: main \\
+					DemoThread t1 = new DemoThread(); \\
+					System.out.println(\textbf{t1.getName()}); // Output: Thread-0 \\
+					\textbf{Thread.currentThread().setName}("A"); \\
+					\textbf{t1.setName}("B"); \\
+					System.out.println(\textbf{Thread.currentThread().getName()}); // Output: A \\
+					System.out.println(\textbf{t1.getName()}); // Output: B \\
+				\} \}		
+		}
+	
+	
+\end{flushleft}
+
+\newpage
+
+
+

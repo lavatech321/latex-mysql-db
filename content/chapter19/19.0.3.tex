@@ -1,0 +1,44 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{GC calls finalise()} before object destroy for cleanup activities.
+		\item finalise() is present in \textbf{Object} class.
+		\syntaxblock{
+			protected void finalise() throws Throwable
+		}
+		\item Override finalise() to define custom cleanup activities.
+		\item If you call finalize() method explicitly, then it would be executed like normal method call.
+		\item \textbf{GC calls finalize() once, even if object is eligible for GC multiple times.}
+		\item JVM runs GC whenever program is low on memory..
+		\item Most GC uses \textbf{Mark and Sweep Algorithm}.
+		\newpage
+		\item Eg:
+		\codeblockfull{DemoTest.java}{			
+			class DemoTest \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s	DemoTest test = new DemoTest(); \\
+			\s \s	test  = null; \\
+			\s \s	System.gc(); \\
+			\s \s	System.out.println("End of main"); \\
+			\s	\} \\
+			\s	public void finalize() \{ \\
+			\s \s	System.out.println("DemoTest finalize"); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			End of main \\
+			DemoTest finalize 			
+		}
+		Or
+		\outputblock{
+			DemoTest finalize \\
+			End of main 
+			
+		}
+	\end{itemize}
+
+\end{flushleft}
+

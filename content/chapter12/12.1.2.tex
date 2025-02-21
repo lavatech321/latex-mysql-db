@@ -1,0 +1,38 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item An \textbf{abstract class cannot be instantiated directly}.
+		\item It \textbf{serves as a blueprint} or template for its subclasses. 
+		\item It defines \textbf{common attributes and behaviors} that can be shared among multiple related classes. 
+		
+		\newpage
+		\item \textbf{What is the need of abstract class?}
+		\newimage{0.55}{content/chapter12/images/img1.png}
+		
+		\item Problem is -
+		\newimage{0.4}{content/chapter12/images/img2.png}	
+		
+		\item In this situation, there is no need to create parent class object.
+		\newpage
+		\item Solution: The \textbf{compiler} won’t let you instantiate an abstract class.
+
+		\bigskip
+		\syntaxblock{
+			\textbf{abstract} public class Classname \{\}
+		}
+		\item Eg:
+		\codeblockfull{Test.java}{
+			\textbf{abstract public class Canine extends Animal} \{ \\
+			\s public void roam() \{\} \\
+			\} \\
+			public class MakeCanine \{ \\
+			\s public void go() \{ \\
+			\s \s	Canine c; \\
+			\s \s	c = new Dog(); \cmark \\
+			\s \s	c = new Canine(); \xmark \\
+			\s \} \}
+		}
+	\end{itemize}
+\end{flushleft}
+

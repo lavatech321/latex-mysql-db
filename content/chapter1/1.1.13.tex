@@ -1,0 +1,119 @@
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{One to One (1:1)}
+		\begin{itemize}
+			\item Each record in one entity (table) is associated with exactly one record in another entity, and vice versa. 
+			\item Eg: Person and Passport is 1:1 relationship
+		\end{itemize}
+		\bigskip
+		\textbf{Person table}
+		\bigskip
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			person\_id & Primary Key \\
+			\hline
+			name & \\
+			\hline
+			date\_of\_birth & \\
+			\hline
+		}
+		\textbf{Passport table}
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			passport\_id & Primary Key \\
+			\hline
+			passport\_number & \\
+			\hline
+			expiration\_date & \\
+			\hline
+			person\_id & Foreign Key from Person table \\
+			\hline			
+		}
+		
+		\item \textbf{One to Many (1:M)}
+		
+		\begin{itemize}
+			\item A single record in one entity (table) can be associated with multiple records in another entity.
+			\item Eg: One manager manages multiple employees
+		\end{itemize}
+	
+		\textbf{Manager table}
+		\bigskip
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			id & Primary key \\
+			\hline
+			name & \\
+			\hline
+			department & \\
+			\hline
+		}
+	
+		\newpage
+		
+		\textbf{Employee table}
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			id & Primary key \\
+			\hline
+			name & \\
+			\hline
+			department & \\
+			\hline
+			manager\_id & Foreign key \\
+			\hline
+		}
+	
+		\item \textbf{Many to Many (M:M)}
+		\begin{itemize}
+			\item Each record in one entity can be related to multiple records in the second entity, and vice versa.
+			\item An intermediary table ( or junction table) contains foreign keys from both entities involved in the relationship, creating a link between them. 
+			\item Eg: One student can enroll for multiple course and 1 course can have multiple students.
+		\end{itemize}
+	
+		\textbf{Students table:}
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			student\_id & Primary Key \\
+			\hline
+			student\_name & \\
+			\hline
+			date\_of\_birth & \\
+			\hline
+		}
+	
+		\textbf{Courses table:}
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			course\_id & Primary Key \\
+			\hline
+			course\_name & \\
+			\hline
+			instructor & \\
+			\hline		
+		}
+	
+		\textbf{Enrollment table (Junction table):}
+		\tabletwo{
+			\textbf{Fields} & \textbf{Type} \\
+			\hline
+			enrollment\_id & Primary Key \\
+			\hline
+			student\_id & Foreign Key \\
+			\hline
+			course\_id & Foreign Key \\
+			\hline
+		}
+	
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

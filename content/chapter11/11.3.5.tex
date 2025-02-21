@@ -1,0 +1,322 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Methods defines the \textbf{actions} objects.
+		\item They are declared within a class and can access attributes.
+		\item They are invoked using object of class.
+		\bigskip
+		\syntaxblock{
+			access-modifier returnType methodName(type1 arg1, type2 arg2, ...)
+		}
+		
+		where,
+		\begin{itemize}
+			\item \textbf{access modifier} can be public, private, protected, default, static, final, abstract, synchronized, native or strictfp.
+			\item \textbf{returnType:} Specifies the type of value returned. Can be a \textbf{primitive type}, an \textbf{object type}, or \textbf{void} if the method does not return any value.
+			\item \textbf{methodName:} Name of method.
+			\item \textbf{type:} Data type of parameter passed to the method.
+			\item arg: Name given to each parameter.
+		\end{itemize}
+		
+	\end{itemize}
+
+	Let's see each part of method syntax in detail.
+	
+	\newpage
+	
+	\textbf{Access modifiers applicable on methods}
+	\begin{itemize}
+		\item \textbf{public:}
+		\begin{itemize}
+			\item Can be accessed from any other class or package. Eg:
+			\codeblockfull{Test.java}{
+			class A \{ \\
+			\s 		\textbf{public void message() \{} \\
+			\s \s			\textbf{System.out.println("Time is money");} \\
+			\s		\textbf{\}} \\
+			\} \\
+			public class Test \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s			A a1 = new A(); \\
+			\s \s			a1.message(); // Output: Time is money \\
+			\s 		\} \}	
+			}
+		\end{itemize}
+	
+		\item \textbf{private}:
+		\begin{itemize}
+			\item Can only be accessed within the same class and not other classes or package. Eg:
+			\codeblockfull{Test.java}{
+				class A \{ \\
+				\s	\textbf{private void msg()} \{ \\
+				\s \s		\textbf{System.out.println("Top secret");} \\
+				\s	\textbf{\}} \\
+				\s	public void display() \{ \\
+				\s \s		\textbf{msg();} \\
+				\s	\} \} \\
+				class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		A a1 = new A(); \\
+				\s \s		a1.display();  // Output: Top secret \\
+				\s	\} \}
+			}
+			\newpage
+			
+		\end{itemize}
+		\bigskip
+		\item \textbf{protected}:
+		\begin{itemize}
+			\item Accessible within the same package or subclass. 
+			\item It can be accessed from subclasses even if they are in a different package. Eg:
+			\bigskip
+			\codeblockfull{Test.java}{
+				class A \{ \\
+				\s	\textbf{protected void msg() \{} \\
+				\s \s	\textbf{System.out.println("Top secret");} \\ 
+				\s	\textbf{\}} \\
+				\} \\
+				class Test extends A \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s	Test t1 = new Test(); \\
+				\s \s	\textbf{t1.msg();} // Output: Top secret \\
+				\s	\} \}
+			}
+		\end{itemize}
+		\bigskip
+		\item \textbf{default (package-private):} 
+		\begin{itemize}
+			\item No access modifier specified means attribute is default. 
+			\item Can be accessed within the same package but not from other packages. Eg:
+			\bigskip
+			\codeblockfull{Test.java}{ 
+				class A \{ \\
+				\s \textbf{void msg()} \{ \\
+				\s \s		\textbf{System.out.println("Time is money");} \\
+				\s	\textbf{\}} \} \\
+				public class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		A a1 = new A(); \\
+				\s \s		\textbf{a1.msg();} // Output: Time is money \\
+				\s	\} \}
+			}
+
+		\end{itemize}
+		
+		\newpage
+		\item \textbf{static}:
+		\begin{itemize}
+			\item A static method belongs to the class rather than object.
+			\item Accessed using the class name and not object. Eg:
+			\codeblockfull{Test.java}{
+				class A \{ \\
+				\s	\textbf{static void msg() \{} \\
+				\s \s	\textbf{System.out.println("Time is money");} \\
+				\s	\textbf{\}} \} \\
+				public class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{A.msg();}  // Output: Time is money \\
+				\s	\}
+				\}
+			}
+		\end{itemize}
+		
+		\item \textbf{final}:
+		\begin{itemize}
+			\item Cannot be overridden by subclasses. 
+			\item It provides the implementation that cannot be changed. Eg:
+			\codeblockfull{Test.java}{
+				class Parent \{ \\
+				\s \textbf{public final void display()} \{ \\
+				\s	\s \textbf{System.out.println("Parent class");} \\
+				\s	\textbf{ \} } \\
+				\}  \\
+				class Child extends Parent \{ \} \\
+				class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Parent parent = new Parent();  \\
+				\s \s		parent.display();  \\
+				\s \s		Child child = new Child(); \\
+				\s \s		child.display();  \\
+				\s	\} \\
+				\}
+			}
+		\end{itemize}
+	
+		\newpage
+		\item \textbf{abstract}:
+		\begin{itemize}
+			\item An abstract method does not have body and must be overridden by any inherited class.
+			\item More on this in abstract class chapter
+		\end{itemize}
+		\bigskip
+		\item \textbf{synchronized:}
+		\begin{itemize}
+			\item A synchronized method can be accessed by only one thread at a time, ensuring thread safety.
+			\item More on this in multi-threading chapter.
+		\end{itemize}
+		\bigskip
+		\item \textbf{native:} A native method is implemented in a language other than Java, typically using JNI (Java Native Interface). It provides a bridge between Java and other languages like C or C++.
+		\bigskip
+		\item \textbf{strictfp:} 
+		\begin{itemize}
+			\item Enforces strict floating-point precision for floating-point calculations. 
+			\item It ensures consistent results across different platforms. Eg:
+			\bigskip
+			\codeblockfull{A.java}{
+			strictfp class A \{ \\
+			\s	\textbf{public strictfp double cal(double a, double b) \{} \\
+			\s \s		\textbf{return a * b / Math.sqrt(a + b);} \\
+			\s	\textbf{\}}
+				\\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		A example = new A(); \\
+			\s \s		double result = example.cal(10.5, 5.3); \\
+			\s \s		System.out.println("Result: " + result); \\
+			\s	\}
+			}
+			\bigskip
+			\outputblock{
+				Result: 14.000276895995912
+			}
+			
+		\end{itemize}
+	
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Method argument types}
+	\begin{itemize}
+		\item Method arguments specify values that can be passed to a method when it is invoked. 
+		\item Types of method arguments:
+		\begin{itemize}
+			\item \textbf{Primitive types}:
+			\codeblock{
+				class Person \{ \\
+				\s	int age; \\
+				\s	public void setDetails(int a) \{ \\
+				\s \s		age = a; \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Person p = new Person(); \\
+				\s \s		p.setDetails(23); \\
+				\s		System.out.println(p.age); // Output: 23 \\
+				\s	\} \}
+			}
+		
+			\item \textbf{Reference types}: Refer to objects or classes or arrays or interfaces or enums. Eg:
+			\bigskip
+			\codeblock{
+				class Person \{ \\
+				\s	String name="Raman"; \\
+				\} \\
+				class Test \{ \\
+				\s	public static void displayPerson(Person person)\{ \\ 
+				\s \s		System.out.println(person.name); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Person p = new Person(); \\
+				\s \s		displayPerson(p);  // Output: Raman \\
+				\s	\} 	\}
+			}
+			\newpage
+			\item \textbf{varargs}: A variable-length argument parameter (denoted by "...") accepts a variable number of arguments of same type. Eg:
+			\codeblockfull{Test.java}{
+				public class Test \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{print(10, 20, 30, 40, 50);} \\
+				\s	\} \\
+				\s	\textbf{public static void print(int... numbers) \{} \\
+				\s \s		\textbf{System.out.print("Numbers-");} \\
+				\s \s		\textbf{for (int num : numbers) \{} \\
+				\s \s \s			\textbf{System.out.print(" " + num);} \\
+				\s // Output: Number- 10 20 30 40 50 \\
+				\s \s		\textbf{\}}   \\
+				\s	\textbf{\}}  \\
+				\}
+			}
+			
+		\end{itemize}
+	\end{itemize}
+
+	\textbf{return keyword}
+	\begin{itemize}
+		\item Used to exit a method and provide a value (or no value) back to the caller of the method. 
+		\bigskip
+		\syntaxblock{
+			public return-type methodName(args) \{ \\
+			\s	// body \\
+			\s	\textbf{return value;} \\
+			\}
+		}
+		\item It has two primary usages:
+		\begin{itemize}
+			\item Returning a Value from a Method
+			\item Exiting a Method
+		\end{itemize}
+	\end{itemize}
+
+	\newpage
+	\textbf{Method return types}
+	\begin{itemize}
+		\item The return type specifies the type of value that the method will return after method execution.
+		\item Method return types:
+		\begin{itemize}
+			\item \textbf{Primitive type}: Return primitive type. Eg:
+			\codeblock{
+				class A \{ \\
+				\s	\textbf{public int msg() \{} \\
+				\s \s		\textbf{return 10;} \\
+				\s	\textbf{\}} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		A a1 = new A(); \\
+				\s \s		\textbf{System.out.println(a1.msg());} // Output: 10 \\
+				\s	\} \}
+			}
+			\item \textbf{Reference types}: Refer to objects or classes or arrays (int[] or String[]) or interfaces or enums. Eg:
+			\codeblock{
+				class Person \{ \\
+				\s	String name; \\
+				\} \\
+				class Test \{ \\
+				\s	\textbf{public static Person setPerson(Person person)\{}  \\
+				\s \s		\textbf{person.name="Raman";} \\
+				\s \s		\textbf{return person;} \\
+				\s	\textbf{\}} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Person p; \\
+				\s \s		\textbf{p = setPerson(new Person());} \\
+				\s \s		System.out.println(p.name); // Output: Raman \\
+				\s	\} \}
+			}
+
+		\end{itemize}
+		
+		\newpage
+		\item \textbf{void}:
+		\begin{itemize}
+			\item Indicates that the method does not return any value. Eg:
+			\codeblockfull{Test.java}{
+				class Person \{ \\
+				\s	String name="Raman"; \\
+				\} \\
+				class Test \{ \\
+				\s	\textbf{public static void displayPerson(Person person)}\{ \\
+				\s \s		\textbf{System.out.println(person.name);} \\
+				\s	\textbf{\}} \\
+				\\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Person p = new Person(); \\
+				\s \s		displayPerson(p); \\
+				\s	\} \\
+				\}
+			}		
+		\end{itemize}
+		
+	\end{itemize}	
+	
+\end{flushleft}
+
+\newpage
+

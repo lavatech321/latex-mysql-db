@@ -1,0 +1,24 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{Main thread is always non-daemon.}
+		\item Default nature of other threads is inherited from their parent threads.
+	\end{itemize}
+
+	\quest{Is it possible to change non-daemon behaviour of main thread?}{
+		No. JVM already starts the main thread at the beginning. 
+	}
+	\item Eg:
+	\codeblockfull{demo.java}{
+		class NewThread extends Thread \{\} \\
+		class demo \{  \\
+		\s	public static void main(String[] args) \{ \\
+		\s		System.out.println(Thread.currentThread().isDaemon());  // false\\
+		\s \s		NewThread t1 = new NewThread(); \\
+		\s \s		System.out.println(t1.isDaemon()); // false  \\
+		\s \s		t1.setDaemon(true); \\
+		\s \s		System.out.println(t1.isDaemon()); // true \\
+		\s	\}  \}
+	}
+	
+\end{flushleft}

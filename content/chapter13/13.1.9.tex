@@ -1,0 +1,49 @@
+
+\begin{flushleft}
+	
+	\textbf{==}
+	\begin{itemize}
+		\item For String \& StringBuffer: Returns true when both object point to the same object.
+		\bigskip
+		\codeblock{
+			String s1 = "Lava"; \\
+			String s2 = "Lava"; \\
+			System.out.println(\textbf{s1 == s2}); // Output: true \\
+			String s3 = new String("Lava");  \\
+			String s4 = new String("Lava"); \\
+			System.out.println(\textbf{s3 == s4}); // Output: false \\
+			\\
+			StringBuffer s5 = new StringBuffer("Lava"); \\
+			StringBuffer s6 = new StringBuffer("Lava"); \\
+			StringBuffer s7 = s5; \\
+			System.out.println(\textbf{s5 == s6}); // Output: false \\
+			System.out.println(\textbf{s5 == s7}); // Output: true
+		}
+		
+		
+	\end{itemize}
+
+	\textbf{equals()}
+	\begin{itemize}
+		\item For \textbf{String} object: Returns true if content of both the object is same.
+		\bigskip
+		\codeblock{
+			String s1 = "Lava"; \\
+			String s2 = "Lava"; \\
+			System.out.println(\textbf{s1.equals(s2)}); // Output: true \\
+			String s3 = new String("Lava");  \\
+			String s4 = new String("Lava"); \\
+			System.out.println(\textbf{s3.equals(s4)}); // Output: true
+		}
+		\newpage
+		\item For \textbf{StringBuffer} object: Return true when both object point to the same object.
+		\bigskip
+		\codeblock{
+		StringBuffer s1 = new StringBuffer("Lava"); \\
+		StringBuffer s2 = new StringBuffer("Lava"); \\
+		System.out.println(s1.equals(s2)); // Output: false
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}

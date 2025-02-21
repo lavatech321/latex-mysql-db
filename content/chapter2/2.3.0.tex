@@ -1,0 +1,58 @@
+
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{Ordered collection of datatypes}, enclosed in "[]", wherein duplicate members are allowed.
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=8pt
+			Syntax: ["string",int,float,complex,....]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg:	
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			a=["ravi@gmail.com",34,4.5,True]
+			\newline
+			print(a,type(a))
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			['ravi@gmail.com', 34, 4.5, True] <class 'list'>
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	  \bigskip
+	  
+	  \item List is a mutable datatype. You can add, remove or change existing list members.
+	  \newline
+	  Eg:			
+	  \begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+	  	\color{white}
+	  	\fontdimen2\font=8pt
+	  	l1=["Ram","Raman","Ravi"] \newline
+	  	l1[-1]="Sham" \newline
+	  	print(l1)
+	  	\fontdimen2\font=4pt
+	  \end{tcolorbox}
+
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			['Ram', 'Raman', 'Sham']
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+
+	  \bigskip
+	  \item Being mutable datatype, memory address of similar list datatype is different.
+	  
+	\end{itemize}
+	
+\end{flushleft}
+
+
+

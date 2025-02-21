@@ -1,0 +1,155 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.19)  6 MAR 2022 17:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**14.3.5.tex
+(./14.3.5.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \begin{flushleft}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 2--2
+[] 
+ []
+
+
+Overfull \hbox (22.736pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 How 
+ []
+
+
+Overfull \hbox (10.22217pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 to 
+ []
+
+
+Overfull \hbox (15.49298pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 de- 
+ []
+
+
+Overfull \hbox (19.96518pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 cide 
+ []
+
+
+Overfull \hbox (20.1249pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 how 
+ []
+
+
+Overfull \hbox (27.31233pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 many 
+ []
+
+
+Overfull \hbox (16.75822pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 IPs 
+ []
+
+
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 and 
+ []
+
+
+Overfull \hbox (19.96518pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 net- 
+ []
+
+
+Overfull \hbox (29.07762pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 works 
+ []
+
+
+Overfull \hbox (15.59714pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 are 
+ []
+
+
+Overfull \hbox (36.74426pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 present 
+ []
+
+
+Overfull \hbox (14.53462pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 ac- 
+ []
+
+
+Overfull \hbox (25.81932pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 cord- 
+ []
+
+
+Overfull \hbox (15.33325pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 ing 
+ []
+
+
+Overfull \hbox (10.22217pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 to 
+ []
+
+
+Overfull \hbox (19.96518pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 net- 
+ []
+
+
+Overfull \hbox (31.20952pt too wide) in paragraph at lines 4--5
+\OT1/cmr/bx/n/10 mask?  
+ []
+
+
+Overfull \hbox (44.52196pt too wide) in paragraph at lines 6--7
+[]\OT1/cmr/bx/n/10 Netmask 
+ []
+
+
+Overfull \hbox (67.08298pt too wide) in paragraph at lines 6--7
+\OT1/cmr/bx/n/10 255.255.255.0  
+ []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \newpage
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+! Emergency stop.
+<*> 14.3.5.tex
+              
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 21 strings out of 483183
+ 430 string characters out of 5966292
+ 231602 words of memory out of 5000000
+ 15135 multiletter control sequences out of 15000+600000
+ 532646 words of font info for 25 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 17i,4n,15p,111b,106s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

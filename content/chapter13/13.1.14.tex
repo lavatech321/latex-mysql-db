@@ -1,0 +1,21 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\tabletwo{
+	\hline
+	StringBuffer & StringBuilder \\
+	\hline
+	Every method present in StringBuffer is synchronized. & No method present in StringBuilder is synchronized. \\
+	\hline
+	At a time, only one thread is allowed to operate on StringBuffer object and hence it is thread safe.
+	& At a time, multiple thread are allowed to operate on StringBuilder object and hence it is not thread safe. \\
+	\hline
+	Threads are required to wait to operate on Stringbuffer object and hence relatively performance is slow.
+	& Threads are not required to wait to operate on StringBuilder object and hence relatively performance is high. \\
+	\hline
+	Introduced in 1.0 version & Introduced in 1.5 version. \\
+	
+	}	
+	
+\end{flushleft}
+

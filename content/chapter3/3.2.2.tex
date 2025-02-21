@@ -1,0 +1,283 @@
+
+\begin{flushleft}
+	
+	Used to select the attribute based on the condition described by WHERE clause.
+	
+	\syntaxblock{
+		SELECT column1, column2, ... \\
+		FROM table\_name; \\
+		or \\
+		SELECT column1, column2, ... \\
+		FROM table\_name \\
+		WHERE [condition];
+	}
+	The [condition] can be any SQL expression, speciﬁed using comparison or logical operators like \textbf{>, <, =, <>, >=, <=, LIKE, NOT, IN, BETWEEN} etc.
+
+	Eg:
+	\commandblock{
+		CREATE TABLE emp(id NUMBER, name VARCHAR2(20)); \\
+		INSERT INTO emp VALUES(101, 'Ram'); \\
+		INSERT INTO emp VALUES(102, 'Ravi'); \\
+		INSERT INTO emp VALUES(103, 'Sham'); 
+	}
+	\outputblock{
+		select id,name   \\
+		2  from emp     	\\
+		3  where id>102;	\\
+		\\
+		ID \s NAME		\\
+		---------- \s -------------	\\
+		103 \s Sham	
+	}
+	
+	\textbf{Variations with select query}:
+	
+	\begin{itemize}
+		\item \textbf{Wildcard character}: \textbf{*} is the wildcard character to select all columns in a table.
+		\newline
+		Eg:
+		\commandblock{
+			SELECT * FROM employees;
+		}
+		\item \textbf{Column Aliases}: 
+		\begin{itemize}
+			\item Make column names more readable by setting alias for column name.
+			\item You can use single quotes ('), double quotes (") and square brackets ([]) to create an alias.
+			\newpage
+			\item Eg:
+			\commandblock{
+				SELECT
+				FName AS "First Name", \\
+				MName AS 'Middle Name', \\
+				LName AS [Last Name] \\
+				FROM employees;
+			}
+			\item If the alias has a single word you can write it without quotes or brackets.
+			\item Eg:
+			\commandblock{
+				SELECT \\
+				FName AS FirstName, \\
+				LName AS LastName \\
+				FROM employees;
+			}
+		\end{itemize}
+		\item \textbf{COUNT returns total number of records}:
+			\bigskip
+			\syntaxblock{
+				SELECT Count(*) column\_name  FROM table\_name;
+			}
+			Eg:
+			\codeblock{
+				CREATE TABLE corder ( \\
+				order\_id NUMBER, \\
+				customer\_id NUMBER, \\
+				order\_amount NUMBER \\
+				); \\
+				insert into corder values(101, 201, 3400); \\
+				insert into corder values(102, 202, 400); \\
+				insert into corder values(103, 201, 100); \\
+				insert into corder values(104, 202, 2300);  
+			}
+			\newpage
+			\outputblock{
+				SELECT COUNT(*) total  FROM corder; \\
+				4
+			}
+		
+
+		\item \textbf{Selecting with table alias}:
+		\bigskip
+		\commandblock{
+			SELECT e.Fname, e.LName \\
+			FROM Employees e
+		}
+		The Employees table is given the alias 'e' directly after the table name.
+		
+		\bigskip 
+		\item \textbf{Selecting with more than 1 condition}
+		\begin{itemize}
+			\item \textbf{AND}: Makes sure all condition are true.
+			\bigskip
+			\commandblock{
+				SELECT name FROM persons WHERE gender = 'M' AND age > 20;
+			}
+			\item \textbf{OR}: Makes sure at least once condition is true.
+			\bigskip
+			\commandblock{
+				SELECT name FROM persons WHERE gender = 'M' OR age < 20;
+			}
+		
+			\item These keywords can be combined to allow for more complex criteria combinations:
+			\bigskip
+			\commandblock{
+				SELECT name \\
+				FROM persons \\
+				WHERE (gender = 'M' AND age < 20) \\
+				OR (gender = 'F' AND age > 20);
+			}	
+		\end{itemize}
+		\item \textbf{Selecting with Aggregate functions}:
+		\begin{itemize}
+			\item \textbf{AVG()}: Return the average of values selected.
+			\bigskip
+			\commandblock{
+				SELECT AVG(Salary) FROM employees; \\
+				SELECT AVG(Salary) FROM employees where DepartmentId = 1;
+			}
+			\item \textbf{MIN()}: Returns the minimum of values selected.
+			\bigskip
+			\commandblock{
+				SELECT MIN(Salary) FROM employees;
+			}
+			\item \textbf{MAX()}: Returns the maximum of values selected.
+			\bigskip
+			\commandblock{
+				SELECT MAX(Salary) FROM employees;
+			}
+			\item \textbf{COUNT()}: Returns the count of values selected.
+			\bigskip
+			\commandblock{
+				SELECT COUNT(*) FROM employees; \\
+				SELECT COUNT(*) FROM employees WHERE managerId IS NOT NULL \\
+				SELECT COUNT(managerId) FROM employees;
+			}
+
+			Count can also be combined with the distinct keyword for a DISTINCT count.
+			\bigskip
+			\commandblock{
+				Select COUNT(DISTINCT DepartmentId) FROM employees;
+			}
+			\item \textbf{SUM()}: Returns the sum of the values selected for all rows.
+			\bigskip
+			\commandblock{
+				SELECT SUM(Salary) FROM employees;
+			}
+		\end{itemize}
+		
+			\item \textbf{Select with condition of multiple values from column}:
+			\bigskip
+			\commandblock{
+				SELECT * FROM Cars WHERE status IN ('Waiting', 'Working') \\
+				or \\
+				SELECT * FROM Cars WHERE (status = 'Waiting' OR status = 'Working')
+			}
+			\bigskip
+			\noteblock{
+				value IN ( <value list> ) is a shorthand for disjunction (logical OR).
+			}
+			\item \textbf{Selection with sorted results}:
+			\bigskip
+			\commandblock{
+				SELECT * FROM employees ORDER BY name; \\
+				SELECT * FROM employees ORDER BY name DESC; \\
+				SELECT * FROM employees ORDER BY name ASC; \\
+				SELECT * FROM employees ORDER BY lame ASC, name ASC
+			}
+
+			To save retyping the column name in the ORDER BY clause, use column's number. Column numbers start from 1.
+			\bigskip
+			\commandblock{
+				SELECT Id, FName, LName, PhoneNumber FROM employees ORDER BY 3
+			}
+		
+			Use ORDER BY with TOP to return the top x rows based on a column's value:
+			\bigskip
+			\commandblock{
+				SELECT TOP 5 DisplayName, Reputation FROM Users ORDER BY Reputation desc
+			}
+			
+			\textbf{Order by Alias}: 
+			\bigskip
+			\commandblock{
+				SELECT DisplayName, JoinDate as jd, Reputation as rep \\
+				FROM Users \\
+				ORDER BY jd, rep
+			}
+			
+			\textbf{Sorting by multiple columns}:
+			\bigskip
+			\commandblock{
+				SELECT DisplayName, JoinDate, Reputation FROM Users ORDER BY JoinDate, Reputation
+			}
+			
+			
+			\item \textbf{Selecting with null}: 
+			\bigskip
+			\commandblock{
+				SELECT Name FROM Customers WHERE PhoneNumber IS NULL
+			}
+			\bigskip
+			\noteblock{
+				Selection with nulls take a diﬀerent syntax. Don't use =, use IS NULL or IS NOT NULL instead.
+			}
+			\item \textbf{Select distinct (unique values only)}
+			\bigskip
+			\commandblock{
+				SELECT DISTINCT ContinentCode
+				FROM Countries;
+			}
+			\item \textbf{Select rows from multiple tables}:
+			\bigskip
+			\commandblock{
+				SELECT * FROM table1, table2; \\
+				SELECT table1.column1, table1.column2, table2.column1  \\
+				FROM table1, table2
+			}
+			\bigskip
+			\item \textbf{GROUP BY}
+			\begin{itemize}
+				\item Results of a SELECT query can be grouped by one or more columns using the GROUP BY statement. 
+				\item This generates a table of partial results, instead of one result. 
+				\item GROUP BY can be used with aggregation functions using the HAVING statement to deﬁne how non-grouped columns are aggregated.
+				\item It might be easier if you think of GROUP BY as "for each" for the sake of explanation.
+
+				\item Eg: Consider below table:
+				\codecontinue{
+					EmpID \s MonthlySalary \\
+					1 \s\s 200 			 \\
+					1 \s\s 300				 \\
+					2 \s\s 300				 
+				}
+				\bigskip
+				\outputblock{
+					SELECT EmpID, SUM (MonthlySalary) \\
+					FROM Employee \\
+					GROUP BY EmpID \\
+					------------------------------ \\
+					1 \s \s 500 \\
+					2 \s \s 300 \\
+				}			
+			\end{itemize}
+			
+		
+			\item \textbf{Filter GROUP BY results using a HAVING clause}
+			\begin{itemize}
+				\item A HAVING clause is used in conjunction with the GROUP BY clause to filter the results of a query based on the result of an aggregate function. 
+				\item Eg: Consider below table
+				\bigskip
+				\commandblock{
+					CREATE TABLE orders ( \\
+					\s order\_id NUMBER, \\
+					\s customer\_id NUMBER, \\
+					\s order\_amount NUMBER \\
+					); \\
+					INSERT INTO orders VALUES (1, 101, 500); \\
+					INSERT INTO orders VALUES (2, 101, 700); \\
+					INSERT INTO orders VALUES (3, 102, 300); \\
+					INSERT INTO orders VALUES (4, 103, 900); \\
+					INSERT INTO orders VALUES (5, 103, 600);
+				}
+
+				Retrieve only those customers who have a total order value greater than 1000:
+				\commandblock{
+					SELECT customer\_id, SUM(order\_amount) AS total\_order\_value \\
+					FROM orders \\
+					GROUP BY customer\_id \\
+					HAVING SUM(order\_amount) > 1000;
+				}
+			
+			\end{itemize}
+
+	\end{itemize}
+\end{flushleft}
+\newpage

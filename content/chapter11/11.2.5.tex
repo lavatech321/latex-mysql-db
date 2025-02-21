@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item \textbf{super()} method is used to invoke a superclass constructor from a subclass constructor. 
+		
+		\item Key points about super():
+		\begin{itemize}
+			\item Must be the \textbf{first statement in the subclass} constructor body.
+			\item The compiler automatically inserts a call to the superclass's default (no-argument) constructor.
+			\item super() can only be used only within a constructor.
+		\end{itemize}	
+		\textbf{Eg: Superclass constructors with arguments}
+		\bigskip
+		\codeblockfull{Test.java}{
+			class Animal \{ \\
+			\s 	String name; \\
+			\s	Animal(String name) \{ \\
+			\s \s		this.name = name; \\
+			\s	\} \\ 
+			\} 		\\
+			class Duck extends Animal \{ \\
+			\s	int size; \\
+			\s	public Duck(String name, int size) \{ \\
+			\s \s		\textbf{super(name);} \\
+			\s \s		\textbf{this.size = size;} \\
+			\s	\} \\
+			\} \\
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Duck d1 = new Duck("Duckling",4); \\
+			\s \s		System.out.println(d1.name); // Output: Duckling \\
+			\s \s		System.out.println(d1.size); // Output: 4 \\
+			\s	\}	 \\
+			\}
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

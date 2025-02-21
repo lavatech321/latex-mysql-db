@@ -1,0 +1,295 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Let's see some commands to create, update, delete users in Linux OS.
+	
+\paragraph{How to creating a new user?}
+\bigskip
+\textbf{useradd}: Used to create new user.
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			Syntax:  useradd username
+		\end{tcolorbox}
+		On adding new user, some actions are performed:	
+		\begin{itemize}
+			\item The home directory of this user will be \textbf{/home/username}
+			\item The default shell assigned to thus user will be \textbf{/bin/bash}
+			\item \textbf{Group named "username" is created}.
+			\item \textbf{User "username" is then made a member of the group "username".}
+		\end{itemize}
+
+	\paragraph{Command options}
+		\begin{enumerate}[label=(\alph*)]
+			\item \textbf{–g}: Assign primary group.
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: useradd -g primary\_group\_name username
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ useradd –g javadevl shekhar
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			\item \textbf{–G}: Assign secondary groups.
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: useradd -G secondary\_group\_name username
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ useradd –G cdevl,perldevl shekhar
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+
+			\item \textbf{–u}: Assign specific UID. UID should be more than 500 for normal users.
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: useradd –u UID username
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ useradd –u 601 shekhar
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+
+			\item \textbf{–s}: Change user shell.
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: useradd –s shell\_name username
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ useradd –s /sbin/nologin shekhar
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: Shell /sbin/nologin do not allow shekhar to log in. Usually used for system users like ftp, squid etc.
+			\end{tcolorbox}
+			
+
+			\item \textbf{–h}: Change user home directory.
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: useradd –h directory\_name –m username
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ useradd –h /mnt/shekar –m shekhar
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		\end{enumerate}
+
+		\bigskip
+		\bigskip
+
+\newpage
+
+\paragraph{How to assign or change user’s password?}
+
+\bigskip
+	\textbf{passwd}: Change shekhar’s password.
+	
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: passwd username
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	On executing the command, you will be asked to set password twice.
+	
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=yellow,colframe=yellow]
+		\color{black}
+		Note: Only root or super user can set the password of any user.
+	\end{tcolorbox}
+	
+	\paragraph{Command options}
+	
+	\begin{itemize}
+		\item \textbf{- -stdin}: Change password by providing on command line itself.
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: echo “new\_password” | passwd ---stdin username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\$ echo “shekhar@12345” | passwd ---stdin shekhar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{itemize}
+	
+
+
+\newpage
+
+\paragraph{How to modify an existing user?}
+\bigskip
+	\textbf{usermod}: Modify existing user.
+	\paragraph{Command options}
+	\begin{enumerate}[label=(\alph*)]
+		\item \textbf{–g}: Change user's primary group.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod –g primary\_group username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\$ usermod –g cdevl shekhar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item \textbf{–G}: Change user's secondary group.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod -G secondary\_group\_name username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\$ usermod –G javadevl shekhar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		\item \textbf{–L}: Lock (i.e. disable) user.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod -L username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}		
+		
+		\item \textbf{–U}: Unlock use.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod –U username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\item \textbf{–s}: Change user's login shell.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod –s shell\_name username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\$ usermod –s /bin/ksh shekhar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+	
+		\item \textbf{–d}: Change user’s home directory.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: usermod –d directory\_name username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\$ usermod –d /opt/java shekhar
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{enumerate}
+
+\bigskip
+\bigskip
+
+\newpage
+	
+\paragraph{How to delete a user?}
+
+\bigskip
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=red,colframe=red]
+	\color{white}
+	Standard Practice: You should not delete a user if he/she leaves the organization. You
+	should lock him/her.
+\end{tcolorbox}
+	
+
+
+\textbf{userdel}: Delete user \& entry is removed from /etc/passwd and /etc/shadow files.
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: userdel username
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\paragraph{Command options}
+	\begin{itemize}
+		\item \textbf{-r}: Delete user along with home directory.
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: userdel -r username
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{itemize}
+
+\end{flushleft}
+
+\newpage
+

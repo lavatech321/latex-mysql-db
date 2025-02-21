@@ -1,0 +1,62 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Set transaction must be executed as beginning of transaction else, you will get error.
+		\item Set transcation require commit or rollback to complete the transaction. After completing the transaction, the mode is set back to read write.
+		\item Using \textbf{set transaction}, you can set the transaction's mode to:
+		\begin{itemize}
+			\item \textbf{Read-Only}:
+			\bigskip
+			\syntaxblock{
+				SET TRANSACTION READ ONLY NAME [transaction\_name]
+			}
+			Using read-only, no DML command are allowed, except \textbf{SELECT}.
+			Eg:
+			\bigskip
+			\outputblock{
+				SET TRANSACTION READ ONLY NAME 'test'; \\
+				INSERT INTO product VALUES(101); \\
+				* \\
+				ERROR at line 1:  \\
+				ORA-01456: may not perform insert/delete/update operation inside a READ ONLY \\
+				transaction
+			}
+			\bigskip
+			\noteblock{
+				Executing DDL commands after setting "read-only" will nullify "read-only" clause
+			}
+			Eg:
+			\commandblock{
+				SET TRANSACTION READ ONLY NAME 'test'; \\
+				CREATE TABLE testtable(no NUMBER); \\
+				INSERT INTO testtable VALUES(101); \\
+				COMMIT;		
+			}
+			
+			\bigskip
+			\item \textbf{Read-Write}:
+			\bigskip
+			\syntaxblock{
+				SET TRANSACTION READ WRITE
+			}
+			Using read-write, you can perform:
+			\begin{itemize}
+				\item INSERT
+				\item UPDATE
+				\item DELETE
+				\item MERGE
+			\end{itemize}
+		\end{itemize}
+		
+		\item Eg:
+		\commandblock{
+			SET TRANSACTION READ WRITE NAME 'test'; \\
+			CREATE TABLE newtable(no NUMBER); \\
+			INSERT INTO newtable VALUES(101); \\
+			COMMIT;
+		}
+	\end{itemize}
+	
+\end{flushleft}
+

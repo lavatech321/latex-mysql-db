@@ -1,0 +1,43 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The string constant pool (SCP) (or string pool), is a \textbf{special area of memory in the Java heap} that stores string objects. 
+		\item Using SCP, Java compiler checks if an new string is already exists in the pool. 
+		\item If not, a new string object is created and added to SCP.
+		\item If it does, the reference to the existing string is returned. 
+		\item Eg:
+		\bigskip
+		\codeblock{
+		String str1 = "lava"; // Added to the string constant pool \\
+		String str2 = "lava"; // Reuses the existing string from the pool \\
+		\\
+		System.out.println(str1 == str2); // Output: true (both strings refer to the same object)
+		}
+	
+		\newimage{0.3}{content/chapter13/images/heap.png}
+		
+		\newpage
+		
+		\item Use intern() method to explicitly add string to the string constant pool:
+		\item Eg:
+		\bigskip
+		\codeblock{
+			String str3 = new String("Hello").intern(); // Explicitly interns the string  \\
+			String str4 = "Hello"; \\
+			\\
+			System.out.println(str3 == str4); // Output: true
+		}
+	
+		\bigskip
+		In this case, str3.intern() adds the string to the string constant pool, allowing str3 and str4 to refer to the same string object.
+	
+		\bigskip
+		\noteblock{
+		Upto Java1.6, scp is in method area. After java1.7, scp is present in heap itself.
+		}	
+	
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

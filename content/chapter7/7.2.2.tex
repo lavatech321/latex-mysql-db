@@ -1,0 +1,91 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item A Pandas series is like a column in a table.
+		\item It is a one-dimensional array holding data of any type.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			data = ['apple','mango','chikoo'] \\
+			var = pd.Series(data) \\
+			print(var)
+		}
+		\bigskip
+		\outputblock{
+			0  \s \s   apple \\
+			1  \s \s  mango \\
+			2  \s \s  chikoo \\
+			dtype: object
+		}	
+	\end{itemize}	
+	
+	\textbf{Labels}
+	\begin{itemize}
+		\item If nothing else is specified, the values are labeled with their index number. 
+		\item First value has index 0, second value has index 1 etc.
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			data = ['apple','mango','chikoo'] \\
+			var = pd.Series(data) \\
+			print(var[0]) \\
+			print(var[1]) \\
+			print(var[2]) 
+		}
+		\outputblock{
+			apple \\
+			mango \\
+			chikoo
+		}
+	
+		\item \textbf{Create your own labels}
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			a = [1, 7, 2] \\
+			myvar = pd.Series(a, index = ["x", "y", "z"]) \\
+			print(myvar) \\
+			print(myvar['x']) \\
+			print(myvar['y'])
+		}
+		\bigskip
+		\outputblock{
+			x  \s \s   1 \\
+			y  \s \s  7 \\
+			z  \s \s  2 \\
+			dtype: int64 \\
+			1  \\
+			7
+		}
+
+		\item \textbf{Key/Value Objects as Series:}
+		\bigskip
+		\codeblock{
+			import pandas as pd \\
+			a = {'name':'Ravi','age':56,'country':'India'} \\
+			myvar = pd.Series(a) \\
+			print(myvar)
+		}	
+		\bigskip
+		\outputblock{
+			name   \s  \s    Ravi \\
+			age    \s  \s      56 \\
+			country  \s \s  India \\
+			dtype: object
+		}
+		
+	\end{itemize}
+	
+	
+
+	
+	
+	
+	
+	
+\end{flushleft}
+
+\newpage
+

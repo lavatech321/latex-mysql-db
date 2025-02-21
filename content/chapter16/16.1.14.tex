@@ -1,0 +1,38 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Until Java 1.6 version, multiple exceptions cannot be caught in single catch block.
+		\item Multi-catch block in Java 1.7 version allows you to write single catch block that can handle multiple exceptions.
+		\bigskip
+		\codeblockfull{demo.java}{
+			import java.io.*; \\
+			public class demo \{ \\
+			\s public static void main(String[] args) \{  \\
+			\s \s		int no1; \\
+			\s \s		int no2; \\
+			\s \s		try \{ \\
+			\s \s \s			no1=5; \\
+			\s \s \s			no2=0; \\
+			\s \s \s			System.out.println(no1/no2); \\
+			\s \s		\} \\
+			\s \s		catch(NullPointerException | ArithmeticException e) \{  \\
+			\s \s \s			e.printStackTrace(); \\
+			\s \s		\} \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			java.lang.ArithmeticException: / by zero \\
+			at demo.main(demo.java:9)
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+
+
+
+

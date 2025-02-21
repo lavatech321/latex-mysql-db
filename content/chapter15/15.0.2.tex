@@ -1,0 +1,96 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item FileWriter class is used to \textbf{write characters to a file}.
+		\begin{itemize}
+			\item To override existing data:
+			\bigskip
+			\syntaxblock{
+				FileWriter fw = new FileWriter(String fname); \\
+				FileWriter fw = new FileWriter(File f);	
+			}
+			\item To append to existing data:
+			\bigskip
+			\syntaxblock{
+				FileWriter fw = new FileWriter(String fname, boolean append); \\
+				FileWriter fw = new FileWriter(File f , boolean append);
+			}
+			\bigskip
+			\noteblock{
+			If the specified file is not already available, then all the above constructors will create that file.
+			}		
+		\end{itemize}
+	
+		\item \textbf{Methods}
+		\begin{itemize}
+			\item Write a single character to file:
+			\bigskip
+			\syntaxblock{
+				void write(int ch);
+			}
+			\item Write an array of character to file:
+			\bigskip
+			\syntaxblock{
+				void write(char[] ch);
+			}
+			\item Write a string to file:
+			\bigskip
+			\syntaxblock{
+				void write(String s);
+			}
+			\item To give the guarantee that total data including last character will be written to the file.
+			\bigskip
+			\syntaxblock{
+				void flush();
+			}
+		
+			\item To close the writer:
+			\bigskip
+			\syntaxblock{
+				void close();
+			}
+		\end{itemize}
+
+	\end{itemize}	
+			
+	\newpage
+		\textbf{Example Program:}
+		
+		\begin{itemize}
+			\item Create a file named "abc.txt" and write some string and characters to it. Close the file and open again to override and write some string and characters to it.
+			\bigskip
+			\codeblockfull{Test.java}{
+				import java.io.*; \\
+				class Test \{ \\
+				public static void main(String[] args) throws Exception \{ \\
+				\s \s		\textbf{FileWriter fw = new FileWriter("abc.txt");} \\
+				\s \s		\textbf{fw.write(108);}  \\
+				\s \s		\textbf{fw.write("avatech$\backslash$ntechnology");} \\
+				\s \s		\textbf{fw.write("$\backslash$n");} \\
+				\s \s		\textbf{char[] c = \{'a','b','c'\};} \\
+				\s \s		\textbf{fw.write(c);} \\
+				\s \s		\textbf{fw.flush();} \\
+				\s \s		\textbf{fw.close();} \\
+				\s \s		\textbf{FileWriter fw = new FileWriter("abc.txt", true);} \\
+				\s \s		\textbf{fw.write("$\backslash$nappending new line");} \\
+				\s \s		\textbf{fw.flush();} \\
+				\s \s		\textbf{fw.close();} \\
+				\s	\} \\
+				\}
+			}
+			Content of "abc.txt":
+			\bigskip
+			\outputblock{
+				lavatech \\
+				technology \\
+				abc \\
+				appending new line
+			}
+		\end{itemize}
+		
+	
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,80 @@
+
+\begin{flushleft}
+	
+	There are 3 types of assignment operators:
+	\begin{itemize}
+		\item \textbf{Simple:}  The assignment operator (=) is used to assign a value to a variable.
+		\bigskip
+		\codeblock{
+			int x = 10;
+		}
+		\item \textbf{Chained:} 
+		\bigskip
+		\codeblock{
+			int a,b,c,d; \\
+			a=b=c=d=20;   
+		}
+	
+		We can’t perform chained assignment directly at the time of declaration:
+		\bigskip
+		\codeblock{
+			int a=b=c=d=20; \xmark \\
+						\\
+			int b,c,d;  \\
+			int a=b=c=d=20;  \cmark
+		}
+		
+		\item \textbf{Compound:} 
+		\begin{itemize}
+			\item Assignment operator can be mixed with other operators.
+			\item Such type of assignment operators are called compound assignment operators.
+			\bigskip
+			\syntaxblock{
+				variable operator= expression;
+			}
+			\bigskip
+			\codeblock{
+				int a = 10;  \\
+				a += 20;  \\
+				System.out.println(a) ; // output: 30
+			}
+			
+			\item In case of compound assignment operator, internal type casting will be performed automatically:
+			\bigskip
+			\codeblock{
+				byte b=10;  \\
+				b = b+1;     \xmark \\
+				\\
+				byte b = 10; \\
+				b++;    // output: 11 \\    
+				\\
+				byte b=10; \\
+				b+=1;    // output: 11
+			}
+			\bigskip
+			\item Below are sample examples of compound assignment operator:
+			\codeblock{
+				int x = 5;
+				x += 3; // x is 8 \\
+				x -= 2; // x is 6 \\
+				x *= 4; // x is 24 \\
+				x /= 3; // x is 8  \\
+				x \%= 5; // x is 3  \\
+				x \&= 1; // x is 1 \\
+				x |= 2; // x is 3 \\
+				x \textbf{\^}= 3; // x is 0 \\
+				x <<= 2; // x is 0 \\
+				x >>= 1; // x is 0
+			}
+		\end{itemize}
+		 
+		
+		
+		
+	\end{itemize}
+	
+	
+	
+	
+\end{flushleft}
+\newpage

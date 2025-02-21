@@ -1,0 +1,542 @@
+
+\begin{flushleft}
+	
+	\newimage{0.7}{content/chapter3/images/types.png}
+	
+	\begin{itemize}
+		\item \textbf{Character Data Types}
+		\begin{itemize}
+			\item \textbf{char}: Fixed-length character strings
+			\bigskip
+			\item For example, if you define a CHAR(10) column and store 'hello' in it, it will occupy 10 bytes of storage, with trailing spaces added to fill the remaining space.
+
+			\item 
+			\syntaxblock{
+				char(size) \\
+				\s where, \\
+				\s \textbf{size is optional}
+			}
+			
+			\begin{itemize}	
+				\item \textbf{Max size}: 2000 chars/bytes
+				\item \textbf{Min size}: 1 char/byte
+				\item Eg:
+				\commandblock{
+					create table sample(grade \textbf{char}, section \textbf{char(3)}); \\
+					insert into sample values(\textbf{'C', 'II'}); \\
+					select length(section) from sample;
+				}
+				Notice the length is 3 characters.
+			\end{itemize}
+
+			\bigskip
+			\item \textbf{nchar}: Store fixed-length unicode character strings.
+			\syntaxblock{
+				char(size) \\
+				\s where, \\
+				\s \textbf{size is optional}
+			}
+			\begin{itemize}
+				\item \textbf{Max size}: 2000 char/byte
+				\item \textbf{Min size}: 1 char/byte
+				\item Eg:
+				\commandblock{
+					create table sample(name nchar(20)); \\
+					insert into sample values('$\alpha$ $\theta$'); \\
+					select length(name) from sample;
+				}
+				Notice the length is 20 characters.
+			\end{itemize}
+
+			\noteblock{
+				\begin{itemize}
+					\item CHAR stores Unicode characters using UTF-16 encoding, but it's not specifically designed for Unicode data. 
+					\item NCHAR is explicitly designed for storing Unicode characters. 
+				\end{itemize}
+			}
+			\newpage
+			\item \textbf{varchar2}: Variable-length character strings
+			\bigskip
+			\syntaxblock{
+				varchar2(size) \\
+				\s where, \\
+				\s \textbf{size is not optional}
+			}
+			\begin{itemize}
+				\item \textbf{Max size}: 4000 characters/bytes
+				\item Eg:
+				\commandblock{
+				create table sample(name varchar2(30)); \\
+				insert into sample values('Raman'); 
+				}
+				Notice the length is 5 characters.
+			\end{itemize}
+			
+			\bigskip
+			\item \textbf{nvarchar2}: Store variable-length unicode character data.
+			\syntaxblock{
+				nvarchar2(size) \\
+				\s where, \\
+				\s \textbf{size is not optional}
+			}
+			\begin{itemize}
+				\item \textbf{Max size}: 4000 char/byte
+				\item Eg:
+				\commandblock{
+					create table sample(name nvarchar2(20)); \\
+					insert into sample values('$\alpha$ $\theta$'); 
+				}
+			\end{itemize}
+			
+			\noteblock{
+				\begin{itemize}
+					\item VARCHAR2 uses the database's default character set encoding, which might not support all Unicode characters.
+					\item NVARCHAR2 ensuring that it can store characters from any language or script supported by Unicode.
+				\end{itemize}
+			}
+		
+			\newpage
+			\item \textbf{CLOB}: stands for \textbf{C}haracter \textbf{L}arge \textbf{O}bject
+			\bigskip
+			\syntaxblock{
+				clob
+			}
+			\begin{itemize}
+				\item Store variable-length large character data using the database's character set, which may not or may be Unicode.
+				\item \textbf{Max size}: 4 GB
+				\item Eg:
+				\commandblock{
+					create table sample(para clob); \\
+					insert into sample values('$\alpha$ $\theta$ data'); 
+				}
+			\end{itemize}
+		
+			\bigskip
+			\item \textbf{NCLOB}: stands for \textbf{N}ational \textbf{C}haracter \textbf{L}arge \textbf{O}bject
+			\bigskip
+			\syntaxblock{
+				nclob
+			}
+			\begin{itemize}
+				\item Store variable-length large character data in the Unicode character set supporting multilingual text.
+				\item \textbf{Max size}: 4 GB
+				\item If you need to store different languages, NCLOB is the appropriate choice to ensure compared to CLOB.
+				\item Eg:
+				\commandblock{
+					create table sample(para nclob); \\
+					insert into sample values('$\alpha$ $\theta$ data'); 					
+				}
+			\end{itemize}
+					
+		\end{itemize}
+		
+		\item \textbf{Number}
+		\begin{itemize}
+			\item NUMBER datatype is used to store numeric data, including \textbf{integers} and \textbf{floating-point} numbers.
+			\item It is a versatile datatype that can store both fixed-point and floating-point numbers with precision and scale.
+			
+			\syntaxblock{
+				NUMBER(precision, scale)	 \\
+				where, \\
+				\textbf{Precision (p)}: Specifies the total number of digits that can be stored in the number. This includes both the digits to the left and right of the decimal point. \\
+				\textbf{Scale}: Specifies the number of digits to the right of the decimal point. Scale cannot be greater than precision.		
+			}
+			\item If you don't specify precision and scale, Oracle defaults to NUMBER(38,0), which means it can store numbers with up to 38 digits, all of which can be to the left of the decimal point.
+		
+			\item Eg:
+			
+			\begin{itemize}
+				\item NUMBER: This defines a numeric column with default precision (38) and scale (0), suitable for storing integers.
+				\item NUMBER(10, 2): This defines a numeric column with a precision of 10 and a scale of 2, meaning it can store numbers with up to 10 digits, 2 of which can be to the right of the decimal point.
+				\item NUMBER(5): This defines a numeric column with a precision of 5 and a scale of 0, suitable for storing small integers.
+			\end{itemize}
+			\bigskip
+			\noteblock{
+				If you add more than 38 digits in Number datatype, Oracle DB can have incorrect behaviour and store incorrect values.
+			}
+			
+		\end{itemize}
+		
+			\item \textbf{Float}
+			\begin{itemize}
+				\item FLOAT datatype in Oracle Database is deprecated, and its use is discouraged. 
+				\item Instead, Oracle recommends using the NUMBER datatype for precise numeric data and the BINARY\_FLOAT and BINARY\_DOUBLE datatypes for floating-point numbers.
+			\end{itemize}
+			
+			\item \textbf{Binary\_float}
+			\begin{itemize}
+				\item It stores single-precision 32-bit floating point number. 
+				\item Max size: 4 bytes
+				\item It provides a precision of approximately 6 to 7 significant decimal digits.
+				\syntaxblock{
+					float
+				}
+				\item Eg:
+				\commandblock{
+					create table sample(no binary\_float); \\
+					insert into sample values(122.2);
+				}
+			\end{itemize}
+			
+			\item \textbf{Binary\_double}
+			\begin{itemize}
+				\item It is double-precision 64-bit floating point number. 
+				\item Max size: 8 bytes
+				\item Double precision provides approximately 15-16 decimal digits of precision.
+				\syntaxblock{
+					binary\_double
+				}
+				\item Eg:
+				\commandblock{
+					create table sample(no binary\_double); \\
+					insert into sample values(122.2);
+				}
+			\end{itemize}		
+					
+		\end{itemize}
+		
+		
+		\newpage
+		\item \textbf{Date \& Time}
+		
+		\begin{itemize}
+			\item \textbf{Date Datatype}		
+			\begin{itemize}
+				\item Default date format is \textbf{DD-MON-YYYY}
+				\item Complete date format is \textbf{DD-MON-YY HH:MI:SS AM} where,
+				\begin{itemize}
+					\item \textbf{DD}: Day of month
+					\item \textbf{MON}: Month name (e.g: "JAN" for January)
+					\item \textbf{YY}: Last two digits of year (e.g: "21" for 2021)
+					\item \textbf{HH}: Hour in 12-hour format
+					\item \textbf{MI}: Minutes
+					\item \textbf{SS}: Seconds
+					\item \textbf{AM}: Time period, either "AM" or "PM"
+				\end{itemize}
+				Eg: 26-SEP-23 03:30:00 PM
+				
+				\item Storage size is 7 bytes.
+				\item After Oracle 9i, the allowed range is between \textbf{01-Jan-4712 BC - 31-Dec-9999}
+				
+				\item Eg:
+				\commandblock{
+					create table sample(joining\_date date); \\
+					insert into sample values('04-Mar-1880'); \\
+					insert into sample values('04-Mar-21'); \\
+					insert into sample values('4-Mar-98'); 
+				}
+				\item Date functions:
+				\begin{itemize}
+					\item \textbf{sysdate}: Returns the current date \& time.
+					\newline
+					Eg:
+					\commandblock{
+						select sysdate from dual; \\
+						insert into sample values(sysdate);
+					}
+					\item \textbf{to\_date}: Converts a character to DATE value using a specified format.
+					\newline
+					Eg:
+					\commandblock{
+						insert into sample values(to\_date('05-Dec-2022 06:34:23 PM', 'DD-MON-YYYY HH:MI:SS PM'));
+					}
+					\bigskip
+					%\item \textbf{to\_char}: Converts DATE to a character with a specified format.
+					%\newline
+					%Eg:
+					%\commandblock{
+					%	select to\_char(joining\_date, 'YYYY-MM-DD HH24:MI:SS') from sample;
+					%}
+					%\bigskip
+					%\item \textbf{add\_months}: Adds specified number of months to a DATE value.
+					%\newline
+					%Eg:
+					%\commandblock{
+					%	insert into sample values(add\_months(sysdate,3));
+					%}
+					%\bigskip
+					\item \textbf{extract}: Extracts a date component (e.g., year, month, day) from a DATE value.
+					\newline
+					Eg:
+					\commandblock{
+						select extract(year from joining\_date), extract(month from joining\_date), extract(day from joining\_date) from sample; 
+					}
+					
+					%\newpage
+					
+					%\item \textbf{last\_day}: Return last day of month for given DATE.
+					%\commandblock{
+					%	select last\_day(joining\_date) from sample;
+					%}
+					
+				\end{itemize}
+				
+			\end{itemize}
+			
+			\newpage
+			
+			\item \textbf{Timestamp}
+			\begin{itemize}
+				\item Introduced in oracle 9i.
+				\item Allows date and time.
+				\syntaxblock{
+					timestamp(p) \\
+					timestamp(p) with timezone \\
+					timestamp(p) with local timezone \\
+					where, \\
+					p stands for precision (optional)
+				}
+				\bigskip
+				\item \textbf{TIMESTAMP(p):} This syntax defines a TIMESTAMP data type with optional precision 'p', specifying the number of digits in the fractional seconds part. If 'p' is not specified, the default precision is 6.
+				\codeblock{
+					CREATE TABLE sample ( \\
+					\s t1 TIMESTAMP(3) \\
+					); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123'); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123990'); \\
+					\\
+					select * from sample;
+				}
+				In this example, the precision is of 3 fractional seconds. Hence, even if you enter more than 3 fractional seconds, it would display only 3 fractional seconds. Adding "AM/PM" is optional.
+				\bigskip
+				\item \textbf{TIMESTAMP(p) WITH TIME ZONE:} This syntax defines a TIMESTAMP data type with time zone information. It stores date and time information along with the time zone offset from UTC (+00:00).
+				\commandblock{
+					CREATE TABLE sample ( \\
+					\s t1 TIMESTAMP with time zone \\
+					); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457'); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM ASIA/TOKYO'); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM +00:00'); \\
+					select * from sample;
+				}
+				In this example, if no timezone is provided, it takes "AM ASIA/CALCUTTA" for first record.
+				\bigskip
+				\item \textbf{TIMESTAMP(p) WITH LOCAL TIME ZONE}: This syntax defines a TIMESTAMP data type with local time zone handling. It automatically converts the time zone to the session time zone when storing and retrieving data. If  "AM/PM" is not added, it by default takes "AM".
+				\newpage
+				\commandblock{
+					CREATE TABLE sample ( \\
+					\s t1 TIMESTAMP with local time zone \\
+					); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM'); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM'); \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM ASIA/TOKYO'); <- Error \\
+					\\
+					insert into sample values('01-Jan-12 10:34:56.123457 AM +00:00'); <-- Error\\
+					select * from sample;
+				}
+			
+				Difference between normal "TIMESTAMP" and "TIMESTAMP WITH LOCAL TIME ZONE" is that the later, when you retrieve the value, it will be converted to the local time zone of the client application.
+				
+			
+				\noteblock{
+					\begin{itemize}
+						\item UTC stands for Coordinated Universal Time. 
+						\item It is the primary time standard by which the world regulates clocks and time. 
+						\item UTC does not change with the seasons like local time zones do, and it is not affected by daylight saving time changes.
+					\end{itemize}
+				}	
+			\end{itemize}
+		
+			\newpage
+			\item \textbf{Interval Year}
+			\begin{itemize}
+				\item Allows time period in terms of years and months
+				\syntaxblock{
+					internal year(yp) to month(p) \\
+					where, \\
+					YP is year precision \\
+					p is month precision
+				}
+				\item Default year precision is 2
+				\item Display format: \textbf{YY-MM}
+				
+				\newimage{0.5}{content/chapter2/images/year.png}
+				
+				\item Eg:
+				\commandblock{
+					create table sample(t1 interval year to month); \\
+					insert into sample values(interval '3' Year); \\
+					insert into sample values(interval '3' month); \\
+					insert into sample values('3-4'); \\
+					insert into sample values('3-0'); \\
+					insert into sample values('0-4');
+				}
+			\end{itemize}
+		
+			\bigskip
+			\item \textbf{Interval Day}
+			\begin{itemize}
+				\item Allows time period is terms of days, hours, minutes, seconds and fraction
+				\bigskip
+				\syntaxblock{
+					interval day(dp) to second(p) \\
+					where, \\
+					dp stands for day precision \\
+					p is fractional part of seconds
+				}
+				\item Default day precision is 2 and default p is 6
+				\item Display format: DD HH:MI:SS:FF
+				
+				\newimage{0.5}{content/chapter2/images/day.png}				
+				
+				\item Eg:
+				\commandblock{
+					create table sample(t1 interval day to second); \\
+					insert into sample values(INTERVAL '3 04:30:15' DAY TO SECOND); \\
+					insert into sample values(Interval '3' hour); \\
+					insert into sample values(Interval '3' minute); 
+				}
+			\end{itemize}
+		\end{itemize}
+		
+		\item \textbf{Binary datatype}:
+		\begin{itemize}
+			\item \textbf{Raw}: 
+			\begin{itemize}
+				\item Store fixed-length binary \& hexadecimal (starting Oracle 9i) data.
+				\item Eg: encryption keys or binary-encoded data.
+				\item \textbf{Dataset} for raw datatype:
+				\begin{itemize}
+					\item Binary data can be 0 or 1
+					\item Hex data is not case-sensitive and can be 0-9 or a-f
+					\item Both data must be enclosed in ''
+					\item Max size: 2000 bytes
+					\item Each character take ½ byte of storage space.
+				\end{itemize}
+				\bigskip
+				\syntaxblock{
+					raw(size) \\
+					where, \textbf{size is not optional}
+				}
+				\item Eg:
+				\commandblock{
+					create table sample(data raw(20));  \\
+					insert into sample values('10101011'); \\
+					insert into sample values('aaff11');
+				}
+				
+			\end{itemize}
+
+			\item \textbf{Blob (Binary large object)}:
+			\begin{itemize}
+				\item Store unstructured binary data, such as images, audio files, video files etc.
+				\item Max size: 128 TB
+				\bigskip
+				\syntaxblock{
+					blob
+				}
+
+				%\item Eg: Inserting image into table
+				%\bigskip
+				%\commandblock{
+				%	SQL> CREATE TABLE image\_table(id number, image BLOB); \\
+				%	SQL> host sqlldr user/password@orcl control=load\_image.ctl \\
+				%	SQL> select length(image) from image\_table;
+				%}
+				%Content of load\_image.ctl file:
+				%\bigskip
+				%\codeblockfull{load\_image.ctl}{
+				%	LOAD DATA INFILE 'images.txt' INTO TABLE image\_table FIELDS TERMINATED BY ',' (id , image\_filename FILLER CHAR(100), image  LOBFILE(image\_filename) TERMINATED BY EOF)	
+				%}
+				%Content of images.txt file:
+				%\bigskip
+				%\codeblockfull{images.txt}{
+				%	1,foo.jpg	
+				%}
+			
+
+				\item Eg: Insert blank entry in place of image
+				\commandblock{
+					CREATE TABLE image\_table(id number, image BLOB); \\
+					insert into image\_table values(101, EMPTY\_BLOB());
+				}
+				\item Eg: Insert image in blob datatype using \textbf{utl\_raw.cast\_to\_raw()}
+				\commandblock{
+					CREATE TABLE image\_table(id number, image BLOB); \\ 
+					insert into image\_table values(101, utl\_raw.cast\_to\_raw('C:$\backslash$Users$\backslash$Admin$\backslash$ Pictures$\backslash$test.png') );  \\
+					\\
+					select * from image\_table;
+				}
+			
+				Notice the output should show \textbf{blob} or the image in image column.
+				
+				To display image path itself:
+				
+				Here's a basic approach using Oracle SQL as an example, assuming the image path is stored as text within the BLOB data:
+				
+				\commandblock{
+				SELECT SUBSTR(TO\_CHAR(image), \\
+				 INSTR(TO\_CHAR(image), 'path=') + 1) FROM image\_table;
+				}
+				
+				
+			\end{itemize}
+
+			%\bigskip
+			%\item \textbf{Long raw (deprecated)}:
+			%\begin{itemize}
+			%	\item Deprecated data type.
+			%	\item Store binary data, such as images, audio files, and other binary objects. 
+			%	\item Use blob instead of long raw.
+			%	\item Max size: 2GB
+			%\end{itemize}
+		
+			\newpage
+			
+			\item \textbf{Bfile (binary file locator)}:
+			\begin{itemize}
+				\item Store references to binary files stored in filesystem outside the database.
+				\item Data will be stored outside the database.
+				\item It is read-only by default. 
+				\bigskip
+				\syntaxblock{
+					bfile
+				}
+
+				\item Using bfile:
+				\begin{itemize}
+					\item Create a directory variable using below query:
+					\bigskip
+					\syntaxblock{
+						create or replace directory <var> as <path>; \\
+					}
+					As admin user, execute below query:
+					\bigskip
+					\syntaxblock{
+						grant read,write on directory <var> to <user>;	
+					}
+					\item To access the data stored in a BFILE column, you use the BFILENAME function:
+					\bigskip
+					\syntaxblock{
+						create table xyz(fname \textbf{bfile}); \\ 
+						insert into xyz values(\textbf{bfilename('<var>','<filename>')});
+					}
+				\end{itemize}
+
+				\newpage
+				\item Eg: Create a table with bfile field and set a directory path:
+				\commandblock{
+					create table sample(fname \textbf{bfile}); \\ 
+					create or replace directory dir1 as 'C:$\backslash$Users$\backslash$Admin$\backslash$Pictures$\backslash$'); \\ 
+					\\
+					-- As admin user execute below query \\
+					grant read,write on directory dir1 to jack; \\ 
+					\\
+					insert into sample values(\textbf{bfilename}('dir1','1.png'));
+				}
+			
+			\end{itemize}
+		\end{itemize}
+		
+	
+\end{flushleft}
+
+\newpage

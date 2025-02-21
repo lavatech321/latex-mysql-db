@@ -1,0 +1,57 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+\bigskip
+Broadcast address is used to transmit data to all of the hosts on the local subnet.
+\newline
+It is used by DHCP server to dynamically assign an IP address to computers on a network.
+\newline
+\newline
+\textbf{How to write broadcast address for a given IP?}
+\begin{itemize}
+	\item Solution: Broadcast address is decided according to the netmask as follows:
+	\begin{itemize}
+		\item Keep the network part of the IP address fix
+		\item Replace the host part of the IP address with 255
+		\item Eg 1:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			IP address: \textbf{195.34.23.128}
+			\newline
+			Netmask: \textbf{255.255.255.0}
+			\newline
+			Broadcast Address: \textbf{195.34.23.255}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item Eg 2:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			IP address: \textbf{10.4.2.3}
+			\newline
+			Netmask: \textbf{255.0.0.0}
+			\newline
+			Broadcast Address: \textbf{10.255.255.255}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\item Eg 3:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		IP address: \textbf{228.34.23.1}
+		\newline
+		Netmask: \textbf{255.255.255.0}
+		\newline
+		Broadcast Address: \textbf{228.34.23.255}
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\end{itemize}
+
+
+\end{itemize}
+
+\end{flushleft}
+\newpage

@@ -1,0 +1,74 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\item You should take separate catch block for every exception type.
+	\item The order of catch block is very important:
+	\begin{itemize}
+		\item \textbf{Catch the child exception first and then parent}, else it shall result in error.
+		\item Two catch blocks with the same exception are not allowed.
+	\end{itemize}
+	
+	\item Handling multiple exceptions with common message:
+
+	\codeblockfull{demo.java}{
+		import java.io.*; \\
+		public class demo \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		try \{ \\
+		\s \s \s			FileReader r1 = new FileReader("abc.txt"); \\
+		\s \s \s			BufferedReader r2 = new BufferedReader(r1); \\
+		\s \s \s			String line; \\
+		\s \s \s			while ( (line = r2.readLine()) != null )  \{ \\
+		\s \s \s \s				System.out.println(line); \\
+		\s \s \s			\} \\
+		\s \s 			System.out.println(5/0); \\
+		\s \s 		\} \\
+		\s \s		catch (Exception e) \{ \\
+		\s \s \s			System.out.println("Something went wrong!"); \\
+		\s \s	\} \} \}	
+	}
+	\bigskip	
+	\outputblock{
+	Something went wrong!
+	}
+	\newpage
+	
+	\item Handling multiple exception with separate catch blocks:
+	
+	\codeblockfull{demo.java}{
+		import java.io.*; \\
+		public class demo \{ \\
+		\s public static void main(String[] args) \{  \\
+		\s \s		try \{ \\
+		\s \s \s	 FileReader r1 = new \\  
+		\s \s \s FileReader("abc.txt"); \\
+		\s \s \s	BufferedReader r2 = new   BufferedReader(r1); \\
+		\s \s \s	String line; \\
+		\s \s \s	while ( (line = r2.readLine()) != null ) \{ \\
+		\s \s \s \s				System.out.println(line); \\
+		\s \s \s			\} \\
+		\s \s \s			System.out.println(5/0); \\
+		\s \s		\} \\
+		\s \s		catch (FileNotFoundException e) \{  \\
+		\s \s \s	System.out.println("File abc.txt not found"); \\
+		\s \s		\} \\
+		\s \s		catch (ArithmeticException e) \{ \\
+		\s \s \s		System.out.println("You are dividing number with 0!"); \\
+		\s \s		\} \\
+		\s \s		catch (Exception e) \{ \\
+		\s \s \s			System.out.println("Something went wrong!"); \\
+		\s \s		\} \\
+		\s	\} \\
+		 \}	
+	}
+
+	\bigskip
+	\outputblock{
+		File abc.txt not found
+	}
+	
+\end{flushleft}
+
+\newpage
+
+

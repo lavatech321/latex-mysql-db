@@ -1,0 +1,44 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item GRANT statement give specific privileges or permissions to users or roles, allowing them to perform operations on database objects such as tables, views, procedures, and more.
+		
+		\syntaxblock{
+			GRANT privilege\_list ON object\_name TO user;
+		}
+		where,
+		\begin{itemize}
+			\item \textbf{privilege\_list}: Include \textbf{SELECT, INSERT, UPDATE, DELETE, EXECUTE, and ALL(which grants all available privileges)}
+			
+			\item \textbf{object\_name}: Name of the database object (e.g, table, view, procedure) on which you are granting privileges.
+			
+			\item \textbf{user}: User to which you are granting the privileges.
+		\end{itemize}
+
+		Eg:
+		\commandblock{
+			GRANT SELECT ON employees TO user1; \\
+			GRANT ALL ON orders TO user2;  \\
+			GRANT ALL ON orders TO user2, user1;
+		}
+		\item GRANT statement with the \textbf{"WITH GRANT OPTION"} clause means to grant a privilege to a user along with the permission to further grant that same privilege to others. 
+		\newline
+		Eg:
+		\bigskip
+		\commandblock{
+			GRANT SELECT ON employees TO user1 \textbf{WITH GRANT OPTION};
+		}
+		\newpage
+		\noteblock{
+			\begin{itemize}
+				\item You cannot execute grant on multiple objects in single grant statement.
+				\item User can grant privileges only those privileges he/she has to other users.
+				\item But not those privilege that he/she has not to other users.
+				\item Person who have granted access can only revoke the permission.
+			\end{itemize}
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}

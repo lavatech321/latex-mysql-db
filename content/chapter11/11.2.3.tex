@@ -1,0 +1,31 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item \textbf{this} keyword refers to the current object instance within a class.
+		\item It is used to access attributes or invoke methods of the current object. Eg: 
+		\codeblockfull{Test.java}{
+			class Circle \{ \\
+			\s	float r; \\
+			\s	public Circle(float r) \{ \\
+			\s \s		\textbf{this.r = r;} \\
+			\s	\} \\
+			\s	public float getArea() \{ \\
+			\s \s		float area = 3.14*r*r; \\
+			\s \s		return area; \\
+			\s	\} \} \\
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Circle c1 = new Circle(3); \\
+			\s \s		float area = c1.getArea(); \\
+			\s \s		System.out.println(area);  // Output: 28.26\\
+			\s	\} \} 
+		}		
+		
+	\end{itemize}	
+
+\end{flushleft}
+\newpage
+
+
+

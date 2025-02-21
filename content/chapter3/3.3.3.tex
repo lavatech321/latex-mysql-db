@@ -1,0 +1,34 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The SET ROLE statement is used to switch between different database roles for a user's session. 
+		\item By setting roles, you can control which privileges a user has during their session.
+		\bigskip
+		\syntaxblock{
+			SET ROLE role\_name
+		}
+		Eg:
+		\commandblock{
+			SET ROLE hr\_admin
+		}
+		\item To disable the currently enabled role(s):
+		\commandblock{
+			SET ROLE NONE;
+		}
+		\item To enable all roles for the current user's session:
+		\commandblock{
+			SET ROLE ALL;
+		}
+		\item To enable all roles except one like hr\_admin:
+		\commandblock{
+			SET ROLE ALL EXCEPT hr\_admin;
+		}
+		\item To set role 'hr\_admin' with password:
+		\commandblock{
+			SET ROLE hr\_admin identified by Admin12345;
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}

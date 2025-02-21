@@ -1,0 +1,137 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item LinkedList are \textbf{ordered \& indexed} collection of \textbf{hetrogenous objects} wherein \textbf{duplicate objects \& null} is allowed. 
+		\newimage{0.28}{content/chapter14/images/newlist.png}
+
+		\item LinkedList class implements List interface.
+		\item LinkedList class is used to \textbf{develop stacks and queues}.
+
+	\end{itemize}
+
+	\textbf{Difference between ArrayList and LinkedList}
+	\tablethree{
+		& \textbf{ArrayList} & \textbf{LinkedList} \\
+		\hline
+		Best choice for & Retrieval operation & Insertion/Deletion operation in the middle \\
+		\hline
+		Worst choice for & Insertion/Deletion operation in the middle & Retrieval operation \\
+		\hline
+		Object storage \newline order & Consecutive memory location & Not stored in consecutive memory locations \\
+		\hline
+		Capacity & Allows mentioning capacity & Does not allow mentioning capacity \\
+	}
+	
+	\newpage
+	\textbf{Ways of initializing LinkedList}
+
+	\begin{itemize}
+		\item Creating an empty LinkedList:
+		\bigskip
+		
+		\syntaxblock{
+			// To create LinkedList of hetrogenous elements: \\
+			LinkedList numbers = new LinkedList(); \\
+			\\
+			// To create LinkedList of homogenous elements: \\
+			LinkedList<ClassName> list = new LinkedList<ClassName>(); 
+		}
+		Eg:
+		\codeblock{
+			LinkedList numbers = new LinkedList(); \\
+			LinkedList<Integer> list = new LinkedList<Integer>(); 
+		}
+		\bigskip
+		\item Initialization with data:
+		\begin{itemize}
+			\item Using \textbf{Arrays.asList()} method:
+			\bigskip
+			\codeblock{
+				import java.util.*; \\
+				String[] namesArray = \{"Jim", "Jane", "Alice"\}; \\
+				LinkedList<String> namesList = new LinkedList<>(Arrays.asList(namesArray)); 
+			}
+			
+			\item Using \textbf{List.of} method:
+			\bigskip
+			\codeblock{
+				LinkedList<String> colors = new LinkedList<>(List.of("Red", "Green", "Blue"));
+			}
+			
+			\item Using \textbf{"var"} and \textbf{"List.of"}: 
+			\bigskip
+			\codeblock{
+				var fruits = new LinkedList<>(List.of("Apple", "Banana", "Orange"));
+			}
+		
+		\end{itemize}
+	
+	\end{itemize}
+	
+
+	
+	\bigskip
+	\textbf{Methods specific to LinkedList}:
+	\begin{itemize}
+		\item Add first member to LinkedList:
+		\syntaxblock{
+			void addFirst(Object o)
+		}
+		\bigskip
+		\item Add last member to LinkedList:
+		\syntaxblock{
+			void lastFirst(Object o)
+		}
+		\bigskip
+		\item Get first member of LinkedList:
+		\syntaxblock{
+			Object getFirst()
+		}
+		\bigskip
+		\item Get last member of LinkedList:
+		\syntaxblock{
+			Object getLast()
+		}
+		\bigskip
+		\item Remove first member of LinkedList:
+		\syntaxblock{
+			Object removeFirst()
+		}
+		\bigskip
+		\item Remove last member of LinkedList:
+		\syntaxblock{
+			Object removeLast()
+		}
+
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Example}
+	
+	Create an empty LinkedList and perform add, remove operation and display it's size:
+	
+	\codeblockfull{Test.java}{
+		import java.util.LinkedList; \\
+		class Test \{  \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		LinkedList l1 = new LinkedList(); \\
+		\s \s		\textbf{l1.add("Jack")};  \\
+		\s \s		\textbf{l1.add(null)}; \\
+		\s \s		\textbf{l1.remove("Jack")};  \\
+		\s \s		\textbf{l1.add(2,"Jimmy")};  \\
+		\s \s		int count = \textbf{l1.size()};  \\
+		\s \s		\textbf{l1.set(0,"Jack Sparrow")};  \\
+		\s \s		\textbf{l1.addFirst("First")}; \\
+		\s \s		\textbf{l1.addLast("Last")}; \\
+		\s \s		\textbf{l1.removeFirst()}; \\
+		\s \s		\textbf{l1.removeLast()}; \\
+		\s	\} 	\\
+		\}
+	}
+	
+\end{flushleft}
+\newpage
+
+

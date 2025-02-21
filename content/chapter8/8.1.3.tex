@@ -1,0 +1,43 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	The self ioin is joining a table by itself. In self join, you have to create the alias for the table name. 
+	
+	
+	Consider below table:	
+	\commandblock{
+		CREATE TABLE Employee(	\\
+		\s EmployeeID INT, FullName VARCHAR(20),	\\
+		\s Gender VARCHAR(10), \\
+		\s ManagerID INT	\\
+		);	 \\
+		INSERT INTO Employee VALUES(1, 'Pranaya', 'Male', 3);	\\
+		INSERT INTO Employee VALUES(2, 'Priyanka', 'Female', 1);	\\
+		INSERT INTO Employee VALUES(3, 'Preety', 'Female', NULL);	\\
+		INSERT INTO Employee VALUES(4, 'Anurag', 'Male', 1);	\\
+		INSERT INTO Employee VALUES(5, 'Sambit', 'Male', 1);	\\
+		INSERT INTO Employee VALUES(6, 'Rajesh', 'Male', 3);	\\
+		INSERT INTO Employee VALUES(7, 'Hina', 'Female', 3);
+	}
+	
+	\textbf{Inner Self Join}
+	
+		\outputblock{
+			SELECT E.FullName as Employee, M.FullName as Manager	\\
+			FROM Employee E	\\
+			INNER JOIN Employee M	\\
+			ON E.ManagerId = M.EmployeeId; \\
+			EMPLOYEE	\s	MANAGER	 \\
+			Priyanka	\s\s	Pranaya	\\
+			Anurag	\s\s	Pranaya	
+		}
+		\newpage
+		\outputblock{
+			Sambit	\s\s	Pranaya	\\
+			Pranaya	\s\s	Preety	\\
+			Rajesh	\s\s	Preety	\\
+			Hina	\s\s\s	Preety
+		}
+	
+	
+\end{flushleft}

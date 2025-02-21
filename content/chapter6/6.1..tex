@@ -1,0 +1,97 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	The return statement is used to exit a function and go back to the place from
+	where it was called.
+	
+	\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=8pt
+		Syntax: 
+		\newline
+		def function\_name(parameters):
+		\newline
+		\hphantom{} \hphantom{} statement(s) \newline
+		\hphantom{} \hphantom{} return expression
+		\fontdimen2\font=4pt
+	\end{tcolorbox}			
+	
+	\textbf{Rules of return statement:}
+	\begin{itemize}
+		\item Use the return statement inside a function only.
+		\item Every function returns something. If there are no return statements, then it returns None.
+		\item If the return statement contains an expression, it’s evaluated first and then the value is returned.
+		\item The return statement terminates the function execution.
+		\item A function can have multiple return statements. When any of them is executed, the function terminates.
+		\item A function can return any of the 13 datatypes.
+		\item A function can return a single values in a single return statement.
+	\end{itemize}
+	
+	\newpage
+	
+	Sample code:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		def accept(no): \newline
+		\hphantom{} \hphantom{} names=[] \newline
+		\hphantom{} \hphantom{} for x in range(no): \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} name=input("Enter student name: ") \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} names.append(name) \newline
+		return names \newline
+		\newline
+		ans=accept(3) \newline
+		print(ans)
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Output:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+		\color{black}
+		Enter student name: Raman \newline
+		Enter student name: Shami \newline
+		Enter student name: Kavi \newline
+		['Raman', 'Shami', 'Kavi']
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	\bigskip
+	Sample code:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		def accept(no): \newline
+		\hphantom{} \hphantom{} info=\{\} \newline
+		\hphantom{} \hphantom{} for x in range(no): \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} marks=[] \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{}name=input("Enter student name: ") \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} for x in range(3): \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} \hphantom{} \hphantom{} m=int(input("Enter marks: ")) \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} \hphantom{} \hphantom{} marks.append(m) \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} info.update(\{name:marks\}) \newline
+		\hphantom{} \hphantom{} return info \newline
+		\newline 
+		ans=accept(2) \newline
+		print(ans)
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Output:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+		\color{black}
+		Enter student name: Ram \newline
+		Enter marks: 34 \newline
+		Enter marks: 45 \newline
+		Enter marks: 55 \newline
+		Enter student name: Raman \newline
+		Enter marks: 34 \newline
+		Enter marks: 23 \newline
+		Enter marks: 78 \newline
+		{'Ram': [34, 45, 55], 'Raman': [34, 23, 78]}
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+		
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,48 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The StringBuffer class is a \textbf{mutable} sequence of characters present in \textbf{java.lang} package. 
+		\item It modifies string content without creating a new object. 
+		
+		\item \textbf{capacity}: Maximum number of characters that can hold without resizing.
+		\begin{itemize}
+			\item Capacity of empty StringBuffer object:
+			\begin{itemize}
+				\item Default capacity: 16 chars.
+				\item Once 16th character is added, new capacity will be:
+				\bigskip
+				\syntaxblock{
+					\textbf{New capacity = (current capacity + 1) * 2}}
+				\item Eg:
+				\bigskip
+				\codeblock{
+					StringBuffer s1 = new StringBuffer(); \\
+					System.out.println(\textbf{s1.capacity()}); // Output: 16 \\
+					s1.append("hello"); \\
+					System.out.println(s1.capacity()); // Output: 16 \\
+					s1.append("world by Java and testing");  \\
+					System.out.println(s1.capacity()); // Output: 34
+				}
+				
+			\end{itemize}
+			
+			
+			\item Capacity of non-empty StringBuffer object:
+			\bigskip
+			\syntaxblock{
+				\textbf{capacity = current length of characters + 16}
+			}
+			\bigskip
+			\item Eg:
+			\bigskip
+			\codeblock{
+			StringBuffer s2 = new StringBuffer("Lavatech Technology"); \\
+			System.out.println(s2.capacity()); // Output: 35
+			}
+			
+		\end{itemize}
+	\end{itemize}
+	
+\end{flushleft}
+

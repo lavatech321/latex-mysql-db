@@ -1,0 +1,52 @@
+
+\begin{flushleft}
+	\begin{itemize}		
+		\item Char literal can be represented as \textbf{single character within single quotes}.
+		\codeblock{
+			char ch='a'; \cmark
+		}
+
+		\item Below char literal declaractions will \textbf{result into compile time errors}:
+		
+		\codeblock{
+			char ch = "a"; \xmark \\
+			char ch = a; \xmark \\
+			char ch = 'ab'; \xmark 
+		}
+
+		\item Char literal can also be \textbf{represented as integral literal} which represents the unicode value of character.
+		\newline
+		The unicode value can be specified in decimal, octal and hexa decimal form.
+		\codeblock{
+			char ch1 = 97; \cmark \\
+			char ch2 = 0xFace; \cmark \\
+			char ch3 = 0777; \cmark \\
+			char ch = 65535; \cmark
+		}
+
+		Note that allowed range is \textbf{0 to 65535}.
+		
+		\bigskip
+		\item Char literal can also be represented in \textbf{unicode representation} by using "\textbackslash uXXXX" syntax where "XXXX" is 4 digit hexa decimal number.
+		
+		\codeblock{
+			char ch1 = '\textbackslash u0052'; \cmark \\
+			char ch2 = '\textbackslash u0932'; \cmark \\
+			char ch3 = \textbackslash uface; \cmark
+		}
+		
+		\newpage
+		
+		\item Char literal can also \textbf{represent escape sequence characters}.
+		\codeblock{
+			char ch1 = '\textbackslash n';  \cmark \\
+			char ch2 = '\textbackslash t'; \cmark
+		}
+
+	\end{itemize}
+	
+
+\end{flushleft}
+
+
+

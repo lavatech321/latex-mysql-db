@@ -1,0 +1,27 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Here are some key points regarding string memory management:
+
+	\begin{itemize}
+		\item \textbf{String Constant Pool}: The string object created using "=" operater, is created in string constant pool.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			String s1 = "lava";
+		}
+		
+		\newimage{0.3}{content/chapter13/images/heap4.png}
+		
+		\item \textbf{Heap}: The string object created using "new" operater, is created in heap.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			String s1 = new String("lava");
+		}
+		
+		\newimage{0.3}{content/chapter13/images/heap3.png}
+	\end{itemize}	
+
+	Let's see each of these in detail.
+	
+\end{flushleft}

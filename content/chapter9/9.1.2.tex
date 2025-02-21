@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Subquery that returns any number of values (Multiple rows of single column only).
+		\item Use operator that supports multiple values, such as the \textbf{IN, ANY, or ALL} operators.
+		\bigskip
+		\commandblock{
+			create table employee(	\\
+			\s id number, 	\\
+			\s name varchar2(20), 	\\
+			\s salary number	\\
+			);	\\
+			insert into employee values(101, 'Ram',34000);	\\
+			insert into employee values(102, 'Ravi',56000);	\\
+			insert into employee values(103, 'Kavi',16000);	\\
+			insert into employee values(104, 'Tanvi',34000);	\\
+			insert into employee values(105, 'Juhi',34000);
+		}
+		\bigskip
+		\outputblock{
+			select * from employee	\\
+			where salary IN (	\\
+			\s select salary from employee 	\\
+			\s where salary > 16000)	\\
+			order by 3;	\\
+			\\
+			ID	\s	NAME	\s	SALARY	\\
+			-------------------------------------------\\
+			101	\s	Ram		\s	34000	\\
+			104	\s	Tanvi	\s	34000	\\
+			105	\s	Juhi	\s	34000	\\
+			102	\s	Ravi	\s	56000 	
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

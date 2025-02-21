@@ -1,0 +1,65 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}	
+	
+	\begin{itemize}
+		\item BufferedReader \textbf{reads character data line-by-line or character-to-character} from the file. 
+		
+		\item \textbf{Constructor}:
+		\bigskip
+		\syntaxblock{
+			BufferedReader br = new BufferedReader(Reader r); \\
+			BufferedReader br = new BufferedReader(Reader r , in buffersize);
+		}
+	
+		\item \textbf{Method}:
+		\begin{itemize}
+			\item Read character in unicode format from file:
+			\bigskip
+			\syntaxblock{
+				int read();
+			}
+			\item Read character in character format from file:
+			\bigskip
+			\syntaxblock{
+				int read(char[] ch);
+			}
+		
+			\item To read next line from the file and returns it. If the next line not available, then this method returns null:
+			\bigskip
+			\syntaxblock{
+				String readLine();
+			}
+		
+			\item To close the reader:
+			\bigskip
+			\syntaxblock{
+				void close();
+			}
+		
+		\end{itemize}
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Example Program:}
+	\begin{itemize}
+		\item Read all lines in file "abc.txt":
+		\bigskip
+		\codeblockfull{Test.java}{
+			import java.io.*; \\
+			class Test \{ \\
+			\s	public static void main(String[] args) \\ throws Exception \{  \\
+			\s \s		\textbf{FileReader fr = new  FileReader("abc.txt");} \\
+			\s \s		\textbf{BufferedReader br = new BufferedReader(fr);} \\
+			\s \s		\textbf{String line;} \\
+			\s \s		\textbf{while( (line = br.readLine()) != null ) \{} \\
+			\s \s \s			\textbf{System.out.println(line);} \\
+			\s \s		\textbf{\}} \\
+			\s \s		\textbf{br.close();} \\
+			\s	\} \}
+		}
+	
+	\end{itemize}
+	
+	
+\end{flushleft}

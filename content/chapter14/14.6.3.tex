@@ -1,0 +1,109 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item ListIterator can move either to \textbf{forward direction} or to the \textbf{backward direction}. 
+		\item Hence it is \textbf{bi-directional} cursor.
+		\item Using ListIterator, you can perform replacement and addition of new objects in addition to read and remove operations.
+	\end{itemize}
+	
+	\textbf{ListIterator specific methods:}
+	ListIterator is the child interface of Iterator, hence all methods of Iterator interface are applicable on ListIterator.
+	
+	\begin{itemize}
+		\item Creating ListIterator object:
+		\syntaxblock{
+			ListIterator l2 = collection.listIterator();
+		}
+		\bigskip
+		\item \textbf{Forward movement:}
+		\begin{itemize}
+			\item Check for next element in collection: 
+			\syntaxblock{
+				public boolean hasNext()
+			}
+			\bigskip
+			\item Get next element in collection: 
+			\syntaxblock{
+				public Object next()
+			}
+			\bigskip
+			\item Return index of next element:
+			\syntaxblock{
+				public int nextIndex()
+			}
+		\end{itemize}
+		
+		\item \textbf{Backward movement:}
+		\begin{itemize}
+			\item Check for previous element in collection: 
+			\syntaxblock{
+				public boolean hasPrevious()
+			}
+			\bigskip
+			\item Get previous element in collection: 
+			\syntaxblock{
+				public Object previous()
+			}
+			\bigskip
+			\item Return index of previous element:
+			\syntaxblock{
+				public int previousIndex()
+			}
+		\end{itemize}
+
+		\item \textbf{Extra operations:}
+		\begin{itemize}
+			\item Remove element in collection:
+			\syntaxblock{
+				public void remove()
+			}
+			\bigskip
+			\item Add element in collection:
+			\syntaxblock{
+				public void add(Object o)	
+			}
+			\bigskip
+			\item  Replaces the last element returned by \textbf{next()} or \textbf{previous()} with the specified element:
+			\syntaxblock{
+				void set(Object o)
+			}	
+		\end{itemize}	
+	\end{itemize}
+	\newpage
+	
+	\textbf{Example:}
+	Java program to display ListIterator operation by retaining only those name starting with vowel character and removing rest names:
+	
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class Test\{ \\
+		\s public static void main(String[] args) \{ \\
+		\s 	ArrayList vowels = new  ArrayList(List.of("A","E","I","O","U")); \\
+		\s \s		LinkedList l1 = new LinkedList(); \\
+		\s \s		l1.add("Apple"); \\
+		\s \s		l1.add("Banana"); \\
+		\s \s		l1.add("Grapes"); \\
+		\s \s		l1.add("Chikoo"); \\
+		\s \s		l1.add("Eggs"); \\
+		\s \s		ListIterator l2 = l1.listIterator(); \\
+		\s \s		while(l2.hasNext()) \{ \\
+		\s \s \s			String s = (String)l2.next(); \\
+		\s \s \s			String value = Character.toString(s.charAt(0)); \\
+		\s \s \s			if (! vowels.contains(value)) \{ \\
+		\s \s \s \s				l2.remove(); \\
+		\s \s \s			\} \\
+		\s \s		\} \\
+		\s \s		System.out.println(l1); \\
+		\s	\} \\
+		\}	
+	}
+	\bigskip
+	\outputblock{
+		\textbf{[}Apple, Eggs\textbf{]}		
+	}
+	
+\end{flushleft}
+
+\newpage
+

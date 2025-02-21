@@ -1,0 +1,78 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	
+	\begin{itemize}
+		\item Collection interface is \textbf{root interface of collection framework}.
+		\item It defines common methods applicable for any collection objects.
+		\item Important methods:
+		\bigskip
+		\begin{enumerate}
+			\item Add single object:
+			\syntaxblock{
+				boolean add(Object o)
+			}
+			\bigskip
+			\item Add multiple object:
+			\syntaxblock{
+				boolean addAll(Collection c)					
+			}
+			\bigskip
+			\item Remove single object:
+			\syntaxblock{
+				boolean remove(Object o)
+			}
+			\bigskip
+			\item Remove multiple object:
+			\syntaxblock{
+				boolean removeAll(Collection c)					
+			}
+			\bigskip
+			\item Remove all objects except those present in collection "c":
+			\syntaxblock{
+				boolean retainAll(Collection c)					
+			}
+			\bigskip
+			\item Clear all objects:
+			\syntaxblock{
+				void clear()
+			}
+			\bigskip
+			\item Check if the object is present:
+			\syntaxblock{
+				boolean contains(Object o)
+			}
+			\bigskip
+			\item Check if multiple object are present:
+			\syntaxblock{
+				boolean containsAll(Collection c)					
+			}
+			\bigskip
+			\item Check if collection is empty:
+			\syntaxblock{
+				boolean isEmpty()
+			}
+			\bigskip
+			\item Check size of collection:
+			\syntaxblock{
+				int size();
+			}
+			\bigskip
+			\item Convert collection to array:
+			\syntaxblock{
+				Object[] toArray();
+			}
+			\bigskip
+			\item To iterate over collection:
+			\syntaxblock{
+				Iterator iterator()
+			}
+		\end{enumerate}
+
+	\end{itemize}
+	
+	
+\end{flushleft}
+
+\newpage
+

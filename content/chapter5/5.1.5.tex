@@ -1,0 +1,161 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\commandblock{
+		CREATE TABLE sample(no number, name varchar2(20)); \\
+		INSERT INTO sample VALUES(101,'Soap'); \\
+		INSERT INTO sample VALUES(102,'Butter');\\
+		INSERT INTO sample VALUES(103,'Cheese');\\
+		INSERT INTO sample VALUES(104,'Bread');\\
+		INSERT INTO sample VALUES(105,'Jam');
+	}
+	\begin{itemize}
+		
+		\item IN (list)
+		\bigskip
+		\outputblock{
+			select * from sample WHERE no IN (102, 103); \\
+			NO 	\s	NAME	\\
+			102 \s	Butter	\\
+			103 \s	Cheese
+		}
+		\item \textbf{NOT IN (list)}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE no NOT IN (102, 103); \\
+			NO 	\s	NAME 	\\
+			101 \s	Soap	\\
+			104	\s	Bread	\\
+			105	\s	Jam
+		}
+		\item \textbf{ALL}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE no < ALL (102, 103); \\
+			NO	\s	NAME	\\
+			101	\s	Soap
+		}
+		\newpage
+		\item ANY
+		\bigskip
+		\outputblock{
+			select * from sample WHERE no <> ANY (102, 103); \\
+			NO	\s	NAME	\\
+			101	\s	Soap	\\
+			102	\s	Butter	\\
+			103	\s	Cheese	\\
+			104	\s	Bread	\\
+			105	\s	Jam
+		}
+		\bigskip
+		\item \textbf{[NOT] LIKE}: Match a character pattern using wildcard character
+		\newline
+		Wild-card characters used with \textbf{LIKE} operator:
+		\begin{itemize}
+			\item \textbf{\%} : Matches any number of characters
+			\item \textbf{\_} : Matches a single character
+		\end{itemize}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE name \textbf{LIKE 'But\%'}; \\
+			NO 	\s	NAME 	\\
+			102	\s	Butter	\\
+			\\
+			select * from sample WHERE name \textbf{LIKE '\%tt\%'}; \\
+			NO 	\s	NAME	\\
+			102	\s	Butter 	\\
+			\\
+			select * from sample WHERE name \textbf{NOT LIKE '\%tt\%'}; \\
+			NO	\s	NAME	\\
+			101	\s	Soap	\\
+			103	\s	Cheese	\\
+			104	\s	Bread	\\
+			105	\s	Jam
+		}
+		\newpage
+		\commandblock{
+			create table contact(id number, phno varchar2(20)); \\
+			insert into contact values(101, '123-3456'); \\
+			insert into contact values(102, '23-3456');	\\
+			insert into contact values(103, '223-7456');
+		}
+		\bigskip
+		\outputblock{
+			select * from contact WHERE phno LIKE '\_\_\_-\_\_\_\_'; \\
+			ID	\s 	PHNO	\\
+			101 \s	123-3456	\\
+			103	\s	223-7456
+		}
+		\item IS [NOT] NULL
+		\bigskip
+		\commandblock{
+			create table sample(id number, phno number); \\
+			insert into sample values(101, 8723452312);	\\
+			insert into sample values(102, 9723051302);	\\
+			insert into sample values(103, NULL);	\\
+			insert into sample values(104, NULL);
+		}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE phno IS NULL; \\
+			ID	\s	PHNO	\\
+			103	\s - 	\\
+			104	\s -  	\\
+			\\
+			select * from sample WHERE phno IS NOT NULL; \\
+			ID	\s	PHNO	\\
+			101	\s	8723452312	\\	
+			102	\s	9723051302
+		}
+		\newpage
+		\item \textbf{EXISTS}
+		\bigskip
+		\syntaxblock{
+			SELECT column1, column2, ...	\\
+			FROM table\_name	\\
+			WHERE EXISTS (subquery);
+		}
+		\bigskip
+		\commandblock{
+			create table sample(id number, phno number);  \\
+			insert into sample values(101, 8723452312);	\\
+			insert into sample values(102, 9723051302);	\\
+			insert into sample values(103, NULL);	\\
+			insert into sample values(104, NULL);
+		}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE EXISTS \\
+			\s (select phno from sample where id = 106); \\
+			-- No Output -- \\
+			\\
+			select * from sample WHERE EXISTS \\
+			\s (select phno from sample where id = 103); \\
+			ID	\s	PHNO	\\
+			101	\s	8723452312	\\
+			102	\s	9723051302	\\
+			103	\s - 		\\
+			104	\s - 		\\
+		}
+		\newpage
+		\item \textbf{BETWEEN..AND}
+		\bigskip
+		\commandblock{
+			create table sample(id number, phno number); \\
+			insert into sample values(101, 8723452312); \\
+			insert into sample values(102, 9723051302); \\
+			insert into sample values(103, NULL); \\
+			insert into sample values(104, NULL);
+		}
+		\bigskip
+		\outputblock{
+			select * from sample WHERE id BETWEEN 101 AND 103; \\
+			ID \s	PHNO	\\
+			101 \s	8723452312	\\
+			102 \s	9723051302	\\
+			103	 \s - 
+		}
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

@@ -1,0 +1,38 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	
+
+	\begin{itemize}
+		\item Data type level promotion are not applicable at array level.
+		\item Eg: Char datatype can be promoted to int type. Whereas, char array cannot be promoted to int array.
+		
+		\codeblock{
+			int[] x = \{10,20,30,40\}; \\
+			char[] ch = \{'a','b','c','d'\}; \\
+			int[] b = x; \cmark \\
+			int[] c = ch; \xmark
+		}
+	\end{itemize}
+	
+	Which of the following promotions will be performed automatically:
+	
+	\begin{tabulary}{1.0\textwidth}{|p{12em}|p{12em}|}
+		\toprule
+		\textbf{Conversion} & \textbf{Answer} \\
+		\midrule
+		char $\rightarrow$ int & \cmark \\
+		\hline
+		char[] $\rightarrow$ int[] & \xmark \\
+		\hline
+		int $\rightarrow$ double & \cmark \\
+		\hline
+		int[] $\rightarrow$ double[] & \xmark \\
+		\hline
+		float $\rightarrow$ int & \xmark \\
+		\hline
+		float[] $\rightarrow$ int[] & \xmark \\
+  		\bottomrule
+	\end{tabulary}
+	
+\end{flushleft}

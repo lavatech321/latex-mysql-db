@@ -1,0 +1,139 @@
+
+\begin{flushleft}
+		
+	\begin{tabular}{|p{12em}|p{12em}|}
+	
+	\multicolumn{2}{l}{1. For loop in list}  \\
+	\multicolumn{2}{l}{Syntax: \textbf{newlist=[x for x in list]}}  \\ 
+	
+	\multicolumn{2}{l}{}  \\
+	\multicolumn{2}{l}{Eg: Add 10 to every member in the list}  \\ \hline
+	\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=[234,128,230] \\
+	 		ans=[x+10 for x in l1] \\
+	 		print(ans)\end{tabular}}   &
+	\multicolumn{1}{|l|}{[244, 138, 240]}  \\
+	\hline
+	
+	\multicolumn{2}{l}{}  \\
+	\multicolumn{2}{l}{Eg: Convert all list member to title case}  \\ \hline
+	\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["ram","sham","ravi"] \\
+			ans=[x.title() for x in l1] \\
+			print(ans)\end{tabular}}   &
+	\multicolumn{1}{|l|}{['Ram', 'Sham', 'Ravi']}  \\
+	\hline	
+
+	\multicolumn{2}{l}{}  \\
+	\multicolumn{2}{l}{Eg: Append ".mp3" to all list member}  \\ \hline
+	\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["a","b","c"] \\
+			ans=[x+".mp3" for x in l1] \\
+			print(ans)\end{tabular}}   &
+	\multicolumn{1}{|l|}{['a.mp3', 'b.mp3', 'c.mp3']}  \\
+	\hline	
+
+	\multicolumn{2}{l}{}  \\
+	\multicolumn{2}{l}{Eg: Convert every list member to integer datatype}  \\ \hline
+	\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+	\\ \hline
+	\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["93423129","89654324"] \\
+			ans=[int(x) for x in l1] \\
+			print(ans) \end{tabular}}   &
+	\multicolumn{1}{|l|}{[93423129, 89654324]}  \\
+	\hline	
+	
+	\end{tabular}
+	
+	
+	\newpage
+
+	\begin{tabular}{|p{12em}|p{12em}|}
+		
+		\multicolumn{2}{l}{2. For loop and if condition in list}  \\
+		\multicolumn{2}{l}{Syntax: \textbf{newlist=[x for x in list if condition]}}  \\ 
+		
+		\multicolumn{2}{l}{}  \\
+		\multicolumn{2}{l}{Eg: Filter all even numbers in a list}  \\ \hline
+		\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=[34,23,10,89] \\
+				ans=[x for x in l1 if x\%2==0] \\
+				print(ans)\end{tabular}}   &
+		\multicolumn{1}{|l|}{[34, 10]}  \\
+		\hline
+		
+		\multicolumn{2}{l}{}  \\
+		\multicolumn{2}{l}{Eg: Filter all member with title case in a list}  \\ \hline
+		\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["Ravi","test","Raman"] \\
+				ans=[x for x in l1 if x.istitle()] \\
+				print(ans)\end{tabular}}   &
+		\multicolumn{1}{|l|}{['Ravi', 'Raman']}  \\
+		\hline	
+		
+		\multicolumn{2}{l}{}  \\
+		\multicolumn{2}{l}{Eg: Append ".mp3" to all list member}  \\ \hline
+		\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["one.jpg","two.mp3","three.mp3 \\
+				ans=[x for x in l1 if 'mp3' in x] \\
+				print(ans)\end{tabular}}   &
+		\multicolumn{1}{|l|}{['two.mp3', 'three.mp3']}  \\
+		\hline	
+				
+	\end{tabular}
+	
+	\newpage
+
+	\begin{tabular}{|p{12em}|p{12em}|}
+	
+		\multicolumn{2}{l}{3. Nested for loop in list}  \\
+		\multicolumn{2}{l}{Syntax: \textbf{newlist=[<xy> for x in list1 for y in list2]}}  \\ 
+		
+		\multicolumn{2}{l}{}  \\
+		\multicolumn{2}{l}{Eg: Multiple each member of a list with another list member}  \\ \hline
+		\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=[23,45,56] \\
+				l2=[2,3]   \\
+				ans=[x*y for x in l1 for y in l2] \\
+				print(ans)\end{tabular}}   &
+		\multicolumn{1}{|l|}{[46, 69, 90, 135, 112, 168]}  \\
+		\hline
+		
+	\end{tabular}
+
+	\bigskip
+	\bigskip
+	
+	\begin{tabular}{|p{12em}|p{12em}|}
+	
+		\multicolumn{2}{l}{4. Nested for loop with if condition in list}  \\
+		\multicolumn{2}{l}{Syntax: \textbf{newlist=[<xy> for x in list1 for y in list2 if condition]}}  \\ 
+		
+		\multicolumn{2}{l}{}  \\
+		\multicolumn{2}{l}{Eg: Multiple each member of a list with another list member}  \\ \hline
+		\multicolumn{1}{|l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}l1=["Ram","Raman","Ravi"] \\
+				l2=["Maths","Science","English"] \\
+				ans=[x+'-'+y for x in l1 for  \\
+				y in l2 if y=="Maths"] \\
+				print(ans) \end{tabular}}   &
+		\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}['Ram-Maths',  \\
+				'Raman-Maths',  \\
+				'Ravi-Maths'] \end{tabular}}  \\
+		\hline
+		
+	\end{tabular}
+
+	
+\end{flushleft}
+
+
+\newpage

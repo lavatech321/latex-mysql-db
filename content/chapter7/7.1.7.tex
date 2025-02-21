@@ -1,0 +1,27 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{tabulary}{1.0\textwidth}{|p{10em}|p{18em}|}
+		\toprule
+		\textbf{Redirection Operator} & \textbf{Resulting Operation}\\
+		\midrule
+		command > file & stdout written to file, overwriting if file exists \\
+		\hline
+		command {$\textgreater$}{$\textgreater$} file & stdout written to file, appending if file exists \\
+		\hline
+		command < file & input read from file \\
+		\hline
+		command 2> file & stderr written to file, overwriting if file exsits \\
+		\hline
+		command 2{$\textgreater$}{$\textgreater$} file & stderr written to file, appending if file exists \\
+		\hline
+		command \&{$\textgreater$} file & stdout \& stderr written to file, overwriting if file exists \\
+		\hline
+		command \&{$\textgreater$}{$\textgreater$} file & stdout \& stderr written to file, appending if file exists \\
+		\bottomrule
+	\end{tabulary}
+	
+\end{flushleft}
+
+\newpage
+

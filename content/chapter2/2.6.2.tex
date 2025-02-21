@@ -1,0 +1,127 @@
+
+\begin{flushleft}
+	
+	\begin{tabular}{|p{8em}|p{8em}|p{10em}|}
+		
+		\multicolumn{3}{l}{} \\
+		\multicolumn{3}{l}{\textbf{len()} - Return length of dictionary}                  
+		\\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   
+		\\ \hline
+		\multicolumn{1}{|l|}{len(dictionary)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" \} \\
+				print(len(info)) \end{tabular}}   &  
+		2  \\ 
+		\hline
+		
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{get()} - Display specific key's value}  \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.get(key)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" \} \\
+				print(info.get("name")) \end{tabular}}   &  
+		Raman \\ 
+		\hline				
+		
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{pop()} - Remove specific key and value pair} \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.pop(key)}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" , \\
+				"age":56 \} \\
+				info.pop('age') \\
+				print(info) \end{tabular}}   &  
+		\{'name': 'Raman'\}\\ 
+		\hline				
+		
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{popitem()} - Remove random key and value pair} \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.popitem()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" , \\
+				 "age":56 \} \\
+				info.popitem() \\
+				print(info) \end{tabular}}   &  
+		\{'name': 'Raman'\} \\
+		\hline				
+
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{keys()} - Display all keys in dictionary} \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.keys()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" , \\
+				"age":56 \} \\
+				print(info.keys())  \end{tabular}}   &  
+		dict\_keys(['name', 'age']) \\
+		\hline				
+				
+	\end{tabular}
+
+
+	\begin{tabular}{|p{8em}|p{8em}|p{10em}|}
+		
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{values()} - Display all values in dictionary} \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.values()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" , \\
+				"age":56 \} \\
+				print(info.values())  \end{tabular}}   &  
+		dict\_values(['Raman', 56]) \\
+		\hline				
+		
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{items()} - Display key value pair as tuples} \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.items()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" , \\
+				"age":56 \} \\
+				print(info.items())  \end{tabular}}   &  
+		dict\_items([('name', 'Raman'), ('age', 56)]) \\
+		\hline				
+
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{update()} - Add new key value pair } \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.items()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" \} \\
+				info.update({"city":"Pune"})  \\
+				print(info)
+			\end{tabular}}   &  
+		\{ "name":"Raman", "city":"Pune" \} \\
+		\hline				
+
+		\multicolumn{3}{l}{}  \\
+		\multicolumn{3}{l}{\textbf{clear()} - Remove all key value pair } \\ \hline
+		\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+		\hline
+		\multicolumn{1}{|l|}{dict.items()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{ "name":"Raman" \} \\
+				info.clear() \\
+				print(info) \end{tabular}}   &  
+		\{\} \\
+		\hline				
+
+	\end{tabular}
+	
+
+	\begin{tabular}{|p{8em}|p{8em}|p{10em}|}
+		
+	\multicolumn{3}{l}{}  \\
+	\multicolumn{3}{l}{\textbf{copy()} - Perform shallow copy } \\ \hline
+	\multicolumn{1}{|l|}{Syntax} & \multicolumn{1}{l|}{Sample Code}  & \multicolumn{1}{l|}{Output}   \\ 
+	\hline
+	\multicolumn{1}{|l|}{dict.items()}  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}info=\{"name":"Raman"\} \\
+			data1=info \\
+			data2=info.copy() \\
+			info["city"]="Pune" \\
+			print(data1) \\
+			print(data2) \end{tabular}}   &  
+	\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}	\{'name': 'Raman', 'city': 'Pune'\} \\
+			\{'name': 'Raman'\} \\ \end{tabular}} 
+	\\
+	\hline
+	\end{tabular}
+	
+\end{flushleft}
+
+
+\newpage

@@ -1,0 +1,52 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item During serialisation, \textbf{if you dont want to save value of variable} then declare it \textbf{transient}.
+		\item \textbf{JVM ignores the original value of transient variable} \& save default value to the file. \textbf{Hence transient means not to serialize.}
+		\syntaxblock{
+			transient varname;
+		}		
+		\item Eg: Declaring a variable as transient hides it's value to 0:
+		\codeblockfull{demo.java}{
+			import java.io.*; \\
+			\textbf{class New implements Serializable \{} \\
+			\s	\textbf{String username= "Ram";} \\
+			\s	\textbf{transient String password="ram@12345";} \\
+			\} \\
+			public class demo \{  \\
+			\s	public static void main(String[] args)  throws Exception \{  \\
+			\s \s	\textbf{New c1 = new New();} \\
+			\s		\textbf{FileOutputStream fout = new FileOutputStream("abc.ser");}  \\
+			\s		\textbf{ObjectOutputStream oos = new ObjectOutputStream(fout);} \\ 
+			\s \s	\textbf{oos.writeObject(c1);} \\
+			\s		\textbf{FileInputStream fis = new FileInputStream("abc.ser");} \\
+			\s		\textbf{ObjectInputStream ois = new ObjectInputStream(fis);} \\
+			\s \s		\textbf{New c2 = (New)ois.readObject();} \\
+			\s \s		System.out.println(c2.username+","+c2.password); // Output: Ram,null \\
+			\} \}			
+		}
+	\end{itemize}
+	\newpage
+	\textbf{static V/S final V/S transient}:
+	\begin{itemize}
+		\item \textbf{Static variable} is not part of object state and hence it wont participate in serialisation. Due to this, declaring static variable as \textbf{transient, is no of use}.
+		\item \textbf{Final variables} will be participated in serialisation directly by the value. Hence, declaring a final variable as a \textbf{transient, is of no impact}.
+		\item Eg:
+	\end{itemize}
+
+	\tabletwo{
+		Declaration &  Output \\
+		\hline
+		int i = 10; \newline int j = 20; & 10..20 \\
+		\hline
+		transient int i = 10; \newline int j = 20; & 0..20 \\
+		\hline
+		transient static int i = 10; \newline transient int j = 20; & 10..0 \\
+		\hline
+		transient int i = 10; \newline transient final int j = 20; & 0..20 \\
+		\hline
+		transient static int i = 10; \newline transient final int j = 20; & 10..20 \\
+	}
+
+\end{flushleft}
+\newpage

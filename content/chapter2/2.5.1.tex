@@ -1,0 +1,33 @@
+
+\begin{flushleft}
+	
+	\begin{tabulary}{1.0\textwidth}{|p{7em}|p{12em}|p{7em}|}
+		\toprule
+		\textbf{Operation} & \textbf{Sample code}  & \textbf{Output} \\
+		\midrule
+		Create empty set & a=set() \newline print(a,type(a)) & set() <class 'set'> \\
+		\hline
+		Delete Set & a=\{"raj","ravi","raman"\} \newline del a \newline print(a) & \textbf{NameError: name 'a' is not defined} \\
+		\hline
+		Membership operator & a=\{"raj","ravi","raman"\} \newline 
+		print("raj" in a) \newline print("kavi" in a) & True \newline False \\
+		\hline
+		Union of set & teamA=\{"Ram","Sham"\} \newline teamB=\{"Raman","Ram"\} \newline
+		print(teamA | teamB)
+		 & \{'Ram', 'Raman', 'Sham'\} \\
+		 \hline
+		 Intersection of set & teamA=\{"Ram","Sham"\} \newline teamB=\{"Raman","Ram"\} \newline print(teamA \& teamB) & \{'Ram'\} \\
+ 		 \hline
+ 		 Unique members of set & teamA=\{"Ram","Sham"\} \newline teamB=\{"Raman","Ram"\} \newline print(teamA \textbf{\^}  teamB) & \{"Sham" , "Raman"\} \\
+ 		 \hline
+		 Member present in set A, but not in set B & teamA=\{"Ram","Sham"\} \newline teamB=\{"Raman","Ram"\} \newline print(teamA - teamB) & \{'Sham'\} \\
+  		 \hline
+		  Return true if A is subset of B & teamA={'A','C','B'} \newline teamB={'A','B'} \newline print(teamA > teamB) & True 
+		  \\ 
+		\bottomrule
+	\end{tabulary}
+	
+	
+\end{flushleft}
+\newpage
+

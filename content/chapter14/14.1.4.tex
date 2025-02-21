@@ -1,0 +1,79 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Stack class is child class of Vector class.
+	
+		\item Stack is designed for \textbf{Last In First Out Order(LIFO)}
+
+		\item Stack are \textbf{ordered \& indexed} collection of \textbf{hetrogenous objects} wherein \textbf{duplicate objects \& null} is allowed. 
+
+		\newimage{0.25}{content/chapter14/images/book.png}
+		
+		\item Creating an empty Stack:
+		
+		\codeblock{
+			Stack s = new Stack();
+		}
+	\end{itemize}
+
+	
+	\textbf{Stack operations}
+
+	\newimage{0.45}{content/chapter14/images/stack.png}	
+	
+	\newpage
+	\textbf{Stack methods}
+	\begin{itemize}
+		\item Inserting an object into stack:
+		\syntaxblock{
+			Object push(Object obj);
+		}
+		\bigskip
+		\item Remove and return top of stack:
+		\syntaxblock{
+			Object pop();
+		}
+		\bigskip
+		\item Return top of stack without removal of object:
+		\syntaxblock{
+			Object peak();
+		}
+
+		\item Search an object and return it's offset, if  object is not present then return -1.
+		\newimage{0.3}{content/chapter14/images/stack5.png}
+		\syntaxblock{
+			int search(Object obj);
+		}
+		\bigskip
+		\item Check if stack is empty or not:
+		\syntaxblock{
+			boolean empty();
+		}
+		
+	\end{itemize}
+	\newpage
+	\textbf{Example Program:}
+	\newline
+	Display stack operations:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		public class Test \{ \\
+		\s public static void main(String[] args) \{ \\
+		\s \s		\textbf{Stack s = new Stack<>();} \\
+		\s \s		\textbf{s.push("Apple");} \\
+		\s \s		s.push("Chikoo"); \\
+		\s \s		s.push("Chikoo"); \\
+		\s \s		\textbf{s.pop();} \\
+		\s \s		int pos = \textbf{s.search("Banana")}; \\
+		\s \s		Object val2 = \textbf{s.peek();} \\
+		\s \s		System.out.println(\textbf{s.empty()}); \\
+		\s	\} \\
+		\}	
+	}
+	
+\end{flushleft}
+
+\newpage
+
+ 

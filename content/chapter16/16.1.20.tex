@@ -1,0 +1,72 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item User-defined exception are custom exceptions created by programmer to meet programming requirements. 
+		\item Eg:
+		\begin{itemize}
+			\item InvalidAgeException
+			\item InvalidEmailException
+			\item InSufficientBalanceException
+		\end{itemize}
+		\item Rules for creating custom exception:
+		\begin{itemize}
+			\item Define customised exceptions as unchecked i.e extend RuntimeException but not Exception.
+			\item Inside every customised exception, super(arg) is needed to make description available to default exception handler.
+			\item You will need to explicitly throw custom exception using "throw" keyword.
+		\end{itemize}
+		\bigskip
+		\syntaxblock{
+			class ExceptionName extends RuntimeException \{ \\
+			\s	ExceptionName(String msg) \{  \\
+			\s \s		super(msg); \\
+			\s	\} \\
+			\}
+		}
+		\item Below code create custom exception named "InvalidAgeException":
+		\codeblockfull{demo.java}{
+			class InvalidAgeException extends RuntimeException \{  \\
+			\s	InvalidAgeException(String msg) \{ \\
+			\s \s 		super(msg); \\
+			\s	\} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{  
+		}
+	
+		\newpage
+		
+		\codecontinue{
+			\s \s   	try \{ \\
+			\s \s    	int age = Integer.parseInt(args[0]);  \\
+			\s \s		if(age < 0 | age > 100) \{ \\
+			\s \s 				throw new InvalidAgeException("You seems have have entered invalid age!"); \\
+			\s \s			\} \\
+			\s \s			else \{ \\
+			\s \s			System.out.println("Age: " + age + " is valid!"); \\
+			\s \s			\} \\
+			\s \s		\} \\
+			\s \s		catch (InvalidAgeException e) \{ \\
+			\s \s \s			System.out.println(e.toString()); \\
+			\s \s		\} \\
+			\s 	\} \\
+			\} 
+		}
+		\bigskip
+		\outputblock{
+			\$ javac demo.java  \\
+			\$ java demo 45 \\
+			Age: 45 is valid! \\
+			\$ java demo 450 \\
+			InvalidAgeException: You seems have have entered invalid age!
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+
+
+
+

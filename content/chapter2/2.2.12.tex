@@ -1,0 +1,57 @@
+
+\begin{flushleft}
+
+	\begin{itemize}
+		
+		\item By default, floating-point numbers are represented in double form.
+		\item So below declaration will result in error: 
+		\bigskip		
+		\codeblock{
+				float f = 1.0 \xmark
+		}
+		\bigskip		
+		
+		\item Correct way to represent float data type is by suffixing \textbf{"F"} or \textbf{"f"} to the floating-point number as shown:
+		\bigskip
+		\codeblock{
+			float f = 1.6F; \cmark \newline
+			float f = 7.8f;		\cmark
+		}
+
+		\item Double data type can be represented using suffix \textbf{"D"} or \textbf{"d"} or no suffix as below:
+		\bigskip
+		\codeblock{
+		    double a = 12.67; \cmark \newline
+			double b = 13.7d; \cmark \newline
+			double c = 123.456D; \cmark 
+		}
+	
+		\item Assign integral literal directly to floating-point variables:
+		\bigskip
+		\codeblock{
+			double a = 0456; \cmark \newline
+			float b = 0XFace; \cmark 
+		}
+			
+		\item \textbf{Expontential format:} This is scientific notation to represent very large or small floating-point values. Use the letter “e” or “E” to indicate the exponent:
+				\bigskip
+		\codeblock{
+			double a = 1.2e3; \cmark \newline
+			float b = 1.3e4F; \cmark
+		}
+		
+		\bigskip
+		\item \textbf{Usage of \_ in floating literal}:
+		\begin{itemize}
+			\item From Java 1.7 version, "\_" in middle of big numbers increase floating-point's readability:
+			\codeblock{
+				double y = 12\_45\_23\_\_23\_2323.90;  \cmark
+			}
+						
+		\end{itemize}	
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+

@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+		\begin{itemize}
+			\item Method overloading means multiple methods with the \textbf{same name but different arguments} in a class.
+			\item Compiler will use method signature while resolving method calls.
+			\item Method signature:
+			\bigskip
+			\syntaxblock{
+				modifier returnType \textbf{methodName(type arg, ...)}
+			}	
+			\bigskip
+			\noteblock{
+				\begin{itemize}
+					\item Method \textbf{returnType} and \textbf{modifier} are not  part of method signature and won't affect method overloading.
+					\item Within a class two methods with same signature not allowed.
+				\end{itemize}
+			}				
+			\item Eg:
+			\codeblockfull{Calculate.java}{
+				class Calculate \{ \\
+				\s	public int add(int a, int b) \{ \\
+				\s \s		return a + b; \\
+				\s	\} \\
+				\s	public double add(double a, double b) \{ \\
+				\s \s		return a + b; \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Calculate math = new Calculate(); \\
+				\s \s		int sum1 = math.add(5, 10); \\
+				\s \s		double sum2 = math.add(2.5, 3.7); \\
+				\s		System.out.println("Sum1: " + sum1); // Output: 15 \\
+				\s		System.out.println("Sum2: " + sum2);  // Output: 6.2 \\
+				\s	\} \}
+			}
+			
+		\end{itemize}
+		
+\end{flushleft}
+

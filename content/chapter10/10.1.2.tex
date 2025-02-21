@@ -1,0 +1,32 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item The ROWNUM pseudo column is used to assign a unique number to each row retrieved in a query result.
+		\item It is often used to limit or rank rows based on their order of retrieval.
+		\item Eg: Consider below table
+		\bigskip
+		\commandblock{
+			CREATE TABLE employee(	\\
+			id NUMBER,	\\
+			name VARCHAR2(50),	\\
+			dept\_id NUMBER);	\\
+			\\
+			insert into employee values(101,'Raman',201);	\\
+			insert into employee values(102,'Sham',201); 
+		}
+
+		\bigskip
+		\outputblock{
+			SELECT name	\\
+			FROM employee	\\
+			WHERE ROWNUM <= 1;	\\
+			\\
+			NAME	\\
+			----------------------------\\
+			Raman
+		}
+	\end{itemize}
+\end{flushleft}
+\newpage
+
+

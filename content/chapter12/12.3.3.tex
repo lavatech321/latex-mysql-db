@@ -1,0 +1,41 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\tabletwo{
+		\hline 
+		extends  & implements \\
+		\hline
+		A class can extend only one class at a time:
+		\codeblock{
+			class B \{\} \\
+			class A extends B \{\} \\
+		}
+		& A class can implement any number of interfaces: 
+		\codeblock{
+			interface A \{\} \\
+			interface B \{\} \\
+			class C implements A, B \{\} \\
+		}
+		\\
+		\hline
+		A class can extend another class and can implement any number of interfaces: 
+		\codeblock{
+			class B \{\} \\
+			interface C \{\} \\
+			interface D \{\} \\
+			class A  extends B implements C,D \{\}
+		} & 
+		An interface can extend any number of interfaces:
+		\codeblock{
+			interface A \{\} \\
+			interface B \{\} \\
+			interface C extends A, B \{\} 
+		} \\
+		\hline
+		
+	}	
+	
+\end{flushleft}
+
+
+\newpage

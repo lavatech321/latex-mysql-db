@@ -1,0 +1,87 @@
+
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{Ordered collection of bytes}, enclosed in "bytes()".
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=8pt
+			Syntax: a=b'characters'
+			\newline
+			Syntax: a=bytes('characters','ascii')
+			\newline
+			Syntax: a=bytes('characters','utf-8')
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Eg:	
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			a=b'apple'
+			\newline
+			b=bytes('apple','ascii')
+			\newline
+			c=bytes('\u0950','utf-8')
+			\newline
+			print(a,type(a))
+			\newline
+			print(b,type(b))
+			\newline
+			print(c,type(c))
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			b'apple' <class 'bytes'>\newline
+			b'apple' <class 'bytes'>\newline
+			b'\\xe0\\xa5\\x90' <class 'bytes'>
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		
+		\item Bytes datatypes stores ascii and unicde characters.
+		\newline
+		Eg:			
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			a=b'apple' \newline
+			print(a, a[0], a[1])
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			b'apple' 97 112
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		\item Bytes is immutable datatype. You cannot add, remove or change existing bytes characters.
+		\newline
+		Eg:			
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			a=b'apple'\newline
+			a[0]=99			
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=error,colframe=error]
+			\color{black}
+			TypeError: 'bytes' object does not support item assignment
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

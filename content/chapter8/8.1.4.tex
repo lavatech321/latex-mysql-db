@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Returns the Cartesian product of two tables. 
+		\item It combines every row from the first table with every row from the second table, resulting in all possible combinations. 
+		\item Cross joins are also known as Cartesian joins or cross products.
+		\bigskip
+		\commandblock{
+			CREATE TABLE employee(id number, first\_name varchar2(20), second\_name varchar2(20)); \\
+			INSERT INTO employee VALUES(101, 'Ravi', 'Sharma');	\\
+			INSERT INTO employee VALUES(102, 'Kavi', 'Verma');	\\
+			INSERT INTO employee VALUES(103, 'Jimmy', 'Kumar');	\\
+			INSERT INTO employee VALUES(104, 'Josh', 'Kumar');	\\
+			\\
+			CREATE TABLE department(id number, name varchar2(20)); 	\\
+			INSERT INTO department VALUES(101, 'HR');		\\
+			INSERT INTO department VALUES(102, 'IT');
+		}
+		\bigskip
+		\outputblock{
+				SELECT employee.first\_name, department.name	\\
+				FROM employee	\\
+				CROSS JOIN department;	
+		}		
+		\newpage
+		\outputblock{
+			-------------------------------------\\
+			FIRST\_NAME \s	NAME	\\
+			Ravi	\s	HR	\\
+			Kavi	\s	HR	\\
+			Jimmy	\s	HR	\\
+			Josh	\s	HR	\\
+			Ravi	\s	IT	\\
+			Kavi	\s	IT	\\
+			Jimmy	\s	IT	\\
+			Josh	\s	IT
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}

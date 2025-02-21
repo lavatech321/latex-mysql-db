@@ -1,0 +1,56 @@
+\setlength{\columnsep}{5pt}
+
+\begin{flushleft}
+
+\begin{itemize}
+	\item Code structure in Java:
+	\newimage{0.35}{content/chapter0/images/new06.png}
+	
+	\quest{What goes in a source file?}{
+		\begin{itemize}
+			\item A source code file with the \textbf{“.java”} extension holds one class definition. 
+			\item The source file name should be \textbf{"classname.java"}.
+			\item The class represents a piece of your program. 
+			\item The class must go within a pair of curly braces.
+			\item Eg: Below code name will be Dog.java and class name will be Dog - \\
+			\boximage{0.3}{content/chapter0/images/new07.png}
+		\end{itemize}
+	}
+	\bigskip
+	\quest{What goes in a class?}{
+		\begin{itemize}
+			\item A class has one or more methods. 
+			\item Your methods must be declared inside a class.
+			\item Eg: The class Dog contains a method called bark()
+			\\
+			\boximage{0.3}{content/chapter0/images/new08.png}
+		\end{itemize}	
+	}
+	\bigskip
+	\quest{What goes in a method?}{
+		\begin{itemize}
+			\item Method code is basically a set of statements.
+			\item Method kind of like a function or procedure.
+			\item When the JVM starts running, it looks for the method inside the class that looks exactly like:
+			\codeblock{
+				public static void main (String[] args) \{ \\
+				\s 	// your code goes here \\
+				\}
+			}
+			\item JVM runs everything inside \{ \} of your main method. 
+			\item Every Java application has to have at least one class, and at least one main method (not one main per class; just one main per application).
+		\end{itemize}
+	}
+
+	\textbf{Overall, a basic Java program would look something like below:}
+	\newimage{0.35}{content/chapter0/images/new09.png}
+	
+	\bigskip
+	\textbf{Running your Java Code:}
+	\newimage{0.3}{content/chapter0/images/new10.png}
+	
+\end{itemize}
+
+				
+\end{flushleft}
+

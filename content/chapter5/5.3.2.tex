@@ -1,0 +1,37 @@
+\setlength{\columnsep}{3pt}
+
+\begin{flushleft}
+	
+	Below is the simple examples of infinite \textbf{"while"} loop:
+	\newline
+	
+	Sample code:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+		\color{white}
+		\fontdimen2\font=8pt
+		flag=True \newline
+		while flag:  \newline
+		\hphantom{} \hphantom{} choice=input('Do you wish to continue? (y/n): ') \newline
+		\hphantom{} \hphantom{} if choice == 'y':  \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} flag=True  \newline
+		\hphantom{} \hphantom{} else:  \newline
+		\hphantom{} \hphantom{} \hphantom{} \hphantom{} flag=False
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Output:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+		\color{black}
+		Do you wish to continue? (y/n): y \newline
+		Do you wish to continue? (y/n): y \newline
+		Do you wish to continue? (y/n): n
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	
+\end{flushleft}
+
+
+\newpage
+
+

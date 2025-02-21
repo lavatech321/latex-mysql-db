@@ -1,0 +1,97 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Until Java 1.6 version, programmer used finally block to close resources like database connections or openned file as shown below:
+		
+		\codeblockfull{demo.java}{
+			import java.io.*; \\ 
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		BufferedReader br = null; \\
+			\s \s		try \{ \\
+			\s			br = new BufferedReader(new FileReader("abc.txt")); \\
+			\s \s		\} \\
+			\s \s		catch(IOException e) \{  \\
+			\s \s \s			System.out.println("File not found"); \\
+			\s \s		\} \\
+			\s \s		catch (Exception e) \{ \\
+			\s \s \s		System.out.println("Oops!"); \\
+			\s \s		\} 		\\
+			\s \s		finally \{ \\
+			\s \s \s			try \{ \\
+			\s \s \s			if (br != null) \\
+			\s \s \s \s				br.close(); \\
+			\s \s \s 			\} \\
+			\s \s \s			catch (IOException e) \{  \\\
+			\s \s 				System.out.println("File not found"); \\
+			\s \s \s \} 	\} 	\}  \}	
+		}
+
+		\item Drawback: Programmer need to manually close the resources.
+	
+		\item try-with resources closes opened resources autoamatically on block end.
+		
+		\bigskip
+		\syntaxblock{
+			try(resource1; resource2; resource3,...) \{ \\
+			   \s \s code-here \\
+			\} \\
+			catch(Exception) \{ \\
+				\s \s code-here \\
+			\}
+		}
+		Things to note:
+		\begin{itemize}
+			\item Multiple resources are separated with ";".
+			\item Resources should be autoCloseable(that implements java.lang.AutoClosable interface). 
+		\end{itemize}
+		\item Code that opens a file and close it as try block ends:
+		\bigskip
+		\codeblockfull{demo.java}{
+			import java.io.*; \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		try(BufferedReader br = new BufferedReader(new FileReader("abc.txt"))) \{ \\
+			\s \s \s		String line; \\
+			\s \s \s			while ( (line = br.readLine()) != null) \{ \\
+			\s \s \s \s				System.out.println(line); \\
+			\s \s \s		\} \\
+			\s \s		\} \\
+			\s \s		catch(IOException e) \{ \\
+			\s \s \s			System.out.println("File not found"); \\
+			\s \s \} \} \}
+		}
+		\newpage
+		\item Within try block you cant perform reassignment of resource, as resource are final.
+		\item Below code results into compile-time error:
+		\bigskip
+		\codeblockfull{demo.java}{
+			import java.io.*; \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		try(FileReader r1=new  FileReader("abc.txt")) \{ \\
+			\s \s \s	r1=new FileReader("mno.txt"); 
+			\s \s	\} \\
+			\s \s		catch(IOException e) \{  \\
+			\s \s \s			System.out.println("File not found"); \\
+			\s \s \} \\
+			\s \} \\
+			\} 	
+		}
+		\bigskip
+		\errorblock{
+			Exception in thread "main" java.lang.Error: Unresolved compilation problem:  \\
+			The resource r1 of a try-with-resources statement cannot be assigned \\
+			at demo.main(demo.java:5)
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+
+
+
+

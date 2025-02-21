@@ -1,0 +1,47 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+	\item Error append redirection \textbf{2{$\textgreater$}{$\textgreater$}} is used to redirect \& append standard error to some file.
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: command 2{$\textgreater$}{$\textgreater$} erorr\_input\_file
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	\item \textbf{"2{$\textgreater$}{$\textgreater$}"} performs below operations:
+	\begin{itemize}
+		\item It creates the file if it does not exists.
+		\item If the file exists, it will \textbf{append} new content to the existing content.
+	\end{itemize}
+	\item
+	Eg: Redirect error \textbf{"No such file or directory"} of \textbf{ls} command to some file:
+	\bigskip
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=9pt
+		\$ ls foo 2{$\textgreater$}{$\textgreater$} error\_file
+		\newline
+		\$ ls foo 2{$\textgreater$}{$\textgreater$} error\_file
+		\newline
+		\newline
+		\color{yellow}
+		\# Read content of error\_file
+		\color{green}
+		\newline
+		\$ cat error\_file
+		\newline
+		\color{white}
+		ls: cannot access 'foo': No such file or directory
+		\newline
+		ls: cannot access 'foo': No such file or directory
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+\end{itemize}
+	
+
+	
+\end{flushleft}
+

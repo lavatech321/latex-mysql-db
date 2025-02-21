@@ -1,0 +1,21 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The ORA\_ROWSCN pseudo column stores the system change number (SCN) of the most recent change to a row. 
+		\item It can be used to track changes to rows for auditing or versioning purposes.	
+		\bigskip
+		\outputblock{
+			SELECT name, ORA\_ROWSCN \\
+			FROM employee; \\
+			\\
+			NAME \s	ORA\_ROWSCN	\\
+			--------------------------------------- \\
+			Raman	\s	143490589944	\\
+			Sham	\s	143490614391
+		}
+	\end{itemize}
+	
+	
+\end{flushleft}
+

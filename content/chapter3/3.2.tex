@@ -1,0 +1,32 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item DML commands deal with data only.
+		\item DML commands interact with \textbf{buffer first}.
+		\item Data will be stored in buffer initially.
+		\item On commit, the buffer content will be transferred to database.
+		\item You can undo (\textbf{rollback}) the changes before commit.
+		\item Due to buffer, the performance is relatively slow.
+		\item Row-level locks occur implicitly on the modified rows:
+		\begin{itemize}
+			\item Write operations in DML places \textbf{implicit row-level lock on rows} being modified for that particular user. 
+			\item If 100 rows are deleted/modified, those row will be locked for that user. \item Once record is locked, other users cannot modify the row unless lock owner releases the lock. 
+			\item However locked row is readable by other users.
+		\end{itemize}
+		
+		\newimage{0.45}{content/chapter3/images/new1.png}
+		
+		\item DML commands:
+		\begin{itemize}
+			\item insert
+			\item update
+			\item delete
+			\item merge
+		\end{itemize}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

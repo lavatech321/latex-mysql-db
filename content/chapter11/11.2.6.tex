@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item More than one constructor in your class, with different argument lists is called constructor overloading. 
+		\item Eg:
+		\codeblockfull{Rectangle.java}{
+			class Rectangle \{ \\
+			\s	float l, w, h; \\
+			\s	public Rectangle() \{ \\
+			\s \s		this.l=0.0f; \\
+			\s \s		this.w=0.0f; \\
+			\s \s		this.h=0.0f; \\
+			\s	\} \\
+			\s	public Rectangle(int length, int width, int height) \{ \\
+			\s \s		this.l = length; \\
+			\s \s		this.w = width; \\
+			\s \s		this.h = height; \\
+			\s	\} \\
+			\s	public float getArea() \{ \\
+			\s \s		float area; \\
+			\s \s	area = 2*(l*w) + 2*(l*h) + 2*(h*w); \\
+			\s \s		return area; \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		\textbf{Rectangle r1 = new Rectangle();} \\
+			\s \s		System.out.println(r1.getArea()); // Output: 0.0 \\
+			\s \s		\textbf{Rectangle r3 = new Rectangle(3,4,5);} \\
+			\s \s		System.out.println(r3.getArea()); // Output: 94.0 \\
+			\s \} \\
+			\} 
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+
+

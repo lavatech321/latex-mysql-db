@@ -1,0 +1,89 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	Follow below steps, to create synchronized method using class lock:
+	\newline
+	\textbf{Step1: Choose the class}
+		\begin{itemize}
+			\item Select the class of your choice.
+			\item Class has a unique lock (class-level lock) used by static synchronised methods.
+		\end{itemize}
+	
+	\textbf{Step 2: Acquire the Lock}
+		\begin{itemize}
+			\item A thread first gets class-level lock.
+			\item Only one thread can hold the class lock at a time for class.
+		\end{itemize}
+	
+	\textbf{Step 3: Execute Critical Section}
+		\begin{itemize}
+			\item One thread can executes static synchronised method at a time.
+			\item Other threads can execute the below methods simultaneously:
+			\begin{itemize}
+				\item Normal static methods
+				\item Synchronised instance methods
+				\item Normal instance methods
+			\end{itemize}
+		\end{itemize}
+		
+	\textbf{Step 4: Release the Lock}
+		\begin{itemize}
+			\item The thread releases the lock, once method completes execution.
+		\end{itemize} 
+
+		
+		
+	Eg: Consider below code wherein 2 threads are trying to increment static variable 5 times, however each thread is incrementing the static variable only once at a time.
+		
+		\codeblockfull{demo.java}{
+			class MyClass \{ \\
+			\s	private static int count = 0; \\
+			\s	public static synchronized void incrementCount() \{ \\
+			\s \s		count=count+1; \\
+			\s	\} \\
+			\s	public static synchronized int getCount() \{ \\
+			\s \s		return count; \\
+			\s	\} \\
+			\} \\
+			class ClassLevel implements Runnable \{ \\
+			\s	public void run() \{ \\
+			\s \s		for (int i = 0; i < 5; i++) \{ \\
+			\s \s \s			MyClass.incrementCount(); \\
+			\s			System.out.println(Thread.currentThread().getName() + ": Count is " +  MyClass.getCount()); \\
+			\s \s \s			try \{  \\
+			\s \s \s \s				Thread.sleep(1000); \\
+			\s \s \s		\} 
+		}
+		\newpage
+		\codecontinue{			
+			\s \s \s			catch (InterruptedException e) \{ \\
+			\s \s \s \s				e.printStackTrace(); \\ 
+			\s \s			\} 	\} \} \} \\
+			class demo \{ \\
+			\s	public static void main(String[] args) throws InterruptedException \{ \\
+			\s \s		ClassLevel c1 = new ClassLevel(); \\
+			\s \s		Thread thread1 = new Thread(c1); \\
+			\s \s		Thread thread2 = new Thread(c1); \\
+			\s \s		thread1.start(); \\
+			\s \s		thread2.start(); \\
+			\s \s		thread1.join(); \\
+			\s \s		thread2.join(); \\
+			\s		System.out.println("Final Count: " + MyClass.getCount()); \\
+			\s	\} 		\}
+		}
+		\bigskip
+		\outputblock{
+			Thread-0: Count is 2 \\
+			Thread-1: Count is 2 \\
+			Thread-0: Count is 3 \\
+			Thread-1: Count is 4 \\
+			Thread-0: Count is 5 \\
+			Thread-1: Count is 6 \\
+			Thread-0: Count is 7 \\
+			Thread-1: Count is 8 \\
+			Thread-0: Count is 9 \\
+			Thread-1: Count is 10 \\
+			Final Count: 10
+		}
+\end{flushleft}
+\newpage

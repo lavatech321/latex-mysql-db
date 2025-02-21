@@ -1,0 +1,38 @@
+
+
+\begin{flushleft}
+	
+	\begin{itemize}
+			\item Command line arguments are \textbf{values passed to Java program from command line}. 
+			\item JVM creates String array out of these arguments named "[]args" and pass it to main().
+			
+			\codecontinue{
+			public static void main(\textbf{String[] args}) 
+			}
+		
+			\newimage{0.5}{content/chapter2/images/ans.png}
+		
+			\item Command line argument are always String[]
+			
+			\codeblockfull{New.java}{
+				class New \{ \\
+				\s	public static void main(String... args) \{  \\
+				\s \s			System.out.println(args[0]+","+args[1]); \\
+				\s \s		\} \} 
+			}
+			\bigskip
+			\commandblock{
+			\$ \textbf{javac New.java}  \\
+			\$ \textbf{java New 1 23 3} \\
+			1,23  
+			}
+			\bigskip
+			\item Command line arguments are separated by space. To give one argument with space character, using "" :
+			\commandblock{
+				\$ java New "Note Book"
+			}	
+	\end{itemize}
+
+\end{flushleft}
+
+

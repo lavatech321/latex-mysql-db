@@ -1,0 +1,269 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	Let's see some commands to archives and compress file or directory.
+	\begin{itemize}
+		\item \textbf{zip \& unzip}: 
+		\begin{enumerate}
+			\item \textbf{zip}: Compresses file/directory. It is available on Linux, Windows, and Mac OS. 
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: zip zip\_file\_name *
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ mkdir testiing
+				\newline
+				\$ cd testing
+				\newline
+				\$ touch \{1..10\} 
+				\newline
+				\$ mkdir -p a/b/c
+				\newline
+				\newline
+				\color{yellow}
+				\# To compress \textbf{testing} folder, execute \textbf{zip} command inside the folder:
+				\newline
+				\color{green}
+				\$ zip data *
+				\newline
+				\newline
+				\color{yellow}
+				\# Confirm the creation of \textbf{data.zip} file
+				\newline
+				\color{green}
+				\$ ls
+				\color{white}
+				\newline
+				1  10  2  3  4  5  6  7  8  9  a  data.zip
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: zip command creates \textbf{data.zip} file automatically.
+			\end{tcolorbox}
+			
+			Options with \textbf{zip} command:
+			\begin{itemize}
+				\item \textbf{-r}: To zip up an entire directory (including all subdirectories):
+				\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+					\color{black}
+					\fontdimen2\font=1em
+					Syntax: zip -r zip\_file\_name *
+					\fontdimen2\font=4pt
+				\end{tcolorbox}
+				Eg:
+				\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+					\color{green}
+					\fontdimen2\font=1em
+					\$ zip -r data *
+					\fontdimen2\font=4pt
+				\end{tcolorbox}
+				
+			\end{itemize}
+			
+			\bigskip\bigskip
+			\item \textbf{unzip}: Used to decompress files/directories compressed using zip utility.
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: unzip argument
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ unzip data.zip
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+		\end{enumerate}
+	
+
+		\item \textbf{gzip} \& \textbf{gunzip}:
+		\begin{enumerate}
+			\item \textbf{gzip}: \textbf{Can compress only files.} Available on Linux and Mac OS. It gives compressed files \textbf{".gz"} extension.
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: gzip filename
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ gzip file.txt
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: This command replaces \textbf{file.txt} with \textbf{file.txt.gz}
+			\end{tcolorbox}
+			
+			\bigskip
+			\bigskip
+			\item \textbf{gunzip}: Uncompress the files with \textbf{".gz"} extension.
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: gunzip filename.gz
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ gunzip file.txt.gz
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+		\end{enumerate}
+		
+		\newpage
+		\item \textbf{bzip2} \& \textbf{bunzip2}:
+		\begin{enumerate}
+			\item \textbf{bzip2}: \textbf{Can compress only files.} Available on Linux and Mac OS.  It gives compressed files \textbf{".bz2"} extension.
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: bzip2 filename
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ bzip2 file.txt
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: This command replaces \textbf{file.txt} with \textbf{file.txt.bz2}
+			\end{tcolorbox}
+			
+			\bigskip\bigskip
+			\item \textbf{bunzip2}: Uncompress the files with \textbf{".bz2"} extension.
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=1em
+				Syntax: bunzip2 filename.bz2
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ bunzip2 file.txt.bz2
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+		\end{enumerate}		
+		
+		\newpage
+		
+		\item \textbf{tar}: Stands for "tape archive". \textbf{Used to create an archive of a directory.}
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			Syntax: tar [options] archive-file-name.tar directory\_name
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Options with \textbf{tar} command:
+		\begin{enumerate}
+			\item \textbf{-c}: Create archive
+			\newline
+			\textbf{-v}: Stands for verbose. Tells tar to print all the filenames added to archive.
+			\newline
+			\textbf{-f}: The name of the archive
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -cvf MyProject.tar  MyProject
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+			\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: The \textbf{-cvf} will only archive the directory, but not compress it. To compress it further, you will need to use \textbf{"-z or -j"} options as shown below.
+			\end{tcolorbox}
+			
+			\bigskip
+			\bigskip
+			\item \textbf{-z}: Compress a tar archive with the gzip command. You need to add extension \textbf{".tar.gz"}
+			\newline
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -cvzf MyProject.tar.gz  MyProject
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+		
+			\bigskip
+			\bigskip
+			\item \textbf{-j}: Compress a tar archive with bzip2 command. You need to add extension \textbf{".tar.bz2"}.
+			\newline
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -cjvf MyProject.tar.bz2  MyProject
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+		
+			To create an archive in a different directory:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -cjvf /tmp/MyProject.tar.bz2  MyProject
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+			\bigskip
+			\bigskip
+			\item \textbf{-t}: List the contents of a tar file.
+			\newline
+			Eg: 
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -tvf MyProject.tar
+				\newline
+				\color{green}
+				\$ tar -tzvf MyProject.tar.gz
+				\newline
+				\color{green}
+				\$  tar -tjvf MyProject.tar.bz2
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+
+			\bigskip\bigskip
+			\item \textbf{-x}: Extract the contents of a tar archive.
+			\newline
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				\$ tar -xvf MyProject.tar
+				\newline
+				\$ tar -xzvf MyProject.tar.gz
+				\newline
+				\$ tar -xjvf MyProject.tar.bz2
+				\fontdimen2\font=4pt
+			\end{tcolorbox}		
+		\end{enumerate}
+		\bigskip
+
+		
+	\end{itemize} 
+	
+\end{flushleft}
+
+\newpage
+

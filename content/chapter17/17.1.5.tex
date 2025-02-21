@@ -1,0 +1,133 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+		\textbf{start()}:
+		\begin{itemize}
+			\item start() comes from Thread class \& is heart of multi-threading.
+			\item \textbf{start() creates new thread} and \textbf{executes run()}.
+			\item start() can be overridden, however \textbf{it is not recommended}.
+			\item Role of start():
+			\begin{itemize}
+				\item \textbf{Register the thread} with thread schedular
+				\item Perform related mandatory activities
+				\item \textbf{Invoke run()}
+			\end{itemize}
+		\end{itemize}
+	
+		\textbf{run()}:
+		\begin{itemize}
+			\item run() contains the code executed by start().
+			\item By default, Thread class's run() is executed i.e empty.
+			\item \textbf{Override this} method when you extend the Thread class or implement the \textbf{Runnable} interface.
+			\item Overloaded run() will need to be call explicitly.
+			\item start() always invoke no-argument run().
+		
+			\bigskip
+			\noteblock{
+				\textbf{Difference between start() and run()}:
+				\newline
+				\textbf{start() creates new thread \& calls run()}. \newline
+				\textbf{run() will not create} \textbf{new thread}. Calling run() explicitly will execute like a normal method call.
+			}
+
+		\end{itemize}	
+
+
+	\newpage	
+		Eg: Below code shows overridden start() not executing run() explicitly.
+		\bigskip
+		\codeblockfull{demo.java}{
+			class DemoThread extends Thread \{ \\
+			\s	public void start() \{ \\
+			\s \s	System.out.println("Overridden Start"); \\
+			\s	\} \\
+			\s	public void run() \{ \\
+			\s \s		System.out.println("This wont execute"); \\
+			\s	\} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		DemoThread demoThread = new DemoThread(); \\
+			\s \s		demoThread.start(); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			Overridden Start
+		}
+		
+		\bigskip
+		
+		Eg: Below code shows overridden run() and no-arg run().
+		\bigskip
+		\codeblockfull{demo.java}{
+			class DemoThread extends Thread \{ \\
+			\s public void run() \{ \\
+			\s System.out.println("No-argument run executed"); \\
+			\s	\}   \\
+			\s	public void run(int i) \{ \\
+			\s \s		System.out.println("run with argument executed"); 
+		}
+		\newpage
+		\codecontinue{
+			\s	\} \\
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		DemoThread demoThread = new  DemoThread(); \\
+			\s \s		demoThread.start(); \\
+			\s	\} \\
+			\} 
+		}
+		\bigskip
+		\outputblock{
+			No-argument run executed
+		}
+		
+		You can call super.start() in overridden start() to create new thread as usual:
+		\newline
+		Eg:
+		\codeblockfull{demo.java}{
+			class DemoThread extends Thread \{ \\
+			\s public void start() \{ \\
+			\s \s	super.start(); \\
+			\s \s	System.out.println("Overridden Start"); \\
+			\s \} \\
+			\s 	public void run() \{ \\
+			\s \s	System.out.println("This will execute"); \\
+			\s	\} 
+			\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s	DemoThread demoThread = new DemoThread(); \\
+			\s \s	demoThread.start(); \\
+			\s	\} 
+			\}
+		}
+		\outputblock{
+			Overridden Start \\
+			This will execute
+		}
+			
+		After starting a thread, if you are trying to restart the same thread, then it will result in runtime exception saying: \textbf{IllegalThreadState} exception.
+		\newline
+		Eg:
+		\codeblockfull{demo.java}{
+			class DemoThread extends Thread \{\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s	\s	DemoThread demoThread = new DemoThread(); \\
+			\s \s		demoThread.start(); \\
+			\s \s		demoThread.start(); \\
+			\s	\} \\
+			\}
+		}
+		\outputblock{
+			Exception in thread "main" \\ java.lang.IllegalThreadStateException
+			at \\ java.base/java.lang.Thread.start(Thread.java:794) \\
+			at demo.main(demo.java:7)
+		}
+		
+\end{flushleft}
+\newpage
