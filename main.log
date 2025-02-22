@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  19 DEC 2024 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  22 FEB 2025 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2686,24 +2686,24 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 319.
-LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 318.
+LaTeX Font Info:    ... okay on input line 318.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count519
@@ -2761,18 +2761,18 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 319.
-Package microtype Info: Applying patch `item' on input line 319.
-Package microtype Info: Applying patch `toc' on input line 319.
-Package microtype Info: Applying patch `eqnum' on input line 319.
-Package microtype Info: Applying patch `footnote' on input line 319.
+LaTeX Info: Redefining \microtypecontext on input line 318.
+Package microtype Info: Applying patch `item' on input line 318.
+Package microtype Info: Applying patch `toc' on input line 318.
+Package microtype Info: Applying patch `eqnum' on input line 318.
+Package microtype Info: Applying patch `footnote' on input line 318.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 319.
+LaTeX Info: Redefining \showhyphens on input line 318.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2793,9 +2793,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 319.
-Package biblatex Info: Reference segment=0 on input line 319.
-Package hyperref Info: Link coloring OFF on input line 319.
+Package biblatex Info: Reference section=0 on input line 318.
+Package biblatex Info: Reference segment=0 on input line 318.
+Package hyperref Info: Link coloring OFF on input line 318.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -2807,40 +2807,40 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count525
 )
-LaTeX Info: Redefining \ref on input line 319.
-LaTeX Info: Redefining \pageref on input line 319.
-LaTeX Info: Redefining \nameref on input line 319.
+LaTeX Info: Redefining \ref on input line 318.
+LaTeX Info: Redefining \pageref on input line 318.
+LaTeX Info: Redefining \nameref on input line 318.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 <Pictures/db.pdf, id=7, 597.73312pt x 845.40843pt>
 File: Pictures/db.pdf Graphic file (type pdf)
 <use Pictures/db.pdf>
-Package pdftex.def Info: Pictures/db.pdf  used on input line 328.
+Package pdftex.def Info: Pictures/db.pdf  used on input line 327.
 (pdftex.def)             Requested size: 597.54924pt x 845.07095pt.
 
 [1
 
  <./Pictures/db.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-44.
+43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 353.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 352.
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
@@ -2849,22 +2849,22 @@ stination with the same identifier (name{page.2}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.379 \tableofcontents
+l.378 \tableofcontents
                        [2
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.379 \tableofcontents
+l.378 \tableofcontents
                        [2]
 <Pictures/image1.png, id=47, 1866.975pt x 933.4875pt>
 File: Pictures/image1.png Graphic file (type png)
 <use Pictures/image1.png>
-Package pdftex.def Info: Pictures/image1.png  used on input line 379.
+Package pdftex.def Info: Pictures/image1.png  used on input line 378.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 LaTeX Font Info:    Trying to load font information for T1+pag on input line 37
-9.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pag.fd
 File: t1pag.fd 2001/06/04 font definitions for T1/pag.
@@ -2874,9 +2874,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <29.86> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 379.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 378.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <29.86> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 379.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 378.
  (./main.toc
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 2.
@@ -2890,10 +2890,10 @@ LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <14.4> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 2.
-<content/logo.png, id=84, 125.268pt x 24.09pt>
+<content/logo.png, id=86, 125.268pt x 24.09pt>
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 19.
+Package pdftex.def Info: content/logo.png  used on input line 20.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
  [3 <./Pictures/image1.png> <./content/logo.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2907,13 +2907,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 1.
-<Pictures/oracle.png, id=246, 1866.975pt x 933.4875pt>
+<Pictures/oracle.png, id=243, 1866.975pt x 933.4875pt>
 File: Pictures/oracle.png Graphic file (type png)
 <use Pictures/oracle.png>
-Package pdftex.def Info: Pictures/oracle.png  used on input line 398.
+Package pdftex.def Info: Pictures/oracle.png  used on input line 397.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter1/1.1.tex
-<content/chapter1/images/1.jpg, id=247, 370.0224pt x 277.5168pt>
+<content/chapter1/images/1.jpg, id=244, 370.0224pt x 277.5168pt>
 File: content/chapter1/images/1.jpg Graphic file (type jpg)
 <use content/chapter1/images/1.jpg>
 Package pdftex.def Info: content/chapter1/images/1.jpg  used on input line 13.
@@ -3019,45 +3019,8 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 19.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[10]) (./content/chapter1/1.1.6.tex
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.41 		}
-        
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]|\T1/ptm/m/n/14.4 (+20) Oracle Database
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]|\T1/ptm/m/n/14.4 (+20) Microsoft SQL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
-[]|\T1/ptm/m/n/14.4 (+20) SUN(acquired by
- []
-
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 17.0pt, for example:
-(fancyhdr)                \setlength{\headheight}{17.0pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.0pt}.
-
-File: content/logo.png Graphic file (type png)
-<use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 57.
-(pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[11]) (./content/chapter1/1.1.7.tex
-<content/chapter1/images/2.png, id=272, 677.53125pt x 489.32813pt>
+[10]) (./content/chapter1/1.1.7.tex
+<content/chapter1/images/2.png, id=264, 677.53125pt x 489.32813pt>
 File: content/chapter1/images/2.png Graphic file (type png)
 <use content/chapter1/images/2.png>
 Package pdftex.def Info: content/chapter1/images/2.png  used on input line 3.
@@ -3079,7 +3042,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 22.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[12 <./content/chapter1/images/2.png>]
+[11 <./content/chapter1/images/2.png>]
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 17.0pt, for example:
@@ -3092,7 +3055,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 58.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[13]) (./content/chapter1/1.1.10.tex
+[12]) (./content/chapter1/1.1.10.tex
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 17.0pt, for example:
@@ -3105,8 +3068,8 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 11.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[14]) (./content/chapter1/1.1.9.tex
-<content/chapter1/images/4.png, id=287, 677.53125pt x 489.32813pt>
+[13]) (./content/chapter1/1.1.9.tex
+<content/chapter1/images/4.png, id=280, 677.53125pt x 489.32813pt>
 File: content/chapter1/images/4.png Graphic file (type png)
 <use content/chapter1/images/4.png>
 Package pdftex.def Info: content/chapter1/images/4.png  used on input line 3.
@@ -3124,7 +3087,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 31.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[15 <./content/chapter1/images/4.png>]
+[14 <./content/chapter1/images/4.png>]
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 17.0pt, for example:
@@ -3137,7 +3100,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 59.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[16]
+[15]
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
 (fancyhdr)                Make it at least 17.0pt, for example:
@@ -3150,14 +3113,14 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 96.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[17]
-<content/chapter1/images/image1.png, id=304, 417.56pt x 207.77625pt>
+[16]
+<content/chapter1/images/image1.png, id=296, 417.56pt x 207.77625pt>
 File: content/chapter1/images/image1.png Graphic file (type png)
 <use content/chapter1/images/image1.png>
 Package pdftex.def Info: content/chapter1/images/image1.png  used on input line
  104.
 (pdftex.def)             Requested size: 167.02103pt x 83.10901pt.
-<content/chapter1/images/image2.png, id=305, 774.895pt x 493.845pt>
+<content/chapter1/images/image2.png, id=297, 774.895pt x 493.845pt>
 File: content/chapter1/images/image2.png Graphic file (type png)
 <use content/chapter1/images/image2.png>
 Package pdftex.def Info: content/chapter1/images/image2.png  used on input line
@@ -3176,15 +3139,15 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 112.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[18 <./content/chapter1/images/image1.png> <./content/chapter1/images/image2.pn
+[17 <./content/chapter1/images/image1.png> <./content/chapter1/images/image2.pn
 g>]
-<content/chapter1/images/image3.png, id=312, 432.61626pt x 378.41376pt>
+<content/chapter1/images/image3.png, id=305, 432.61626pt x 378.41376pt>
 File: content/chapter1/images/image3.png Graphic file (type png)
 <use content/chapter1/images/image3.png>
 Package pdftex.def Info: content/chapter1/images/image3.png  used on input line
  113.
 (pdftex.def)             Requested size: 173.04343pt x 151.36281pt.
-<content/chapter1/images/image4.png, id=313, 712.6625pt x 378.41376pt>
+<content/chapter1/images/image4.png, id=306, 712.6625pt x 378.41376pt>
 File: content/chapter1/images/image4.png Graphic file (type png)
 <use content/chapter1/images/image4.png>
 Package pdftex.def Info: content/chapter1/images/image4.png  used on input line
@@ -3203,7 +3166,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 135.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[19 <./content/chapter1/images/image3.png> <./content/chapter1/images/image4.pn
+[18 <./content/chapter1/images/image3.png> <./content/chapter1/images/image4.pn
 g>]) (./content/chapter1/1.1.11.tex)
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -3215,30 +3178,30 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 427.
+Package pdftex.def Info: content/logo.png  used on input line 426.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[20]
+[19] [20
+
+]
 Chapter 2.
-<Pictures/index3.png, id=324, 1866.975pt x 933.4875pt>
+<Pictures/index3.png, id=321, 1866.975pt x 933.4875pt>
 File: Pictures/index3.png Graphic file (type png)
 <use Pictures/index3.png>
-Package pdftex.def Info: Pictures/index3.png  used on input line 427.
+Package pdftex.def Info: Pictures/index3.png  used on input line 426.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter1/1.1.12.tex
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 29.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
- [21
-
- <./Pictures/index3.png>]
-<content/chapter1/images/eg1.png, id=330, 677.53125pt x 489.32813pt>
+ [21 <./Pictures/index3.png>]
+<content/chapter1/images/eg1.png, id=327, 677.53125pt x 489.32813pt>
 File: content/chapter1/images/eg1.png Graphic file (type png)
 <use content/chapter1/images/eg1.png>
 Package pdftex.def Info: content/chapter1/images/eg1.png  used on input line 30
 .
 (pdftex.def)             Requested size: 304.88625pt x 220.19562pt.
-<content/chapter1/images/test100.png, id=331, 677.53125pt x 489.32813pt>
+<content/chapter1/images/test100.png, id=328, 677.53125pt x 489.32813pt>
 File: content/chapter1/images/test100.png Graphic file (type png)
 <use content/chapter1/images/test100.png>
 Package pdftex.def Info: content/chapter1/images/test100.png  used on input lin
@@ -3259,7 +3222,7 @@ Package pdftex.def Info: content/logo.png  used on input line 40.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [22 <./content/chapter1/images/eg1.png> <./content/chapter1/images/test100.png 
 (PNG copy)>]
-<content/chapter1/images/test200.png, id=339, 677.53125pt x 489.32813pt>
+<content/chapter1/images/test200.png, id=336, 677.53125pt x 489.32813pt>
 File: content/chapter1/images/test200.png Graphic file (type png)
 <use content/chapter1/images/test200.png>
 Package pdftex.def Info: content/chapter1/images/test200.png  used on input lin
@@ -3283,34 +3246,34 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 57.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [23 <./content/chapter1/images/test200.png (PNG copy)>]
-<content/chapter1/images/1.png, id=346, 316.18124pt x 169.63374pt>
+<content/chapter1/images/1.png, id=343, 316.18124pt x 169.63374pt>
 File: content/chapter1/images/1.png Graphic file (type png)
 <use content/chapter1/images/1.png>
 Package pdftex.def Info: content/chapter1/images/1.png  used on input line 62.
 (pdftex.def)             Requested size: 126.47025pt x 67.85228pt.
-<content/chapter1/images/5.png, id=347, 335.2525pt x 195.73125pt>
+<content/chapter1/images/5.png, id=344, 335.2525pt x 195.73125pt>
 File: content/chapter1/images/5.png Graphic file (type png)
 <use content/chapter1/images/5.png>
 Package pdftex.def Info: content/chapter1/images/5.png  used on input line 64.
 (pdftex.def)             Requested size: 134.09862pt x 78.2911pt.
-<content/chapter1/images/8.png, id=348, 317.185pt x 201.75375pt>
+<content/chapter1/images/8.png, id=345, 317.185pt x 201.75375pt>
 File: content/chapter1/images/8.png Graphic file (type png)
 <use content/chapter1/images/8.png>
 Package pdftex.def Info: content/chapter1/images/8.png  used on input line 66.
 (pdftex.def)             Requested size: 126.87173pt x 80.70006pt.
-<content/chapter1/images/10.png, id=349, 251.94125pt x 155.58125pt>
+<content/chapter1/images/10.png, id=346, 251.94125pt x 155.58125pt>
 File: content/chapter1/images/10.png Graphic file (type png)
 <use content/chapter1/images/10.png>
 Package pdftex.def Info: content/chapter1/images/10.png  used on input line 69.
 
 (pdftex.def)             Requested size: 125.9703pt x 77.79042pt.
-<content/chapter1/images/11.png, id=350, 302.12875pt x 196.735pt>
+<content/chapter1/images/11.png, id=347, 302.12875pt x 196.735pt>
 File: content/chapter1/images/11.png Graphic file (type png)
 <use content/chapter1/images/11.png>
 Package pdftex.def Info: content/chapter1/images/11.png  used on input line 71.
 
 (pdftex.def)             Requested size: 181.27864pt x 118.04189pt.
-<content/chapter1/images/12.png, id=351, 391.4625pt x 306.14375pt>
+<content/chapter1/images/12.png, id=348, 391.4625pt x 306.14375pt>
 File: content/chapter1/images/12.png Graphic file (type png)
 <use content/chapter1/images/12.png>
 Package pdftex.def Info: content/chapter1/images/12.png  used on input line 74.
@@ -3337,12 +3300,12 @@ Package pdftex.def Info: content/logo.png  used on input line 75.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [24 <./content/chapter1/images/1.png> <./content/chapter1/images/5.png> <./cont
 ent/chapter1/images/8.png> <./content/chapter1/images/10.png>]
-<content/chapter1/images/6.png, id=364, 335.2525pt x 195.73125pt>
+<content/chapter1/images/6.png, id=361, 335.2525pt x 195.73125pt>
 File: content/chapter1/images/6.png Graphic file (type png)
 <use content/chapter1/images/6.png>
 Package pdftex.def Info: content/chapter1/images/6.png  used on input line 77.
 (pdftex.def)             Requested size: 134.09862pt x 78.2911pt.
-<content/chapter1/images/13.png, id=365, 391.4625pt x 306.14375pt>
+<content/chapter1/images/13.png, id=362, 391.4625pt x 306.14375pt>
 File: content/chapter1/images/13.png Graphic file (type png)
 <use content/chapter1/images/13.png>
 Package pdftex.def Info: content/chapter1/images/13.png  used on input line 80.
@@ -3363,12 +3326,12 @@ Package pdftex.def Info: content/logo.png  used on input line 81.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [25 <./content/chapter1/images/11.png> <./content/chapter1/images/12.png> <./co
 ntent/chapter1/images/6.png> <./content/chapter1/images/13.png>]
-<content/chapter1/images/7.png, id=378, 310.15875pt x 187.70125pt>
+<content/chapter1/images/7.png, id=375, 310.15875pt x 187.70125pt>
 File: content/chapter1/images/7.png Graphic file (type png)
 <use content/chapter1/images/7.png>
 Package pdftex.def Info: content/chapter1/images/7.png  used on input line 83.
 (pdftex.def)             Requested size: 124.0613pt x 75.07916pt.
-<content/chapter1/images/new.png, id=379, 1021.8175pt x 837.1275pt>
+<content/chapter1/images/new.png, id=376, 1021.8175pt x 837.1275pt>
 File: content/chapter1/images/new.png Graphic file (type png)
 <use content/chapter1/images/new.png>
 Package pdftex.def Info: content/chapter1/images/new.png  used on input line 85
@@ -3448,13 +3411,13 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 119.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [28]) (./content/chapter1/1.1.15.tex
-<content/chapter1/images/new5.png, id=396, 1013.7875pt x 678.535pt>
+<content/chapter1/images/new5.png, id=393, 1013.7875pt x 678.535pt>
 File: content/chapter1/images/new5.png Graphic file (type png)
 <use content/chapter1/images/new5.png>
 Package pdftex.def Info: content/chapter1/images/new5.png  used on input line 6
 .
 (pdftex.def)             Requested size: 304.1386pt x 203.56207pt.
-<content/chapter1/images/erd.png, id=397, 1046.91125pt x 825.0825pt>
+<content/chapter1/images/erd.png, id=394, 1046.91125pt x 825.0825pt>
 File: content/chapter1/images/erd.png Graphic file (type png)
 <use content/chapter1/images/erd.png>
 Package pdftex.def Info: content/chapter1/images/erd.png  used on input line 9.
@@ -3478,31 +3441,19 @@ Package pdftex.def Info: content/logo.png  used on input line 13.
 
 ]
 Chapter 3.
-<Pictures/index4.png, id=412, 1866.975pt x 933.4875pt>
+<Pictures/index4.png, id=408, 1866.975pt x 933.4875pt>
 File: Pictures/index4.png Graphic file (type png)
 <use Pictures/index4.png>
-Package pdftex.def Info: Pictures/index4.png  used on input line 445.
+Package pdftex.def Info: Pictures/index4.png  used on input line 444.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter2/2.1.tex
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 	\newline
-             
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 21.
+Package pdftex.def Info: content/logo.png  used on input line 19.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[31 <./Pictures/index4.png>]) (./content/chapter2/2.1.1.tex
-<content/chapter3/images/types.png, id=418, 677.53125pt x 489.32813pt>
+ [31 <./Pictures/index4.png>])
+(./content/chapter2/2.1.1.tex
+<content/chapter3/images/types.png, id=415, 677.53125pt x 489.32813pt>
 File: content/chapter3/images/types.png Graphic file (type png)
 <use content/chapter3/images/types.png>
 Package pdftex.def Info: content/chapter3/images/types.png  used on input line 
@@ -3726,7 +3677,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 348.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [42]
-<content/chapter2/images/year.png, id=468, 935.495pt x 507.8975pt>
+<content/chapter2/images/year.png, id=465, 935.495pt x 507.8975pt>
 File: content/chapter2/images/year.png Graphic file (type png)
 <use content/chapter2/images/year.png>
 Package pdftex.def Info: content/chapter2/images/year.png  used on input line 3
@@ -3750,7 +3701,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 377.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [43 <./content/chapter2/images/year.png>]
-<content/chapter2/images/day.png, id=475, 829.0975pt x 758.835pt>
+<content/chapter2/images/day.png, id=472, 829.0975pt x 758.835pt>
 File: content/chapter2/images/day.png Graphic file (type png)
 <use content/chapter2/images/day.png>
 Package pdftex.def Info: content/chapter2/images/day.png  used on input line 38
@@ -3871,7 +3822,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 542.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [48]) (./content/chapter4/4.1.tex
-<content/chapter4/images/con.png, id=499, 677.53125pt x 489.32813pt>
+<content/chapter4/images/con.png, id=496, 677.53125pt x 489.32813pt>
 File: content/chapter4/images/con.png Graphic file (type png)
 <use content/chapter4/images/con.png>
 Package pdftex.def Info: content/chapter4/images/con.png  used on input line 8.
@@ -3986,7 +3937,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 32.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [54]
-<content/chapter4/images/new.png, id=527, 900.36375pt x 680.5425pt>
+<content/chapter4/images/new.png, id=524, 900.36375pt x 680.5425pt>
 File: content/chapter4/images/new.png Graphic file (type png)
 <use content/chapter4/images/new.png>
 Package pdftex.def Info: content/chapter4/images/new.png  used on input line 57
@@ -4100,14 +4051,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 462.
+Package pdftex.def Info: content/logo.png  used on input line 461.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [62]
 Chapter 4.
-<Pictures/index5.png, id=565, 1866.975pt x 933.4875pt>
+<Pictures/index5.png, id=562, 1866.975pt x 933.4875pt>
 File: Pictures/index5.png Graphic file (type png)
 <use Pictures/index5.png>
-Package pdftex.def Info: Pictures/index5.png  used on input line 462.
+Package pdftex.def Info: Pictures/index5.png  used on input line 461.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter3/3.1.tex
 File: content/logo.png Graphic file (type png)
@@ -4118,7 +4069,7 @@ Package pdftex.def Info: content/logo.png  used on input line 15.
 
  <./Pictures/index5.png>])
 (./content/chapter3/3.1.1.tex
-<content/chapter3/images/success.png, id=571, 677.53125pt x 489.32813pt>
+<content/chapter3/images/success.png, id=568, 677.53125pt x 489.32813pt>
 File: content/chapter3/images/success.png Graphic file (type png)
 <use content/chapter3/images/success.png>
 Package pdftex.def Info: content/chapter3/images/success.png  used on input lin
@@ -4372,7 +4323,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 14.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [77]
-<content/chapter3/images/new1.png, id=633, 677.53125pt x 489.32813pt>
+<content/chapter3/images/new1.png, id=630, 677.53125pt x 489.32813pt>
 File: content/chapter3/images/new1.png Graphic file (type png)
 <use content/chapter3/images/new1.png>
 Package pdftex.def Info: content/chapter3/images/new1.png  used on input line 1
@@ -4600,7 +4551,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 31.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [92]) (./content/chapter3/3.3.tex
-<content/chapter3/images/new3.png, id=699, 677.53125pt x 489.32813pt>
+<content/chapter3/images/new3.png, id=696, 677.53125pt x 489.32813pt>
 File: content/chapter3/images/new3.png Graphic file (type png)
 <use content/chapter3/images/new3.png>
 Package pdftex.def Info: content/chapter3/images/new3.png  used on input line 8
@@ -4709,14 +4660,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 562.
+Package pdftex.def Info: content/logo.png  used on input line 561.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [98]
 Chapter 5.
-<Pictures/index9.png, id=727, 1866.975pt x 933.4875pt>
+<Pictures/index9.png, id=724, 1866.975pt x 933.4875pt>
 File: Pictures/index9.png Graphic file (type png)
 <use Pictures/index9.png>
-Package pdftex.def Info: Pictures/index9.png  used on input line 562.
+Package pdftex.def Info: Pictures/index9.png  used on input line 561.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter5/5.1.8.tex
 Underfull \hbox (badness 2088) in paragraph at lines 16--16
@@ -4832,7 +4783,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 25.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [105]) (./content/chapter8/8.1.1.tex
-<content/chapter8/images/inner.png, id=762, 293.095pt x 178.6675pt>
+<content/chapter8/images/inner.png, id=759, 293.095pt x 178.6675pt>
 File: content/chapter8/images/inner.png Graphic file (type png)
 <use content/chapter8/images/inner.png>
 Package pdftex.def Info: content/chapter8/images/inner.png  used on input line 
@@ -4894,7 +4845,7 @@ Underfull \hbox (badness 7362) in paragraph at lines 19--19
 \T1/ptm/m/n/14.4 (+20) CREATE TA-BLE con-trac-tor(id num-ber, first_name var-
  []
 
-<content/chapter8/images/left.png, id=774, 334.24875pt x 209.78375pt>
+<content/chapter8/images/left.png, id=771, 334.24875pt x 209.78375pt>
 File: content/chapter8/images/left.png Graphic file (type png)
 <use content/chapter8/images/left.png>
 Package pdftex.def Info: content/chapter8/images/left.png  used on input line 2
@@ -4918,7 +4869,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 40.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [108 <./content/chapter8/images/left.png>]
-<content/chapter8/images/right.png, id=781, 334.24875pt x 209.78375pt>
+<content/chapter8/images/right.png, id=778, 334.24875pt x 209.78375pt>
 File: content/chapter8/images/right.png Graphic file (type png)
 <use content/chapter8/images/right.png>
 Package pdftex.def Info: content/chapter8/images/right.png  used on input line 
@@ -4942,7 +4893,7 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 62.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [109 <./content/chapter8/images/right.png>]
-<content/chapter8/images/full.png, id=788, 334.24875pt x 209.78375pt>
+<content/chapter8/images/full.png, id=785, 334.24875pt x 209.78375pt>
 File: content/chapter8/images/full.png Graphic file (type png)
 <use content/chapter8/images/full.png>
 Package pdftex.def Info: content/chapter8/images/full.png  used on input line 6
@@ -5028,14 +4979,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 577.
+Package pdftex.def Info: content/logo.png  used on input line 576.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [114]
 Chapter 6.
-<Pictures/index10.png, id=813, 1866.975pt x 933.4875pt>
+<Pictures/index10.png, id=810, 1866.975pt x 933.4875pt>
 File: Pictures/index10.png Graphic file (type png)
 <use Pictures/index10.png>
-Package pdftex.def Info: Pictures/index10.png  used on input line 577.
+Package pdftex.def Info: Pictures/index10.png  used on input line 576.
 (pdftex.def)             Requested size: 597.50787pt x 298.7506pt.
 (./content/chapter9/9.1.tex
 File: content/logo.png Graphic file (type png)
@@ -5167,23 +5118,23 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 File: content/logo.png Graphic file (type png)
 <use content/logo.png>
-Package pdftex.def Info: content/logo.png  used on input line 608.
+Package pdftex.def Info: content/logo.png  used on input line 607.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [121]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 608.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 608.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 607.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 607.
  (./main.xwm) (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 608.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 608.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 607.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 607.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42246 strings out of 480247
- 791999 string characters out of 5896152
+ 42240 strings out of 480247
+ 791892 string characters out of 5896152
  1652489 words of memory out of 5000000
- 58832 multiletter control sequences out of 15000+600000
+ 58830 multiletter control sequences out of 15000+600000
  530271 words of font info for 222 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  64i,16n,103p,1001b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5194,10 +5145,10 @@ f-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/share/texlive/texmf-dist/fonts
 ymbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (123 pages, 4290534 bytes).
+Output written on main.pdf (123 pages, 4289019 bytes).
 PDF statistics:
- 1099 PDF objects out of 1200 (max. 8388607)
- 810 compressed objects within 9 object streams
- 220 named destinations out of 1000 (max. 500000)
- 65716 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1093 PDF objects out of 1200 (max. 8388607)
+ 805 compressed objects within 9 object streams
+ 219 named destinations out of 1000 (max. 500000)
+ 65708 words of extra memory for PDF output out of 74296 (max. 10000000)
 
