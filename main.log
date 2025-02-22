@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  22 FEB 2025 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.4)  22 FEB 2025 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3822,11 +3822,11 @@ File: content/logo.png Graphic file (type png)
 Package pdftex.def Info: content/logo.png  used on input line 542.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
 [48]) (./content/chapter4/4.1.tex
-<content/chapter4/images/con.png, id=496, 677.53125pt x 489.32813pt>
-File: content/chapter4/images/con.png Graphic file (type png)
-<use content/chapter4/images/con.png>
-Package pdftex.def Info: content/chapter4/images/con.png  used on input line 8.
-
+<content/chapter4/images/con1.png, id=496, 677.53125pt x 489.32813pt>
+File: content/chapter4/images/con1.png Graphic file (type png)
+<use content/chapter4/images/con1.png>
+Package pdftex.def Info: content/chapter4/images/con1.png  used on input line 8
+.
 (pdftex.def)             Requested size: 677.52959pt x 489.32692pt.
 
 Overfull \hbox (250.73824pt too wide) in paragraph at lines 8--8
@@ -3845,7 +3845,7 @@ File: content/logo.png Graphic file (type png)
 <use content/logo.png>
 Package pdftex.def Info: content/logo.png  used on input line 15.
 (pdftex.def)             Requested size: 75.16136pt x 14.45409pt.
-[49 <./content/chapter4/images/con.png>]) (./content/chapter4/4.1.2.tex
+[49 <./content/chapter4/images/con1.png>]) (./content/chapter4/4.1.2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 33--33
 
  []
@@ -5132,7 +5132,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  42240 strings out of 480247
- 791892 string characters out of 5896152
+ 791898 string characters out of 5896152
  1652489 words of memory out of 5000000
  58830 multiletter control sequences out of 15000+600000
  530271 words of font info for 222 fonts, out of 8000000 for 9000
